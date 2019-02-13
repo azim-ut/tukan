@@ -1,0 +1,56 @@
+<div class="wow fadeInUp product-item grid animated"
+     style="visibility: visible; animation-duration: 1s; animation-delay: 0ms; animation-name: fadeInUp;">
+    <div class="inner-wrap">
+        <div class="product-outner">
+            <div class="product-inner">
+                <div class="product-img-wrap">
+                    <div class="product-img-wrap-inner">
+                        <div class="product-img" style="position: relative;">
+                            <div style="height: 50px; position: absolute; right: 0px; z-index: 2;">
+                                <more-button product="{{id}}"></more-button>
+                            </div>
+                            <a href="/product/{{id}}"
+                               title="{{title}}">
+                                <div class="main-img"
+                                     style="min-height: 400px; background: transparent url({{img}}) no-repeat center center/cover">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-info-wrap">
+                        <div class="info">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <div style="height: 30px;">{{title}}</div>
+                                    <small>{{tags}}</small>
+                                    <br/>
+                                    <div class="amount">
+                                        <span><s>&nbsp;€ {{fullprice}}&nbsp;</s></span>
+                                        <span>€ {{price}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div style="height: 50px;">
+                                        <wish-button product="{{id}}" title="{{title}}"></wish-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Clone Group btns for layout List -->
+                <div class="hidden-tag nasa-list-stock-wrap">
+                    <p class="nasa-list-stock-status instock">
+                        AVAILABILITY: <span>In stock</span></p>
+                </div>
+                <div class="group-btn-in-list-wrap hidden-tag">
+                    <div class="group-btn-in-list"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
