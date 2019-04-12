@@ -3,7 +3,6 @@
 use assets\services\CatalogService;
 use assets\services\TagsService;
 
-require_once(__DIR__ . "/config.php");
 $catalog     = CatalogService::getInstance();
 $tagsService = TagsService::getInstance();
 $list        = $catalog->getList();

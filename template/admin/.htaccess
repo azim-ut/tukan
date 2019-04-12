@@ -21,5 +21,7 @@ php_value memory_limit 256M
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-l
 
+	RewriteRule ^(files)($|/) - [L]
+	RewriteRule (.html|.htm|.js|.css|.png|.jpg) - [L]
     RewriteRule .* index.php  [QSA,L]
 </IfModule>
