@@ -10,6 +10,7 @@ namespace assets\services;
 
 
 use core\service\MySqlService;
+use core\utils\StringUtils;
 
 class WishService extends BaseService{
 
@@ -48,13 +49,13 @@ class WishService extends BaseService{
     public function usersList($uid){
         $rows = $this->sql->smart_select_rows("
         SELECT 
-          p.ID as id,
-          p.post_name as name,
-          p.post_title as title,
-          price.meta_value as price,
-          IFNULL(b.meta_value, 0) as fullprice,
-          img.post_name as img,
-        	GROUP_CONCAT(h.meta_value SEPARATOR ' ') as height 
+            p.ID as id,
+            p.post_name as name,
+            p.post_title as title,
+            price.meta_value as price,
+            IFNULL(b.meta_value, 0) as fullprice,
+            img.post_name as img,
+            GROUP_CONCAT(h.meta_value SEPARATOR ' ') as height 
         FROM wishes as w
         INNER JOIN wp_posts as p ON p.ID=w.postid  
         INNER JOIN wp_postmeta as pm ON pm.post_id=p.ID AND pm.meta_key='_thumbnail_id' AND pm.post_id=p.ID
@@ -71,6 +72,11 @@ class WishService extends BaseService{
             $row->fullprice = floatval($row->fullprice);
             if(!$row->fullprice){
                 $row->fullprice = $row->price * 2;
+            }
+            if(StringUtils::stringIsNotEmpty($row->img)){
+                $tmp = $row->img;
+                $row->img = "/wp-content/uploads/auto/" . $tmp . "_800x800.jpg";
+                $row->s   = "/wp-content/uploads/auto/" . $tmp . "_200x200.jpg";
             }
         }
 
@@ -102,6 +108,11 @@ class WishService extends BaseService{
             $row->fullprice = floatval($row->fullprice);
             if(!$row->fullprice){
                 $row->fullprice = $row->price * 2;
+            }
+            if(StringUtils::stringIsNotEmpty($row->img)){
+                $tmp = $row->img;
+                $row->img = "/wp-content/uploads/auto/" . $tmp . "_800x800.jpg";
+                $row->s   = "/wp-content/uploads/auto/" . $tmp . "_200x200.jpg";
             }
         }
 

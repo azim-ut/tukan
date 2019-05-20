@@ -34,33 +34,22 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/"><i class="icon-home"></i> На главную</a></li>
-                <li><a href="/help"><i class="icon-question"></i> Как купить?</a></li>
+                <li><a href="/"><i class="icon-home"></i></a></li>
+                <li><a href="/help"><i class="icon-question"></i></a></li>
+                <li><a href="/wishes"><i class="icon-heart"></i>
+                        <span ng-if="data.wishes.length" style="font-weight: 700;">({{data.wishes.length}})</span>
+                    </a>
+                </li>
+                <li>
+                    <a data-enable="1"
+                       data-toggle="modal"
+                       data-target="#AuthForm">
+                        <span class="icon-login"></span>
+                    </a>
+                </li>
             </ul>
         </div><!--/.nav-collapse -->
         <div ng-controller="AuthBlockController" ng-cloak>
-            <div class="row">
-                <div style="padding: 5px;" class="overflow" ng-if="!data.user.current && data.user.updated">
-                    <button class="btn btn-sm" ng-click="goBack()">
-                        <span class="icon-arrow-left"></span>
-                    </button>
-                    <div class="pull-right">
-                        <a href="/wishes">
-                            <span class="icon-heart"></span> Мой список
-                            <span ng-if="data.wishes.length"
-                                  style="font-weight: 700;">({{data.wishes.length}})</span>
-                        </a>
-                        &nbsp;
-                        <buttob class="btn btn-warning" data-enable="1"
-                                data-toggle="modal"
-                                data-target="#AuthForm"
-                                title="Register or sign in">
-                            <span class="icon-login"></span>
-                            Вход
-                        </buttob>
-                    </div>
-                </div>
-            </div>
             <div ng-if="data.user.current">
                 <div class="text-right">
                     <div id="AuthBlock">
@@ -92,7 +81,7 @@
 </nav>
 
 <a id="start"></a>
-<div id="header-content" class="site-header" style="min-height: 100px;">
+<div id="header-content" class="site-header" style="min-height: 60px;">
 
 </div>
 <? include_once __DIR__ . "/auth.php" ?>

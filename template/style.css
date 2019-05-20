@@ -3491,7 +3491,7 @@ html {
 body {
   min-height: 100%;
   overflow-y: scroll;
-  background-color: transparent;
+  background-color: #f4f2f2 !important;
 }
 body.bg-full-size {
   background-size: cover;
@@ -3515,7 +3515,6 @@ body.full-width #wrapper {
 }
 
 #wrapper {
-  background-color: #fff;
   position: relative;
 }
 
@@ -10246,7 +10245,7 @@ li.featured-item.style_2:hover img {
     transition: all 350ms ease;
   }
   .products.list .product-warp-item .product-item {
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid #333;
     margin: 0;
   }
   .products.list .product-warp-item .product-item .product-inner {
@@ -12291,7 +12290,7 @@ del .amount {
   position: relative;
   display: block;
   margin: 10px 0 20px 0;
-  border: #eaeaae 1px solid;
+  border: #b9c5c2 1px solid;
 }
 .product-item h5 {
   margin-bottom: 0px;
@@ -12309,6 +12308,7 @@ del .amount {
   padding: 5px 10px 5px;
   color: #333;
   font-size: 100%;
+  background-color: #f1e5e5;
 }
 
 .product-item .info .amount {
@@ -12321,13 +12321,15 @@ del .amount {
   color: #ccc;
   font-size: 150%;
   border-radius: 50%;
-  border: #ccc 2px solid;
-  width: 50px;
-  height: 50px;
+  border: #f1e5e5 5px solid;
+  width: 70px;
+  height: 70px;
   padding: 5px 0 0;
-  margin-top: -30px;
+  margin-top: -40px;
   outline: none;
   background: #fff;
+  position: absolute;
+  right: 10px;
 }
 .product-item .info .heart:hover{
   color: #666 !important;

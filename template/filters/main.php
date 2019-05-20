@@ -35,7 +35,7 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
 
                         <div class="inner-content">
                             <div class="row">
-                                <div class="col-xs-10">
+                                <div class="col-xs-12">
                                     <div ng-class="{'hiddenFilter':!useFilter}">
                                         <div class="row filterPostsStore">
                                             <div class="col-sm-4 text-center">
@@ -57,17 +57,6 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-2 text-center">
-                                    <span style="cursor: pointer;"
-                                          ng-click="toggleFilterAccess()">
-                                        <i class="glyphicon glyphicon-remove"
-                                           style="font-size: 2em; margin: 25px 0;"
-                                           ng-if="useFilter"></i>
-                                        <i class="glyphicon glyphicon-search"
-                                           style="font-size: 2em; margin: 25px 0; opacity: .2;"
-                                           ng-if="!useFilter"></i>
-                                    </span>
-                                </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
@@ -81,6 +70,7 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
                                         </div>
 
                                         <div class="row text-center"
+                                             style="background: #fff;"
                                              ng-if="!posts.length && fetched && !data.process">
                                             <div class="subProduct"
                                                  style="width: 100%; height: 350px; background: transparent url(/web/img/empty_list_2.png) no-repeat center center/contain; border: none;">

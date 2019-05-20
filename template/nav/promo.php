@@ -17,7 +17,7 @@
                     data-slotamount="8" data-masterspeed="700" data-delay="9400"
                     data-thumb="/web/img/revolutionslider/thumbs/thumb2.jpg">
                     <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
-                    <img src="/web/img/promo1/11.jpg" alt="">
+                    <img src="/web/img/1.jpg" alt="">
 
                     <div class="caption lft slide_title slide_item_left white_bg"
                          style="font-size: 180%; line-height: 50px; font-weight: bold; padding: 5px 20px;"
@@ -34,7 +34,7 @@
                          data-speed="800"
                          data-start="1800"
                          data-easing="easeOutExpo">
-                        Итальянский бренд
+                        Эксклюзивные товары
                     </div>
                     <div class="caption lft slide_btn slide_item_left"
                          data-x="800"
@@ -42,7 +42,7 @@
                          data-speed="1000"
                          data-start="2100"
                          data-easing="easeOutExpo">
-                        Отличное качество
+                        Доставка в любые регионы
                         <br/>
                     </div>
                 </li>

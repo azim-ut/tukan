@@ -230,3 +230,7 @@ button.gender:hover{
     width:  48px;
     padding: 10px;
 }
+
+.tp-bgimg{
+    background-position: center top !important;
+}

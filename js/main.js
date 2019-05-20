@@ -6,7 +6,7 @@ angular.module('root')
             lastFetchInterval: null,
             loadDisabled: true,
             fetched: false,
-            useFilter: false,
+            useFilter: true,
             post: 0,
             limit: 27,
             heightP: 50,
