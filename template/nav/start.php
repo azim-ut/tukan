@@ -26,30 +26,39 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand pointer" href="/#start"
+            <a class="navbar-brand pointer" href="/"
                style="background: transparent url(/web/img/logo.jpg) no-repeat center center/contain">
                 <div style="width: 100px;"
                      class="header_logo" alt="www.Tukan.Store"></div>
             </a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse" ng-controller="AuthBlockController" ng-cloak>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/"><i class="icon-home"></i></a></li>
                 <li><a href="/help"><i class="icon-question"></i></a></li>
-                <li><a href="/wishes"><i class="icon-heart"></i>
-                        <span ng-if="data.wishes.length" style="font-weight: 700;">({{data.wishes.length}})</span>
+                <li><a href="/wishes">
+                        <i class="icon-heart"></i>
+                        <span ng-show="data.wishes.length" style="font-weight: 700;">1({{data.wishes.length}})</span>
                     </a>
                 </li>
                 <li>
                     <a data-enable="1"
                        data-toggle="modal"
+                       ng-if="!data.user"
                        data-target="#AuthForm">
                         <span class="icon-login"></span>
                     </a>
                 </li>
+                <li class="menu-item color"
+                    ng-click="logout()"
+                    ng-if="data.user" style="margin-left: 15px;">
+                    <a>
+                        <span class="icon-logout"></span>
+                    </a>
+                </li>
             </ul>
         </div><!--/.nav-collapse -->
-        <div ng-controller="AuthBlockController" ng-cloak>
+        <div>
             <div ng-if="data.user.current">
                 <div class="text-right">
                     <div id="AuthBlock">
@@ -61,15 +70,9 @@
                             <li class="menu-item color" ng-if="data.user">
                                 <a href="/wishes">
                                     <span class="icon-heart"></span> Мой список
-                                    <span ng-if="data.wishes.length"
-                                          style="font-weight: 700;">({{data.wishes.length}})</span>
+                                    <span ng-if="data.user.wishes.length>"
+                                          style="font-weight: 700;">({{data.user.wishes.length}})</span>
                                 </a>
-                            </li>
-                            <li class="menu-item color"
-                                ng-click="logout()"
-                                ng-if="data.user" style="margin-left: 15px;">
-                                <span class="icon-logout"></span>
-                                <span class="nasa-login-title">Выход</span>
                             </li>
                         </ul>
                     </div>

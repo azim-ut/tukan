@@ -1,9 +1,5 @@
 <div ng-controller="AuthBlockController" ng-cloak="" ng-init="check()">
 
-
-
-
-
     <div class="modal fade" tabindex="-1" role="dialog" id="AuthForm">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -55,9 +51,8 @@
                         </div>
                     </div>
 
-                    <div ng-if="tab == 'forgot'">
+                    <div ng-if="tab === 'forgot'">
                         <form ng-submit="resetPassword(email)">
-
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">

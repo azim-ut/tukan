@@ -4951,3 +4951,5 @@ Stack trace:
 [13-Feb-2019 20:46:29 Europe/Tallinn] PHP Fatal error:  Class 'core\rest\UserRest' not found in C:\Server\OSPanel\domains\tukan\web\rest\src\AuthRest.php on line 14
 [13-Feb-2019 20:46:29 Europe/Tallinn] PHP Fatal error:  Class 'core\rest\UserRest' not found in C:\Server\OSPanel\domains\tukan\web\rest\src\AuthRest.php on line 14
 [13-Feb-2019 20:46:29 Europe/Tallinn] PHP Fatal error:  Class 'core\rest\UserRest' not found in C:\Server\OSPanel\domains\tukan\web\rest\src\AuthRest.php on line 14
+[20-May-2019 23:06:48 Europe/Tallinn] PHP Notice:  Undefined property: stdClass::$icon in C:\Server\OSPanel\domains\tukan\core\beans\User.php on line 37
+[20-May-2019 23:09:06 Europe/Tallinn] PHP Notice:  Undefined property: stdClass::$icon in C:\Server\OSPanel\domains\tukan\core\beans\User.php on line 37

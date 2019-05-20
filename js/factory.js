@@ -44,10 +44,10 @@ angular.module('root')
         });
     })
     .factory('AuthFactory', function ($resource) {
-        return $resource('/web/rest', null, {
+        return $resource('/core/rest', null, {
             register: {
                 method: 'POST',
-                url: "/web/rest/auth/new",
+                url: "/core/rest/user/new",
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             },
@@ -57,19 +57,20 @@ angular.module('root')
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             },
-            update: {
+            check: {
                 method: 'GET',
-                url: "/web/rest/auth/check",
+                url: "/core/rest/user/check",
                 isArray: false
             },
-            resetPassword: {
-                method: 'GET',
-                url: "/web/rest/auth/resetPwd",
-                isArray: false
+            resetPwd: {
+                method: 'POST',
+                url: "/core/rest/user/reset/pwd",
+                isArray: false,
+                headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             },
             logout: {
                 method: 'GET',
-                url: "/web/rest/auth/logout",
+                url: "/core/rest/auth/logout",
                 isArray: false
             }
         })

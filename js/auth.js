@@ -1,15 +1,15 @@
 angular.module('root')
-    .controller("AuthBlockController", function ($scope, $controller, $interval, $anchorScroll, AuthService, Data, ViewFactory, $httpParamSerializer) {
+    .controller("AuthBlockController", function ($scope, $controller, $interval, $anchorScroll, AuthService, AuthFactory, ToastService, $httpParamSerializer) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
             tab: 'login',
             logout: AuthService.logout,
-            resetPassword: AuthService.resetPassword,
-            login: function(email, pwd, save){
-                AuthService.login(email, pwd, save, function(){
-                    $("#AuthForm").modal("hide");
+            resetPassword: function(email){
+                let params = $.param({email: email});
+                return AuthFactory.resetPwd(params).$promise.then(function (res) {
                 });
             },
+            login: AuthService.login,
             register: AuthService.register,
             setTab: function (val) {
                 $scope.tab = val;
@@ -18,7 +18,7 @@ angular.module('root')
                 window.history.back();
             },
             check: function () {
-                AuthService.update();
+                AuthService.check();
             }
     });
     });

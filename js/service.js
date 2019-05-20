@@ -48,7 +48,7 @@ angular.module('root')
                 let params = $.param({name: name, email: email, pwd1: pwd1, pwd2: pwd2, terms: 1});
                 return AuthFactory.register(params).$promise.then(function (res) {
                     if (ToastService.check(res)) {
-
+                        location.reload();
                     }
                 });
             },
@@ -57,17 +57,20 @@ angular.module('root')
                     Data.user = null;
                 });
             },
-            login: function (email, pwd, save, callback) {
+            login: function (email, pwd, save) {
                 let params = $.param({email: email, pwd: pwd, save: save});
                 return AuthFactory.login(params).$promise.then(function (res) {
                     ToastService.check(res);
                     Data.user = res.data.user;
-                    callback();
+                    location.reload();
                 });
             },
-            update: function () {
-                return AuthFactory.update().$promise.then(function (res) {
-                    Data.user = res.data.user;
+            check: function () {
+                return AuthFactory.check().$promise.then(function (res) {
+                    Data.user = null;
+                    if(res.data){
+                        Data.user = res.data.user;
+                    }
                 });
             }
         });
@@ -107,11 +110,11 @@ angular.module('root')
                         hideMethod: "fadeOut"
                     };
                     var $toast = null;
-                    if (type == "success") {
+                    if (type === "success") {
                         $toast = toastr.success(msg, title);
-                    } else if (type == "error") {
+                    } else if (type === "error") {
                         $toast = toastr.error(msg, title);
-                    } else if (type == "warning") {
+                    } else if (type === "warning") {
                         $toast = toastr.warning(msg, title);
                     } else {
                         $toast = toastr.info(msg, title);

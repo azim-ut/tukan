@@ -11501,6 +11501,12 @@ li.featured-item.style_2:hover img {
   display: none;
 }
 
+.woocommerce-Price-amount{
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
 .woocommerce.widget_products .add-to-cart-btn {
   display: none;
 }
@@ -13430,7 +13436,7 @@ ins {
   }
 }
 #main-content{
-  min-height: 1000px !important;
+  min-height: 660px !important;
 }
 
 /* PRODUCT PAGE DETAIL */
@@ -13622,6 +13628,8 @@ ins {
   clear: both;
   margin: 0;
   padding-top: 15px;
+  border-top: #ccc 1px solid;
+  margin-top: 35px;
 }
 .product-info .woocommerce-product-details__short-description {
   opacity: 0.9;
