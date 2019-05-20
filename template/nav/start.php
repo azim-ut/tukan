@@ -27,7 +27,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand pointer" href="/#start"
-               style="background: transparent url(/web/template/img/logo.jpg) no-repeat center center/contain">
+               style="background: transparent url(/web/img/logo.jpg) no-repeat center center/contain">
                 <div style="width: 100px;"
                      class="header_logo" alt="www.Tukan.Store"></div>
             </a>

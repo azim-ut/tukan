@@ -27,7 +27,7 @@ angular.module('root')
                 angular.extend(this, $controller("CommonController", {$scope: $scope, Data, WishesService}));
                 angular.extend($scope, {});
             },
-            templateUrl: '/template/js/assets/product-preview.html?t=' + now.getTime()
+            templateUrl: '/web/js/assets/product-preview.html?t=' + now.getTime()
         };
     })
     .directive('moreButton', function () {
@@ -50,7 +50,7 @@ angular.module('root')
                     }
                 });
             },
-            templateUrl: '/template/js/assets/more-button.html?t=' + now.getTime()
+            templateUrl: '/web/js/assets/more-button.html?t=' + now.getTime()
         };
     });
 

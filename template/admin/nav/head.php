@@ -31,15 +31,15 @@ try{
     <script type="text/javascript" src="/web/template/admin/js/jquery.form.js"></script>
     <script type="text/javascript" src="/web/template/admin/js/clipboard.min.js"></script>
 
-    <script type="text/javascript" src="/web/template/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/web/assets/bootstrap/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="/web/template/assets/ng/angular.min.js"></script>
-    <script type="text/javascript" src="/web/template/assets/ng/angular-cookies.min.js"></script>
-    <script type="text/javascript" src="/web/template/assets/ng/angular-route.min.js"></script>
-    <script type="text/javascript" src="/web/template/assets/ng/angular-resource.min.js"></script>
+    <script type="text/javascript" src="/web/assets/ng/angular.min.js"></script>
+    <script type="text/javascript" src="/web/assets/ng/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="/web/assets/ng/angular-route.min.js"></script>
+    <script type="text/javascript" src="/web/assets/ng/angular-resource.min.js"></script>
 
 
-	<link rel="stylesheet" type="text/css" media="all" href="/web/template/assets/bootstrap/css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/web/assets/bootstrap/css/bootstrap.css"/>
     <link href="/admin/css/main.css<?= $version ?>" rel="stylesheet"/>
 
     <script type="text/javascript">angular.module("root", ['ngRoute','ngResource','ngCookies']);</script>

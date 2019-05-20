@@ -54,7 +54,7 @@ class WishService extends BaseService{
           price.meta_value as price,
           IFNULL(b.meta_value, 0) as fullprice,
           img.post_name as img,
-           GROUP_CONCAT(h.meta_value SEPARATOR ' ') as height 
+        	GROUP_CONCAT(h.meta_value SEPARATOR ' ') as height 
         FROM wishes as w
         INNER JOIN wp_posts as p ON p.ID=w.postid  
         INNER JOIN wp_postmeta as pm ON pm.post_id=p.ID AND pm.meta_key='_thumbnail_id' AND pm.post_id=p.ID

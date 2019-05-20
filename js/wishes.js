@@ -35,7 +35,7 @@ angular.module('root')
 
                 // WishesService.fetchIds();
             },
-            templateUrl: '/template/js/assets/wish-button.html?t=' + now.getTime()
+            templateUrl: '/web/js/assets/wish-button.html?t=' + now.getTime()
         };
     })
 ;

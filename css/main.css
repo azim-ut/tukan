@@ -14,14 +14,14 @@ a .btn:hover{
 
 hr.line1{
     border: none;
-    background: transparent url(/template/img/line-png-32.png) no-repeat center center;
+    background: transparent url(/web/img/line-png-32.png) no-repeat center center;
     padding: 10px;
     opacity: .6;
 }
 
 hr.line2{
     border: none;
-    background: transparent url(/template/img/4u9cfa.png) no-repeat center center;
+    background: transparent url(/web/img/4u9cfa.png) no-repeat center center;
     padding: 50px;
     opacity: .6;
 }
@@ -29,7 +29,7 @@ hr.line2{
 hr.line3{
     border: none;
     border-top: transparent 20px solid;
-    background: transparent url(/template/img/fancyline1.png) no-repeat center center/contain;
+    background: transparent url(/web/img/fancyline1.png) no-repeat center center/contain;
     padding: 20px 0 0 ;
     opacity: .6;
 }
@@ -78,10 +78,10 @@ button.gender:hover{
     border-color: #333;
 }
 .gender.boy{
-    background: #fff url(/template/img/boy&girl.png) no-repeat center 9px;
+    background: #fff url(/web/img/boy&girl.png) no-repeat center 9px;
 }
 .gender.girl{
-    background: #fff url(/template/img/boy&girl.png) no-repeat center -46px;
+    background: #fff url(/web/img/boy&girl.png) no-repeat center -46px;
 }
 
 

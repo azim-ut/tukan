@@ -2,9 +2,9 @@
 
 
 <div align="center" style="margin-top: 10%;">
-<img src="/web/template/img/logo.jpg">
+<img src="/web/img/logo.jpg">
 <hr/>
-<img src="/web/template/img/omlogo.jpg">
+<img src="/web/img/omlogo.jpg">
 </div>
 
 

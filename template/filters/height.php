@@ -65,7 +65,7 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
                                         <div class="row text-center"
                                              ng-if="!posts.length && fetched && !data.process">
                                             <div class="subProduct"
-                                                 style="width: 100%; height: 350px; background: transparent url(/template/img/empty_list_2.png) no-repeat center center/contain; border: none;">
+                                                 style="width: 100%; height: 350px; background: transparent url(/web/img/empty_list_2.png) no-repeat center center/contain; border: none;">
 
                                             </div>
                                             <hr/>

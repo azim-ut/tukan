@@ -11,14 +11,13 @@
 <footer id="nasa-footer" class="footer-wrapper" style="overflow: hidden;">
     <div class="row">
         <div class="col-md-4" style="padding: 10px;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1014.609463986366!2d24.76371049307965!3d59.42942316406845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469294a724e59f33%3A0xe600a46c499ab504!2sLiivam%C3%A4e%2C+Tallinn!5e0!3m2!1sen!2see!4v1542652964397"
-                    width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            &nbsp;
         </div>
         <div class="col-md-4">
-            -
+            &nbsp;
         </div>
         <div class="col-md-4">
-            -
+            &nbsp;
         </div>
     </div>
 

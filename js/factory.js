@@ -53,7 +53,7 @@ angular.module('root')
             },
             login: {
                 method: 'POST',
-                url: "/web/rest/auth/login",
+                url: "/core/rest/user/login",
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             },
