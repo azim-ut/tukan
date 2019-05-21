@@ -3,6 +3,10 @@ angular.module('root')
         angular.extend(this, {
             user: {},
             view: null,
+            cart: {
+                ids: [],
+                list: []
+            },
             wishes: {
                 ids: [],
                 list: []

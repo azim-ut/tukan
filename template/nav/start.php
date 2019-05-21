@@ -38,7 +38,12 @@
                 <li><a href="/help"><i class="icon-question"></i></a></li>
                 <li><a href="/wishes">
                         <i class="icon-heart"></i>
-                        <span ng-show="data.wishes.length" style="font-weight: 700;">1({{data.wishes.length}})</span>
+                        <div ng-show="data.wishes.ids.length" class="subIconCount">{{data.wishes.ids.length}}</div>
+                    </a>
+                </li>
+                <li><a href="/cart">
+                        <i class="icon-basket"></i>
+                        <div ng-show="data.cart.ids.length" class="subIconCount">{{data.cart.ids.length}}</div>
                     </a>
                 </li>
                 <li>

@@ -9,6 +9,39 @@ angular.module('root')
             }
         });
     })
+    .service('CartService', function ($http, Data, CartFactory) {
+        let fetched = false;
+        angular.extend(this, {
+            fetchList: function () {
+                // if(!fetched){
+                    fetched = true;
+                    CartFactory.list().$promise.then(function (res) {
+                        Data.cart.list = res.data;
+                    });
+                // }
+            },
+            fetchIds: function () {
+                if(!fetched) {
+                    fetched = true;
+                    CartFactory.ids().$promise.then(function (res) {
+                        Data.cart.ids = res.data;
+                    })
+                }
+            },
+            remove: function (id) {
+                fetched = false;
+                CartFactory.del({id: id}).$promise.then(function (res) {
+                    Data.cart.ids = res.data;
+                })
+            },
+            add: function (id) {
+                fetched = false;
+                CartFactory.add({id: id}).$promise.then(function (res) {
+                    Data.cart.ids = res.data;
+                })
+            }
+        });
+    })
     .service('WishesService', function ($http, Data, WishFactory) {
         let fetched = false;
         angular.extend(this, {

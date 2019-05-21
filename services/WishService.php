@@ -37,7 +37,6 @@ class WishService extends BaseService{
 
     public function addItem($sid, $uid, $postId){
         $uid = $uid ?? 0;
-
         return $this->sql->smart_query("REPLACE wishes(sid, uid,postid,tm) VALUES(%s, %d,%d,%d)", $sid, $uid, $postId, time());
     }
 

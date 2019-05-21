@@ -12,3 +12,4 @@ require_once(__DIR__."/services/PostService.php");
 require_once(__DIR__."/services/PresetsService.php");
 require_once(__DIR__."/services/WebCatalogService.php");
 require_once(__DIR__."/services/WishService.php");
+require_once(__DIR__."/services/CartService.php");

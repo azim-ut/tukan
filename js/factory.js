@@ -43,6 +43,30 @@ angular.module('root')
             }
         });
     })
+    .factory('CartFactory', function ($resource) {
+        return $resource('/web/rest', null, {
+            add: {
+                method: 'GET',
+                url: "/web/rest/cart/add/:id",
+                isArray: false
+            },
+            del: {
+                method: 'GET',
+                url: "/web/rest/cart/del/:id",
+                isArray: false
+            },
+            ids: {
+                method: 'GET',
+                url: "/web/rest/cart/ids",
+                isArray: false
+            },
+            list: {
+                method: 'GET',
+                url: "/web/rest/cart/list",
+                isArray: false
+            }
+        });
+    })
     .factory('AuthFactory', function ($resource) {
         return $resource('/core/rest', null, {
             register: {

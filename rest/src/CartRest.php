@@ -1,5 +1,7 @@
 <?php
 
+use assets\services\CartService;
+use assets\services\WishService;
 use core\manager\ParamsManager;
 use core\manager\SessionManager;
 use core\manager\UserManager;
@@ -15,6 +17,12 @@ use rest\src\RestBase;
 
 class CartRest extends RestBase{
 
+	public function GET_ids(){
+		$uid             = UserManager::currentId();
+		$sid             = SessionManager::id();
+		$this->out->data = CartService::getInstance()->ids($sid, $uid);
+	}
+
     public function GET_cart(){
         $sid = SessionManager::id();
         $this->out->data = null;
@@ -25,36 +33,19 @@ class CartRest extends RestBase{
         $details = ParamsManager::getParam("details");
     }
 
-    public function GET_delivery_list(){
+	public function GET_add($postId){
+		SafeUtils::checkNumbers($postId);
+		$uid = UserManager::currentId();
+		$sid = SessionManager::id();
+		WishService::getInstance()->addItem($sid, $uid, $postId);
+		$this->out->data = WishService::getInstance()->ids($sid, $uid);
+	}
 
-    }
-
-    public function POST_delivery_set(){
-
-    }
-
-    public function POST_item_add(){
-        $id = ParamsManager::getParamInt("id");
-        $count = ParamsManager::getParamInt("count", 1);
-        $user = UserManager::current();
-        $this->out->data = null;
-    }
-
-    public function DELETE_item_del($id){
-        $sid = SessionManager::id();
-        $user = UserManager::current();
-        $this->out->data = null;
-    }
-
-    public function POST_item_inc(){
-        $id = ParamsManager::getParamInt("id");
-        $user = UserManager::current();
-        $this->out->data = null;
-    }
-
-    public function POST_item_dec(){
-        $id = ParamsManager::getParamInt("id");
-        $user = UserManager::current();
-        $this->out->data = null;
-    }
+	public function GET_del($postId){
+		SafeUtils::checkNumbers($postId);
+		$uid = UserManager::currentId();
+		$sid = SessionManager::id();
+		WishService::getInstance()->delItem($sid, $uid, $postId);
+		$this->out->data = WishService::getInstance()->ids($sid, $uid);
+	}
 }
