@@ -4,6 +4,7 @@ namespace assets\services;
 use core\service\MySqlService;
 use core\utils\StringUtils;
 use core\utils\DateUtils;
+use Goods;
 use stdClass;
 
 /**
@@ -91,35 +92,7 @@ class CatalogService extends BaseService{
 	}
 
 	public function getItem($postId){
-		$q = "SELECT * FROM wp_posts WHERE ID=". intval($postId);
-
-		$row = $this->sql->select_row($q);
-
-		if($row){
-			$sub = $this->sql->select_rows("SELECT * FROM wp_postmeta WHERE post_id=". intval($postId));
-			if($sub){
-				foreach($sub as $r){
-					switch($r->meta_key){
-						case '_thumbnail_id':
-							$row->img = $r->meta_value??null;
-						break;
-						case '_price':
-							$row->price = $r->meta_value;
-						break;
-						case '_height':
-							$row->height = $r->meta_value;
-						break;
-					}
-				}
-			}
-
-			$tags = $this->sql->select_rows("SELECT term_taxonomy_id, term_order FROM wp_term_relationships WHERE object_id=". intval($postId));
-			$row->tags = array();
-			foreach($tags as $t){
-				$row->tags[] = $t->term_taxonomy_id*1;
-			}
-		}
-		return $row;
+		return new Goods($postId);
 
 	}
 

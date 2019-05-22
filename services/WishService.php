@@ -35,6 +35,13 @@ class WishService extends BaseService{
         return $this->sql->smart_query("UPDATE wishes SET uid=%d WHERE sid=%s", $uid, $sid);
     }
 
+    public function setSidToUser($sid){
+    	$row = $this->sql->smart_select_row("SELECT uid FROM user_session WHERE sess=%s ORDER BY exp DESC LIMIT 1", $sid);
+    	if($row){
+		    $this->sql->smart_query("UPDATE wishes SET uid=%d WHERE sid=%s", $row->uid, $sid);
+	    }
+    }
+
     public function addItem($sid, $uid, $postId){
         $uid = $uid ?? 0;
         return $this->sql->smart_query("REPLACE wishes(sid, uid,postid,tm) VALUES(%s, %d,%d,%d)", $sid, $uid, $postId, time());

@@ -1,7 +1,6 @@
 <?php
 
 use assets\services\CartService;
-use assets\services\WishService;
 use core\manager\ParamsManager;
 use core\manager\SessionManager;
 use core\manager\UserManager;
@@ -14,38 +13,46 @@ use rest\src\RestBase;
  * Date: 11/21/2018
  * Time: 5:25 PM
  */
-
 class CartRest extends RestBase{
 
 	public function GET_ids(){
-		$uid             = UserManager::currentId();
-		$sid             = SessionManager::id();
-		$this->out->data = CartService::getInstance()->ids($sid, $uid);
+		$cart            = $this->getCart();
+		$this->out->data = CartService::getInstance()->ids($cart);
 	}
 
-    public function GET_cart(){
-        $sid = SessionManager::id();
-        $this->out->data = null;
-    }
+	public function GET_cart(){
+		$this->out->data = $this->getCart();
+	}
 
-    public function POST_submit(){
-        $address = ParamsManager::getParam("address");
-        $details = ParamsManager::getParam("details");
-    }
+	public function POST_submit(){
+		$address = ParamsManager::getParam("address");
+		$details = ParamsManager::getParam("details");
+	}
 
 	public function GET_add($postId){
 		SafeUtils::checkNumbers($postId);
-		$uid = UserManager::currentId();
-		$sid = SessionManager::id();
-		WishService::getInstance()->addItem($sid, $uid, $postId);
-		$this->out->data = WishService::getInstance()->ids($sid, $uid);
+		$cart = $this->getCart();
+
+		CartService::getInstance()->addItem($cart, $postId * 1);
+		$this->out->data = CartService::getInstance()->ids($cart);
 	}
 
 	public function GET_del($postId){
 		SafeUtils::checkNumbers($postId);
+		$cart = $this->getCart();
+		CartService::getInstance()->delItem($cart, $postId * 1);
+		$this->out->data = CartService::getInstance()->ids($cart);
+	}
+
+	private function getCart(){
 		$uid = UserManager::currentId();
 		$sid = SessionManager::id();
-		WishService::getInstance()->delItem($sid, $uid, $postId);
-		$this->out->data = WishService::getInstance()->ids($sid, $uid);
+		if($uid){
+			$cart = new Cart(["uid" => $uid]);
+		}else{
+			$cart = new Cart(["sid" => $sid]);
+		}
+
+		return $cart;
 	}
 }

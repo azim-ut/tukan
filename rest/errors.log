@@ -5011,3 +5011,13 @@ Stack trace:
 #2 C:\Server\OSPanel\domains\tkn\web\rest\rest.php(35): rest\src\RestBase->run('GET', Array)
 #3 {main}
   thrown in C:\Server\OSPanel\domains\tkn\web\rest\src\CartRest.php on line 21
+[22-May-2019 14:14:21 Europe/Tallinn] PHP Warning:  vsprintf(): Too few arguments in C:\Server\OSPanel\domains\tkn\core\service\MySqlService.php on line 151
+[22-May-2019 14:14:21 Europe/Tallinn] PHP Warning:  mysqli::query(): Empty query in C:\Server\OSPanel\domains\tkn\core\service\MySqlService.php on line 157
+[22-May-2019 14:14:21 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tkn\core\service\MySqlService.php:151) in C:\Server\OSPanel\domains\tkn\core\RestController.php on line 34
+[22-May-2019 14:14:21 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tkn\core\service\MySqlService.php:151) in C:\Server\OSPanel\domains\tkn\core\RestController.php on line 35
+[22-May-2019 14:14:21 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tkn\core\service\MySqlService.php:151) in C:\Server\OSPanel\domains\tkn\core\RestController.php on line 36
+[22-May-2019 14:15:13 Europe/Tallinn] PHP Warning:  vsprintf(): Too few arguments in C:\Server\OSPanel\domains\tkn\core\service\MySqlService.php on line 151
+[22-May-2019 14:15:13 Europe/Tallinn] PHP Warning:  mysqli::query(): Empty query in C:\Server\OSPanel\domains\tkn\core\service\MySqlService.php on line 157
+[22-May-2019 14:15:13 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tkn\core\service\MySqlService.php:151) in C:\Server\OSPanel\domains\tkn\core\RestController.php on line 34
+[22-May-2019 14:15:13 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tkn\core\service\MySqlService.php:151) in C:\Server\OSPanel\domains\tkn\core\RestController.php on line 35
+[22-May-2019 14:15:13 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tkn\core\service\MySqlService.php:151) in C:\Server\OSPanel\domains\tkn\core\RestController.php on line 36

@@ -38,8 +38,10 @@ class PostService extends BaseService{
         INNER JOIN wp_postmeta as pm ON pm.post_id=p.ID AND pm.meta_key='_thumbnail_id' AND pm.post_id=p.ID
         INNER JOIN wp_posts as img ON img.ID=pm.meta_value
         INNER JOIN wp_postmeta as price ON price.post_id=p.ID AND price.meta_key='_price'
+        
         INNER JOIN wp_term_relationships as tr ON tr.object_id=p.ID
         INNER JOIN wp_terms as t ON t.term_group=1 AND tr.term_taxonomy_id=t.term_id
+        
         INNER JOIN wp_term_relationships as sz ON sz.object_id=p.ID
         INNER JOIN wp_terms as st ON st.term_group=2 AND sz.term_taxonomy_id=st.term_id
         WHERE p.ID=%d

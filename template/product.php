@@ -1,9 +1,7 @@
 <? use assets\services\CatalogService;
 use assets\services\PostService;
-use assets\services\WebCatalogService;
 use core\Engine;
 use core\utils\SafeUtils;
-use core\utils\StringUtils;
 
 include_once __DIR__ . "/nav/start.php" ?>
 
@@ -12,7 +10,7 @@ $dirs = Engine::getInstance()->getDirs(1);
 $id   = 0;
 
 if(sizeof($dirs) && SafeUtils::toInteger($dirs[0], 0)){
-    $id = $dirs[0];
+    $id = $dirs[0]*1;
 }
 
 if(!$id){
@@ -20,7 +18,8 @@ if(!$id){
     <script>location.href = "/404";</script>
     <?
 }
-$post   = PostService::getInstance()->getProduct($id);
+$post   = new Goods($id);
+
 $images = CatalogService::getInstance()->getPostsImages($id);
 ?>
 
@@ -55,24 +54,24 @@ $images = CatalogService::getInstance()->getPostsImages($id);
             <div class="large-4 small-12 columns product-info rtl-left">
                 <div class="nasa-product-info-wrap">
                     <div class="nasa-product-info-scroll" style="margin-top: 0px; overflow-y: inherit;"><h1
-                                class="product_title entry-title"><?=$post->title?></h1>
+                                class="product_title entry-title"><?=$post->getTitle()?></h1>
                         <div>
-                            Размеры: <?=$post->sizes?>
+                            Размеры: <?=$post->getSizesStr()?>
                         </div>
 
                         <p class="price">
                             <span class="woocommerce-Price-amount amount">
-                                <span class="woocommerce-Price-currencySymbol">€</span><?=$post->price?>
+                                <span class="woocommerce-Price-currencySymbol">€</span><?=$post->getFullPrice()?>
                             </span>
                             <span>
-                                <s style="margin: 10px; font-size: 90%; font-weight: 100; color: #888;">&nbsp;€ <?=$post->fullprice?>
+                                <s style="margin: 10px; font-size: 90%; font-weight: 100; color: #888;">&nbsp;€ <?=$post->getPrice()?>
                                     </s>
                             </span>
                         </p>
                         <hr class="nasa-single-hr">
                         <div class="woocommerce-product-details__short-description">
                             <p>
-                                &nbsp<?=$post->content?>
+                                &nbsp<?=$post->getContent()?>
                             </p>
                         </div>
                         <button class="btn btn-lg btn-danger btn-block"

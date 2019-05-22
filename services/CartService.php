@@ -9,10 +9,9 @@
 namespace assets\services;
 
 
+use Cart;
 use core\manager\SessionManager;
-use core\manager\UserManager;
 use core\service\MySqlService;
-use core\utils\SafeUtils;
 
 class CartService extends BaseService{
 
@@ -20,7 +19,6 @@ class CartService extends BaseService{
 	 * @var CartService
 	 */
 	protected static $instance = null;
-
 
 	/**
 	 * @return CartService
@@ -34,17 +32,53 @@ class CartService extends BaseService{
 		return self::$instance;
 	}
 
-	public function ids($sid, $uid){
-		$uid  = $uid ?? 0;
-		$rows = $this->sql->smart_select_rows(
-			"SELECT i.post_id AS id
-			FROM cart AS c
-			LEFT JOIN cart_items AS i ON i.cart_id=c.id
-			WHERE (c.sid=%s OR c.uid=%d) AND c.processing=0", $sid, $uid
-		);
-		$ids  = array();
-		foreach($rows as $row){
-			$ids[] = intval($row->id);
+	public function getCart(){
+		return new Cart(["sid" => SessionManager::id()]);
+	}
+
+
+	public function mergeSidToUser($sid, $uid){
+		return $this->sql->smart_query("UPDATE cart SET uid=%d WHERE sid=%s", $uid, $sid);
+	}
+
+	public function setSidToUser($sid){
+		$row = $this->sql->smart_select_row("SELECT uid FROM user_session WHERE sess=%s ORDER BY exp DESC LIMIT 1", $sid);
+		if($row){
+			$this->sql->smart_query("UPDATE cart SET uid=%d WHERE sid=%s", $row->uid, $sid);
+		}
+	}
+
+	/**
+	 * @param $cart Cart
+	 * @param $postId int
+	 */
+	public function addItem($cart, $postId){
+		$item = $cart->getCartItem($postId);
+		if($item){
+			$this->sql->smart_query("REPLACE cart_items(cart, post, count, price) VALUES(%d,%d,%d,%d,%01.4f)", $cart->getId(), $item->getPost(), 0);
+		}
+	}
+
+	/**
+	 * @param $cart Cart
+	 * @param $postId int
+	 */
+	public function delItem($cart, $postId){
+		$item = $cart->getCartItem($postId);
+		if($item){
+			$this->sql->smart_query("DELETE FROM cart_items WHERE id=%d AND postid=%d", $cart->getId(), $item->getPost());
+		}
+	}
+
+	/**
+	 * @param $cart Cart
+	 *
+	 * @return array
+	 */
+	function ids($cart){
+		$ids = array();
+		foreach($cart->getItems() as $row){
+			$ids[] = intval($row->getId());
 		}
 
 		return $ids;
