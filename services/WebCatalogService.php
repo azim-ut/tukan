@@ -122,11 +122,10 @@ class WebCatalogService extends BaseService{
 					p.*,
 					m1.meta_value as price, 
 					m2.meta_value as stock, 
-					img.post_name as img,
+					m.meta_value as img,
 					GROUP_CONCAT(t.name SEPARATOR ', ') as tags 
 			FROM wp_posts as p
 			INNER JOIN wp_postmeta as m ON m.post_id=p.ID AND m.meta_key='_thumbnail_id' AND m.meta_value<>''
-			INNER JOIN wp_posts as img ON img.ID=m.meta_value
 			INNER JOIN wp_postmeta as m1 ON m1.post_id=p.ID AND m1.meta_key='_price'
 			INNER JOIN wp_postmeta as m2 ON m2.post_id=p.ID AND m2.meta_key='_stock'
 			INNER JOIN wp_term_relationships tr ON tr.object_id=p.ID
@@ -143,11 +142,10 @@ class WebCatalogService extends BaseService{
 					p.*,
 					m1.meta_value as price, 
 					m2.meta_value as stock,
-					img.post_name as img,
+					m.meta_value as img,
 					GROUP_CONCAT(t.name SEPARATOR ', ') as tags
 			FROM wp_posts as p
 			LEFT JOIN wp_postmeta as m ON m.post_id=p.ID AND m.meta_key='_thumbnail_id' AND m.meta_value<>''
-			LEFT JOIN wp_posts as img ON img.ID=m.meta_value
 			LEFT JOIN wp_postmeta as m1 ON m1.post_id=p.ID AND m1.meta_key='_price'
 			LEFT JOIN wp_postmeta as m2 ON m2.post_id=p.ID AND m2.meta_key='_stock'
 			LEFT JOIN wp_term_relationships tr ON tr.object_id=p.ID
@@ -181,9 +179,9 @@ class WebCatalogService extends BaseService{
 				SELECT 
 					p.ID as post_id,
 					img.ID as image_post_id, 
-					img.post_name as img FROM wp_posts as p
-				INNER JOIN wp_postmeta as m ON m.post_id=p.ID AND m.meta_key='_thumbnail_id' AND m.meta_value<>'' AND m.meta_value IS NOT NULL
-				INNER JOIN wp_posts as img ON img.ID=CAST(m.meta_value as int) AND img.post_type='attachment' AND img.post_parent=p.ID");
+					m.meta_value as img 
+                FROM wp_posts as p
+				INNER JOIN wp_postmeta as m ON m.post_id=p.ID AND m.meta_key='_thumbnail_id' AND m.meta_value<>'' AND m.meta_value IS NOT NULL");
         $rows  = $this->sql->select_rows($query);
         foreach($rows as $row){
             $src                               = "/wp-content/uploads/auto/" . $row->img . "_800x800.jpg";

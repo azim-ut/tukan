@@ -12371,7 +12371,11 @@ del .amount {
 .product-item .info .heart.on{
   background-color: #ff0000;
   color: #fff;
-  border-color: #464343;
+  /*border-color: #464343;*/
+  border-color: #ffffff;
+}
+.product-item .info .cart.on{
+  background-color: #8f8bdc;
 }
 .product-item .info .cart.on:hover,
 .product-item .info .heart.on:hover{

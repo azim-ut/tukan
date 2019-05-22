@@ -56,6 +56,7 @@ $version = time();
 	<script type="text/javascript" src="/web/js/auth.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/product.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/wishes.js?t=<?=$version?>"></script>
+	<script type="text/javascript" src="/web/js/cart.js?t=<?=$version?>"></script>
 
 
 

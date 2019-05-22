@@ -12,6 +12,7 @@ namespace assets\services;
 use Cart;
 use core\manager\SessionManager;
 use core\service\MySqlService;
+use Goods;
 
 class CartService extends BaseService{
 
@@ -53,10 +54,11 @@ class CartService extends BaseService{
 	 * @param $postId int
 	 */
 	public function addItem($cart, $postId){
-		$item = $cart->getCartItem($postId);
+	    $item = new Goods($postId);
 		if($item){
-			$this->sql->smart_query("REPLACE cart_items(cart, post, count, price) VALUES(%d,%d,%d,%d,%01.4f)", $cart->getId(), $item->getPost(), 0);
+			$this->sql->smart_query("REPLACE cart_items(cart, post, count, img, price) VALUES(%d,%d,1,%s,%01.4f)", $cart->getId(), $postId, $item->getImg(), $item->getPrice());
 		}
+		$cart->fetchItems();
 	}
 
 	/**
@@ -64,10 +66,8 @@ class CartService extends BaseService{
 	 * @param $postId int
 	 */
 	public function delItem($cart, $postId){
-		$item = $cart->getCartItem($postId);
-		if($item){
-			$this->sql->smart_query("DELETE FROM cart_items WHERE id=%d AND postid=%d", $cart->getId(), $item->getPost());
-		}
+        $this->sql->smart_query("DELETE FROM cart_items WHERE cart=%d AND post=%d", $cart->getId(), $postId);
+        $cart->fetchItems();
 	}
 
 	/**
@@ -77,8 +77,9 @@ class CartService extends BaseService{
 	 */
 	function ids($cart){
 		$ids = array();
-		foreach($cart->getItems() as $row){
-			$ids[] = intval($row->getId());
+		$items = $cart->getItems();
+		foreach($items as $row){
+			$ids[] = intval($row->getPost());
 		}
 
 		return $ids;
