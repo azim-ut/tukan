@@ -60,12 +60,11 @@ class WishService extends BaseService{
             p.post_title as title,
             price.meta_value as price,
             IFNULL(b.meta_value, 0) as fullprice,
-            img.post_name as img,
+			img.meta_value as img,
             GROUP_CONCAT(h.meta_value SEPARATOR ' ') as height 
         FROM wishes as w
         INNER JOIN wp_posts as p ON p.ID=w.postid  
-        INNER JOIN wp_postmeta as pm ON pm.post_id=p.ID AND pm.meta_key='_thumbnail_id' AND pm.post_id=p.ID
-        INNER JOIN wp_posts as img ON img.ID=pm.meta_value
+        INNER JOIN wp_postmeta as img ON img.post_id=p.ID AND img.meta_key='_thumbnail_id' AND img.post_id=p.ID
         INNER JOIN wp_postmeta as price ON price.post_id=p.ID AND price.meta_key='_price'
         INNER JOIN wp_postmeta as h ON h.post_id=p.ID AND h.meta_key='_height'
         LEFT JOIN wp_postmeta as b ON b.post_id=p.ID AND b.meta_key='_fullprice'
@@ -92,17 +91,16 @@ class WishService extends BaseService{
     public function sessionsList($sid){
         $rows = $this->sql->smart_select_rows("
         SELECT 
-          p.ID as id,
-          p.post_name as name,
-          p.post_title as title,
-          price.meta_value as price,
-          IFNULL(b.meta_value, 0) as fullprice,
-          img.post_name as img,
-           GROUP_CONCAT(h.meta_value SEPARATOR ' ') as height 
+			p.ID as id,
+			p.post_name as name,
+			p.post_title as title,
+			price.meta_value as price,
+			IFNULL(b.meta_value, 0) as fullprice,
+			img.meta_value as img,
+			GROUP_CONCAT(h.meta_value SEPARATOR ' ') as height 
         FROM wishes as w
         INNER JOIN wp_posts as p ON p.ID=w.postid  
-        INNER JOIN wp_postmeta as pm ON pm.post_id=p.ID AND pm.meta_key='_thumbnail_id' AND pm.post_id=p.ID
-        INNER JOIN wp_posts as img ON img.ID=pm.meta_value
+        INNER JOIN wp_postmeta as img ON img.post_id=p.ID AND img.meta_key='_thumbnail_id' AND img.post_id=p.ID
         INNER JOIN wp_postmeta as price ON price.post_id=p.ID AND price.meta_key='_price'
         INNER JOIN wp_postmeta as h ON h.post_id=p.ID AND h.meta_key='_height'
         LEFT JOIN wp_postmeta as b ON b.post_id=p.ID AND b.meta_key='_fullprice'

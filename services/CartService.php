@@ -56,7 +56,7 @@ class CartService extends BaseService{
 	public function addItem($cart, $postId){
 	    $item = new Goods($postId);
 		if($item){
-			$this->sql->smart_query("REPLACE cart_items(cart, post, count, img, price) VALUES(%d,%d,1,%s,%01.4f)", $cart->getId(), $postId, $item->getImg(), $item->getPrice());
+			$this->sql->smart_query("REPLACE cart_items(cart, post, count, title, img, price) VALUES(%d,%d,1,%s,%s,%01.4f)", $cart->getId(), $postId, $item->getTitle(), $item->getImg(), $item->getPrice());
 		}
 		$cart->fetchItems();
 	}

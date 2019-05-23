@@ -2,11 +2,11 @@ angular.module('root')
     .service('CartService', function ($http, Data, CartFactory) {
         let fetched = false;
         angular.extend(this, {
-            fetchList: function () {
+            fetch: function () {
                 // if(!fetched){
                 fetched = true;
                 CartFactory.list().$promise.then(function (res) {
-                    Data.cart.list = res.data;
+                    Data.cart = res.data;
                 });
                 // }
             },
@@ -14,20 +14,20 @@ angular.module('root')
                 if(!fetched) {
                     fetched = true;
                     CartFactory.ids().$promise.then(function (res) {
-                        Data.cart.ids = res.data;
+                        Data.cart_ids = res.data;
                     })
                 }
             },
             remove: function (id) {
                 fetched = false;
                 CartFactory.del({id: id}).$promise.then(function (res) {
-                    Data.cart.ids = res.data;
+                    Data.cart_ids = res.data;
                 })
             },
             add: function (id) {
                 fetched = false;
                 CartFactory.add({id: id}).$promise.then(function (res) {
-                    Data.cart.ids = res.data;
+                    Data.cart_ids = res.data;
                 })
             }
         });
@@ -43,7 +43,7 @@ angular.module('root')
                 CartService.remove(id);
             }
         });
-        CartService.fetchList();
+        CartService.fetch();
     })
     .directive('cartButton', function () {
         let now = new Date();
@@ -57,7 +57,7 @@ angular.module('root')
                 angular.extend($scope, {
                     toggleCart: function (productId) {
                         productId *= 1;
-                        if (Data.cart.ids.indexOf(productId) >= 0) {
+                        if (Data.cart_ids.indexOf(productId) >= 0) {
                             CartService.remove(productId);
                         } else {
                             CartService.add(productId);

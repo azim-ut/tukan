@@ -43,7 +43,7 @@
                 </li>
                 <li><a href="/cart">
                         <i class="icon-basket"></i>
-                        <div ng-show="data.cart.ids.length" class="subIconCount">{{data.cart.ids.length}}</div>
+                        <div ng-show="data.cart_ids.length" class="subIconCount">{{data.cart_ids.length}}</div>
                     </a>
                 </li>
                 <li>

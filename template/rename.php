@@ -18,6 +18,7 @@ foreach($files as $file){
     if(sizeof($res)<2){
         continue;
     }
+
     $to = null;
     $nm = $res[0]."_".$res[1];
     if(sizeof($res) == 2){

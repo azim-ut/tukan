@@ -25,8 +25,7 @@ class CartRest extends RestBase{
 	}
 
 	public function GET_list(){
-        $cart = $this->getCart();
-		$this->out->data = $cart->getItems();
+		$this->out->data = $this->getCart();
 	}
 
 	public function POST_submit(){

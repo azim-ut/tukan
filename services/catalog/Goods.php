@@ -10,8 +10,6 @@ class Goods{
 	private $content;
 	private $title;
 	private $name;
-	private $img200;
-	private $img800;
 	private $img;
 	private $price;
 	private $fullPrice;
@@ -54,9 +52,7 @@ class Goods{
 				foreach($sub as $r){
 					switch($r->meta_key){
 						case '_thumbnail_id':
-                            $this->img = $r->meta_value.".jpg";
-                            $this->img200 = $r->meta_value."_200x200.jpg";
-                            $this->img800 = $r->meta_value."_800x800.jpg";
+                            $this->img = $r->meta_value;
 							break;
 						case '_price':
 							$this->price = $r->meta_value*1;
@@ -172,19 +168,5 @@ class Goods{
 	public function getFullPrice(){
 		return $this->fullPrice;
 	}
-
-    /**
-     * @return mixed
-     */
-    public function getImg200(){
-        return $this->img200;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getImg800(){
-        return $this->img800;
-    }
 
 }
