@@ -1,0 +1,10 @@
+.emptyWish{
+    position: relative;display: inline-block;
+}
+
+.emptyWish .example{
+    width: 200px; height: 350px; padding-top: 100px;
+}
+.emptyWish .example .icon{
+    font-size: 400%;
+}

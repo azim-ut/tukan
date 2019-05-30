@@ -1,0 +1,11 @@
+.emptyCart{
+    position: relative; display: inline-block; text-align: center;
+}
+
+.emptyCart .example{
+    width: 200px; height: 350px; padding-top: 130px;
+}
+
+.emptyCart .example .icon{
+    font-size: 400%;
+}
