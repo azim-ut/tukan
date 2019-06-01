@@ -5060,3 +5060,74 @@ Stack trace:
 #7 C:\Server\OSPanel\domains\tukan\web\rest\rest.php(35): rest\src\RestBase->run('GET', Array)
 #8 {main}
   thrown in C:\Server\OSPanel\domains\tukan\web\services\cart\CartItem.php on line 23
+[01-Jun-2019 12:20:56 Europe/Tallinn] PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 8192 bytes) in C:\Server\OSPanel\domains\tukan\web\services\WebCatalogService.php on line 61
+[01-Jun-2019 12:37:04 Europe/Tallinn] PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in C:\Server\OSPanel\domains\tukan\web\services\WebCatalogService.php on line 45
+[01-Jun-2019 12:59:17 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:17 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:17 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:19 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:19 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:19 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:23 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:23 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:23 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:29 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:29 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:29 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:38 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:38 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 12:59:38 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 13:27:59 Europe/Tallinn] PHP Notice:  Undefined property: Cart::$CartService in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 13:27:59 Europe/Tallinn] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php:35
+Stack trace:
+#0 C:\Server\OSPanel\domains\tukan\core\RestController.php(106): CartRest->POST_submit()
+#1 C:\Server\OSPanel\domains\tukan\core\rest\src\RestBase.php(14): core\RestController->init('POST', Array, Object(CartRest))
+#2 C:\Server\OSPanel\domains\tukan\web\rest\rest.php(35): rest\src\RestBase->run('POST', Array)
+#3 {main}
+  thrown in C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php on line 35
+[01-Jun-2019 16:03:43 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php:36) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 34
+[01-Jun-2019 16:03:43 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php:36) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 35
+[01-Jun-2019 16:03:43 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\web\rest\src\CartRest.php:36) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 36
+[01-Jun-2019 16:20:23 Europe/Tallinn] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::getId() in C:\Server\OSPanel\domains\tukan\web\rest\src\AuthRest.php:21
+Stack trace:
+#0 C:\Server\OSPanel\domains\tukan\core\RestController.php(106): AuthRest->POST_login()
+#1 C:\Server\OSPanel\domains\tukan\core\rest\src\RestBase.php(14): core\RestController->init('POST', Array, Object(AuthRest))
+#2 C:\Server\OSPanel\domains\tukan\web\rest\rest.php(36): rest\src\RestBase->run('POST', Array)
+#3 {main}
+  thrown in C:\Server\OSPanel\domains\tukan\web\rest\src\AuthRest.php on line 21
+[01-Jun-2019 16:21:09 Europe/Tallinn] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::getId() in C:\Server\OSPanel\domains\tukan\web\rest\src\AuthRest.php:22
+Stack trace:
+#0 C:\Server\OSPanel\domains\tukan\core\RestController.php(106): AuthRest->POST_login()
+#1 C:\Server\OSPanel\domains\tukan\core\rest\src\RestBase.php(14): core\RestController->init('POST', Array, Object(AuthRest))
+#2 C:\Server\OSPanel\domains\tukan\web\rest\rest.php(36): rest\src\RestBase->run('POST', Array)
+#3 {main}
+  thrown in C:\Server\OSPanel\domains\tukan\web\rest\src\AuthRest.php on line 22
+[01-Jun-2019 16:46:14 Europe/Tallinn] PHP Warning:  ltrim() expects parameter 1 to be string, object given in C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php on line 23
+[01-Jun-2019 16:46:14 Europe/Tallinn] PHP Warning:  mysqli_real_escape_string() expects parameter 2 to be string, object given in C:\Server\OSPanel\domains\tukan\core\service\MySqlService.php on line 94
+[01-Jun-2019 16:46:14 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 34
+[01-Jun-2019 16:46:14 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 35
+[01-Jun-2019 16:46:14 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 36
+[01-Jun-2019 16:47:19 Europe/Tallinn] PHP Warning:  ltrim() expects parameter 1 to be string, object given in C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php on line 23
+[01-Jun-2019 16:47:19 Europe/Tallinn] PHP Warning:  mysqli_real_escape_string() expects parameter 2 to be string, object given in C:\Server\OSPanel\domains\tukan\core\service\MySqlService.php on line 94
+[01-Jun-2019 16:47:19 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 34
+[01-Jun-2019 16:47:19 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 35
+[01-Jun-2019 16:47:19 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 36
+[01-Jun-2019 16:47:24 Europe/Tallinn] PHP Warning:  ltrim() expects parameter 1 to be string, object given in C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php on line 23
+[01-Jun-2019 16:47:24 Europe/Tallinn] PHP Warning:  mysqli_real_escape_string() expects parameter 2 to be string, object given in C:\Server\OSPanel\domains\tukan\core\service\MySqlService.php on line 94
+[01-Jun-2019 16:47:24 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 34
+[01-Jun-2019 16:47:24 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 35
+[01-Jun-2019 16:47:24 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 36
+[01-Jun-2019 16:47:31 Europe/Tallinn] PHP Warning:  ltrim() expects parameter 1 to be string, object given in C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php on line 23
+[01-Jun-2019 16:47:31 Europe/Tallinn] PHP Warning:  mysqli_real_escape_string() expects parameter 2 to be string, object given in C:\Server\OSPanel\domains\tukan\core\service\MySqlService.php on line 94
+[01-Jun-2019 16:47:31 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 34
+[01-Jun-2019 16:47:31 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 35
+[01-Jun-2019 16:47:31 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 36
+[01-Jun-2019 16:49:02 Europe/Tallinn] PHP Warning:  ltrim() expects parameter 1 to be string, object given in C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php on line 23
+[01-Jun-2019 16:49:02 Europe/Tallinn] PHP Warning:  mysqli_real_escape_string() expects parameter 2 to be string, object given in C:\Server\OSPanel\domains\tukan\core\service\MySqlService.php on line 94
+[01-Jun-2019 16:49:02 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 34
+[01-Jun-2019 16:49:02 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 35
+[01-Jun-2019 16:49:02 Europe/Tallinn] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php:23) in C:\Server\OSPanel\domains\tukan\core\RestController.php on line 36
+[01-Jun-2019 16:52:36 Europe/Tallinn] PHP Warning:  ltrim() expects parameter 1 to be string, object given in C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php on line 23
+[01-Jun-2019 16:52:36 Europe/Tallinn] PHP Warning:  mysqli_real_escape_string() expects parameter 2 to be string, object given in C:\Server\OSPanel\domains\tukan\core\service\MySqlService.php on line 94
+[01-Jun-2019 16:58:22 Europe/Tallinn] PHP Warning:  ltrim() expects parameter 1 to be string, object given in C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php on line 23
+[01-Jun-2019 16:58:22 Europe/Tallinn] PHP Warning:  mysqli_real_escape_string() expects parameter 2 to be string, object given in C:\Server\OSPanel\domains\tukan\core\service\MySqlService.php on line 94

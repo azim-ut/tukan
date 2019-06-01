@@ -19,6 +19,30 @@ angular.module('root')
             }
         })
     })
+    .factory('OrdersFactory', function ($resource) {
+        return $resource('/web/rest', null, {
+            add: {
+                method: 'GET',
+                url: "/web/rest/order/add/:id",
+                isArray: false
+            },
+            del: {
+                method: 'GET',
+                url: "/web/rest/order/del/:id",
+                isArray: false
+            },
+            ids: {
+                method: 'GET',
+                url: "/web/rest/order/ids",
+                isArray: false
+            },
+            list: {
+                method: 'GET',
+                url: "/web/rest/order/list",
+                isArray: false
+            }
+        });
+    })
     .factory('WishFactory', function ($resource) {
         return $resource('/web/rest', null, {
             add: {
@@ -47,12 +71,17 @@ angular.module('root')
         return $resource('/web/rest', null, {
             add: {
                 method: 'GET',
-                url: "/web/rest/cart/add/:id",
+                url: "/web/rest/cart/ids/add/:id",
                 isArray: false
             },
             del: {
                 method: 'GET',
                 url: "/web/rest/cart/del/:id",
+                isArray: false
+            },
+            idsDel: {
+                method: 'GET',
+                url: "/web/rest/cart/ids/del/:id",
                 isArray: false
             },
             ids: {
@@ -64,6 +93,12 @@ angular.module('root')
                 method: 'GET',
                 url: "/web/rest/cart/list",
                 isArray: false
+            },
+            submit: {
+                method: 'POST',
+                url: "/web/rest/cart/submit",
+                isArray: false,
+                headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             }
         });
     })
@@ -77,7 +112,7 @@ angular.module('root')
             },
             login: {
                 method: 'POST',
-                url: "/core/rest/user/login",
+                url: "/web/rest/auth/login",
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             },
@@ -94,7 +129,7 @@ angular.module('root')
             },
             logout: {
                 method: 'GET',
-                url: "/core/rest/auth/logout",
+                url: "/core/rest/user/logout",
                 isArray: false
             }
         })

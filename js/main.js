@@ -9,7 +9,7 @@ angular.module('root')
             useFilter: true,
             post: 0,
             limit: 27,
-            heightP: 50,
+            heightP: $cookies.get("heightP"),
             height: 0,
             offset: 0,
             tagsOn: [],
@@ -17,7 +17,7 @@ angular.module('root')
             wishes: [],
             posts: [],
             updateHeight: function () {
-                console.log($scope.heightP);
+                $cookies.put("heightP", $scope.heightP);
                 $scope.height = (120 / 100) * $scope.heightP + 56;
                 $scope.tags.forEach(function (tag) {
                     if (tag.from && tag.to && tag.group === 'height') {
@@ -84,7 +84,6 @@ angular.module('root')
             },
 
         });
-
         function updateTags(){
             let tags = [];
             let gender = null;

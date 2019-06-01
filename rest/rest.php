@@ -7,6 +7,7 @@ require_once(__DIR__."/src/RestTags.php");
 require_once(__DIR__."/src/RestPosts.php");
 require_once(__DIR__."/src/WishRest.php");
 require_once(__DIR__."/src/CartRest.php");
+require_once(__DIR__."/src/OrderRest.php");
 
 use core\Context;
 use core\exception\RestNotFoundedException;
@@ -50,5 +51,6 @@ function getRestExecutor($to){
 		case "preset":	 		return new RestPreset(); break;
 		case "wish":	 		return new WishRest(); break;
 		case "cart":	 		return new CartRest(); break;
+		case "order":	 		return new OrderRest(); break;
 	}
 }

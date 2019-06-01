@@ -9,19 +9,32 @@ angular.module('root')
             }
         });
     })
+    .service('OrdersService', function ($http, Data, OrdersFactory) {
+        let fetched = false;
+        angular.extend(this, {
+            fetchIds: function () {
+                if (!fetched) {
+                    fetched = true;
+                    OrdersFactory.ids().$promise.then(function (res) {
+                        Data.orders.ids = res.data;
+                    })
+                }
+            }
+        });
+    })
     .service('WishesService', function ($http, Data, WishFactory) {
         let fetched = false;
         angular.extend(this, {
             fetchList: function () {
                 // if(!fetched){
-                    fetched = true;
-                    WishFactory.list().$promise.then(function (res) {
-                        Data.wishes.list = res.data;
-                    });
+                fetched = true;
+                WishFactory.list().$promise.then(function (res) {
+                    Data.wishes.list = res.data;
+                });
                 // }
             },
             fetchIds: function () {
-                if(!fetched) {
+                if (!fetched) {
                     fetched = true;
                     WishFactory.ids().$promise.then(function (res) {
                         Data.wishes.ids = res.data;
@@ -58,7 +71,7 @@ angular.module('root')
                 });
             },
             login: function (email, pwd, save) {
-                let params = $.param({email: email, pwd: pwd, save: save});
+                let params = $.param({email: email, pass: pwd, save: save});
                 return AuthFactory.login(params).$promise.then(function (res) {
                     ToastService.check(res);
                     Data.user = res.data.user;
@@ -68,8 +81,8 @@ angular.module('root')
             check: function () {
                 return AuthFactory.check().$promise.then(function (res) {
                     Data.user = null;
-                    if(res.data){
-                        Data.user = res.data.user;
+                    if (res.data) {
+                        Data.user = res.data;
                     }
                 });
             }

@@ -32,7 +32,7 @@ class WishService extends BaseService{
     }
 
     public function mergeSidToUser($sid, $uid){
-        return $this->sql->smart_query("UPDATE wishes SET uid=%d WHERE sid=%s", $uid, $sid);
+        $this->sql->smart_query("UPDATE wishes SET uid=%d WHERE sid=%s", $uid, $sid);
     }
 
     public function setSidToUser($sid){

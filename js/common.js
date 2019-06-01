@@ -4,7 +4,7 @@ angular.module('root')
             return parseInt(input, 10);
         };
     })
-    .controller("CommonController", function ($scope, $location, Data, WishesService, CartService) {
+    .controller("CommonController", function ($scope, $location, Data, WishesService, CartService, OrdersService) {
         angular.extend($scope, {
             data: Data,
             process: false
@@ -12,6 +12,7 @@ angular.module('root')
         $("#nasa-before-load").hide();
         WishesService.fetchIds();
         CartService.fetchIds();
+        OrdersService.fetchIds();
     })
     .directive('productPreview', function () {
         let now = new Date();
@@ -29,29 +30,6 @@ angular.module('root')
                 angular.extend($scope, {});
             },
             templateUrl: '/web/js/assets/product-preview.html?t=' + now.getTime()
-        };
-    })
-    .directive('moreButton', function () {
-        let now = new Date();
-        return {
-            restrict: "E",
-            scope: {
-                product: "@"
-            },
-            controller: function ($scope, $controller, Data, $interval, $anchorScroll, WishesService) {
-                angular.extend(this, $controller("CommonController", {$scope: $scope, Data, WishesService}));
-                angular.extend($scope, {
-                    on: function () {
-                        return Data.user.current.a;
-                    },
-                    toMore: function () {
-                        if (Data.user.current.a) {
-                            location.href = "/assets/edit.php?id=" + $scope.product
-                        }
-                    }
-                });
-            },
-            templateUrl: '/web/js/assets/more-button.html?t=' + now.getTime()
         };
     });
 
