@@ -80,7 +80,7 @@ angular.module('root')
 
                 let tags = [];
                 let gender = null;
-
+                console.log(111);
                 $scope.tags.forEach(function (row) {
                     if (row.on && row.group === 'gender') {
                         gender = row;

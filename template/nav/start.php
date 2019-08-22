@@ -35,15 +35,19 @@
         <div id="navbar" class="navbar-collapse collapse" ng-controller="AuthBlockController" ng-cloak>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/"><i class="icon-home"></i></a></li>
-                <li><a href="/help"><i class="icon-question"></i></a></li>
+                <li ng-if="data.user"><a href="/orders">
+                        <i class="icon-list"></i>
+                        <div ng-show="data.order_ids.length" class="subIconCount">{{data.order_ids.length}}</div>
+                    </a>
+                </li>
                 <li><a href="/wishes">
                         <i class="icon-heart"></i>
-                        <div ng-show="data.wishes.ids.length" class="subIconCount">{{data.wishes.ids.length}}</div>
+                        <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}</div>
                     </a>
                 </li>
                 <li><a href="/cart">
                         <i class="icon-basket"></i>
-                        <div ng-show="data.cart_ids.length" class="subIconCount">{{data.cart_ids.length}}</div>
+                        <div ng-show="data.cart_ids.length" class="subIconCount blue">{{data.cart_ids.length}}</div>
                     </a>
                 </li>
                 <li>

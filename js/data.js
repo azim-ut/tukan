@@ -10,6 +10,10 @@ angular.module('root')
             wishes: {
                 ids: [],
                 list: []
+            },
+            orders: {
+                ids: [],
+                list: []
             }
         });
         return this;

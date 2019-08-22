@@ -1,0 +1,39 @@
+<div class="row"
+     style="margin: 0; background: #fff; padding: 10px;">
+
+    <div class="col-xs-12" style="overflow: hidden;">
+        <div class="row">
+            <div class="col-xs-4">
+                <span style="font-size: 130%; font-weight: bold;">Заказ от {{order.ordered*1000 | date:'dd.MM.yyyy'}}</span>
+            </div>
+            <div class="col-xs-4 text-center">
+                <i class="icon-tag"></i> x {{order.items.length}}
+            </div>
+            <div class="col-xs-4 text-right" style="font-weight: bold; font-size: 120%l">
+                Total: € {{order.sum}}
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-xs-6">
+                <i class="icon-home"></i> {{order.address}}
+                <div style="margin-top: 10px;">
+                    <div class="orderStatus">Упаковывается</div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div style="overflow: hidden;">
+                    <div ng-repeat="row in order.items" class="items">
+                        <a href="/product/{{row.id}}">
+                            <div style="width: 80px; height: 80px; border: #eaeaea 2px solid; background: #fff url('/wp-content/uploads/auto/{{row.img}}_200x200.jpg') no-repeat center center/cover"
+                            ></div>
+                            <div class="text-center">
+                                € {{row.price}}
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

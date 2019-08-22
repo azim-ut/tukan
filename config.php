@@ -15,6 +15,8 @@ require_once(__DIR__."/services/WishService.php");
 
 require_once(__DIR__."/services/catalog/Goods.php");
 require_once(__DIR__."/services/catalog/Tag.php");
+require_once(__DIR__."/services/cart/Order.php");
 require_once(__DIR__."/services/cart/Cart.php");
 require_once(__DIR__."/services/cart/CartItem.php");
 require_once(__DIR__."/services/CartService.php");
+require_once(__DIR__."/services/OrderService.php");

@@ -12291,6 +12291,12 @@ del .amount {
   color: inherit;
 }
 
+.subIconCount.red{
+  background: #ff0000;
+}
+.subIconCount.blue{
+  background: #5d5fff;
+}
 
 .subIconCount{
   font-weight: 700;

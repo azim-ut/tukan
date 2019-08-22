@@ -1,10 +1,8 @@
 <?php
 
-use core\manager\SessionManager;
-use core\manager\UserManager;
 use core\service\MySqlService;
 
-class Cart{
+class Order{
     public $id;
     private $uid;
     private $sid;
@@ -16,50 +14,12 @@ class Cart{
     public $finished = 0;
 
     public function __construct($args){
-        if(is_int($args)){
-            $this->initById($args);
-        }else if(is_array($args) && array_key_exists('sid', $args)){
-            $this->sid = $args['sid'];
-            $this->initBySid($this->sid);
-        }else if(is_array($args) && array_key_exists('uid', $args)){
-            $this->uid = $args['uid'];
-            $this->initByUid($this->uid);
-        }
-        if(!$this->id){
-            $this->create();
-        }
-        $this->fetchItems();
-    }
-
-    private function create(){
-        if(!$this->sid){
-            $this->sid = SessionManager::id();
-        }
-        $this->uid = UserManager::getUserIdBySessionId($this->sid);
-        $sql       = MySqlService::getInstance();
-        $res       = $sql->smart_query("INSERT INTO cart(sid, uid, address, cart) VALUES(%s, %d, %s, 1)",
-            $this->sid, $this->uid, $this->address
-        );
-        if($res){
-            $this->initByUid($sql->last_id());
-        }
+        $this->initById($args);
     }
 
     private function initById($id){
         $sql   = MySqlService::getInstance();
-        $query = sprintf("SELECT * FROM cart as c WHERE c.id=%d AND c.cart=1", $sql->smart($id));
-        $this->dbQuery($query);
-    }
-
-    private function initBySid($sid){
-        $sql   = MySqlService::getInstance();
-        $query = sprintf("SELECT * FROM cart as c WHERE c.sid=%s AND c.cart=1", $sql->smart($sid));
-        $this->dbQuery($query);
-    }
-
-    private function initByUid($uid){
-        $sql   = MySqlService::getInstance();
-        $query = sprintf("SELECT * FROM cart as c WHERE c.uid=%d AND c.cart=1", $sql->smart($uid));
+        $query = sprintf("SELECT * FROM cart WHERE id=%d AND orders=1", $sql->smart($id));
         $this->dbQuery($query);
     }
 
@@ -67,14 +27,15 @@ class Cart{
         $sql = MySqlService::getInstance();
         $row = $sql->select_row($query);
         if($row){
-            $this->id       = $row->id * 1;
-            $this->uid      = $row->uid * 1;
-            $this->sid      = $row->sid;
-            $this->address  = $row->address;
+            $this->id      = $row->id * 1;
+            $this->uid     = $row->uid * 1;
+            $this->sid     = $row->sid;
+            $this->address = $row->address;
             $this->ordered  = $row->ordered;
             $this->updated  = $row->updated;
             $this->finished = $row->finished;
         }
+        $this->fetchItems();
     }
 
     public function fetchItems(){
@@ -102,10 +63,6 @@ class Cart{
 
     public function getAddress(){
         return $this->address;
-    }
-
-    public function getDetails(){
-        return $this->details;
     }
 
     public function getCartItem($post){

@@ -61,11 +61,7 @@ $images = CatalogService::getInstance()->getPostsImages($id);
 
                         <p class="price">
                             <span class="woocommerce-Price-amount amount">
-                                <span class="woocommerce-Price-currencySymbol">€</span><?=$post->getFullPrice()?>
-                            </span>
-                            <span>
-                                <s style="margin: 10px; font-size: 90%; font-weight: 100; color: #888;">&nbsp;€ <?=$post->getPrice()?>
-                                    </s>
+                                <span class="woocommerce-Price-currencySymbol">€</span><?=$post->getPrice()?>
                             </span>
                         </p>
                         <hr class="nasa-single-hr">
