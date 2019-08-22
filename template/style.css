@@ -3491,7 +3491,7 @@ html {
 body {
   min-height: 100%;
   overflow-y: scroll;
-  background-color: #f4f2f2 !important;
+  background-color: #fffdf6 !important;
 }
 body.bg-full-size {
   background-size: cover;
@@ -12311,7 +12311,9 @@ del .amount {
   position: relative;
   display: block;
   margin: 10px 0 20px 0;
-  border: #b9c5c2 1px solid;
+  border: #b9c5c2 1px dashed;
+  border-radius: 12px;
+  overflow: hidden;
 }
 .product-item h5 {
   margin-bottom: 0px;
