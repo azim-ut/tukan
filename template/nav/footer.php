@@ -10,7 +10,7 @@
 <!-- MAIN FOOTER -->
 <footer id="nasa-footer" class="footer-wrapper" style="overflow: hidden;">
     <br/>
-    <br/>
+    <br/>N
     <div class="row">
         <div class="col-sm-4 text-right">
             <i class="glyphicon glyphicon-map-marker"></i>

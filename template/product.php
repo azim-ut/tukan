@@ -87,6 +87,10 @@ $images = CatalogService::getInstance()->getPostsImages($id);
                             <div class="sharethis-inline-share-buttons"></div>
                         </div>
                     </div>
+                    <fb:login-button
+                            scope="public_profile,email"
+                            onlogin="checkLoginState();">
+                    </fb:login-button>
                 </div>
             </div>
         </div>
