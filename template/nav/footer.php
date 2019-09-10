@@ -14,8 +14,9 @@
     <div class="row">
         <div class="col-sm-4 text-right">
             <i class="glyphicon glyphicon-map-marker"></i>
-            10113 Estonia, Harjumaa, Tallinn
-            Liivamae tee
+            Mustakivi Keskus<br/>
+            Mahtra 1, 13811 Tallinn, Estonia<br/>
+            2-й этаж, бокс 24
             <br/>
             <br/>
             <i class="glyphicon glyphicon-phone"></i> <a href="tel:+37258347178">(372) 5818 5225</a>
