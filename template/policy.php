@@ -1,236 +1,77 @@
 <? include_once __DIR__ . "/nav/start.php" ?>
     <div class="row mb-4">
         <div class="col">
-            <h4><strong>Политика в отношении обработки персональных данных</strong></h4>
-            <p><strong>1. Общие положения</strong></p>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col">
-            <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального
-                закона
-                от 27.07.2006. №152-ФЗ &laquo;О персональных данных&raquo; и определяет порядок обработки персональных
-                данных и меры по обеспечению безопасности персональных данных
-                OU Tukan&nbsp;(далее &ndash; Оператор).
-            </p>
-            <ol>
-                <li>Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и
-                    свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на
-                    неприкосновенность частной жизни, личную и семейную тайну.
-                </li>
-                <li>Настоящая политика Оператора в отношении обработки персональных данных (далее &ndash; Политика)
-                    применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта&nbsp;
-                        http://tukan.store
-                    
-                    .
-                </li>
-            </ol>
-            <p><strong>2. Основные понятия, используемые в Политике</strong></p>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col">
-            <ol>
-                <li>Автоматизированная обработка персональных данных &ndash; обработка персональных данных с помощью
-                    средств
-                    вычислительной техники;
-                </li>
-                <li>Блокирование персональных данных &ndash; временное прекращение обработки персональных данных (за
-                    исключением случаев, если обработка необходима для уточнения персональных данных);
-                </li>
-                <li>Веб-сайт &ndash; совокупность графических и информационных материалов, а также программ для ЭВМ и
-                    баз
-                    данных, обеспечивающих их доступность в сети интернет по сетевому адресу&nbsp;
-                        http://tukan.store
-                    
-                    ;
-                </li>
-                <li>Информационная система персональных данных &mdash; совокупность содержащихся в базах данных
-                    персональных
-                    данных, и обеспечивающих их обработку информационных технологий и технических средств;
-                </li>
-                <li>Обезличивание персональных данных &mdash; действия, в результате которых невозможно определить без
-                    использования дополнительной информации принадлежность персональных данных конкретному Пользователю
-                    или
-                    иному субъекту персональных данных;
-                </li>
-                <li>Обработка персональных данных &ndash; любое действие (операция) или совокупность действий
-                    (операций),
-                    совершаемых с использованием средств автоматизации или без использования таких средств с
-                    персональными
-                    данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление,
-                    изменение),
-                    извлечение, использование, передачу (распространение, предоставление, доступ), обезличивание,
-                    блокирование, удаление, уничтожение персональных данных;
-                </li>
-                <li>Оператор &ndash; государственный орган, муниципальный орган, юридическое или физическое лицо,
-                    самостоятельно или совместно с другими лицами организующие и (или) осуществляющие обработку
-                    персональных
-                    данных, а также определяющие цели обработки персональных данных, состав персональных данных,
-                    подлежащих
-                    обработке, действия (операции), совершаемые с персональными данными;
-                </li>
-                <li>Персональные данные &ndash; любая информация, относящаяся прямо или косвенно к определенному или
-                    определяемому Пользователю веб-сайта&nbsp;http://tukan.store
-                    ;
-                </li>
-                <li>Пользователь &ndash; любой посетитель веб-сайта&nbsp;http://tukan.store
-                    ;
-                </li>
-                <li>Предоставление персональных данных &ndash; действия, направленные на раскрытие персональных данных
-                    определенному лицу или определенному кругу лиц;
-                </li>
-                <li>Распространение персональных данных &ndash; любые действия, направленные на раскрытие персональных
-                    данных неопределенному кругу лиц (передача персональных данных) или на ознакомление с персональными
-                    данными неограниченного круга лиц, в том числе обнародование персональных данных в средствах
-                    массовой
-                    информации, размещение в информационно-телекоммуникационных сетях или предоставление доступа к
-                    персональным данным каким-либо иным способом;
-                </li>
-                <li>Трансграничная передача персональных данных &ndash; передача персональных данных на территорию
-                    иностранного государства органу власти иностранного государства, иностранному физическому или
-                    иностранному юридическому лицу;
-                </li>
-                <li>Уничтожение персональных данных &ndash; любые действия, в результате которых персональные данные
-                    уничтожаются безвозвратно с невозможностью дальнейшего восстановления содержания персональных данных
-                    в
-                    информационной системе персональных данных и (или) результате которых уничтожаются материальные
-                    носители
-                    персональных данных.
-                </li>
-            </ol>
-            <p><strong>3. Оператор может обрабатывать следующие персональные данные Пользователя</strong></p>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col">
-            <ol>
-                <li>
-                    Фамилия, имя, отчество;
-                </li>
-                <li>
-                    Электронный адрес;
-                </li>
-                <li>
-                    Номера телефонов;
-                </li>
-                <li>
-                    Isikukood;
-                </li>
-                <li>Также на сайте происходит сбор и обработка обезличенных данных о посетителях (в т.ч. файлов &laquo;cookie&raquo;)
-                    с помощью сервисов интернет-статистики (Яндекс Метрика и Гугл Аналитика и других).
-                </li>
-                <li>Вышеперечисленные данные далее по тексту Политики объединены общим понятием Персональные данные.
-                </li>
-            </ol>
-            <p><strong>4. Цели обработки персональных данных</strong></p>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col">
-            <ol>
-                <li>Цель обработки персональных данных Пользователя &mdash;&nbsp;информирование Пользователя
-                        посредством отправки электронных писем; предоставление доступа Пользователю к сервисам,
-                        информации
-                        и/или материалам, содержащимся на веб-сайте.
-                    
-                </li>
-                <li>Также Оператор имеет право направлять Пользователю уведомления о новых продуктах и услугах,
-                    специальных
-                    предложениях и различных событиях. Пользователь всегда может отказаться от получения информационных
-                    сообщений, направив Оператору письмо на адрес электронной почты&nbsp;office@tukan.store&nbsp;с
-                    пометкой &laquo;Отказ от уведомлениях о новых продуктах и услугах и специальных предложениях&raquo;.
-                </li>
-                <li>Обезличенные данные Пользователей, собираемые с помощью сервисов интернет-статистики, служат для
-                    сбора
-                    информации о действиях Пользователей на сайте, улучшения качества сайта и его содержания.
-                </li>
-            </ol>
-            <p><strong>5. Правовые основания обработки персональных данных</strong></p>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col">
-            <ol>
-                <li>Оператор обрабатывает персональные данные Пользователя только в случае их заполнения и/или отправки
-                    Пользователем самостоятельно через специальные формы, расположенные на сайте&nbsp;
-                        http://tukan.store
-                    
-                    . Заполняя соответствующие формы и/или отправляя свои персональные данные Оператору, Пользователь
-                    выражает свое согласие с данной Политикой.
-                </li>
-                <li>Оператор обрабатывает обезличенные данные о Пользователе в случае, если это разрешено в настройках
-                    браузера Пользователя (включено сохранение файлов &laquo;cookie&raquo; и использование технологии
-                    JavaScript).
-                </li>
-            </ol>
-            <p><strong>6. Порядок сбора, хранения, передачи и других видов обработки персональных данных</strong></p>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col">
-            <p>Безопасность персональных данных, которые обрабатываются Оператором, обеспечивается путем реализации
-                правовых, организационных и технических мер, необходимых для выполнения в полном объеме требований
-                действующего законодательства в области защиты персональных данных.</p>
-            <ol>
-                <li>Оператор обеспечивает сохранность персональных данных и принимает все возможные меры, исключающие
-                    доступ
-                    к персональным данным неуполномоченных лиц.
-                </li>
-                <li>Персональные данные Пользователя никогда, ни при каких условиях не будут переданы третьим лицам, за
-                    исключением случаев, связанных с исполнением действующего законодательства.
-                </li>
-                <li>В случае выявления неточностей в персональных данных, Пользователь может актуализировать их
-                    самостоятельно, путем направления Оператору уведомление на адрес электронной почты Оператора&nbsp;
-                        office@tukan.store
-                    &nbsp;с пометкой &laquo;Актуализация персональных данных&raquo;.
-                </li>
-                <li>Срок обработки персональных данных является неограниченным. Пользователь может в любой момент
-                    отозвать
-                    свое согласие на обработку персональных данных, направив Оператору уведомление посредством
-                    электронной
-                    почты на электронный адрес Оператора&nbsp;office@tukan.store&nbsp;с пометкой &laquo;Отзыв
-                    согласия на обработку персональных данных&raquo;.
-                </li>
-            </ol>
-            <p><strong>7. Трансграничная передача персональных данных</strong></p>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col">
-            <ol>
-                <li>Оператор до начала осуществления трансграничной передачи персональных данных обязан убедиться в том,
-                    что
-                    иностранным государством, на территорию которого предполагается осуществлять передачу персональных
-                    данных, обеспечивается надежная защита прав субъектов персональных данных.
-                </li>
-                <li>Трансграничная передача персональных данных на территории иностранных государств, не отвечающих
-                    вышеуказанным требованиям, может осуществляться только в случае наличия согласия в письменной форме
-                    субъекта персональных данных на трансграничную передачу его персональных данных и/или исполнения
-                    договора, стороной которого является субъект персональных данных.
-                </li>
-            </ol>
-            <p><strong>8. Заключительные положения</strong></p>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col">
-            <ol>
-                <li>Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его
-                    персональных данных, обратившись к Оператору с помощью электронной почты&nbsp;
-                        office@tukan.store
-                    
-                    .
-                </li>
-                <li>В данном документе будут отражены любые изменения политики обработки персональных данных Оператором.
-                    Политика действует бессрочно до замены ее новой версией.
-                </li>
-                <li>Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу&nbsp;
-                        http://tukan.store/policy
-                    
-                    .
-                </li>
-            </ol>
+            <p><strong>Privacy Policy</strong></p>
+            <p><br/>Tukan OU is committed to protecting the privacy of its customers and users. Based on this, we have
+                provided this Privacy Policy which governs the collection, use, disclosure, transfer and storage of
+                Customer Data. Our activities on the Internet are in accordance with all relevant activities and
+                relevant European Union legislation and the laws of the Republic of Estonia. Take a moment to read our
+                Privacy Policy. </p>
+            <p>Collection and Use of<br/>Personal Data Personal Data is your personal data that is specifically or
+                indirectly associated with an individual and is collected and processed by Tukan OU for the purpose of
+                executing or contacting an individual and for the performance of his or her legal obligations.</p>
+            <p>Loyal Customer Personal Data may be collected in any of the following ways:</p>
+            <p>&bull; by providing contact information (including your name, personal identification code, postal
+                address, telephone number, email address, preferred contact method) on our website or elsewhere (eg
+                stores);<br/>&bull; using the website through customer account information or cookies<br/>&bull; making
+                a purchase or ordering in our store or online store personal contact information or purchase preference
+                information (Tukan OU may voluntarily request personal and personal information in certain areas of the
+                website. Required personal information may include name, address , zip code, email address, phone
+                number, and more);<br/>&bull; when applying for a hire purchase</p>
+            <p>&nbsp;</p>
+            <p>Collection of Other Data<br/>We also collect non-personally identifiable data - data that cannot be
+                directly associated with a particular individual (gender, age, language preference, location).<br/>We
+                may also collect customer activity data on our website. This data is aggregated and used to provide our
+                customers with more useful information and to know which parts of the website, products and services are
+                most interesting to you. Aggregate data is treated as non-personal data in this Privacy Policy.</p>
+            <p>Use and storage of personal data collected</p>
+            <p>With the personal information we collect, we can inform our clients about Tukan OU product news,
+                campaigns and upcoming events. A customer who does not wish to be on our newsletter list or be notified
+                of products that may be of interest to them may at any time remove themselves from the intended
+                audience.</p>
+            <p>We also use the personal information we collect to deliver the goods and to fulfill our obligations to
+                the customer.</p>
+            <p>By accepting the terms of this Privacy Policy, the customer agrees to Tukan OU' automated processing of
+                their data. You can always withdraw your consent through our website or by submitting a written
+                application. There shall be no retroactive effect on the application or the withdrawal of consent.</p>
+            <p>In order to better serve the customer, Tukan OU may disclose information about individual users to a
+                third party that provides services to Tukan OU and is contractually bound to keep the information shared
+                confidential. A third party is, for example, our partner, whose job is to transport goods for sale in an
+                e-shop or to provide hire purchase services.</p>
+            <p>Tukan OU will retain the Customer's personal data until the termination of the Loyal Customer Agreement.
+                Data that Tukan OU is obliged to retain for legal purposes (eg accounting data) shall be stored by Tukan
+                OU in accordance with the requirements set forth in legal acts. </p>
+            <p>Modification of Personal Information Collected Personal information collected by the<br/>Customer to
+                identify and contact the Customer can be viewed, modified and supplemented on the "My Information"
+                section of our website.</p>
+            <p>If the e-mail (username of the Tukan OU website) changes, please let us know as it cannot be changed by
+                the customer.</p>
+            <p>Protection of personal data</p>
+            <p>Tukan OU takes all precautionary measures, including administrative, technical and physical measures, to
+                protect the Customer's personal data. Only authorized persons may access and modify the data.</p>
+            <p>If you suspect that your personal information has been treated contrary to this Privacy Policy or are at
+                risk of leaking your information to strangers, please let us know immediately. Only in this way can we
+                keep the potential damage to a minimum.</p>
+            <p>The Customer shall have the right to request the termination of the processing of his or her data,
+                information on the use of the data and the transmission of the data to himself or to a third party in a
+                commonly used format. In order to avoid misuse of customer data and rights, applications may only be
+                submitted in a form that identifies the applicant (digitally signed or personally signed at the
+                representative office). We have 30 days to respond to such requests.</p>
+            <p>We shall treat a claim for termination of data processing as an application for termination of a loyal
+                customer agreement. </p>
+            <p>Security<br/>All personal information about a customer that comes to the Tukan OU e-shop and purchases
+                are treated as confidential information. An encrypted communication channel with banks ensures the
+                security of the purchaser's personal data and bank details.</p>
+            <p>Privacy Policy Terms and Changes</p>
+            <p>By accessing our website or by completing a loyal customer application, you have read and accepted these
+                Terms and Conditions. We reserve the right to change the general terms and conditions of our Privacy
+                Policy as necessary, notifying all our regular customers, but we will use our best endeavors to keep our
+                Privacy Policy up to date and accessible to you on our website.</p>
+            <p>For any questions or concerns regarding our privacy policy or data processing, please contact
+                privatsus@Tukan OU.ee</p>
+            <p>You are always entitled to seek the protection of your data from the Data Protection Inspectorate or the
+                courts. The Data Protection Inspectorate is a public body, which can also be consulted or consulted on
+                personal data protection issues.</p>
         </div>
     </div>
 <? include_once __DIR__ . "/nav/footer.php" ?>

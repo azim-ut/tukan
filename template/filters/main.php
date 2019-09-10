@@ -60,7 +60,7 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
                             </div>
                             <div class="row">
                                 <div class="large-3 columns">
-                                    <>
+
                                 </div>
                                 <div class="large-9 columns">
                                     <div class="row">

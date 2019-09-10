@@ -23,7 +23,8 @@
             <br/>
             <br/>
         </div>
-        <div class="col-sm-4 text-center">
+        <div class="col-sm-4 text-center small">
+            <a href="/policy">Политика конфидекциальности</a>
             <br/>
         </div>
         <div class="col-sm-4 text-right">
