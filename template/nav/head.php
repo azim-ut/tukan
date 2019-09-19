@@ -12,8 +12,6 @@ use core\service\App; ?>
     <script type="text/javascript" src="/web/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/web/assets/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/web/assets/js/jquery-migrate.min.js"></script>
-    <link rel="shortcut icon" href="icon/favicon.ico"/>
-
 
     <link href="/web/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="/web/assets/bootstrap/js/bootstrap.min.js"></script>

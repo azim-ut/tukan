@@ -14,8 +14,10 @@ class Cart{
     public $ordered = 0;
     public $updated = 0;
     public $finished = 0;
+    private $sql;
 
     public function __construct($args){
+	    $this->sql = MySqlService::getInstance();
         if(is_int($args)){
             $this->initById($args);
         }else if(is_array($args) && array_key_exists('sid', $args)){
@@ -58,13 +60,11 @@ class Cart{
     }
 
     private function initByUid($uid){
-        $sql   = MySqlService::getInstance();
         $query = sprintf("SELECT * FROM cart as c WHERE c.uid=%d AND c.cart=1", $sql->smart($uid));
         $this->dbQuery($query);
     }
 
     private function dbQuery($query){
-        $sql = MySqlService::getInstance();
         $row = $sql->select_row($query);
         if($row){
             $this->id       = $row->id * 1;
