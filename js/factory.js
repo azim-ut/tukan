@@ -1,102 +1,102 @@
 angular.module('root')
     .factory('ViewFactory', function ($resource) {
-        return $resource('/web/rest', null, {
+        return $resource('/shop/rest', null, {
             tags: {
                 method: 'GET',
-                url: "/web/rest/tags/all",
+                url: "/shop/rest/tags/all",
                 isArray: false
             },
             posts: {
                 method: 'POST',
-                url: "/web/rest/posts/list",
+                url: "/shop/rest/posts/list",
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             },
             product: {
                 method: 'GET',
-                url: "/web/rest/posts/product/:id",
+                url: "/shop/rest/posts/product/:id",
                 isArray: false
             }
         })
     })
     .factory('OrdersFactory', function ($resource) {
-        return $resource('/web/rest', null, {
+        return $resource('/shop/rest', null, {
             add: {
                 method: 'GET',
-                url: "/web/rest/order/add/:id",
+                url: "/shop/rest/order/add/:id",
                 isArray: false
             },
             del: {
                 method: 'GET',
-                url: "/web/rest/order/del/:id",
+                url: "/shop/rest/order/del/:id",
                 isArray: false
             },
             ids: {
                 method: 'GET',
-                url: "/web/rest/order/ids",
+                url: "/shop/rest/order/ids",
                 isArray: false
             },
             list: {
                 method: 'GET',
-                url: "/web/rest/order/list",
+                url: "/shop/rest/order/list",
                 isArray: false
             }
         });
     })
     .factory('WishFactory', function ($resource) {
-        return $resource('/web/rest', null, {
+        return $resource('/shop/rest', null, {
             add: {
                 method: 'GET',
-                url: "/web/rest/wish/add/:id",
+                url: "/shop/rest/wish/add/:id",
                 isArray: false
             },
             del: {
                 method: 'GET',
-                url: "/web/rest/wish/del/:id",
+                url: "/shop/rest/wish/del/:id",
                 isArray: false
             },
             ids: {
                 method: 'GET',
-                url: "/web/rest/wish/ids",
+                url: "/shop/rest/wish/ids",
                 isArray: false
             },
             list: {
                 method: 'GET',
-                url: "/web/rest/wish/list",
+                url: "/shop/rest/wish/list",
                 isArray: false
             }
         });
     })
     .factory('CartFactory', function ($resource) {
-        return $resource('/web/rest', null, {
+        return $resource('/shop/rest', null, {
             add: {
                 method: 'GET',
-                url: "/web/rest/cart/ids/add/:id",
+                url: "/shop/rest/cart/ids/add/:id",
                 isArray: false
             },
             del: {
                 method: 'GET',
-                url: "/web/rest/cart/del/:id",
+                url: "/shop/rest/cart/del/:id",
                 isArray: false
             },
             idsDel: {
                 method: 'GET',
-                url: "/web/rest/cart/ids/del/:id",
+                url: "/shop/rest/cart/ids/del/:id",
                 isArray: false
             },
             ids: {
                 method: 'GET',
-                url: "/web/rest/cart/ids",
+                url: "/shop/rest/cart/ids",
                 isArray: false
             },
             list: {
                 method: 'GET',
-                url: "/web/rest/cart/list",
+                url: "/shop/rest/cart/list",
                 isArray: false
             },
             submit: {
                 method: 'POST',
-                url: "/web/rest/cart/submit",
+                url: "/shop/rest/cart/submit",
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             }
@@ -112,7 +112,7 @@ angular.module('root')
             },
             login: {
                 method: 'POST',
-                url: "/web/rest/auth/login",
+                url: "/shop/rest/auth/login",
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             },

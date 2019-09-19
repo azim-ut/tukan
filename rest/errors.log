@@ -5131,3 +5131,44 @@ Stack trace:
 [01-Jun-2019 16:52:36 Europe/Tallinn] PHP Warning:  mysqli_real_escape_string() expects parameter 2 to be string, object given in C:\Server\OSPanel\domains\tukan\core\service\MySqlService.php on line 94
 [01-Jun-2019 16:58:22 Europe/Tallinn] PHP Warning:  ltrim() expects parameter 1 to be string, object given in C:\Server\OSPanel\domains\tukan\core\utils\StringUtils.php on line 23
 [01-Jun-2019 16:58:22 Europe/Tallinn] PHP Warning:  mysqli_real_escape_string() expects parameter 2 to be string, object given in C:\Server\OSPanel\domains\tukan\core\service\MySqlService.php on line 94
+[19-Sep-2019 16:44:27 Europe/Tallinn] PHP Notice:  Undefined variable: sql in C:\Server\OSPanel\domains\tkn\web\services\cart\Cart.php on line 68
+[19-Sep-2019 16:44:27 Europe/Tallinn] PHP Fatal error:  Uncaught Error: Call to a member function select_row() on null in C:\Server\OSPanel\domains\tkn\web\services\cart\Cart.php:68
+Stack trace:
+#0 C:\Server\OSPanel\domains\tkn\web\services\cart\Cart.php(59): Cart->dbQuery('SELECT * FROM o...')
+#1 C:\Server\OSPanel\domains\tkn\web\services\cart\Cart.php(25): Cart->initBySid('qpdnru9pg03gg0m...')
+#2 C:\Server\OSPanel\domains\tkn\web\rest\src\CartRest.php(74): Cart->__construct(Array)
+#3 C:\Server\OSPanel\domains\tkn\web\rest\src\CartRest.php(22): CartRest->getCart()
+#4 C:\Server\OSPanel\domains\tkn\core\RestController.php(109): CartRest->GET_ids()
+#5 C:\Server\OSPanel\domains\tkn\core\rest\src\RestBase.php(14): core\RestController->init('GET', Array, Object(CartRest))
+#6 C:\Server\OSPanel\domains\tkn\web\rest\rest.php(36): rest\src\RestBase->run('GET', Array)
+#7 {main}
+  thrown in C:\Server\OSPanel\domains\tkn\web\services\cart\Cart.php on line 68
+[19-Sep-2019 16:58:27 Europe/Tallinn] PHP Fatal error:  Uncaught Error: Class 'assets\services\TagsService' not found in C:\Server\OSPanel\domains\tkn\web\rest\src\RestTags.php:21
+Stack trace:
+#0 C:\Server\OSPanel\domains\tkn\core\RestController.php(109): RestTags->GET_all()
+#1 C:\Server\OSPanel\domains\tkn\core\rest\src\RestBase.php(14): core\RestController->init('GET', Array, Object(RestTags))
+#2 C:\Server\OSPanel\domains\tkn\web\rest\rest.php(36): rest\src\RestBase->run('GET', Array)
+#3 {main}
+  thrown in C:\Server\OSPanel\domains\tkn\web\rest\src\RestTags.php on line 21
+[19-Sep-2019 16:58:27 Europe/Tallinn] PHP Fatal error:  Uncaught Error: Class 'assets\services\OrderService' not found in C:\Server\OSPanel\domains\tkn\web\rest\src\OrderRest.php:16
+Stack trace:
+#0 C:\Server\OSPanel\domains\tkn\core\RestController.php(109): OrderRest->GET_ids()
+#1 C:\Server\OSPanel\domains\tkn\core\rest\src\RestBase.php(14): core\RestController->init('GET', Array, Object(OrderRest))
+#2 C:\Server\OSPanel\domains\tkn\web\rest\rest.php(36): rest\src\RestBase->run('GET', Array)
+#3 {main}
+  thrown in C:\Server\OSPanel\domains\tkn\web\rest\src\OrderRest.php on line 16
+[19-Sep-2019 16:58:27 Europe/Tallinn] PHP Fatal error:  Uncaught Error: Class 'Cart' not found in C:\Server\OSPanel\domains\tkn\web\rest\src\CartRest.php:74
+Stack trace:
+#0 C:\Server\OSPanel\domains\tkn\web\rest\src\CartRest.php(22): CartRest->getCart()
+#1 C:\Server\OSPanel\domains\tkn\core\RestController.php(109): CartRest->GET_ids()
+#2 C:\Server\OSPanel\domains\tkn\core\rest\src\RestBase.php(14): core\RestController->init('GET', Array, Object(CartRest))
+#3 C:\Server\OSPanel\domains\tkn\web\rest\rest.php(36): rest\src\RestBase->run('GET', Array)
+#4 {main}
+  thrown in C:\Server\OSPanel\domains\tkn\web\rest\src\CartRest.php on line 74
+[19-Sep-2019 16:58:27 Europe/Tallinn] PHP Fatal error:  Uncaught Error: Class 'assets\services\WishService' not found in C:\Server\OSPanel\domains\tkn\web\rest\src\WishRest.php:31
+Stack trace:
+#0 C:\Server\OSPanel\domains\tkn\core\RestController.php(109): WishRest->GET_ids()
+#1 C:\Server\OSPanel\domains\tkn\core\rest\src\RestBase.php(14): core\RestController->init('GET', Array, Object(WishRest))
+#2 C:\Server\OSPanel\domains\tkn\web\rest\rest.php(36): rest\src\RestBase->run('GET', Array)
+#3 {main}
+  thrown in C:\Server\OSPanel\domains\tkn\web\rest\src\WishRest.php on line 31
