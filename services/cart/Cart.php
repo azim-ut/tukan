@@ -39,8 +39,8 @@ class Cart{
         }
         $this->uid = UserManager::getUserIdBySessionId($this->sid);
         $sql       = MySqlService::getInstance();
-        $res       = $sql->smart_query("INSERT INTO orders(sid, uid, address, cart) VALUES(%s, %d, %s, 1)",
-            $this->sid, $this->uid, $this->address
+        $res       = $sql->smart_query("INSERT INTO orders(sid, uid, address, cart) VALUES(%s, %d, %s, %d)",
+            $this->sid, $this->uid, $this->address, time()
         );
         if($res){
             $this->initByUid($sql->last_id());
@@ -49,18 +49,18 @@ class Cart{
 
     private function initById($id){
         $sql   = MySqlService::getInstance();
-        $query = sprintf("SELECT * FROM orders as c WHERE c.id=%d AND c.cart>0", $sql->smart($id));
+        $query = sprintf("SELECT * FROM orders WHERE id=%d AND cart>0", $this->sql->smart($id));
         $this->dbQuery($query);
     }
 
     private function initBySid($sid){
         $sql   = MySqlService::getInstance();
-        $query = sprintf("SELECT * FROM orders as c WHERE c.sid=%s AND c.cart>0", $sql->smart($sid));
+        $query = sprintf("SELECT * FROM orders WHERE sid=%s AND cart>0", $this->sql->smart($sid));
         $this->dbQuery($query);
     }
 
     private function initByUid($uid){
-        $query = sprintf("SELECT * FROM orders as c WHERE c.uid=%d AND c.cart>0", $sql->smart($uid));
+        $query = sprintf("SELECT * FROM orders WHERE uid=%d AND cart>0", $this->sql->smart($uid));
         $this->dbQuery($query);
     }
 
@@ -79,7 +79,7 @@ class Cart{
 
     public function fetchItems(){
         $sql         = MySqlService::getInstance();
-        $rows        = $sql->smart_select_rows("SELECT * FROM order_post WHERE post=%d", $this->id);
+        $rows        = $sql->smart_select_rows("SELECT * FROM order_post WHERE id=%d", $this->id);
         $this->items = array();
         foreach($rows as $r){
             $item      = new CartItem($r);

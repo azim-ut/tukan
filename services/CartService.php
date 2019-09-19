@@ -72,7 +72,7 @@ class CartService extends BaseService{
      * @param $postId int
      */
     public function delItem($cart, $postId){
-        $this->sql->smart_query("DELETE FROM cart_items WHERE cart=%d AND post=%d", $cart->getId(), $postId);
+        $this->sql->smart_query("DELETE FROM order_post WHERE id=%d AND post=%d", $cart->getId(), $postId);
         $this->markCartUpdated($cart->getId());
         $cart->fetchItems();
     }
