@@ -34,6 +34,13 @@
                                 <button type="submit" class="btn btn-warning btn-group-justified">Вход</button>
                             </div>
 
+                            <div class="form-group">
+                                <fb:login-button
+                                        scope="public_profile,email"
+                                        onlogin="checkLoginState();">
+                                </fb:login-button>
+                            </div>
+
                             <div class="form-group overflow">
                                 <label for="nasa_rememberme" class="pull-left">
                                     <input ng-model="save" type="checkbox" id="nasa_rememberme" value="forever">

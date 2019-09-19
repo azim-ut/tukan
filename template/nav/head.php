@@ -1,6 +1,7 @@
 <?
 $version = time();
-?>
+
+use core\service\App; ?>
 <head>
 	<meta charset="UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -67,22 +68,26 @@ $version = time();
     <script>
         window.fbAsyncInit = function() {
             FB.init({
-                appId      : '460310011240888',
+                appId      : '<?=App::context()->facebookAuthAppID()?>',
                 cookie     : true,
                 xfbml      : true,
-                version    : 'v4.0'
+                version    : '<?=App::context()->facebookAuthApiVersion()?>'
             });
-
             FB.AppEvents.logPageView();
-
         };
 
         (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
+            let js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {return;}
             js = d.createElement(s); js.id = id;
             js.src = "https://connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
+
+        $(function(){
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        });
     </script>
 </head>
