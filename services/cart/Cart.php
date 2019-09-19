@@ -39,7 +39,7 @@ class Cart{
         }
         $this->uid = UserManager::getUserIdBySessionId($this->sid);
         $sql       = MySqlService::getInstance();
-        $res       = $sql->smart_query("INSERT INTO cart(sid, uid, address, cart) VALUES(%s, %d, %s, 1)",
+        $res       = $sql->smart_query("INSERT INTO orders(sid, uid, address, cart) VALUES(%s, %d, %s, 1)",
             $this->sid, $this->uid, $this->address
         );
         if($res){
@@ -49,18 +49,18 @@ class Cart{
 
     private function initById($id){
         $sql   = MySqlService::getInstance();
-        $query = sprintf("SELECT * FROM cart as c WHERE c.id=%d AND c.cart=1", $sql->smart($id));
+        $query = sprintf("SELECT * FROM orders as c WHERE c.id=%d AND c.cart>0", $sql->smart($id));
         $this->dbQuery($query);
     }
 
     private function initBySid($sid){
         $sql   = MySqlService::getInstance();
-        $query = sprintf("SELECT * FROM cart as c WHERE c.sid=%s AND c.cart=1", $sql->smart($sid));
+        $query = sprintf("SELECT * FROM orders as c WHERE c.sid=%s AND c.cart>0", $sql->smart($sid));
         $this->dbQuery($query);
     }
 
     private function initByUid($uid){
-        $query = sprintf("SELECT * FROM cart as c WHERE c.uid=%d AND c.cart=1", $sql->smart($uid));
+        $query = sprintf("SELECT * FROM orders as c WHERE c.uid=%d AND c.cart>0", $sql->smart($uid));
         $this->dbQuery($query);
     }
 
@@ -79,7 +79,7 @@ class Cart{
 
     public function fetchItems(){
         $sql         = MySqlService::getInstance();
-        $rows        = $sql->smart_select_rows("SELECT * FROM cart_items WHERE cart=%d", $this->id);
+        $rows        = $sql->smart_select_rows("SELECT * FROM order_post WHERE post=%d", $this->id);
         $this->items = array();
         foreach($rows as $r){
             $item      = new CartItem($r);
@@ -121,13 +121,13 @@ class Cart{
 
     public function setAddress($address){
         $sql = MySqlService::getInstance();
-        $sql->smart_query("UPDATE cart SET address=%s WHERE id=%d", $address, $this->getId());
+        $sql->smart_query("UPDATE orders SET address=%s WHERE id=%d", $address, $this->getId());
         $this->address = $address;
     }
 
     public function removeItem($post){
         $sql = MySqlService::getInstance();
-        $sql->smart_query("DELETE FROM cart_items WHERE id=%d AND post=%d", $this->getId(), $post);
+        $sql->smart_query("DELETE FROM order_post WHERE id=%d AND post=%d", $this->getId(), $post);
     }
 
     /**
