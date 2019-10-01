@@ -18,9 +18,7 @@ if(!$id){
     <script>location.href = "/404";</script>
     <?
 }
-$post   = new Goods($id);
-
-$images = CatalogService::getInstance()->getPostsImages($id);
+$post   = new CatalogItem($id);
 ?>
 
     <div class="large-12 columns nasa-single-product-scroll nasa-single-product-2-columns" data-num_main="2"
@@ -34,11 +32,11 @@ $images = CatalogService::getInstance()->getPostsImages($id);
                             <more-button product="<?=$id?>"></more-button>
                             <ul id="imageGallery">
                                 <?
-                                foreach($images as $image){
+                                foreach($post->images as $image){
                                     ?>
-                                    <li data-thumb="<?=$image->s?>"
-                                        data-src="<?=$image->src?>">
-                                        <div style="background: #fff url(<?=$image->m?>) no-repeat center center/contain; width: 100%; height: 500px;"
+                                    <li data-thumb="<?=$image->path?>"
+                                        data-src="<?=$image->path?>">
+                                        <div style="background: #fff url(<?=$image->path?>) no-repeat center center/contain; width: 100%; height: 500px;"
 
                                         ></div>
                                     </li>
@@ -54,20 +52,20 @@ $images = CatalogService::getInstance()->getPostsImages($id);
             <div class="large-4 small-12 columns product-info rtl-left">
                 <div class="nasa-product-info-wrap">
                     <div class="nasa-product-info-scroll" style="margin-top: 0px; overflow-y: inherit;"><h1
-                                class="product_title entry-title"><?=$post->getTitle()?></h1>
+                                class="product_title entry-title"><?=$post->title()?></h1>
                         <div>
-                            Размеры: <?=$post->getSizesStr()?>
+                            Размеры: <?=implode(", ", $post->enabledSizes())?>
                         </div>
 
                         <p class="price">
                             <span class="woocommerce-Price-amount amount">
-                                <span class="woocommerce-Price-currencySymbol">€</span><?=$post->getPrice()?>
+                                <span class="woocommerce-Price-currencySymbol">€</span><?=$post->price()?>
                             </span>
                         </p>
                         <hr class="nasa-single-hr">
                         <div class="woocommerce-product-details__short-description">
                             <p>
-                                &nbsp<?=$post->getContent()?>
+                                &nbsp<?=$post->content()?>
                             </p>
                         </div>
                         <button class="btn btn-lg btn-danger btn-block"
