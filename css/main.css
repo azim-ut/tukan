@@ -237,8 +237,8 @@ button.gender:hover{
 }
 
 .lSGallery li{
-    height: 60px;
     overflow: hidden;
+    height: 40px;
     border: #ccc 1px solid; border-radius: 0px !important;
 }
 .lSGallery li.active{

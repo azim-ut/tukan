@@ -63,29 +63,4 @@ use core\service\App; ?>
     <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5bf306b3d329fa00111f74c2' async='async'></script>
 
 
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '<?=App::context()->facebookAuthAppID()?>',
-                cookie     : true,
-                xfbml      : true,
-                version    : '<?=App::context()->facebookAuthApiVersion()?>'
-            });
-            FB.AppEvents.logPageView();
-        };
-
-        (function(d, s, id){
-            let js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
-        $(function(){
-            FB.getLoginStatus(function(response) {
-                statusChangeCallback(response);
-            });
-        });
-    </script>
 </head>
