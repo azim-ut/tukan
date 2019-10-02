@@ -24,7 +24,7 @@ use core\service\App; ?>
 	<link href="/web/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
 
 
-	<title>Аутлет-магазин «Original Marines» Качественная Детская Одежда Из Италии</title>
+	<title>«Tukan» Качественная Детская Одежда Из Италии</title>
 	<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
 	<link rel='dns-prefetch' href='//s.w.org'/>
 	<link rel="alternate" type="application/rss+xml" title="tukan.store &raquo; Лента"
