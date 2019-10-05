@@ -12334,10 +12334,9 @@ del .amount {
 }
 .product-item .info {
   position: relative;
-  padding: 5px 10px 5px;
+  padding: 0;
   color: #333;
   font-size: 100%;
-  background-color: #f1e5e5;
 }
 
 .product-item .info .amount {

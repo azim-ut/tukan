@@ -86,6 +86,7 @@ angular.module('root')
         return {
             restrict: "E",
             scope: {
+                price: "@",
                 product: "@"
             },
             controller: function ($scope, $controller, Data, $interval, $anchorScroll, CartService) {

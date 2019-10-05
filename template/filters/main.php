@@ -41,9 +41,9 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
                                         <div ng-repeat="row in posts" class="col-sm-3">
                                             <product-preview id="row.id"
                                                              title="row.title"
-                                                             img="row.images[0].path"
+                                                             img="row.img"
                                                              price="row.price"
-                                                             fullprice="row.fullprice"></product-preview>
+                                                             fullprice="row.price"></product-preview>
                                         </div>
 
                                         <div class="row text-center"
