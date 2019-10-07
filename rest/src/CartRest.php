@@ -44,7 +44,7 @@ class CartRest extends RestBase{
         CartService::getInstance()->submitCart($cart->id);
     }
 
-    public function GET_ids_add($postId){
+    public function POST_add($postId){
         SafeUtils::checkNumbers($postId);
         $cart = $this->getCart();
         CartService::getInstance()->addItem($cart, $postId * 1);

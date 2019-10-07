@@ -70,8 +70,8 @@ angular.module('root')
     .factory('CartFactory', function ($resource) {
         return $resource('/shop/rest', null, {
             add: {
-                method: 'GET',
-                url: "/shop/rest/cart/ids/add/:id",
+                method: 'POST',
+                url: "/shop/rest/cart/add/:id",
                 isArray: false
             },
             del: {

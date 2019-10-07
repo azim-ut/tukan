@@ -35,8 +35,7 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
 
                         <div class="inner-content">
                             <div class="row">
-                                <div class="large-2 columns">&nbsp;</div>
-                                <div class="large-8 columns">
+                                <div class="large-12 columns">
                                     <div class="row">
                                         <div ng-repeat="row in posts" class="col-sm-3">
                                             <product-preview id="row.id"
@@ -70,7 +69,6 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
                                         <div class="col-sm-4">&nbsp;</div>
                                     </div>
                                 </div>
-                                <div class="large-2 columns">&nbsp;</div>
                             </div>
                         </div>
 
