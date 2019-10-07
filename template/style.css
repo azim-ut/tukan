@@ -12362,6 +12362,12 @@ del .amount {
   position: absolute;
 }
 
+.product-item .info .cart{
+  color: #FFA500;
+  font-size: 150%;
+  font-weight: 700;
+}
+
 .product-item .info .heart{
   width: 50px;
   height: 50px;
