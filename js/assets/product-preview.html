@@ -12,13 +12,28 @@
                             <a href="/product/{{id}}"
                                title="{{title}}">
                                 <div class="main-img"
-                                     style="min-height: 300px; background: transparent url({{img}}) no-repeat center center/cover">
+                                     style="min-height: 400px; background: transparent url({{img}}) no-repeat center center/cover">
                                 </div>
                             </a>
-                            <div class="info" style="position: absolute;bottom: -15px;right: -4px;margin: 0;width: 100%;">
-                                <div style="height: 50px; display: inline-flex;">
-                                    <wish-button product="{{id}}" title="{{title}}"></wish-button>
-                                    <cart-button product="{{id}}" price="{{price}}"></cart-button>
+                        </div>
+                    </div>
+
+                    <div class="product-info-wrap">
+                        <div class="info">
+                            <div class="row">
+                                <div class="col-xs-8" style="text-align: left;">
+                                    <div style="height: 20px;">{{title}}</div>
+                                    <small>{{tags}}</small>
+                                    <br/>
+                                    <div class="amount" style="padding-left: 10px; font-size: 150%;">
+                                        <span>€ {{price}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div style="height: 50px; display: inline-flex;">
+                                        <wish-button product="{{id}}" title="{{title}}"></wish-button>
+                                        <cart-button product="{{id}}" title="{{title}}"></cart-button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
