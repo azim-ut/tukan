@@ -278,3 +278,25 @@ button.gender:hover{
 .ProductLabel .heightList li:hover{
     color: #0c0c0c !important; border-color: #333;
 }
+.lSSlideWrapper{
+    background: #fff; border: #ccc 1px solid;
+}
+
+.mainLogo{
+    background: #fff url(/web/img/logo.jpg) no-repeat center center/contain;
+    position: absolute;
+    top: 0;
+    height: 80px;
+    border: #ccc 1px solid;
+    border-top: none;
+}
+.mainLogo:hover{
+    background-color: #fff;
+}
+@media screen and (max-width: 600px){
+    .mainLogo{
+        background: transparent url(/web/img/logo.jpg) no-repeat center center/contain;
+        height: 50px;
+        border: none;
+    }
+}

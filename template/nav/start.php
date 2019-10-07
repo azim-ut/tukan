@@ -26,10 +26,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand pointer" href="/"
-               style="background: transparent url(/web/img/logo.jpg) no-repeat center center/contain">
+            <a class="navbar-brand pointer" href="/">
                 <div style="width: 100px;"
-                     class="header_logo" alt="www.Tukan.Store"></div>
+                     class="header_logo mainLogo" alt="www.Tukan.Store"></div>
             </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse" ng-controller="AuthBlockController" ng-cloak>
