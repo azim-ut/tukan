@@ -18,6 +18,27 @@ if(!$id){
 }
 $post = new CatalogItem($id);
 
+$brandSrc = null;
+switch($post->brand){
+    case 'Original Marines':
+	    $brandSrc = "marines1_2.png";
+        break;
+    case 'To Be Too':
+	    $brandSrc = "to_be_too.png";
+        break;
+    case 'Y-Clu':
+	    $brandSrc = "y_clu_img.png";
+        break;
+    case 'Street Gang':
+	    $brandSrc = "street-gang.png";
+        break;
+    case 'Gaialuna':
+	    $brandSrc = "gaialuna-logo.png";
+        break;
+    case 'Ronnie Kay':
+	    $brandSrc = "ronnie-kay_logo-2.png";
+        break;
+}
 
 ?>
 
@@ -55,23 +76,44 @@ $post = new CatalogItem($id);
                         <table>
                             <tr>
                                 <td>
-
-                                    <h1 class="product_title entry-title"><?=$post->title()?></h1>
+                                    <h1 class="product_title entry-title"><?=ucfirst($post->title())?></h1>
                                 </td>
                                 <td>
                                     <div style="line-height: 20px; padding-left: 10px; text-align: right;">
                                         <b>ID:</b> <?=$post->id?><br/>
-                                        <b>Размеры:</b> <?=implode(", ", $post->enabledSizes())?>
                                     </div>
                                 </td>
                             </tr>
                         </table>
 
-                        <p class="price">
-                            <span class="amount">
-                                <span style="padding-right: 5px;">€</span><?=$post->price()?>
-                            </span>
-                        </p>
+                        <div class="ProductLabel">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="amount">
+                                            <b style="padding-right: 5px;">€</b><?=$post->price()?>
+                                        </div>
+                                        <div class="ean">
+                                            <b>EAN:</b> <?=$post->barcode?>
+                                        </div>
+                                        <div>
+                                            <b>Рост:</b>
+                                            <ul class="heightList">
+			                                    <?foreach($post->enabledHeights() as $item){?>
+                                                    <li class="pointer"
+                                                        ng-click="chooseSize(<?=$item->size?>)"><?=$item->height?></li>
+			                                    <?}?>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td style="width: 200px;">
+                                        <?if($brandSrc != null){?>
+                                                <img src="/web/img/brands/<?=$brandSrc?>"/>
+                                        <?}?>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                         <hr class="nasa-single-hr">
                         <div class="woocommerce-product-details__short-description">
                             <p>

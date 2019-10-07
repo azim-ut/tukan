@@ -12377,7 +12377,6 @@ del .amount {
 
 .product-item .info .cart:hover,
 .product-item .info .heart:hover{
-  color: #666 !important;
   border: #666 2px solid;
 }
 .product-item .info .cart.on,
