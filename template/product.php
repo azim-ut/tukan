@@ -40,6 +40,7 @@ switch($post->brand){
         break;
 }
 
+$heights = $post->enabledHeights();
 ?>
 
     <div class="large-12 columns nasa-single-product-scroll nasa-single-product-2-columns" data-num_main="2"
@@ -96,6 +97,7 @@ switch($post->brand){
                                         <div class="ean">
                                             <b>EAN:</b> <?=$post->barcode?>
                                         </div>
+                                        <?if(sizeof($heights)){?>
                                         <div>
                                             <b>Рост:</b>
                                             <ul class="heightList">
@@ -105,6 +107,13 @@ switch($post->brand){
 			                                    <?}?>
                                             </ul>
                                         </div>
+                                        <?}?>
+                                        <?if($post->gender === 3 || $post->gender === 1){?>
+                                            <div style="height: 45px; width: 40px; float: left; background: transparent url('/web/img/boy_girl.png') no-repeat center 0px;"></div>
+                                        <?}?>
+                                        <?if($post->gender === 3 || $post->gender === 2){?>
+                                            <div style="height: 45px; width: 40px; float: left; background: transparent url('/web/img/boy_girl.png') no-repeat center -55px;"></div>
+                                        <?}?>
                                     </td>
                                     <td style="width: 200px;">
                                         <?if($brandSrc != null){?>
