@@ -1,47 +1,4 @@
 angular.module('root')
-    .service('ProductService', function ($http, Data, $interval, ViewFactory, WishFactory) {
-        let fetchTimer = null;
-        angular.extend(this, {
-            fetchData: function (productId) {
-                ViewFactory.product({id: productId}).$promise.then(function (res) {
-                    Data.view = res.data;
-                });
-            }
-        });
-    })
-    .service('WishesService', function ($http, Data, WishFactory) {
-        let fetched = false;
-        angular.extend(this, {
-            fetchList: function () {
-                // if(!fetched){
-                fetched = true;
-                WishFactory.list().$promise.then(function (res) {
-                    Data.wishes.list = res.data;
-                });
-                // }
-            },
-            fetchIds: function () {
-                if (!fetched) {
-                    fetched = true;
-                    WishFactory.ids().$promise.then(function (res) {
-                        Data.wishes.ids = res.data;
-                    })
-                }
-            },
-            remove: function (id) {
-                fetched = false;
-                WishFactory.del({id: id}).$promise.then(function (res) {
-                    Data.wishes.ids = res.data;
-                })
-            },
-            add: function (id) {
-                fetched = false;
-                WishFactory.add({id: id}).$promise.then(function (res) {
-                    Data.wishes.ids = res.data;
-                })
-            }
-        });
-    })
     .service('AuthService', function ($http, Data, $interval, AuthFactory, ToastService) {
         angular.extend(this, {
             register: function (name, email, pwd1, pwd2, terms) {

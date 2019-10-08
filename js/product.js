@@ -1,18 +1,43 @@
 angular.module('root')
-    .controller("ProductController", function ($scope, $controller, $interval, $anchorScroll, ProductService, WishesService) {
+    .controller("ProductController", function ($scope, $controller, $interval, $anchorScroll, ViewFactory, WishFactory, CartFactory) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
-            chooseSize: function (size) {
-                console.log(size);
+            wished: false,
+            size: null,
+            needSize: false,
+            toggleSize: function (size) {
+                $scope.needSize = false;
+                if($scope.size !== size){
+                    $scope.size = size;
+                }else{
+                    $scope.size = null;
+                }
             },
-            addWish: function (postId) {
-                WishesService.add(postId);
+            toggleProductWish: function (productId) {
+                WishFactory.toggle({id:productId}).$promise.then(function(res){
+                    $scope.data.wishes.ids = res.data;
+                    $scope.fetchProduct(productId);
+                });
             },
-            delWish: function (postId) {
-                WishesService.remove(postId);
+            toCart: function (id, size) {
+                if(size === null){
+                    $scope.needSize = true;
+                    return;
+                }
+
+                CartFactory.add({id: id, size:size}, {}).$promise.then(function (res) {
+                    Data.cart_ids = res.data;
+                })
             },
             fetchProduct: function (id) {
-                ProductService.fetchData(id);
+                WishFactory.total({post:id}).$promise.then(function(res){
+                    $scope.totalWished = res.data;
+                    $scope.wished = false;
+                    if($scope.data.wishes.ids.includes(id)){
+                        $scope.wished = true;
+                    }
+                });
             }
         });
+
     });

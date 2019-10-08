@@ -4,15 +4,11 @@ angular.module('root')
             user: {},
             view: null,
             cart: {
-                ids: [],
+                ids: null,
                 list: []
             },
             wishes: {
-                ids: [],
-                list: []
-            },
-            orders: {
-                ids: [],
+                ids: null,
                 list: []
             }
         });

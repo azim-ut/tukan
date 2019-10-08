@@ -26,7 +26,7 @@
                              ng-repeat="row in data.wishes.list"
                              ng-if="data.wishes.indexOf(row.id)>=0">
                             <div style="width : 100px;">
-                                <button class="btn btn-danger del" ng-click="removeFromList(row.id)">x</button>
+                                <button class="btn btn-danger del" ng-click="toggleWish(row.id)">x</button>
                             </div>
                             <div class="img"
                                  ng-click="toProduct(row.name)"

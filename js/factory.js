@@ -45,9 +45,19 @@ angular.module('root')
     })
     .factory('WishFactory', function ($resource) {
         return $resource('/shop/rest', null, {
+            toggle: {
+                method: 'GET',
+                url: "/shop/rest/wish/toggle/:id",
+                isArray: false
+            },
             add: {
                 method: 'GET',
                 url: "/shop/rest/wish/add/:id",
+                isArray: false
+            },
+            total: {
+                method: 'GET',
+                url: "/shop/rest/wish/total/:post",
                 isArray: false
             },
             del: {

@@ -5,12 +5,12 @@ angular.module('root')
             list: [],
             toProduct: function (id) {
                 location.href = "/product/" + id;
-            },
-            removeFromList: function (id) {
-                WishesService.remove(id);
             }
         });
-        WishesService.fetchList();
+
+        WishFactory.list().$promise.then(function (res) {
+            $scope.data.wishes.list = res.data;
+        });
     })
     .directive('wishButton', function () {
         let now = new Date();
@@ -19,21 +19,8 @@ angular.module('root')
             scope: {
                 product: "@"
             },
-            controller: function ($scope, $controller, Data, $interval, $anchorScroll, WishesService) {
-                angular.extend(this, $controller("CommonController", {$scope: $scope, Data, WishesService}));
-                angular.extend($scope, {
-                    toggleWish: function (productId) {
-                        productId *= 1;
-                        if (Data.wishes.ids.indexOf(productId) >= 0) {
-                            WishesService.remove(productId);
-                        } else {
-                            WishesService.add(productId);
-                        }
-                    }
-
-                });
-
-                // WishesService.fetchIds();
+            controller: function ($scope, $controller, Data, $interval, $anchorScroll, WishFactory) {
+                angular.extend(this, $controller("CommonController", {$scope: $scope, Data, WishFactory}));
             },
             templateUrl: '/web/js/assets/wish-button.html?t=' + now.getTime()
         };

@@ -259,6 +259,10 @@ button.gender:hover{
     padding: 30px 35px 15px 35px;
 }
 
+.ProductLabel .error{
+    color: #c10000; padding: 5px 0; font-size: 90%; margin: 0; font-weight: 600;
+}
+
 .ProductLabel .amount {
     line-height: 30px; color: #FFA500; font-size: 150%; font-weight: 700;
 }
@@ -274,9 +278,13 @@ button.gender:hover{
 .ProductLabel .heightList li{
     border: #ccc 2px solid; padding: 2px 4px; color: #858585 !important;
 }
-
-.ProductLabel .heightList li:hover{
+.ProductLabel .heightList li:hover,
+.ProductLabel .heightList li.on{
     color: #0c0c0c !important; border-color: #333;
+}
+
+.ProductLabel .heightList li.on{
+    border-color: #FFA500;
 }
 .lSSlideWrapper{
     background: #fff; border: #ccc 1px solid;

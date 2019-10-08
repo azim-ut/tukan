@@ -4,14 +4,21 @@ angular.module('root')
             return parseInt(input, 10);
         };
     })
-    .controller("CommonController", function ($scope, $location, Data, WishesService, CartService) {
+    .controller("CommonController", function ($scope, $location, Data, WishFactory, CartService) {
         angular.extend($scope, {
             data: Data,
-            process: false
+            process: false,
+            fetchVisitsData: function(){
+                WishFactory.ids().$promise.then(function(res){$scope.data.wishes.ids = res.data});
+                CartService.fetchIds();
+            },
+            toggleWish: function (productId) {
+                WishFactory.toggle({id:productId}).$promise.then(function(res){
+                    $scope.data.wishes.ids = res.data;
+                });
+            }
         });
         $("#nasa-before-load").hide();
-        WishesService.fetchIds();
-        CartService.fetchIds();
     })
     .directive('productPreview', function () {
         let now = new Date();
@@ -24,8 +31,8 @@ angular.module('root')
                 price: "=",
                 fullprice: "=",
             },
-            controller: function ($scope, $controller, Data, $interval, $anchorScroll, WishesService) {
-                angular.extend(this, $controller("CommonController", {$scope: $scope, Data, WishesService}));
+            controller: function ($scope, $controller, Data, $interval, $anchorScroll, WishFactory) {
+                angular.extend(this, $controller("CommonController", {$scope: $scope, Data, WishFactory}));
                 angular.extend($scope, {});
             },
             templateUrl: '/web/js/assets/product-preview.html?t=' + now.getTime()

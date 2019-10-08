@@ -4,7 +4,7 @@ angular.module('root')
         angular.extend($scope, {
             tab: 'login',
             logout: AuthService.logout,
-            resetPassword: function(email){
+            resetPassword: function (email) {
                 let params = $.param({email: email});
                 return AuthFactory.resetPwd(params).$promise.then(function (res) {
                 });
@@ -14,11 +14,11 @@ angular.module('root')
             setTab: function (val) {
                 $scope.tab = val;
             },
-            goBack:function () {
+            goBack: function () {
                 window.history.back();
             },
             check: function () {
                 AuthService.check();
             }
-    });
+        });
     });

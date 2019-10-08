@@ -56,7 +56,6 @@ use core\service\App; ?>
 	<script type="text/javascript" src="/web/js/product.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/wishes.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/cart.js?t=<?=$version?>"></script>
-	<script type="text/javascript" src="/web/js/orders.js?t=<?=$version?>"></script>
 
 
 

@@ -14,7 +14,7 @@ angular.module('root')
                 if (!fetched) {
                     fetched = true;
                     CartFactory.ids().$promise.then(function (res) {
-                        Data.cart_ids = res.data;
+                        Data.cart.ids = res.data;
                     })
                 }
             },
@@ -63,11 +63,11 @@ angular.module('root')
                 cart: "=",
                 product: "="
             },
-            controller: function ($scope, $controller, Data, $interval, $anchorScroll, WishesService, CartFactory) {
+            controller: function ($scope, $controller, Data, $interval, $anchorScroll, WishFactory, CartFactory) {
                 angular.extend(this, $controller("CommonController", {
                     $scope: $scope,
                     Data,
-                    WishesService,
+                    WishFactory,
                     CartFactory
                 }));
                 angular.extend($scope, {
@@ -92,13 +92,8 @@ angular.module('root')
             controller: function ($scope, $controller, Data, $interval, $anchorScroll, CartService) {
                 angular.extend(this, $controller("CommonController", {$scope: $scope, Data, CartService}));
                 angular.extend($scope, {
-                    toggleCart: function (productId) {
-                        productId *= 1;
-                        if (Data.cart_ids && Data.cart_ids.indexOf(productId) >= 0) {
-                            CartService.remove(productId);
-                        } else {
-                            CartService.add(productId);
-                        }
+                    toProduct: function (productId) {
+                        location.href = "/product/" + productId;
                     }
 
                 });

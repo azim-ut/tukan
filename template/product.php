@@ -18,6 +18,7 @@ if(!$id){
 }
 $post = new CatalogItem($id);
 
+
 $brandSrc = null;
 switch($post->brand){
     case 'Original Marines':
@@ -103,8 +104,8 @@ $heights = $post->enabledHeights();
                                             <b>Рост:</b>
                                             <ul class="heightList">
 			                                    <?foreach($post->enabledHeights() as $item){?>
-                                                    <li class="pointer"
-                                                        ng-click="chooseSize(<?=$item->size?>)"><?=$item->height?></li>
+                                                    <li ng-class="{'pointer':true, 'on': size===<?=$item->size?>}"
+                                                        ng-click="toggleSize(<?=$item->size?>)"><?=$item->height?></li>
 			                                    <?}?>
                                             </ul>
                                         </div>
@@ -123,6 +124,15 @@ $heights = $post->enabledHeights();
                                     </td>
                                 </tr>
                             </table>
+                            <div class="error">
+                                <span ng-if="needSize === true">Пожалуйста, выберите размер</span>&nbsp;
+                            </div>
+                            <button ng-if="false" type="button" class="btn btn-danger">Купить сейчас</button>
+                            <button type="button" ng-click="toCart(<?=$id?>, size)" class="btn btn-warning">В корзину </button>
+                            <button type="button" class="btn btn-default" ng-click="toggleProductWish(<?=$id?>)">
+                                <span ng-if="wished"><i class="glyphicon glyphicon-heart text-danger"></i> {{totalWished}}</span>
+                                <span ng-if="!wished"><i class="glyphicon glyphicon-heart-empty"></i> {{totalWished}}</span>
+                            </button>
                         </div>
                         <hr class="nasa-single-hr">
                         <div class="woocommerce-product-details__short-description">
