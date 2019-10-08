@@ -9,19 +9,6 @@ angular.module('root')
             }
         });
     })
-    .service('OrdersService', function ($http, Data, OrdersFactory) {
-        let fetched = false;
-        angular.extend(this, {
-            fetchIds: function () {
-                if (!fetched) {
-                    fetched = true;
-                    OrdersFactory.ids().$promise.then(function (res) {
-                        Data.orders.ids = res.data;
-                    })
-                }
-            }
-        });
-    })
     .service('WishesService', function ($http, Data, WishFactory) {
         let fetched = false;
         angular.extend(this, {

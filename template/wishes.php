@@ -33,13 +33,6 @@
                                  style="background-image: url(/wp-content/uploads/auto/{{row.img}}_200x200.jpg);">
                                 &nbsp;
                             </div>
-                            <div class="title text-left" ng-click="toProduct(row.name)">
-                                {{row.title}}
-                            </div>
-                            <div style="width : 100px;" class="price text-left" ng-click="toProduct(row.name)">
-                                <s>&nbsp;€ {{row.fullprice}}&nbsp;</s>
-                                <span>€ {{row.price}}</span>
-                            </div>
                         </div>
                     </div>
 

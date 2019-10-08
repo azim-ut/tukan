@@ -12346,52 +12346,48 @@ del .amount {
 .product-item .info .amount s{
   color: #555; font-size: 100% !important; font-weight: 100;
 }
-.product-item .info .cart,
-.product-item .info .heart {
+.product-item .cart,
+.product-item .heart {
   color: #989898;
   font-size: 150%;
   border-radius: 50%;
   border: #f1e5e5 5px solid;
-  right: 10px;
   width: 70px;
   height: 70px;
   padding: 5px 0 0;
   margin-top: -40px;
   outline: none;
   background: #fff;
-  position: absolute;
 }
 
-.product-item .info .cart{
+.product-item .cart{
   border: #FFA500 5px solid;
   color: #FFA500;
   font-size: 150%;
   font-weight: 700;
 }
 
-.product-item .info .heart{
+.product-item .heart{
   width: 50px;
   height: 50px;
-  right: 70px;
-  bottom: 25px;
 }
 
-.product-item .info .cart.on,
-.product-item .info .heart.on{
+.product-item .cart.on,
+.product-item .heart.on{
   background-color: #ff0000;
   color: #fff;
   /*border-color: #464343;*/
-  border-color: #ffffff;
+  border-color: #ffcc00;
 }
-.product-item .info .cart.on{
+.product-item .cart.on{
   background-color: #8f8bdc;
 }
-.product-item .info .cart.on:hover,
-.product-item .info .heart.on:hover{
+.product-item .cart.on:hover,
+.product-item .heart.on:hover{
   color: #fffd0a !important;
   border: #333 3px solid;
 }
-.product-item .info .cart:hover{
+.product-item .cart:hover{
   border: #A86D00 5px solid;
 }
 .product-item .info .name {

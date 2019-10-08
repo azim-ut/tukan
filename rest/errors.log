@@ -5172,3 +5172,5 @@ Stack trace:
 #2 C:\Server\OSPanel\domains\tkn\web\rest\rest.php(36): rest\src\RestBase->run('GET', Array)
 #3 {main}
   thrown in C:\Server\OSPanel\domains\tkn\web\rest\src\WishRest.php on line 31
+[08-Oct-2019 16:46:42 Europe/Tallinn] PHP Warning:  require_once(C:\Server\OSPanel\domains\tkn\web\rest/src/OrderRest.php): failed to open stream: No such file or directory in C:\Server\OSPanel\domains\tkn\web\rest\rest.php on line 10
+[08-Oct-2019 16:46:42 Europe/Tallinn] PHP Fatal error:  require_once(): Failed opening required 'C:\Server\OSPanel\domains\tkn\web\rest/src/OrderRest.php' (include_path='.;c:/server/ospanel/modules/php/PHP-7.2-x64;c:/server/ospanel/modules/php/PHP-7.2-x64/PEAR/pear') in C:\Server\OSPanel\domains\tkn\web\rest\rest.php on line 10

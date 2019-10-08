@@ -72,6 +72,7 @@ angular.module('root')
             add: {
                 method: 'POST',
                 url: "/shop/rest/cart/add/:id",
+                headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
                 isArray: false
             },
             del: {

@@ -4,7 +4,7 @@ angular.module('root')
             return parseInt(input, 10);
         };
     })
-    .controller("CommonController", function ($scope, $location, Data, WishesService, CartService, OrdersService) {
+    .controller("CommonController", function ($scope, $location, Data, WishesService, CartService) {
         angular.extend($scope, {
             data: Data,
             process: false
@@ -12,7 +12,6 @@ angular.module('root')
         $("#nasa-before-load").hide();
         WishesService.fetchIds();
         CartService.fetchIds();
-        OrdersService.fetchIds();
     })
     .directive('productPreview', function () {
         let now = new Date();

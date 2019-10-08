@@ -26,7 +26,7 @@ angular.module('root')
             },
             add: function (id) {
                 fetched = false;
-                CartFactory.add({id: id}).$promise.then(function (res) {
+                CartFactory.add({id: id}, {}).$promise.then(function (res) {
                     Data.cart_ids = res.data;
                 })
             }

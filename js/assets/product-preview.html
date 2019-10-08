@@ -2,7 +2,7 @@
      style="visibility: visible; animation-duration: 1s; animation-delay: 0ms; animation-name: fadeInUp;">
     <div class="inner-wrap">
         <div class="product-outner">
-            <div class="product-inner">
+            <div class="product-inner" style="position: relative;">
                 <div class="product-img-wrap">
                     <div class="product-img-wrap-inner">
                         <div class="product-img" style="position: relative;">
@@ -17,28 +17,9 @@
                             </a>
                         </div>
                     </div>
-
-                    <div class="product-info-wrap">
-                        <div class="info">
-                            <div class="row">
-                                <div class="col-xs-8" style="text-align: left;">
-                                    <div style="height: 20px;">{{title}}</div>
-                                    <small>{{tags}}</small>
-                                    <br/>
-                                    <div class="amount" style="padding-left: 10px; font-size: 150%;">
-                                        <span>€ {{price}}</span>
-                                    </div>
-                                </div>
-                                <div class="col-xs-4">
-                                    <div style="height: 50px; display: inline-flex;">
-                                        <wish-button product="{{id}}" title="{{title}}"></wish-button>
-                                        <cart-button product="{{id}}" price="{{price}}"></cart-button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+                <cart-button product="{{id}}" price="{{price}}" style="position: absolute; right: 10px; bottom: 10px;"></cart-button>
+                <wish-button product="{{id}}" title="{{title}}" style="position: absolute; right: 70px; bottom: 5px;"></wish-button>
 
 
                 <!-- Clone Group btns for layout List -->
