@@ -12363,6 +12363,7 @@ del .amount {
 }
 
 .product-item .info .cart{
+  border: #FFA500 5px solid;
   color: #FFA500;
   font-size: 150%;
   font-weight: 700;
@@ -12375,10 +12376,6 @@ del .amount {
   bottom: 25px;
 }
 
-.product-item .info .cart:hover,
-.product-item .info .heart:hover{
-  border: #666 2px solid;
-}
 .product-item .info .cart.on,
 .product-item .info .heart.on{
   background-color: #ff0000;
@@ -12393,6 +12390,9 @@ del .amount {
 .product-item .info .heart.on:hover{
   color: #fffd0a !important;
   border: #333 3px solid;
+}
+.product-item .info .cart:hover{
+  border: #A86D00 5px solid;
 }
 .product-item .info .name {
   padding: 5px 0 10px 0;

@@ -283,7 +283,7 @@ button.gender:hover{
 }
 
 .mainLogo{
-    background: #fff url(/web/img/logo.jpg) no-repeat center center/contain;
+    background: #fff url(/web/img/logo_head.jpg) no-repeat center center;
     position: absolute;
     top: 0;
     height: 80px;
