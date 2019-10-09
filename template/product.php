@@ -21,32 +21,35 @@ $post = new CatalogItem($id);
 
 $brandSrc = null;
 switch($post->brand){
-    case 'Original Marines':
-	    $brandSrc = "marines1_2.png";
-        break;
-    case 'To Be Too':
-	    $brandSrc = "to_be_too.png";
-        break;
-    case 'Y-Clu':
-	    $brandSrc = "y_clu_img.png";
-        break;
-    case 'Street Gang':
-	    $brandSrc = "street-gang.png";
-        break;
-    case 'Gaialuna':
-	    $brandSrc = "gaialuna-logo.png";
-        break;
-    case 'Ronnie Kay':
-	    $brandSrc = "ronnie-kay_logo-2.png";
-        break;
+	case 'Original Marines':
+		$brandSrc = "marines1_2.png";
+		break;
+	case 'To Be Too':
+		$brandSrc = "to_be_too.png";
+		break;
+	case 'Y-Clu':
+		$brandSrc = "y_clu_img.png";
+		break;
+	case 'Street Gang':
+		$brandSrc = "street-gang.png";
+		break;
+	case 'Gaialuna':
+		$brandSrc = "gaialuna-logo.png";
+		break;
+	case 'Ronnie Kay':
+		$brandSrc = "ronnie-kay_logo-2.png";
+		break;
 }
 
 $heights = $post->enabledHeights();
 ?>
 
-    <div class="large-12 columns nasa-single-product-scroll nasa-single-product-2-columns" data-num_main="2"
+    <div class="large-12 columns nasa-single-product-scroll nasa-single-product-2-columns"
+         data-num_main="2"
          style="margin-top: 40px;"
-         ng-controller="ProductController" data-num_thumb="4" data-speed="300" ng-init="fetchProduct(<?=$id?>)">
+         ng-controller="ProductController"
+         data-num_thumb="4"
+         data-speed="300">
 
         <div class="row">
             <div class="large-5 small-12 columns product-gallery rtl-right">
@@ -99,39 +102,41 @@ $heights = $post->enabledHeights();
                                         <div class="ean">
                                             <b>EAN:</b> <?=$post->barcode?>
                                         </div>
-                                        <?if(sizeof($heights)){?>
-                                        <div>
-                                            <b>Рост:</b>
-                                            <ul class="heightList">
-			                                    <?foreach($post->enabledHeights() as $item){?>
-                                                    <li ng-class="{'pointer':true, 'on': size===<?=$item->size?>}"
-                                                        ng-click="toggleSize(<?=$item->size?>)"><?=$item->height?></li>
-			                                    <?}?>
-                                            </ul>
-                                        </div>
-                                        <?}?>
-                                        <?if($post->gender === 3 || $post->gender === 1){?>
+										<? if(sizeof($heights)){ ?>
+                                            <div>
+                                                <b>Рост:</b>
+                                                <ul class="heightList">
+													<? foreach($post->enabledHeights() as $item){ ?>
+                                                        <li ng-class="{'pointer':true, 'on': size==='<?=$item->size?>'}"
+                                                            ng-click="toggleSize('<?=$item->size?>')"><?=$item->height?></li>
+													<? } ?>
+                                                </ul>
+                                            </div>
+										<? } ?>
+										<? if($post->gender === 3 || $post->gender === 1){ ?>
                                             <div style="height: 45px; width: 40px; float: left; background: transparent url('/web/img/boy_girl.png') no-repeat center 0px;"></div>
-                                        <?}?>
-                                        <?if($post->gender === 3 || $post->gender === 2){?>
+										<? } ?>
+										<? if($post->gender === 3 || $post->gender === 2){ ?>
                                             <div style="height: 45px; width: 40px; float: left; background: transparent url('/web/img/boy_girl.png') no-repeat center -55px;"></div>
-                                        <?}?>
+										<? } ?>
                                     </td>
                                     <td style="width: 200px;">
-                                        <?if($brandSrc != null){?>
-                                                <img src="/web/img/brands/<?=$brandSrc?>"/>
-                                        <?}?>
+										<? if($brandSrc != null){ ?>
+                                            <img src="/web/img/brands/<?=$brandSrc?>"/>
+										<? } ?>
                                     </td>
                                 </tr>
                             </table>
                             <div class="error">
-                                <span ng-if="needSize === true">Пожалуйста, выберите размер</span>&nbsp;
+                                <span ng-if="needSize === true">Пожалуйста, выберите рост</span>&nbsp;
                             </div>
                             <button ng-if="false" type="button" class="btn btn-danger">Купить сейчас</button>
-                            <button type="button" ng-click="toCart(<?=$id?>, size)" class="btn btn-warning">В корзину </button>
+                            <button type="button" ng-click="toCart(<?=$id?>, size)" class="btn btn-warning">В корзину
+                            </button>
                             <button type="button" class="btn btn-default" ng-click="toggleProductWish(<?=$id?>)">
                                 <span ng-if="wished"><i class="glyphicon glyphicon-heart text-danger"></i> {{totalWished}}</span>
-                                <span ng-if="!wished"><i class="glyphicon glyphicon-heart-empty"></i> {{totalWished}}</span>
+                                <span ng-if="!wished"><i
+                                            class="glyphicon glyphicon-heart-empty"></i> {{totalWished}}</span>
                             </button>
                         </div>
                         <hr class="nasa-single-hr">

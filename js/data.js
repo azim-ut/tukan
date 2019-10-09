@@ -5,7 +5,7 @@ angular.module('root')
             view: null,
             cart: {
                 ids: null,
-                list: []
+                data: null
             },
             wishes: {
                 ids: null,

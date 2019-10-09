@@ -81,18 +81,22 @@ angular.module('root')
         return $resource('/shop/rest', null, {
             add: {
                 method: 'POST',
-                url: "/shop/rest/cart/add/:id",
+                url: "/shop/rest/cart/add",
+                params: {
+                    post: '@post',
+                    size: '@size'
+                },
                 headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
                 isArray: false
             },
             del: {
-                method: 'GET',
-                url: "/shop/rest/cart/del/:id",
-                isArray: false
-            },
-            idsDel: {
-                method: 'GET',
-                url: "/shop/rest/cart/ids/del/:id",
+                method: 'POST',
+                url: "/shop/rest/cart/del",
+                params: {
+                    post: '@post',
+                    size: '@size'
+                },
+                headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
                 isArray: false
             },
             ids: {

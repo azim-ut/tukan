@@ -18,6 +18,9 @@ angular.module('root')
                 });
             }
         });
+        $scope.$on("updateCartIds", function (event, args) {
+            CartService.fetchIds();
+        });
         $("#nasa-before-load").hide();
     })
     .directive('productPreview', function () {

@@ -1,5 +1,5 @@
 angular.module('root')
-    .controller("WishesListController", function ($scope, $controller, $interval, $anchorScroll, WishesService) {
+    .controller("WishesListController", function ($scope, $controller, $interval, $anchorScroll, WishFactory) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
             list: [],
@@ -9,6 +9,7 @@ angular.module('root')
         });
 
         WishFactory.list().$promise.then(function (res) {
+            console.log(res);
             $scope.data.wishes.list = res.data;
         });
     })

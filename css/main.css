@@ -276,8 +276,9 @@ button.gender:hover{
 }
 
 .ProductLabel .heightList li{
-    border: #ccc 2px solid; padding: 2px 4px; color: #858585 !important;
+    border: #eaeaea 2px solid; padding: 2px 4px; color: #858585 !important;
 }
+
 .ProductLabel .heightList li:hover,
 .ProductLabel .heightList li.on{
     color: #0c0c0c !important; border-color: #333;
@@ -294,8 +295,7 @@ button.gender:hover{
     background: #fff url(/web/img/logo_head.jpg) no-repeat center center;
     position: absolute;
     top: 0;
-    height: 80px;
-    border: #ccc 1px solid;
+    height: 79px;
     border-top: none;
 }
 .mainLogo:hover{

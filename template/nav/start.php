@@ -16,7 +16,7 @@
 </div>
 
 
-<nav class="navbar navbar-default navbar-fixed-top" style="background: #fff;">
+<nav class="navbar navbar-default navbar-fixed-top" style="background: #fff; height: 80px;">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -46,7 +46,7 @@
                 </li>
                 <li><a href="/cart">
                         <i class="icon-basket"></i>
-                        <div ng-show="data.cart_ids.length" class="subIconCount blue">{{data.cart_ids.length}}</div>
+                        <div ng-show="data.cart.ids.length" class="subIconCount blue">{{data.cart.ids.length}}</div>
                     </a>
                 </li>
                 <li>
@@ -92,7 +92,7 @@
 </nav>
 
 <a id="start"></a>
-<div id="header-content" class="site-header" style="min-height: 60px;">
+<div id="header-content" class="site-header" style="min-height: 90px;">
 
 </div>
 <? include_once __DIR__ . "/auth.php" ?>

@@ -25,8 +25,8 @@ angular.module('root')
                     return;
                 }
 
-                CartFactory.add({id: id, size:size}, {}).$promise.then(function (res) {
-                    Data.cart_ids = res.data;
+                CartFactory.add(null, {post: id, size:size}).$promise.then(function (res) {
+                    $scope.data.cart.ids = res.data;
                 })
             },
             fetchProduct: function (id) {

@@ -2,14 +2,6 @@ angular.module('root')
     .service('CartService', function ($http, Data, CartFactory) {
         let fetched = false;
         angular.extend(this, {
-            fetch: function () {
-                // if(!fetched){
-                fetched = true;
-                CartFactory.list().$promise.then(function (res) {
-                    Data.cart = res.data;
-                });
-                // }
-            },
             fetchIds: function () {
                 if (!fetched) {
                     fetched = true;
@@ -17,25 +9,13 @@ angular.module('root')
                         Data.cart.ids = res.data;
                     })
                 }
-            },
-            remove: function (id) {
-                fetched = false;
-                CartFactory.idsDel({id: id}).$promise.then(function (res) {
-                    Data.cart_ids = res.data;
-                })
-            },
-            add: function (id) {
-                fetched = false;
-                CartFactory.add({id: id}, {}).$promise.then(function (res) {
-                    Data.cart_ids = res.data;
-                })
             }
         });
     })
-    .controller("CartListController", function ($scope, $controller, $interval, $anchorScroll, CartService, CartFactory) {
+    .controller("CartListController", function ($rootScope, $scope, $controller, $interval, $anchorScroll, CartService, CartFactory) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
-            list: [],
+            cart: null,
             msg: null,
             toProduct: function (id) {
                 location.href = "/product/" + id;
@@ -53,7 +33,13 @@ angular.module('root')
                 });
             }
         });
-        CartService.fetch();
+
+        $scope.$on("updateCart", function (event, args) {
+            CartFactory.list().$promise.then(function (res) {
+                $scope.cart = res.data;
+            });
+        });
+        $rootScope.$broadcast('updateCart', {});
     })
     .directive('cartRow', function () {
         let now = new Date();
@@ -63,7 +49,7 @@ angular.module('root')
                 cart: "=",
                 product: "="
             },
-            controller: function ($scope, $controller, Data, $interval, $anchorScroll, WishFactory, CartFactory) {
+            controller: function ($rootScope, $scope, $controller, Data, $interval, $anchorScroll, WishFactory, CartFactory) {
                 angular.extend(this, $controller("CommonController", {
                     $scope: $scope,
                     Data,
@@ -71,9 +57,10 @@ angular.module('root')
                     CartFactory
                 }));
                 angular.extend($scope, {
-                    del: function () {
-                        CartFactory.del({id: $scope.product.id}).$promise.then(function (res) {
-                            $scope.cart = res.data;
+                    del: function (post, size) {
+                        CartFactory.del({}, {post: post, size: size}).$promise.then(function (res) {
+                            $rootScope.$broadcast('updateCart', {});
+                            $rootScope.$broadcast('updateCartIds', {});
                         })
                     }
                 });
