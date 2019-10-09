@@ -8,7 +8,7 @@ angular.module('root')
             fetched: false,
             useFilter: true,
             post: 0,
-            limit: 27,
+            limit: 30,
             heightP: $cookies.get("heightP"),
             height: 0,
             offset: 0,

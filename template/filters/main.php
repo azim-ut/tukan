@@ -37,7 +37,7 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
                             <div class="row">
                                 <div class="large-12 columns">
                                     <div class="row">
-                                        <div ng-repeat="row in posts" class="col-sm-3">
+                                        <div ng-repeat="row in posts" class="col-sm-2">
                                             <product-preview id="row.id"
                                                              title="row.title"
                                                              img="row.img"
