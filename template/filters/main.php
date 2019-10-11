@@ -2,6 +2,7 @@
 use assets\services\WebCatalogService;
 use core\Engine;
 use core\manager\ParamsManager;
+use core\service\App;
 
 include_once __DIR__ . "/../nav/start.php" ?>
 
@@ -21,12 +22,31 @@ if(!$ts->isAgeExists($age, $gender) || !$ts->isValidGender($gender)){
 $tags = $ts->getHeightTagsByAge($age, $gender);
 array_push($tags, $gender);
 $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
+
+App::context()->get
 ?>
 
 
     <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController"
          ng-cloak>
-
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">Рост:</span>
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="col-sm-4 text-center">
+                    <ul style="display: inline-flex; margin: 0;">
+                        <li class="gender boy {{row.on?'on':''}}" ng-click="setGender('boy')"
+                            ng-if="row.group=='gender'">&nbsp;
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
         <div class="row">
             <div class="nasa-col large-12 columns right">
                 <div class="wpb_wrapper">
