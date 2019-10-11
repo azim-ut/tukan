@@ -7,6 +7,7 @@ angular.module('root')
                     fetched = true;
                     CartFactory.ids().$promise.then(function (res) {
                         Data.cart.ids = res.data;
+                        setTimeout(function(){fetched = false;}, 200);
                     })
                 }
             }
@@ -20,9 +21,8 @@ angular.module('root')
             toProduct: function (id) {
                 location.href = "/product/" + id;
             },
-            submit: function () {
-                let params = $.param({address: $scope.data.cart.address});
-                CartFactory.submit(params).$promise.then(function (res) {
+            submit: function (cart) {
+                CartFactory.submit({},{address: cart.address}).$promise.then(function (res) {
                     if (res.code === 401) {
                         $("#AuthForm").modal("show");
                     }

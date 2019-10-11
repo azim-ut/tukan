@@ -112,6 +112,9 @@ angular.module('root')
             submit: {
                 method: 'POST',
                 url: "/shop/rest/cart/submit",
+                params: {
+                    address: '@address'
+                },
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             }
@@ -127,7 +130,12 @@ angular.module('root')
             },
             login: {
                 method: 'POST',
-                url: "/shop/rest/auth/login",
+                url: "/core/rest/user/login",
+                params: {
+                    email: '@email',
+                    pass: '@pass',
+                    save: '@save'
+                },
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             },

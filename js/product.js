@@ -1,5 +1,5 @@
 angular.module('root')
-    .controller("ProductController", function ($scope, $controller, $interval, $anchorScroll, ViewFactory, WishFactory, CartFactory) {
+    .controller("ProductController", function ($scope, $rootScope, $controller, $interval, $anchorScroll, ViewFactory, WishFactory, CartFactory) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
             wished: false,
@@ -26,7 +26,7 @@ angular.module('root')
                 }
 
                 CartFactory.add(null, {post: id, size:size}).$promise.then(function (res) {
-                    $scope.data.cart.ids = res.data;
+                    $rootScope.$broadcast('updateCartIds', {});
                 })
             },
             fetchProduct: function (id) {

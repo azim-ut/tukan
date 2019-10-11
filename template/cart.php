@@ -62,7 +62,7 @@
                             </div>
 
                             <div ng-show="msg" class="msg">{{msg}}</div>
-                            <button class="btn cart-page-submit" ng-click="submit()">Заказать</button>
+                            <button class="btn cart-page-submit" ng-click="submit(cart)">Заказать</button>
                         </div>
 
                     </div>
