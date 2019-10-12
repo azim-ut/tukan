@@ -162,25 +162,6 @@ $heights = $post->enabledHeights();
                             </div>
                         </div>
 
-                        <div class="woocommerce-product-details__short-description">
-                            <p>
-                                &nbsp<?=$post->content()?>
-                            <table class="table table-striped" style="background: #fff; border: #ccc 2px solid;">
-                                <?
-                                foreach($post->contains() as $materialRow){
-                                    foreach($materialRow as $material => $percents){
-                                        ?>
-                                        <tr>
-                                            <td><?=$material?></td>
-                                            <td><?=$percents?>%</td>
-                                        </tr>
-                                        <?
-                                    }
-                                }
-                                ?>
-                            </table>
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
