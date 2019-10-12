@@ -23,13 +23,12 @@ $tags = $ts->getHeightTagsByAge($age, $gender);
 array_push($tags, $gender);
 $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
 
-App::context()->get
 ?>
 
 
     <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController"
          ng-cloak>
-        <div class="row">
+        <div class="row" ng-if="false">
             <div class="col-sm-4">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon3">Рост:</span>
