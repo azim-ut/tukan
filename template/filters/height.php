@@ -24,8 +24,7 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
 ?>
 
 
-    <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController"
-         ng-cloak>
+    <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController" ng-cloak>
 
         <div class="row filterPostsStore">
             <div class="col-sm-4 text-center">

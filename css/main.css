@@ -8,6 +8,7 @@
 a, a:hover, a:active, a:visited, a:focus {
     text-decoration:none;
 }
+.product-item{margin: 0;}
 .navbar-header {overflow: hidden;}
 
 .menu-item a:hover{
