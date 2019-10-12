@@ -16,7 +16,7 @@
 </div>
 
 
-<nav class="navbar navbar-default navbar-fixed-top" style="background: #fff; height: 80px;">
+<nav class="navbar navbar-default navbar-fixed-top" style="background: #fff;">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -27,8 +27,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand pointer" href="/">
-                <div style="width: 100px;"
-                     class="header_logo mainLogo" alt="www.Tukan.Store"></div>
+                <div class="header_logo mainLogo" alt="www.Tukan.Store"></div>
             </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse" ng-controller="AuthBlockController" ng-cloak>

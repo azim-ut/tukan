@@ -5,6 +5,7 @@
 .navbar{
     background: #fff;
 }
+.navbar-header {overflow: hidden;}
 .menu-item a:hover{
     text-decoration: none !important;
 }
@@ -292,19 +293,36 @@ button.gender:hover{
 }
 
 .mainLogo{
-    background: #fff url(/web/img/logo_head.jpg) no-repeat center center;
+    background: #fff url(/web/img/logo2.jpg) no-repeat center center;
     position: absolute;
+    width: 140px;
     top: 0;
     height: 79px;
-    border-top: none;
+    border-bottom: #eaeaea 1px solid;
 }
 .mainLogo:hover{
     background-color: #fff;
 }
+
+.main-img{
+    min-height: 400px;
+}
 @media screen and (max-width: 600px){
     .mainLogo{
-        background: transparent url(/web/img/logo.jpg) no-repeat center center/contain;
+        background: transparent url(/web/img/logo_txt.jpg) no-repeat center center/contain;
         height: 50px;
         border: none;
+    }
+
+    .main-img{
+        min-height: 200px;
+    }
+
+    .product-item .cart, .product-item .heart{
+        width: 50px; height: 50px; font-size: 110%; border-width: 3px;
+    }
+
+    .product-item .heart{
+        width: 40px; height: 40px;
     }
 }
