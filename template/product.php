@@ -133,12 +133,17 @@ $heights = $post->enabledHeights();
                             </table>
 
                             <div class="btnRows" role="group">
-                                <div class="error" style="padding: 5px;">
+                                <div class="error" ng-if="needSize" style="padding: 5px;">
                                     <span ng-if="needSize === true">Пожалуйста, выберите рост</span>&nbsp;
                                 </div>
                                 <div class="btn-group btn-group-justified">
                                     <div class="btn-group" ng-if="false">
                                         <button type="button" class="btn btn-lg btn-danger">Купить сейчас</button>
+                                    </div>
+                                    <div class="btn-group" style="width: 2px;">
+                                        <button type="button" class="btn btn-lg btn-default" ng-click="goBack()">
+                                            <i class="icon-arrow-left"></i>
+                                        </button>
                                     </div>
                                     <div class="btn-group">
                                         <button type="button" ng-click="toCart(<?=$id?>, size)"
@@ -156,7 +161,7 @@ $heights = $post->enabledHeights();
                                 </div>
                             </div>
                         </div>
-                        <hr class="nasa-single-hr">
+
                         <div class="woocommerce-product-details__short-description">
                             <p>
                                 &nbsp<?=$post->content()?>
@@ -176,27 +181,10 @@ $heights = $post->enabledHeights();
                             </table>
                             </p>
                         </div>
-                        <button class="btn btn-lg btn-danger btn-block"
-                                ng-if="data.wishes.indexOf(data.view.id)<0"
-                                ng-click="addWish(data.view.id)">
-                            <i class="icon-heart"></i> Добавить
-                        </button>
-
-                        <button class="btn btn-lg btn-info btn-block"
-                                ng-if="data.wishes.indexOf(data.view.id)>=0"
-                                ng-click="delWish(data.view.id)">
-                            <i class="icon-heart"></i> Убрать
-                        </button>
-
-                        <hr class="nasa-single-hr">
-                        <div class="nasa-single-share">
-                            <div class="sharethis-inline-share-buttons"></div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <hr/>
     </div>
     <script>
         $(function () {

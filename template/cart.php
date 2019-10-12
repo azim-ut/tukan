@@ -1,7 +1,7 @@
 <? include_once __DIR__ . "/nav/start.php" ?>
     <link type="text/css" rel="stylesheet" href="/web/css/cart_empty.css?t=<?=$version?>"/>
 
-    <div ng-controller="CartListController" ng-cloak>
+    <div ng-controller="CartListController" ng-cloak class="nasa-single-product-scroll">
         <div ng-if="cart.items.length == 0" style="text-align: center;">
             <div class="emptyCart">
                 <div class="example">
