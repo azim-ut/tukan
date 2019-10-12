@@ -5,7 +5,11 @@
 .navbar{
     background: #fff;
 }
+a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none;
+}
 .navbar-header {overflow: hidden;}
+
 .menu-item a:hover{
     text-decoration: none !important;
 }
@@ -295,7 +299,7 @@ button.gender:hover{
 .mainLogo{
     background: #fff url(/web/img/logo2.jpg) no-repeat center center;
     position: absolute;
-    width: 140px;
+    width: 120px;
     top: 0;
     height: 79px;
     border-bottom: #eaeaea 1px solid;
@@ -307,9 +311,27 @@ button.gender:hover{
 .main-img{
     min-height: 400px;
 }
+
+#MobileHeadMenu {
+    overflow: hidden; display: none; height: 40px; padding-top: 0; top:0; z-index: 100; width: 100px;
+}
+
+#MobileHeadMenu .wishHeadBtn,
+#MobileHeadMenu .cartHeadBtn{
+    height: 39px; float: left; padding: 5px 10px;color: hotpink; cursor: pointer;
+}
+
 @media screen and (max-width: 600px){
+    #MobileHeadMenu{display: block; margin-top: 60px; margin-left: 40%;}
+    #header-content{display: none;}
+
+    .nav .cartHeadBtn,
+    .nav .wishHeadBtn{
+        display: none !important;
+    }
+
     .mainLogo{
-        background: transparent url(/web/img/logo_txt.jpg) no-repeat center center/contain;
+        background: transparent url(/web/img/logo_txt.jpg) no-repeat 0 center;
         height: 50px;
         border: none;
     }

@@ -19,16 +19,13 @@
 
             <div class="col-xs-10">
                 <div class="row">
-                    <div class="col-xs-7">
-                        <div style="
-                                        overflow: hidden;
-                                        padding: 0;
-                                        border: #ccc 1px solid;">
-
+                    <div class="col-sm-7">
+                        <div style="overflow: hidden; border: #ccc 1px solid;">
                             <cart-row ng-repeat="row in cart.items" cart="cart" product="row"></cart-row>
                         </div>
+                        <br/>
                     </div>
-                    <div class="col-xs-5">
+                    <div class="col-sm-5">
                         <div class="row">
                             <div class="col-sm-12"
                                  style="overflow: hidden;

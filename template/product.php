@@ -46,7 +46,7 @@ $heights = $post->enabledHeights();
 
     <div class="large-12 columns nasa-single-product-scroll nasa-single-product-2-columns"
          data-num_main="2"
-         style="margin-top: 40px;"
+         style="margin-top: 20px;"
          ng-controller="ProductController"
          data-num_thumb="4"
          data-speed="300">
