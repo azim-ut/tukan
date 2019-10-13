@@ -1,5 +1,5 @@
 <? include_once __DIR__ . "/../nav/start.php" ?>
-<div class="row mb-4">
+<div class="row mb-4" style="padding: 15px;">
     <div class="col">
         <p><strong>Политика конфиденциальности</strong></p>
         <p><br/>Tukan OU стремится защищать конфиденциальность своих клиентов и пользователей. Исходя из этого, мы

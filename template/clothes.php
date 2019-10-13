@@ -42,7 +42,8 @@ if(!in_array($type, $types)){
                 break;
         }
         if(!StringUtils::isEmpty($type)){
-            $sub = WebCatalogService::getInstance()->getPosts('publish', array($type));
+            $filter = new CatalogFilter();
+            $sub = WebCatalogService::getInstance()->getPosts($filter, array($type));
             ?>
 
             <div class="col-md-6">

@@ -1,56 +1,34 @@
 angular.module('root')
     .controller("MainPageController", function ($scope, $cookies, $controller, $anchorScroll, ViewFactory, $httpParamSerializer) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
+        let heightCookieName = "heightFilter";
+        let genderCookieName = "genderFilter";
 
         angular.extend($scope, {
             lastFetchInterval: null,
             loadDisabled: true,
             fetched: false,
             useFilter: true,
+            gender: $cookies.get(genderCookieName),
+            height: $cookies.get(heightCookieName),
             post: 0,
             limit: 30,
-            heightP: $cookies.get("heightP"),
-            height: 0,
             offset: 0,
             tagsOn: [],
             tags: [],
             wishes: [],
             posts: [],
-            updateHeight: function () {
-                $cookies.put("heightP", $scope.heightP);
-                $scope.height = (120 / 100) * $scope.heightP + 56;
-                $scope.tags.forEach(function (tag) {
-                    if (tag.from && tag.to && tag.group === 'height') {
-                        tag.on = false;
-                        if (tag.from <= $scope.height && tag.to >= $scope.height) {
-                            tag.on = true;
-                        }
-                    }
-                });
-            },
-            toggleFilterAccess: function(){
-                $scope.useFilter = $scope.useFilter?false:true;
-                $scope.fetchList();
-            },
-            setHeight: function () {
-                $scope.updateHeight();
-                if ($scope.lastFetchInterval != null) {
-                    clearTimeout($scope.lastFetchInterval);
+            updateFilter: function(heightVal, genderVal){
+                if(heightVal !== undefined){
+                    $cookies.put(heightCookieName, heightVal, {path: "/"});
                 }
-                $scope.lastFetchInterval = setTimeout($scope.resetPosts, 250);
-            },
-            fetchList: function (post) {
-                if ($scope.data.process) {
-                    return;
+                if(genderVal !== undefined) {
+                    $cookies.put(genderCookieName, genderVal, {path: "/"});
                 }
-                $scope.data.process = true;
-                ViewFactory.tags().$promise.then(function (res) {
-                    $scope.data.process = false;
-                    $scope.post = post;
-                    $scope.tags = res.data;
-                    $scope.offset = 0;
-                    $scope.setHeight();
-                });
+                if(heightVal !== $scope.height || genderVal !== $scope.gender){
+                    $scope.resetPosts();
+                }
+                $("#CatalogFilterModal").modal("hide");
             },
             clickOnTag: function (tag) {
                 $scope.tags.forEach(function (row) {
@@ -80,10 +58,16 @@ angular.module('root')
                     $scope.total = res.data.total;
                     $scope.posts = res.data.list;
                     $scope.fetched = true;
+                    $scope.gender = $scope.genderTemp = res.data.gender;
+                    $scope.height = $scope.heightTemp = res.data.height;
+                    if($scope.heightTemp === 0){
+                        $scope.heightTemp = undefined;
+                    }
                 });
             },
 
         });
+        $scope.resetPosts();
         function updateTags(){
             let tags = [];
             let gender = null;
@@ -114,5 +98,4 @@ angular.module('root')
             }
             return tags;
         }
-        $scope.fetchList();
     });

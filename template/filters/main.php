@@ -3,6 +3,7 @@ use assets\services\WebCatalogService;
 use core\Engine;
 use core\manager\ParamsManager;
 use core\service\App;
+use core\utils\ArrayUtils;
 
 include_once __DIR__ . "/../nav/start.php" ?>
 
@@ -15,36 +16,34 @@ $types  = $ts->getClothesTypeTags();
 
 
 if(!$ts->isAgeExists($age, $gender) || !$ts->isValidGender($gender)){
-    include_once __DIR__."/../404.php";
+    include_once __DIR__ . "/../404.php";
 
     return;
 }
 $tags = $ts->getHeightTagsByAge($age, $gender);
 array_push($tags, $gender);
-$posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
-
+$filter  = new CatalogFilter();
+$posts   = WebCatalogService::getInstance()->getPosts($filter, $tags);
+$genders = ArrayUtils::ArrayToString(App::context()->prop("gender"));
 ?>
 
 
     <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController"
          ng-cloak>
-        <div class="row" ng-if="false">
-            <div class="col-sm-4">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon3">Рост:</span>
-                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        <div class="row" ng-if="true" id="CatalogFilter" data-toggle="modal" data-target="#CatalogFilterModal">
+            <div class="col-sm-4 col-xs-1"></div>
+            <div class="col-xs-5" style="border-right: #ccc 1px solid;">
+                <div class="height tool">
+                    <span ng-if="!height">Рост: -</span>
+                    <span ng-if="height">{{height}}cm</span>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="col-sm-4 text-center">
-                    <ul style="display: inline-flex; margin: 0;">
-                        <li class="gender boy {{row.on?'on':''}}" ng-click="setGender('boy')"
-                            ng-if="row.group=='gender'">&nbsp;
-                        </li>
-                    </ul>
-                </div>
+            <div class="col-xs-5">
+                <div ng-if="gender===1" class="gender boy tool"></div>
+                <div ng-if="gender===2" class="gender girl tool"></div>
+                <div ng-if="gender===3 || gender===0" class="gender girl_boy tool"></div>
             </div>
-            <div class="col-sm-4"></div>
+            <div class="col-sm-4 col-xs-1"></div>
         </div>
         <div class="row">
             <div class="nasa-col large-12 columns right">
@@ -95,6 +94,44 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
 
 
                 </div>
+            </div>
+        </div>
+        <div class="modal fade" tabindex="-1" id="CatalogFilterModal" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <form ng-submit="updateFilter(heightTemp, genderTemp)">
+                    <div class="modal-content" style="padding: 10px;">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Фильтр:</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">Рост</span>
+                                <input type="text" class="form-control"
+                                       ng-model="heightTemp"
+                                       placeholder="Укажите рост ребенка"
+                                       aria-describedby="basic-addon1">
+                                <span class="input-group-addon" id="basic-addon1">cm</span>
+                            </div>
+                            <div class="row margin-top-30 margin-bottom-30">
+                                <div class="col-xs-4 genderBlock pointer" ng-click="genderTemp = 1">
+                                    <div ng-class="{'gender boy tool':1, 'on': genderTemp === 1}"></div>
+                                </div>
+                                <div class="col-xs-4 genderBlock pointer" ng-click="genderTemp = 2">
+                                    <div ng-class="{'gender girl tool':1, 'on':genderTemp === 2}"></div>
+                                </div>
+                                <div class="col-xs-4 genderBlock pointer" ng-click="genderTemp = 0">
+                                    <div ng-class="{'gender girl_boy tool':1,'on':(genderTemp === 3 || genderTemp === 0)}"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                            <button type="submit" class="btn btn-primary">Применить</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

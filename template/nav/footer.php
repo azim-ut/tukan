@@ -11,10 +11,12 @@
 <footer id="nasa-footer" class="footer-wrapper" style="overflow: hidden;">
     <br/>
     <br/>
-    <div class="row">
-        <div class="col-sm-4 text-right" style="line-height: 20px;">
-            <i class="glyphicon glyphicon-map-marker"></i>
-            Mustakivi Keskus<br/>
+    <div class="row" style="padding-bottom: 80px;">
+        <div class="col-xs-6">
+            <i class="glyphicon glyphicon-map-marker" style="font-size: 500%; color: #eaeaea;"></i>
+        </div>
+        <div class="col-xs-6 text-right" style="line-height: 20px;">
+            <b>Mustakivi Keskus</b><br/>
             Mahtra 1, 13811 Tallinn, Estonia<br/>
             2-й этаж, бокс 24
             <br/>
@@ -23,17 +25,14 @@
             <br/>
             <br/>
         </div>
-        <div class="col-sm-4 text-center small">
+        <div class="col-xs-6">
             <a href="/policy">Политика конфидекциальности</a>
             <br/>
         </div>
-        <div class="col-sm-4 text-right">
+        <div class="col-xs-6 text-right">
             <div class="sharethis-inline-follow-buttons"></div>
         </div>
     </div>
-    <br/>
-    <br/>
-    <br/>
 </footer>
 <!-- END MAIN FOOTER -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
