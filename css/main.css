@@ -82,7 +82,7 @@ button.gender:hover{
 }
 
 .tool{
-    height: 50px; background-color: #fff;  list-style-type: none;
+    height: 50px; background-color: transparent;  list-style-type: none;
     text-align: center; line-height: 45px; font-size: 150%; min-width: 50px;
 }
 #CatalogFilterModal .genderBlock {border-right: orange 1px solid;}
@@ -93,13 +93,13 @@ button.gender:hover{
     border-color: #333;
 }
 .gender.boy{
-    background: #fff url(/web/img/boy_girl.png) no-repeat center 2px;
+    background: transparent url(/web/img/boy_girl.png) no-repeat center 2px;
 }
 .gender.girl{
-    background: #fff url(/web/img/boy_girl.png) no-repeat center -56px;
+    background: transparent url(/web/img/boy_girl.png) no-repeat center -56px;
 }
 .gender.girl_boy{
-    background: #fff url(/web/img/boy_girl.png) no-repeat center -128px;min-width: 70px;
+    background: transparent url(/web/img/boy_girl.png) no-repeat center -128px;min-width: 70px;
 }
 
 
@@ -326,7 +326,9 @@ button.gender:hover{
     width: 120px;
     top: 0;
     height: 79px;
-    border-bottom: #eaeaea 1px solid;
+    border-radius: 0px 0px 50px 50px;
+    border-bottom: #eaeaea 3px solid;
+    border-top: none;
 }
 .mainLogo:hover{
     background-color: #fff;
@@ -355,8 +357,7 @@ button.gender:hover{
 .product-gallery .images{margin-bottom: 0;}
 
 @media screen and (max-width: 600px){
-
-    #CatalogFilter{
+   #CatalogFilter{
         position: fixed; width: 100%; bottom: 0; right: 0; left: 0; z-index: 100; background: #fff; border-top: #ccc 1px solid; padding: 5px 0 5px 0;
     }
     #CatalogFilter .tool {border: none; border-radius: 0;}
@@ -378,7 +379,7 @@ button.gender:hover{
     .lSPager{display: none;}
 
     .nasa-single-product-scroll{margin-top: 60px;}
-    .section-element{ margin: 45px 0 0 0 !important; }
+    .section-element{ margin: 55px 0 0 0 !important; }
 
     .btnRows{position: fixed; bottom: 0; background: white; left: 0; right:0; overflow: hidden;}
     .btnRows .btn {font-size: 100%; font-family: "Calibri Light";}
@@ -394,7 +395,7 @@ button.gender:hover{
     .mainLogo{
         background: transparent url(/web/img/logo_txt.jpg) no-repeat 0 center;
         height: 50px;
-        border: none;
+        border: none; border-radius: 0;
     }
 
     .main-img{
@@ -408,4 +409,6 @@ button.gender:hover{
     .product-item .heart{
         width: 40px; height: 40px;
     }
+
+    .toolsTtl{display: none;}
 }

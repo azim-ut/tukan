@@ -24,18 +24,18 @@ $tags = $ts->getHeightTagsByAge($age, $gender);
 array_push($tags, $gender);
 $filter  = new CatalogFilter();
 $posts   = WebCatalogService::getInstance()->getPosts($filter, $tags);
-$genders = ArrayUtils::ArrayToString(App::context()->prop("gender"));
 ?>
 
 
     <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController"
          ng-cloak>
+
         <div class="row" ng-if="true" id="CatalogFilter" data-toggle="modal" data-target="#CatalogFilterModal">
-            <div class="col-sm-4 col-xs-1"></div>
+            <div class="col-xs-1"></div>
             <div class="col-xs-5" style="border-right: #ccc 1px solid;">
                 <div class="height tool">
                     <span ng-if="!height">Рост: -</span>
-                    <span ng-if="height">{{height}}cm</span>
+                    <span ng-if="height"><span class="toolsTtl">Рост: </span>{{height}}cm</span>
                 </div>
             </div>
             <div class="col-xs-5">
@@ -43,7 +43,7 @@ $genders = ArrayUtils::ArrayToString(App::context()->prop("gender"));
                 <div ng-if="gender===2" class="gender girl tool"></div>
                 <div ng-if="gender===3 || gender===0" class="gender girl_boy tool"></div>
             </div>
-            <div class="col-sm-4 col-xs-1"></div>
+            <div class="col-xs-1"></div>
         </div>
         <div class="row">
             <div class="nasa-col large-12 columns right">
