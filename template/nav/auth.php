@@ -1,4 +1,4 @@
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v4.0&appId=460310011240888&autoLogAppEvents=1"></script>
+
 <div id="fb-root"></div>
 
 <div ng-controller="AuthBlockController" ng-cloak="" ng-init="check()">
