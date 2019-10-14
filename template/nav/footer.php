@@ -15,7 +15,7 @@
         <div class="col-xs-6">
             <a href="/">На главную</a>&nbsp;|&nbsp;<a href="/policy">Policy</a>
             <br/>
-            <div class="sharethis-inline-follow-buttons"></div>
+            <div class="sharethis-inline-follow-buttons" style="text-align: left; padding-top: 20px;"></div>
         </div>
         <div class="col-xs-6 text-right" style="line-height: 20px;">
             <table>
