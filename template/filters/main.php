@@ -41,7 +41,7 @@ $posts   = WebCatalogService::getInstance()->getPosts($filter, $tags);
             <div class="col-xs-5">
                 <div ng-if="gender===1" class="gender boy tool"></div>
                 <div ng-if="gender===2" class="gender girl tool"></div>
-                <div ng-if="gender===3 || gender===0" class="gender girl_boy tool"></div>
+                <div ng-if="gender===3 || gender==0" class="gender girl_boy tool"></div>
             </div>
             <div class="col-xs-1"></div>
         </div>

@@ -13,24 +13,33 @@
     <br/>
     <div class="row" style="padding-bottom: 80px;">
         <div class="col-xs-6">
-            <i class="glyphicon glyphicon-map-marker" style="font-size: 500%; color: #eaeaea;"></i>
+            <a href="/">На главную</a>&nbsp;|&nbsp;<a href="/policy">Policy</a>
+            <br/>
+            <div class="sharethis-inline-follow-buttons"></div>
         </div>
         <div class="col-xs-6 text-right" style="line-height: 20px;">
-            <b>Mustakivi Keskus</b><br/>
-            Mahtra 1, 13811 Tallinn, Estonia<br/>
-            2-й этаж, бокс 24
-            <br/>
-            <br/>
-            <i class="glyphicon glyphicon-phone"></i> <a href="tel:+37258347178">(372) 5818 5225</a>
-            <br/>
-            <br/>
+            <table>
+                <tr>
+                    <td>
+                        <i class="glyphicon glyphicon-map-marker" style="font-size: 500%; color: #eaeaea;"></i>
+                    </td>
+                    <td>
+                        <b>Mustakivi Keskus</b><br/>
+                        Mahtra 1, 13811 Tallinn, Estonia<br/>
+                        2-й этаж, бокс 24
+                        <br/>
+                        <br/>
+                        <i class="glyphicon glyphicon-phone"></i> <a href="tel:+37258347178">(372) 5818 5225</a>
+                        <br/>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="col-xs-6">
-            <a href="/policy">Политика конфидекциальности</a>
-            <br/>
         </div>
         <div class="col-xs-6 text-right">
-            <div class="sharethis-inline-follow-buttons"></div>
+
         </div>
     </div>
 </footer>

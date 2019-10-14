@@ -93,13 +93,13 @@ button.gender:hover{
     border-color: #333;
 }
 .gender.boy{
-    background: transparent url(/web/img/boy_girl.png) no-repeat center 2px;
+    background: transparent url(/web/img/boy_girl_2.png) no-repeat center 2px;
 }
 .gender.girl{
-    background: transparent url(/web/img/boy_girl.png) no-repeat center -56px;
+    background: transparent url(/web/img/boy_girl_2.png) no-repeat center -56px;
 }
 .gender.girl_boy{
-    background: transparent url(/web/img/boy_girl.png) no-repeat center -128px;min-width: 70px;
+    background: transparent url(/web/img/boy_girl_2.png) no-repeat center -128px;min-width: 70px;
 }
 
 
