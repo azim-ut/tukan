@@ -1,4 +1,8 @@
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v4.0&appId=460310011240888&autoLogAppEvents=1"></script>
+<div id="fb-root"></div>
+
 <div ng-controller="AuthBlockController" ng-cloak="" ng-init="check()">
+
 
     <div class="modal fade" tabindex="-1" role="dialog" id="AuthForm">
         <div class="modal-dialog modal-sm" role="document">
@@ -34,13 +38,6 @@
                                 <button type="submit" class="btn btn-warning btn-group-justified">Вход</button>
                             </div>
 
-                            <div class="form-group">
-                                <fb:login-button
-                                        scope="public_profile,email"
-                                        onlogin="checkLoginState();">
-                                </fb:login-button>
-                            </div>
-
                             <div class="form-group overflow">
                                 <label for="nasa_rememberme" class="pull-left">
                                     <input ng-model="save" type="checkbox" id="nasa_rememberme" value="forever">
@@ -50,6 +47,9 @@
                             </div>
                         </form>
                         <hr/>
+                        <div class="form-group">
+                            <div class="fb-login-button" data-width="100%" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                        </div>
                         <div class="form-group">
                             <input ng-click="setTab('registration')"
                                    type="button"

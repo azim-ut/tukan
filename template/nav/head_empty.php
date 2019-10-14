@@ -23,7 +23,6 @@ $version = time();
 
 	<link href="/web/template/assets/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/web/template/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-
-
-    <title>«Tukan» Качественная Детская Одежда Из Италии</title>
+    
+    <title>«Tukan» - магазин детской итальянской одежды</title>
 </head>
