@@ -19,16 +19,28 @@
 <div ng-controller="AuthBlockController" ng-cloak>
 
     <div id="MobileHeadMenu">
-        <div class="wishHeadBtn pointer">
-            <a href="/wishes">
-                <i class="icon-heart"></i>
-                <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}</div>
+        <div class="userBtn pointer">
+            <a data-enable="1"
+               data-toggle="modal"
+               ng-if="!data.user"
+               data-target="#AuthForm">
+                <span class="icon-user"></span>
+            </a>
+            <a ng-click="logout()"
+               ng-if="data.user" style="margin-left: 15px;">
+                <span class="icon-logout"></span>
             </a>
         </div>
         <div class="cartHeadBtn pointer">
             <a href="/cart">
                 <i class="icon-basket"></i>
                 <div ng-show="data.cart.ids.length" class="subIconCount blue">{{data.cart.ids.length}}</div>
+            </a>
+        </div>
+        <div class="wishHeadBtn pointer">
+            <a href="/wishes">
+                <i class="icon-heart"></i>
+                <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}</div>
             </a>
         </div>
     </div>
@@ -48,16 +60,16 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/"><i class="icon-home"></i></a></li>
-                    <li ng-if="data.user"><a href="/orders">
-                            <i class="icon-list"></i>
-                            <div ng-show="data.order_ids.length" class="subIconCount">{{data.order_ids.length}}</div>
+                    <li class="userBtn">
+                        <a data-enable="1"
+                           data-toggle="modal"
+                           ng-if="!data.user"
+                           data-target="#AuthForm">
+                            <span class="icon-user"></span>
                         </a>
-                    </li>
-                    <li class="wishHeadBtn"><a href="/wishes">
-                            <i class="icon-heart"></i>
-                            <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}
-                            </div>
+                        <a ng-click="logout()"
+                           ng-if="data.user" style="margin-left: 15px;">
+                            <span class="icon-logout"></span>
                         </a>
                     </li>
                     <li class="cartHeadBtn"><a href="/cart">
@@ -65,19 +77,10 @@
                             <div ng-show="data.cart.ids.length" class="subIconCount blue">{{data.cart.ids.length}}</div>
                         </a>
                     </li>
-                    <li>
-                        <a data-enable="1"
-                           data-toggle="modal"
-                           ng-if="!data.user"
-                           data-target="#AuthForm">
-                            <span class="icon-login"></span>
-                        </a>
-                    </li>
-                    <li class="menu-item color"
-                        ng-click="logout()"
-                        ng-if="data.user" style="margin-left: 15px;">
-                        <a>
-                            <span class="icon-logout"></span>
+                    <li class="wishHeadBtn"><a href="/wishes">
+                            <i class="icon-heart"></i>
+                            <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}
+                            </div>
                         </a>
                     </li>
                 </ul>
