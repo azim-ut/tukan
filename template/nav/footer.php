@@ -11,7 +11,7 @@
 <footer id="nasa-footer" class="footer-wrapper" style="overflow: hidden;">
     <br/>
     <br/>
-    <div class="row" style="padding-bottom: 80px;">
+    <div class="row" style="padding-bottom: 30px;">
         <div class="col-xs-6">
             <a href="/">На главную</a>&nbsp;|&nbsp;<a href="/policy">Policy</a>
             <br/>

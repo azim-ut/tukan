@@ -326,8 +326,8 @@ button.gender:hover{
     width: 120px;
     top: 0;
     height: 79px;
-    border-radius: 0px 0px 50px 50px;
-    border-bottom: #eaeaea 3px solid;
+    border-radius: 0 0 30px 30px;
+    border-bottom: #cdcdcd 3px solid;
     border-top: none;
 }
 .mainLogo:hover{
@@ -344,7 +344,7 @@ button.gender:hover{
 
 #MobileHeadMenu .wishHeadBtn,
 #MobileHeadMenu .cartHeadBtn{
-    height: 39px; float: left; padding: 5px 10px;color: hotpink; cursor: pointer;
+    height: 39px; float: left; padding: 5px 10px;color: hotpink; cursor: pointer; width: 50px;
 }
 
 .mobileHead{display: none;}
