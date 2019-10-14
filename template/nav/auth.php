@@ -48,9 +48,6 @@
                         </form>
                         <hr/>
                         <div class="form-group">
-                            <div class="fb-login-button" data-width="100%" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
-                        </div>
-                        <div class="form-group">
                             <input ng-click="setTab('registration')"
                                    type="button"
                                    value="Регистрация"
@@ -129,6 +126,9 @@
                                    value="Вход"
                                    class="btn btn-default btn-group-justified">
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="fb-login-button" data-width="100%" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
                     </div>
                 </div>
             </div>
