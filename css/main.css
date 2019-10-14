@@ -357,7 +357,7 @@ button.gender:hover{
 .product-gallery .images{margin-bottom: 0;}
 
 @media screen and (max-width: 600px){
-   #CatalogFilter{
+    #CatalogFilter{
         position: fixed; width: 100%; bottom: 0; right: 0; left: 0; z-index: 100; background: #fff; border-top: #ccc 1px solid; padding: 5px 0 5px 0;
     }
     #CatalogFilter .tool {border: none; border-radius: 0;}
@@ -411,4 +411,5 @@ button.gender:hover{
     }
 
     .toolsTtl{display: none;}
+    #main-content{ min-height: 500px !important; }
 }

@@ -1,5 +1,5 @@
 angular.module('root')
-    .controller("MainPageController", function ($scope, $cookies, $controller, $anchorScroll, ViewFactory, $httpParamSerializer) {
+    .controller("MainPageController", function ($scope, $cookies, $location, $controller, $anchorScroll, ViewFactory, $httpParamSerializer) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         let heightCookieName = "heightFilter";
         let genderCookieName = "genderFilter";
@@ -18,14 +18,14 @@ angular.module('root')
             tags: [],
             wishes: [],
             posts: [],
-            updateFilter: function(heightVal, genderVal){
-                if(heightVal !== undefined){
+            updateFilter: function (heightVal, genderVal) {
+                if (heightVal !== undefined) {
                     $cookies.put(heightCookieName, heightVal, {path: "/"});
                 }
-                if(genderVal !== undefined) {
+                if (genderVal !== undefined) {
                     $cookies.put(genderCookieName, genderVal, {path: "/"});
                 }
-                if(heightVal !== $scope.height || genderVal !== $scope.gender){
+                if (heightVal !== $scope.height || genderVal !== $scope.gender) {
                     $scope.resetPosts();
                 }
                 $("#CatalogFilterModal").modal("hide");
@@ -40,12 +40,12 @@ angular.module('root')
                 $scope.resetPosts();
             },
             resetPosts: function (offset) {
-                if(!offset){
+                if (!offset) {
                     offset = 0;
                 }
                 let tags = [];
 
-                if($scope.useFilter){
+                if ($scope.useFilter) {
                     tags = updateTags();
                 }
 
@@ -60,15 +60,23 @@ angular.module('root')
                     $scope.fetched = true;
                     $scope.gender = $scope.genderTemp = res.data.gender;
                     $scope.height = $scope.heightTemp = res.data.height;
-                    if($scope.heightTemp === 0){
+                    if ($scope.heightTemp === 0) {
                         $scope.heightTemp = undefined;
+                    }
+
+                    let newHash = 'HeadTop';
+                    if ($location.hash() !== newHash) {
+                        $location.hash('HeadTop');
+                    } else {
+                        $anchorScroll();
                     }
                 });
             },
 
         });
         $scope.resetPosts();
-        function updateTags(){
+
+        function updateTags() {
             let tags = [];
             let gender = null;
 

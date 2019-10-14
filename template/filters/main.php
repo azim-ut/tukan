@@ -27,8 +27,7 @@ $posts   = WebCatalogService::getInstance()->getPosts($filter, $tags);
 ?>
 
 
-    <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController"
-         ng-cloak>
+    <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController" ng-cloak>
 
         <div class="row" ng-if="true" id="CatalogFilter" data-toggle="modal" data-target="#CatalogFilterModal">
             <div class="col-xs-1"></div>
