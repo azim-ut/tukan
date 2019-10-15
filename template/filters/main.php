@@ -16,18 +16,19 @@ $types  = $ts->getClothesTypeTags();
 
 
 if(!$ts->isAgeExists($age, $gender) || !$ts->isValidGender($gender)){
-    include_once __DIR__ . "/../404.php";
+	include_once __DIR__ . "/../404.php";
 
-    return;
+	return;
 }
 $tags = $ts->getHeightTagsByAge($age, $gender);
 array_push($tags, $gender);
-$filter  = new CatalogFilter();
-$posts   = WebCatalogService::getInstance()->getPosts($filter, $tags);
+$filter = new CatalogFilter();
+$posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
 ?>
 
 
-    <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController" ng-cloak>
+    <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController"
+         ng-cloak>
 
         <div class="row" ng-if="true" id="CatalogFilter" data-toggle="modal" data-target="#CatalogFilterModal">
             <div class="col-xs-1"></div>
@@ -53,6 +54,16 @@ $posts   = WebCatalogService::getInstance()->getPosts($filter, $tags);
                         <div class="inner-content">
                             <div class="row">
                                 <div class="large-12 columns">
+                                    <div class="text-center" ng-if="pages.length>1">
+                                        <ul class="pagination pagination-sm margin-top-5 margin-bottom-10" style="display: inline-block;">
+                                            <li ng-class="{'active':row == 1}"
+                                                ng-click="resetPosts($index*limit)"
+                                                ng-repeat="row in pages track by $index">
+                                                <span class="bold">{{$index+1}}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
                                     <div class="row">
                                         <div ng-repeat="row in posts" class="col-sm-2 col-xs-6" style="padding: 5px;">
                                             <product-preview id="row.id"
@@ -71,20 +82,16 @@ $posts   = WebCatalogService::getInstance()->getPosts($filter, $tags);
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-sm-4">&nbsp;</div>
-                                        <div class="col-sm-4 text-center">
-                                            <ul class="pagination" style="display: inline-block;">
-                                                <li ng-class="{'active':row == 1}"
-                                                    ng-click="resetPosts($index*limit)"
-                                                    ng-repeat="row in pages track by $index">
-                                                    <span class="bold">{{$index+1}}</span>
-                                                </li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-sm-4">&nbsp;</div>
+                                    <div class="text-center" ng-if="pages.length>1">
+                                        <ul class="pagination pagination-sm margin-top-5 margin-bottom-10" style="display: inline-block;">
+                                            <li ng-class="{'active':row == 1}"
+                                                ng-click="resetPosts($index*limit)"
+                                                ng-repeat="row in pages track by $index">
+                                                <span class="bold">{{$index+1}}</span>
+                                            </li>
+                                        </ul>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

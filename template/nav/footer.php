@@ -13,9 +13,7 @@
     <br/>
     <div class="row" style="padding-bottom: 30px;">
         <div class="col-xs-6">
-            <a href="/">На главную</a>&nbsp;|&nbsp;<a href="/policy">Policy</a>
-            <br/>
-            <div class="sharethis-inline-follow-buttons" style="text-align: left; padding-top: 20px;"></div>
+            &nbsp;
         </div>
         <div class="col-xs-6 text-right" style="line-height: 20px;">
             <table>
@@ -43,6 +41,17 @@
         </div>
     </div>
 </footer>
+<div class="padding-top-10 padding-bottom-10 row margin-bottom-50">
+    <div class="col-xs-6 padding-top-5 text-right small text-uppercase">
+        <ul style="list-style: none;">
+            <li><a href="/">На главную</a><br/></li>
+            <li><a href="/policy">Policy</a></li>
+        </ul>
+    </div>
+    <div class="col-xs-6">
+        <div class="sharethis-inline-follow-buttons" style="text-align: center;"></div>
+    </div>
+</div>
 <!-- END MAIN FOOTER -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47064836-2"></script>

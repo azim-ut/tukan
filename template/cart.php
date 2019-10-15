@@ -17,7 +17,7 @@
             </div>
 
 
-            <div class="col-xs-10">
+            <div class="col-xs-10 margin-bottom-30">
                 <div class="row">
                     <div class="col-sm-7">
                         <div style="overflow: hidden; border: #ccc 1px solid;">

@@ -57,7 +57,7 @@ use core\service\App; ?>
 	<script type="text/javascript" src="/web/js/wishes.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/cart.js?t=<?=$version?>"></script>
 
-
+    <script src="//kit.fontawesome.com/f15c23ae14.js" crossorigin="anonymous"></script>
 
     <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5bf306b3d329fa00111f74c2' async='async'></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v4.0&appId=<?=App::context()->facebookAuthAppID()?>&autoLogAppEvents=1"></script>
