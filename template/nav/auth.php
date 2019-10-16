@@ -127,7 +127,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-
+                        <div class="fb-login-button" data-width="100%" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
                     </div>
                 </div>
             </div>
