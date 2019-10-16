@@ -126,14 +126,11 @@
                                    class="btn btn-default btn-group-justified">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="fb-login-button"
-                             onlogin="fbLogged()"
-                             data-width="100%"
-                             data-size="large"
-                             data-button-type="continue_with"
-                             data-auto-logout-link="true"
-                             data-use-continue-as="true"></div>
+                    <div class="text-center margin-bottom-10">
+                        <b>или</b>
+                    </div>
+                    <div class="row">
+                        <button type="button" ng-click="loginFB()" class="btn btn-default btn-group-justified btn-primary"><i class="icon-social-facebook"></i> Facebook вход </button>
                     </div>
                 </div>
             </div>

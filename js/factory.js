@@ -154,6 +154,11 @@ angular.module('root')
                 method: 'GET',
                 url: "/core/rest/user/logout",
                 isArray: false
+            },
+            fbLoginLink: {
+                method: 'GET',
+                url: "/core/rest/facebook/login",
+                isArray: false
             }
         })
     });

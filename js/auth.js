@@ -39,10 +39,13 @@ angular.module('root')
                     $scope.data.user = null;
                     if (res.data) {
                         $scope.data.user = res.data;
-                    }else{
-                        FB.getLoginStatus(function(response) {
-                            console.log("getLoginStatus",response);
-                        });
+                    }
+                });
+            },
+            loginFB: function () {
+                AuthFactory.fbLoginLink().$promise.then(function(res){
+                    if(res.data){
+                        location.href=res.data;
                     }
                 });
             }

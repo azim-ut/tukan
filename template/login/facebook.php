@@ -1,5 +1,5 @@
-<? include_once __DIR__ . "/../nav/start.php" ?>
+<? include_once __DIR__ . "/../nav/start_empty.php" ?>
 
-Dashboard
+Facebook logged
 
-<? include_once __DIR__ . "/../nav/footer.php" ?>
+<? include_once __DIR__ . "/../nav/footer_empty.php" ?>
