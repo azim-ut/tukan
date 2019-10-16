@@ -18,6 +18,11 @@
 
 <div ng-controller="AuthBlockController" ng-cloak>
 
+    <div id="SocialFooter" ng-if="!data.user">
+        <div class="fb-login-button"
+             data-width="100%" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
+    </div>
+
     <div id="MobileHeadMenu">
         <div class="userBtn pointer">
             <a data-enable="1"

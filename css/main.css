@@ -356,6 +356,8 @@ button.gender:hover{
     text-align: center; font-weight: bolder;
 }
 
+#SocialFooter{position: fixed; bottom: 50px; left: 0; right: 0; height: 50px;}
+
 .mobileHead{display: none;}
 .desktopHead{display: block;}
 

@@ -12,7 +12,7 @@ angular.module('root')
             gender: $cookies.get(genderCookieName),
             height: $cookies.get(heightCookieName),
             post: 0,
-            limit: 30,
+            limit: 18,
             offset: 0,
             tagsOn: [],
             tags: [],
