@@ -47,8 +47,10 @@ angular.module('root')
                 });
             }
         });
-
-        function fbLogged(attr) {
-            console.log("fbLogged", attr);
-        }
     });
+
+function fbLogged(attr) {
+    let $scope = angular.element('div[ng-controller="AuthBlockController"]').scope();
+    console.log("fbLogged", attr);
+    $scope.check();
+}
