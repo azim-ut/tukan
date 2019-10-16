@@ -39,8 +39,16 @@ angular.module('root')
                     $scope.data.user = null;
                     if (res.data) {
                         $scope.data.user = res.data;
+                    }else{
+                        FB.getLoginStatus(function(response) {
+                            console.log("getLoginStatus",response);
+                        });
                     }
                 });
             }
         });
+
+        function fbLogged(attr) {
+            console.log("fbLogged", attr);
+        }
     });
