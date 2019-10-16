@@ -17,8 +17,8 @@
 </div>
 
 <div ng-controller="AuthBlockController" ng-cloak>
-
-    <div id="SocialFooter" ng-if="!data.user">
+    
+    <div id="SocialFooter" ng-show="!data.user">
         <div class="fb-login-button"
              data-width="100%" data-size="large"
              data-button-type="continue_with"
