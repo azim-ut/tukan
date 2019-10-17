@@ -19,29 +19,26 @@ $expiresIn   = ParamsManager::getParam("expires_in");
 
 /** got code, but still has no access_token */
 if(!$user && $state === SessionManager::id() && $code != null && $accessToken == null){
-    SessionManager::set("code", $code);
-    $checkTokenPath = FacebookConstants::getTokenPath($appID, $appSecret, $code, $redirectUrl);
-    header("Location: " . $checkTokenPath);
-    return;
-}
-
-/** got access_token and */
-if(!$user && $state === SessionManager::id() && $code === null && $accessToken != null){
-    $code           = SessionManager::get("code");
-    $checkTokenPath = FacebookConstants::checkTokenPath($code, $accessToken);
-    $content = file_get_contents($checkTokenPath);
+    $getTokenPath = FacebookConstants::getTokenPath($appID, $appSecret, $code, $redirectUrl);
+    $content = file_get_contents($getTokenPath);
     FacebookAuthService::getInstance()->log($content);
     $res = json_decode($content);
-    if(boolval($res->is_valid)){
-        echo "Done!";
-    }else{
-        echo "Fail";
+    $accessToken = $res->access_token??null;
+
+    /** got access_token and */
+    if($code != null && $accessToken != null){
+        $checkTokenPath = FacebookConstants::getTokenDebugPath($code, $accessToken);
+        $content = file_get_contents($checkTokenPath);
+        FacebookAuthService::getInstance()->log($content);
+        $res = json_decode($content);
+        if(boolval($res->is_valid)){
+            echo "Done!";
+        }else{
+            echo "Fail";
+        }
     }
 }
 
-if($state === SessionManager::id() && $code != null){
-    FacebookConstants::getTokenPath($appID, $appSecret, $code, $redirectUrl);
-}
 ?>
     <div class="row">
         <div class="col-xs-2">&nbsp;</div>
