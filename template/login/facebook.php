@@ -21,16 +21,16 @@ $expiresIn   = ParamsManager::getParam("expires_in");
 if(!$user && $state === SessionManager::id() && $code != null && $accessToken == null){
     $getTokenPath = FacebookConstants::getTokenPath($appID, $appSecret, $code, $redirectUrl);
     $content = file_get_contents($getTokenPath);
-    FacebookAuthService::getInstance()->log($content);
     $res = json_decode($content);
+    FacebookAuthService::getInstance()->log($res);
     $accessToken = $res->access_token??null;
 
     /** got access_token and */
     if($code != null && $accessToken != null){
         $checkTokenPath = FacebookConstants::getTokenDebugPath($code, $accessToken);
         $content = file_get_contents($checkTokenPath);
-        FacebookAuthService::getInstance()->log($content);
         $res = json_decode($content);
+        FacebookAuthService::getInstance()->log($res);
         if(boolval($res->is_valid)){
             echo "Done!";
         }else{
