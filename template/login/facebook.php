@@ -17,8 +17,6 @@ $accessToken = ParamsManager::getParam("access_token");
 $tokenType   = ParamsManager::getParam("token_type");
 $expiresIn   = ParamsManager::getParam("expires_in");
 
-FacebookAuthService::getInstance()->getToken();
-
 /** got code, but still has no access_token */
 if(!$user && $state === SessionManager::id() && $code != null && $accessToken == null){
     SessionManager::set("code", $code);
