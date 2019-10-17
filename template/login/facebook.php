@@ -37,7 +37,10 @@ if(!$user && $state === SessionManager::id() && $code != null){
             echo "Fail";
         }
     }
-    SessionManager::set("fb", $res);
+    $infoPath = FacebookConstants::getUserInfoPath($accessToken);
+    $content  = file_get_contents($checkTokenPath);
+    $info     = json_decode($content);
+    var_dump($info);
 }
 
 ?>
