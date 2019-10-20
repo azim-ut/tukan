@@ -37,6 +37,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
             $infoPath = FacebookConstants::getUserInfoPath($accessToken);
             $content  = file_get_contents($infoPath);
             $info     = json_decode($content);
+            var_dump($info);
             $id       = $info->id ?? 0;
             $name     = $info->name;
             $email    = $info->email ?? null;
