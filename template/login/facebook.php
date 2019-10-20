@@ -36,6 +36,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
         $content        = file_get_contents($checkTokenPath);
         $res            = json_decode($content);
         var_dump($res);
+        echo 1;
         FacebookAuthService::getInstance()->log($res);
         if(boolval($res->is_valid)){
             $infoPath = FacebookConstants::getUserInfoPath($accessToken);
