@@ -19,7 +19,7 @@ $token       = ParamsManager::getParam("token");
 $tokenType   = ParamsManager::getParam("token_type");
 $expiresIn   = ParamsManager::getParam("expires_in");
 
-var_dump($_GET);
+
 /** got code, but still has no access_token */
 if(!$user && $state === SessionManager::id() && $code != null){
     $getTokenPath = FacebookConstants::getTokenPath($appID, $appSecret, $code, $redirectUrl);
@@ -30,7 +30,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
 
     /** got access_token and */
     if($code != null && $appSecret != null){
-        $checkTokenPath = FacebookConstants::getTokenDebugPath($appSecret, $accessToken);
+        $checkTokenPath = FacebookConstants::getTokenDebugPath($code, $accessToken);
         var_dump($checkTokenPath);
         echo "<hr/>";
         $content = file_get_contents($checkTokenPath);
