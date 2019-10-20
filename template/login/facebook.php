@@ -1,4 +1,6 @@
-<? use core\manager\ParamsManager;
+<? use core\exception\BadResultException;
+use core\exception\NoUserException;
+use core\manager\ParamsManager;
 use core\manager\SessionManager;
 use core\manager\UserManager;
 use core\service\App;
@@ -32,17 +34,25 @@ if(!$user && $state === SessionManager::id() && $code != null){
         $res            = json_decode($content);
         FacebookAuthService::getInstance()->log($res);
         if(boolval($res->is_valid)){
-            echo "Done!";
+            $infoPath = FacebookConstants::getUserInfoPath($accessToken);
+            $content  = file_get_contents($infoPath);
+            $info     = json_decode($content);
+            $id       = $info->id ?? 0;
+            $name     = $info->name;
+            $email    = $info->email ?? null;
+            try{
+                $user = UserManager::facebook($info->id);
+                FacebookAuthService::getInstance()->appendToSession(SessionManager::id(), $user->getId(), $token, $accessToken);
+                header("Location:/");
+            }catch(BadResultException $e){
+
+            }catch(NoUserException $e){
+
+            }
         }else{
             echo "Fail";
         }
     }
-    $infoPath = FacebookConstants::getUserInfoPath($accessToken);
-    echo "<br/>".$infoPath."<br/>";
-    $content  = file_get_contents($infoPath);
-    $info     = json_decode($content);
-    FacebookAuthService::getInstance()->log($info);
-    var_dump($info);
 }
 
 ?>
