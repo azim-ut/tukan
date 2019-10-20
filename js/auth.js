@@ -46,7 +46,7 @@ angular.module('root')
                 AuthFactory.fbLoginLink().$promise.then(function (res) {
                     if (res.data) {
                         console.log(res.data);
-                        location.href = res.data;
+                        // location.href = res.data;
                     }
                 });
             }
