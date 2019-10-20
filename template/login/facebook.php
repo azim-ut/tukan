@@ -19,7 +19,6 @@ $token       = ParamsManager::getParam("token");
 $tokenType   = ParamsManager::getParam("token_type");
 $expiresIn   = ParamsManager::getParam("expires_in");
 
-var_dump($user);
 
 /** got code, but still has no access_token */
 if(!$user && $state === SessionManager::id() && $code != null){
@@ -41,9 +40,9 @@ if(!$user && $state === SessionManager::id() && $code != null){
             $content  = file_get_contents($infoPath);
             $info     = json_decode($content);
             var_dump($info);
-            $id       = $info->id ?? 0;
-            $name     = $info->name;
-            $email    = $info->email ?? null;
+            $id    = $info->id ?? 0;
+            $name  = $info->name;
+            $email = $info->email ?? null;
             try{
                 $user = UserManager::facebook($info->id);
                 FacebookAuthService::getInstance()->appendToSession(SessionManager::id(), $user->getId(), $token, $accessToken);
@@ -57,6 +56,8 @@ if(!$user && $state === SessionManager::id() && $code != null){
             echo "Fail";
         }
     }
+}else{
+    var_dump($user, $state, SessionManager::id(), $code);
 }
 
 ?>
