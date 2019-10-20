@@ -33,9 +33,9 @@ if(!$user && $state === SessionManager::id() && $code != null){
         $checkTokenPath = FacebookConstants::getTokenDebugPath($appSecret, $accessToken);
         var_dump($checkTokenPath);
         echo "<hr/>";
-        $content        = file_get_contents($checkTokenPath);
+        $content = file_get_contents($checkTokenPath);
         var_dump($content);
-        $res            = json_decode($content);
+        $res = json_decode($content);
         FacebookAuthService::getInstance()->log($res);
         if(boolval($res->is_valid)){
             $infoPath = FacebookConstants::getUserInfoPath($accessToken);
@@ -57,7 +57,11 @@ if(!$user && $state === SessionManager::id() && $code != null){
         }else{
             echo "Fail";
         }
-    }else{echo "-";}
+    }else{
+        echo "-";
+    }
+}else{
+    var_dump($user, $state, SessionManager::id(), $code);
 }
 
 ?>
