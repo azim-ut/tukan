@@ -30,7 +30,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
 
     /** got access_token and */
     if($code != null && $appSecret != null){
-        $checkTokenPath = FacebookConstants::getTokenDebugPath($accessToken, $code);
+        $checkTokenPath = FacebookConstants::getTokenDebugPath($code, $accessToken);
         var_dump($checkTokenPath);
         echo "<hr/>";
         $content = file_get_contents($checkTokenPath);
