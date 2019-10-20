@@ -45,9 +45,9 @@ if(!$user && $state === SessionManager::id() && $code != null){
                 FacebookAuthService::getInstance()->appendToSession(SessionManager::id(), $user->getId(), $token, $accessToken);
                 header("Location:/");
             }catch(BadResultException $e){
-
+                var_dump($e);
             }catch(NoUserException $e){
-
+                var_dump($e);
             }
         }else{
             echo "Fail";
