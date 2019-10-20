@@ -19,7 +19,7 @@ $token       = ParamsManager::getParam("token");
 $tokenType   = ParamsManager::getParam("token_type");
 $expiresIn   = ParamsManager::getParam("expires_in");
 
-
+var_dump($_GET);
 /** got code, but still has no access_token */
 if(!$user && $state === SessionManager::id() && $code != null){
     $getTokenPath = FacebookConstants::getTokenPath($appID, $appSecret, $code, $redirectUrl);
