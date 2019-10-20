@@ -25,6 +25,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
     $getTokenPath = FacebookConstants::getTokenPath($appID, $appSecret, $code, $redirectUrl);
     echo $getTokenPath;
     $content      = file_get_contents($getTokenPath);
+    var_dump($content);
     echo "1<hr/>";
     $res          = json_decode($content);
     echo "2<hr/>";
