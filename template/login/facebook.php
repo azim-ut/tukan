@@ -61,6 +61,8 @@ if(!$user && $state === SessionManager::id() && $code != null){
         }else{
             echo "Fail";
         }
+    }else{
+        var_dump("code: ", $code, "token: ", $token);
     }
 }else{
     var_dump($user, $state, SessionManager::id(), $code);
