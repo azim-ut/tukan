@@ -32,7 +32,7 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
 
 
         <div class="row"
-             style="background: #c3cc36 url(/web/img/stars_bg.png) repeat-x 0 center; padding: 0;"
+             style="background: #ccc url(/web/img/stars_bg.png) repeat-x 0 center; padding: 0;"
              ng-if="true" id="CatalogFilter">
             <div class="col-xs-4 bannerFilter" style="background-color: #fff; position: relative;">
                 <div class="height tool" data-toggle="modal" data-target="#CatalogFilterModal">
