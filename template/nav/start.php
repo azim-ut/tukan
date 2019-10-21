@@ -26,7 +26,8 @@
                 <span class="icon-user"></span>
             </a>
             <a href="/my"
-               ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold;">
+               class="toMy"
+               ng-if="data.user" style="margin-left: 15px; font-size: 120%; font-weight: bold;">
                 {{data.user.name.charAt(0)}}
             </a>
         </div>
@@ -68,6 +69,7 @@
                         </a>
 
                         <a href="/my"
+                           class="toMy"
                            ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold;">
                             {{data.user.name.charAt(0)}}
                         </a>
