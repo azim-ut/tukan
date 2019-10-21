@@ -66,9 +66,10 @@
                            data-target="#AuthForm">
                             <span class="icon-user"></span>
                         </a>
-                        <a ng-click="logout()"
-                           ng-if="data.user" style="margin-left: 15px;">
-                            <span class="icon-logout"></span>
+
+                        <a href="/user"
+                           ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold;">
+                            {{data.user.name.charAt(0)}}
                         </a>
                     </li>
                     <li class="cartHeadBtn"><a href="/cart">
