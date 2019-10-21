@@ -32,6 +32,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
     if($code != null && SessionManager::id() === $state && $appSecret != null){
         $checkTokenPath = FacebookConstants::getCodeDebugPath($accessToken, $accessToken);
         $content = file_get_contents($checkTokenPath);
+        $res = json_decode($content);
         if(boolval($res->data->is_valid??false)){
             $infoPath = FacebookConstants::getUserInfoPath($accessToken);
             $content  = file_get_contents($infoPath);
