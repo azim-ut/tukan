@@ -356,6 +356,7 @@ button.gender:hover{
     text-align: center; font-weight: bolder;
 }
 
+
 #SocialFooter{position: fixed; bottom: 50px; left: 0; right: 0; height: 50px;}
 
 .mobileHead{display: none;}
@@ -367,7 +368,35 @@ button.gender:hover{
 .nasa-single-product-scroll{margin-top: 0px;}
 .product-gallery .images{margin-bottom: 0;}
 
+.bannerFilter{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 180px;
+}
+
+.bannerFilter .fbLogin{
+    position: absolute; right: -40px; top: 50px;
+    background: #275d8c; border-radius: 50%; width: 80px; height: 80px; text-align: center; line-height: 80px; color: #fff; font-size: 160%; border: #fff 5px solid;
+}
+
+#CatalogFilter{
+    background: #fff;
+    overflow: hidden;
+}
+
+.headGreatingBar h1{
+    color: #333; font-weight: bolder; font-size: 200%; vertical-align: middle; padding-top: 120px;
+}
+
 @media screen and (max-width: 700px){
+    .bannerFilter{
+        padding-top: 0px; height: 100px;
+    }
+
+    .bannerFilter .fbLogin{
+        width: 40px; height: 40px; line-height: 40px; top: 30px; right: -18px
+    }
+
     #CatalogFilter{
         position: fixed; width: 100%; bottom: 0; right: 0; left: 0; z-index: 100; background: #fff; border-top: #ccc 1px solid; padding: 5px 0 5px 0;
     }

@@ -111,7 +111,7 @@
     </nav>
 </div>
 <a id="start"></a>
-<div id="header-content" class="site-header" style="min-height: 90px;">
+<div id="header-content" class="site-header" style="min-height: 51px;">
 
 </div>
 <? include_once __DIR__ . "/auth.php" ?>
