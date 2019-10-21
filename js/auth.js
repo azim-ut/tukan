@@ -43,9 +43,10 @@ angular.module('root')
                 });
             },
             loginFB: function () {
-                AuthFactory.fbLoginLink().$promise.then(function(res){
-                    if(res.data){
-                        location.href=res.data;
+                AuthFactory.fbLoginLink().$promise.then(function (res) {
+                    if (res.data) {
+                        console.log(res.data);
+                        location.href = res.data;
                     }
                 });
             }

@@ -1,4 +1,6 @@
-<? use core\manager\ParamsManager;
+<? use core\exception\BadResultException;
+use core\exception\NoUserException;
+use core\manager\ParamsManager;
 use core\manager\SessionManager;
 use core\manager\UserManager;
 use core\service\App;
@@ -17,6 +19,7 @@ $token       = ParamsManager::getParam("token");
 $tokenType   = ParamsManager::getParam("token_type");
 $expiresIn   = ParamsManager::getParam("expires_in");
 
+
 /** got code, but still has no access_token */
 if(!$user && $state === SessionManager::id() && $code != null){
     $getTokenPath = FacebookConstants::getTokenPath($appID, $appSecret, $code, $redirectUrl);
@@ -26,25 +29,39 @@ if(!$user && $state === SessionManager::id() && $code != null){
     $accessToken = $res->access_token ?? null;
 
     /** got access_token and */
-    if($code != null && $token != null){
-        $checkTokenPath = FacebookConstants::getTokenDebugPath($token, $accessToken);
-        $content        = file_get_contents($checkTokenPath);
-        $res            = json_decode($content);
+    if($code != null && $appSecret != null){
+        $checkTokenPath = FacebookConstants::getTokenDebugPath($code, $accessToken);
+        $content = file_get_contents($checkTokenPath);
+        $res = json_decode($content);
+	    var_dump($res);
         FacebookAuthService::getInstance()->log($res);
-        if(boolval($res->is_valid??false)){
-            echo "Done!";
+        if(boolval($res->is_valid)){
+            $infoPath = FacebookConstants::getUserInfoPath($accessToken);
+            $content  = file_get_contents($infoPath);
+            $info     = json_decode($content);
+            var_dump($info);
+            $id    = $info->id ?? 0;
+            $name  = $info->name;
+            $email = $info->email ?? null;
+            try{
+                $user = UserManager::facebook($info->id);
+                FacebookAuthService::getInstance()->appendToSession(SessionManager::id(), $user->getId(), $token, $accessToken);
+                header("Location:/");
+            }catch(BadResultException $e){
+                var_dump($e);
+            }catch(NoUserException $e){
+                var_dump($e);
+            }
 	        exit();
         }else{
             echo "Fail";
             exit();
         }
+    }else{
+        echo "-";
     }
-    $infoPath = FacebookConstants::getUserInfoPath($accessToken);
-    echo "<br/>".$infoPath."<br/>";
-    $content  = file_get_contents($infoPath);
-    $info     = json_decode($content);
-    FacebookAuthService::getInstance()->log($info);
-    var_dump($info);
+}else{
+    var_dump($user, $state, SessionManager::id(), $code);
 }
 
 ?>
