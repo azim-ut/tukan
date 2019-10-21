@@ -9,9 +9,8 @@ if(!$user){
 	exit();
 }
 ?>
-
+1
 	<div ng-controller="AuthBlockController" ng-cloak class="nasa-single-product-scroll">
-
 
 		<div class="row">
 			<div class="col-xs-1">
@@ -29,11 +28,12 @@ if(!$user){
 			<div class="col-xs-7 margin-bottom-30">
 				{{data.user.name}}
 			</div>
+
 			<div class="col-xs-1">
 			</div>
 		</div>
 	</div>
-
+2
 
 
 <? include_once __DIR__ . "/nav/footer.php" ?>
