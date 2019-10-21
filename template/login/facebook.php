@@ -41,7 +41,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
             $name  = $info->name;
             $email = $info->email ?? null;
             try{
-                $user = UserManager::facebook($info->id);
+                $user = UserManager::facebook($info->id, $email, $name);
                 FacebookAuthService::getInstance()->appendToSession(SessionManager::id(), $user->getId(), $token, $accessToken);
                 header("Location:/");
             }catch(BadResultException $e){
