@@ -29,17 +29,13 @@ if(!$user && $state === SessionManager::id() && $code != null){
     $accessToken = $res->access_token ?? null;
 
     /** got access_token and */
-    if($code != null && $appSecret != null){
+    if($code != null && SessionManager::id() === $state && $appSecret != null){
         $checkTokenPath = FacebookConstants::getCodeDebugPath($accessToken, $accessToken);
         $content = file_get_contents($checkTokenPath);
-	    var_dump($content);
-        $res = json_decode($content);
-        FacebookAuthService::getInstance()->log($res);
-        if(boolval($res->is_valid)){
+        if(boolval($res->data->is_valid??false)){
             $infoPath = FacebookConstants::getUserInfoPath($accessToken);
             $content  = file_get_contents($infoPath);
             $info     = json_decode($content);
-            var_dump($info);
             $id    = $info->id ?? 0;
             $name  = $info->name;
             $email = $info->email ?? null;
