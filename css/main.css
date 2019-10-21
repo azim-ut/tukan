@@ -392,7 +392,7 @@ button.gender:hover{
     .bannerFilter{
         padding-top: 0px; height: 100px;
     }
-
+    .subFooter{margin-bottom: 120px;}
     .bannerFilter .fbLogin{
         width: 40px; height: 40px; line-height: 40px; top: 30px; right: -18px
     }
