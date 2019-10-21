@@ -22,7 +22,7 @@ $expiresIn   = ParamsManager::getParam("expires_in");
 
 /** got code, but still has no access_token */
 if(!$user && $state === SessionManager::id() && $code != null){
-    $getTokenPath = FacebookConstants::getTokenPath($appID, $appSecret, $code, $redirectUrl);
+    $getTokenPath = FacebookConstants::changeCodeToAccessTokenPath($appID, $appSecret, $code, $redirectUrl);
     $content      = file_get_contents($getTokenPath);
     $res          = json_decode($content);
     FacebookAuthService::getInstance()->log($res);
@@ -30,7 +30,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
 
     /** got access_token and */
     if($code != null && $appSecret != null){
-        $checkTokenPath = FacebookConstants::getTokenDebugPath($code, $accessToken);
+        $checkTokenPath = FacebookConstants::getCodeDebugPath($code, $accessToken);
         $content = file_get_contents($checkTokenPath);
         $res = json_decode($content);
 	    var_dump($res);
