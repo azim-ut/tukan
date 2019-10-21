@@ -10,7 +10,7 @@ if(!$user){
 }
 ?>
 1
-	<div ng-controller="AuthBlockController" ng-cloak class="nasa-single-product-scroll">
+	<div ng-controller="AuthBlockController" ng-cloak class="nasa-single-product-scroll" ng-init="check()">
 
 		<div class="row">
 			<div class="col-xs-1">
