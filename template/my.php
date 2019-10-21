@@ -24,7 +24,7 @@ include_once __DIR__ . "/nav/start.php";
             <div class="col-xs-3">
                 &nbsp;
                 <div class="list-group">
-                    <a ng-click="logout()" class="list-group-item">Logout</a>
+                    <a href="/logout" class="list-group-item">Выйти</a>
                 </div>
             </div>
 
