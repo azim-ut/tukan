@@ -25,7 +25,7 @@
                data-target="#AuthForm">
                 <span class="icon-user"></span>
             </a>
-            <a href="/user"
+            <a href="/my"
                ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold;">
                 {{data.user.name.charAt(0)}}
             </a>
@@ -67,7 +67,7 @@
                             <span class="icon-user"></span>
                         </a>
 
-                        <a href="/user"
+                        <a href="/my"
                            ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold;">
                             {{data.user.name.charAt(0)}}
                         </a>
