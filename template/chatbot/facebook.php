@@ -43,7 +43,7 @@ $apiResponse = json_decode($content);
 $response                = new stdClass();
 $response->recipient->id = $senderID;
 $response->message->text = "Hello!";
-sendToFacebookMessage($response, $accessToken);
+//sendToFacebookMessage($response, $accessToken);
 
 function sendToFacebookMessage($data, $accessToken){
     $api_url     = 'https://graph.facebook.com/v4.0/me/messages?access_token=' . $accessToken;
