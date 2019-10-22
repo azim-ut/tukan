@@ -10,8 +10,6 @@ $hub_verify_token = null;
 $hubChallenge     = ParamsManager::getParam("hub_challenge");
 $hubVerifyToken   = ParamsManager::getParam("hub_verify_token");
 $sql              = MySqlService::getInstance();
-$inputJSON        = file_get_contents('php://input');
-FacebookChatService::getInstance()->log($_REQUEST, $inputJSON);
 if($hubChallenge){
     $challenge        = $hubChallenge;
     $hub_verify_token = $hubVerifyToken;
@@ -20,4 +18,14 @@ if($hubChallenge){
 
 if($hub_verify_token === $verify_token){
     echo $challenge;
+    exit();
 }
+
+$input = json_decode(file_get_contents('php://input'));
+
+$recipientID = ($input->entry[0]->messaging[0]->recipient->id)??-1;
+$senderID = ($input->entry[0]->messaging[0]->sender->id)??-1;
+$messageInputText = ($input->entry[0]->messaging[0]->text)??"Hi";
+
+FacebookChatService::getInstance()->log([$recipientID, $senderID, $messageInputText]);
+
