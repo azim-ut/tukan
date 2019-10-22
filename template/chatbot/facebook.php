@@ -4,7 +4,7 @@ use core\manager\ParamsManager;
 use core\service\FacebookChatService;
 use core\service\MySqlService;
 
-$access_token     = "EAAGipka04bgBALkxrZB8qhg3JLHfRq5D8wMtZCsj0XVxTfTZBr9YFxNfI19Ka0bTlVrA3dY6hUO91WuNpBpGY5OPKgIOCY4hfuccYuZAt5bcjXTvuouMWcD4ZC4ZCN6nzfnZCguRkeSoZCv1GJIbsv6lhqYEd6Lbga3AZCVsPoRQQ5fQmN6jZCKeD9";
+$accessToken      = "EAAGipka04bgBALkxrZB8qhg3JLHfRq5D8wMtZCsj0XVxTfTZBr9YFxNfI19Ka0bTlVrA3dY6hUO91WuNpBpGY5OPKgIOCY4hfuccYuZAt5bcjXTvuouMWcD4ZC4ZCN6nzfnZCguRkeSoZCv1GJIbsv6lhqYEd6Lbga3AZCVsPoRQQ5fQmN6jZCKeD9";
 $verify_token     = "fb_time_bot";
 $hub_verify_token = null;
 $hubChallenge     = ParamsManager::getParam("hub_challenge");
@@ -29,3 +29,14 @@ $messageInputText = ($input->entry[0]->messaging[0]->message->text)??"Hi";
 
 FacebookChatService::getInstance()->log([$recipientID, $senderID, $messageInputText]);
 
+
+//Send sender action to Facebook Messenger - typing on
+$response = new stdClass();
+$response->recipient->id = $senderID;
+$response->sender_action = "typing_on";
+$api_url = 'https://graph.facebook.com/v4.0/me/messages?access_token=' . $accessToken;
+$httpHeader = ['Content-Type: application/json'];
+
+$apiResponse = json_decode(file_get_contents($api_url));
+
+FacebookChatService::getInstance()->log($apiResponse);
