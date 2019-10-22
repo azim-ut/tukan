@@ -25,7 +25,7 @@ $input = json_decode(file_get_contents('php://input'));
 
 $recipientID = ($input->entry[0]->messaging[0]->recipient->id)??-1;
 $senderID = ($input->entry[0]->messaging[0]->sender->id)??-1;
-$messageInputText = ($input->entry[0]->messaging[0]->text)??"Hi";
+$messageInputText = ($input->entry[0]->messaging[0]->message->text)??"Hi";
 
 FacebookChatService::getInstance()->log([$recipientID, $senderID, $messageInputText]);
 
