@@ -23,20 +23,21 @@ if($hub_verify_token === $verify_token){
 
 $input = json_decode(file_get_contents('php://input'));
 
-$recipientID = ($input->entry[0]->messaging[0]->recipient->id)??-1;
-$senderID = ($input->entry[0]->messaging[0]->sender->id)??-1;
-$messageInputText = ($input->entry[0]->messaging[0]->message->text)??"Hi";
+$recipientID      = ($input->entry[0]->messaging[0]->recipient->id) ?? - 1;
+$senderID         = ($input->entry[0]->messaging[0]->sender->id) ?? - 1;
+$messageInputText = ($input->entry[0]->messaging[0]->message->text) ?? "Hi";
 
 FacebookChatService::getInstance()->log([$recipientID, $senderID, $messageInputText]);
 
 
 //Send sender action to Facebook Messenger - typing on
-$response = new stdClass();
+$response                = new stdClass();
 $response->recipient->id = $senderID;
 $response->sender_action = "typing_on";
-$api_url = 'https://graph.facebook.com/v4.0/me/messages?access_token=' . $accessToken;
-$httpHeader = ['Content-Type: application/json'];
+$api_url                 = 'https://graph.facebook.com/v4.0/me/messages?access_token=' . $accessToken;
+$httpHeader              = ['Content-Type: application/json'];
 
-$apiResponse = json_decode(file_get_contents($api_url));
+$content = file_get_contents($api_url);
+FacebookChatService::getInstance()->log($content);
 
-FacebookChatService::getInstance()->log($apiResponse);
+$apiResponse = json_decode($content);
