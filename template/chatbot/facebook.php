@@ -10,8 +10,8 @@ $hub_verify_token = null;
 $hubChallenge     = ParamsManager::getParam("hub_challenge");
 $hubVerifyToken   = ParamsManager::getParam("hub_verify_token");
 $sql              = MySqlService::getInstance();
-$params           = ParamsManager::paramsToString();
-FacebookChatService::getInstance()->log($params);
+$inputJSON        = file_get_contents('php://input');
+FacebookChatService::getInstance()->log($_REQUEST, $inputJSON);
 if($hubChallenge){
     $challenge        = $hubChallenge;
     $hub_verify_token = $hubVerifyToken;
