@@ -41,7 +41,7 @@
         </div>
     </div>
 </footer>
-<div class="padding-top-10 padding-bottom-10 row margin-bottom-50">
+<div class="padding-top-10 padding-bottom-10 row subFooter">
     <div class="col-xs-6 padding-top-5 text-right small text-uppercase">
         <ul style="list-style: none;">
             <li><a href="/">На главную</a><br/></li>

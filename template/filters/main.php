@@ -30,21 +30,29 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
     <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController"
          ng-cloak>
 
-        <div class="row" ng-if="true" id="CatalogFilter" data-toggle="modal" data-target="#CatalogFilterModal">
-            <div class="col-xs-1"></div>
-            <div class="col-xs-5" style="border-right: #ccc 1px solid;">
-                <div class="height tool">
+
+        <div class="row"
+             style="background: #ccc url(/web/img/stars_bg.png) repeat-x 0 center; padding: 0;"
+             ng-if="true" id="CatalogFilter">
+            <div class="col-xs-4 bannerFilter" style="background-color: #fff; position: relative;">
+                <div class="height tool" data-toggle="modal" data-target="#CatalogFilterModal">
                     <span ng-if="!height">Рост: -</span>
                     <span ng-if="height"><span class="toolsTtl">Рост: </span>{{height}}cm</span>
                 </div>
+                <div data-toggle="modal" data-target="#CatalogFilterModal">
+                    <div ng-if="gender===1" class="gender boy tool"></div>
+                    <div ng-if="gender===2" class="gender girl tool"></div>
+                    <div ng-if="gender===3 || gender==0" class="gender girl_boy tool"></div>
+                </div>
+                <a class="fbLogin pull-right" href="https://www.facebook.com/Tukantallinn" target="_blank">
+                    <i class="icon-social-facebook"></i>
+                </a>
             </div>
-            <div class="col-xs-5">
-                <div ng-if="gender===1" class="gender boy tool"></div>
-                <div ng-if="gender===2" class="gender girl tool"></div>
-                <div ng-if="gender===3 || gender==0" class="gender girl_boy tool"></div>
+            <div class="col-xs-8 text-right headGreatingBar">
+<!--                <h1>Приятных покупок!</h1>-->
             </div>
-            <div class="col-xs-1"></div>
         </div>
+
         <div class="row">
             <div class="nasa-col large-12 columns right">
                 <div class="wpb_wrapper">

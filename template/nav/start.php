@@ -26,7 +26,8 @@
                 <span class="icon-user"></span>
             </a>
             <a href="/my"
-               ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold;">
+               class="toMy"
+               ng-if="data.user" style="margin-left: 15px; font-size: 120%; font-weight: bold;">
                 {{data.user.name.charAt(0)}}
             </a>
         </div>
@@ -68,6 +69,7 @@
                         </a>
 
                         <a href="/my"
+                           class="toMy"
                            ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold;">
                             {{data.user.name.charAt(0)}}
                         </a>
@@ -111,7 +113,7 @@
     </nav>
 </div>
 <a id="start"></a>
-<div id="header-content" class="site-header" style="min-height: 90px;">
+<div id="header-content" class="site-header" style="min-height: 51px;">
 
 </div>
 <? include_once __DIR__ . "/auth.php" ?>
