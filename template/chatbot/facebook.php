@@ -32,11 +32,11 @@ FacebookChatService::getInstance()->log([$recipientID, $senderID, $messageInputT
 
 
 //Send sender action to Facebook Messenger - typing on
-$response                    = [];
-$response["recipient"]["id"] = $senderID;
-$response["sender_action"]   = "typing_on";
-$api_url                     = 'https://graph.facebook.com/v4.0/me/messages?access_token=' . $accessToken;
-$httpHeaders                 = ['Content-Type: application/json'];
+$response                = new stdClass();
+$response->recipient->id = $senderID;
+$response->sender_action = "typing_on";
+$api_url                 = 'https://graph.facebook.com/v4.0/me/messages?access_token=' . $accessToken;
+$httpHeaders             = ['Content-Type: application/json'];
 FacebookChatService::getInstance()->log(json_encode($response));
 $content = ServerUtils::curlPost($api_url, json_encode($response), $httpHeaders);
 FacebookChatService::getInstance()->log($content);
