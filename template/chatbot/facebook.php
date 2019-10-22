@@ -28,7 +28,7 @@ $input = json_decode(file_get_contents('php://input'));
 $recipientID      = ($input->entry[0]->messaging[0]->recipient->id) ?? - 1;
 $senderID         = ($input->entry[0]->messaging[0]->sender->id) ?? - 1;
 $messageInputText = ($input->entry[0]->messaging[0]->message->text) ?? null;
-if(StringUtils::isEmpty($messageInputText)){
+if(StringUtils::isEmpty($messageInputText) || strtolower($messageInputText) != "test"){
     exit();
 }
 FacebookChatService::getInstance()->log([$recipientID, $senderID, $messageInputText]);
