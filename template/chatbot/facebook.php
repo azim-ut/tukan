@@ -27,7 +27,9 @@ $input = json_decode(file_get_contents('php://input'));
 $recipientID      = ($input->entry[0]->messaging[0]->recipient->id) ?? - 1;
 $senderID         = ($input->entry[0]->messaging[0]->sender->id) ?? - 1;
 $messageInputText = ($input->entry[0]->messaging[0]->message->text) ?? "Hi";
-
+if(!$messageInputText){
+    exit();
+}
 FacebookChatService::getInstance()->log([$recipientID, $senderID, $messageInputText]);
 
 
@@ -43,7 +45,7 @@ $apiResponse = json_decode($content);
 $response                = new stdClass();
 $response->recipient->id = $senderID;
 $response->message->text = "Hello!";
-//sendToFacebookMessage($response, $accessToken);
+sendToFacebookMessage($response, $accessToken);
 
 function sendToFacebookMessage($data, $accessToken){
     $api_url     = 'https://graph.facebook.com/v4.0/me/messages?access_token=' . $accessToken;
