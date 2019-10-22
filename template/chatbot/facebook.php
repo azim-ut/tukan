@@ -35,10 +35,20 @@ FacebookChatService::getInstance()->log([$recipientID, $senderID, $messageInputT
 $response                = new stdClass();
 $response->recipient->id = $senderID;
 $response->sender_action = "typing_on";
-$api_url                 = 'https://graph.facebook.com/v4.0/me/messages?access_token=' . $accessToken;
-$httpHeaders             = ['Content-Type: application/json'];
-FacebookChatService::getInstance()->log(json_encode($response));
-$content = ServerUtils::curlPost($api_url, json_encode($response), $httpHeaders);
-FacebookChatService::getInstance()->log($content);
 
+sendToFacebookMessage($response, $accessToken);
 $apiResponse = json_decode($content);
+
+//Send message
+$response                = new stdClass();
+$response->recipient->id = $senderID;
+$response->message->text = "Hello!";
+sendToFacebookMessage($response, $accessToken);
+
+function sendToFacebookMessage($data, $accessToken){
+    $api_url     = 'https://graph.facebook.com/v4.0/me/messages?access_token=' . $accessToken;
+    $httpHeaders = ['Content-Type: application/json'];
+//    FacebookChatService::getInstance()->log(json_encode($data));
+    $content = ServerUtils::curlPost($api_url, json_encode($data), $httpHeaders);
+    FacebookChatService::getInstance()->log($content);
+}
