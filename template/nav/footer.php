@@ -15,7 +15,7 @@
         <div class="col-xs-6">
             &nbsp;
         </div>
-        <div class="col-xs-6 text-right" style="line-height: 20px;">
+        <div class="col-xs-6 text-right" style="line-height: 20px; font-size: 140%;">
             <table>
                 <tr>
                     <td>
@@ -27,7 +27,7 @@
                         2-й этаж, бокс 24
                         <br/>
                         <br/>
-                        <i class="glyphicon glyphicon-phone"></i> <a href="tel:+37258347178">(372) 5818 5225</a>
+                        <b><i class="glyphicon glyphicon-phone"></i> <a href="tel:+37258347178" style="color: white;">(372) 5818 5225</a></b>
                         <br/>
                         <br/>
                     </td>

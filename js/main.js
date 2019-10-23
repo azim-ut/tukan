@@ -39,6 +39,22 @@ angular.module('root')
                 tag.on = true;
                 $scope.resetPosts();
             },
+            backList: function () {
+                let temp = $scope.offset;
+                temp -= $scope.limit;
+                console.log(temp);
+                if (temp >= 0) {
+                    $scope.resetPosts(temp);
+                }
+            },
+            forwardList: function () {
+                let temp = $scope.offset;
+                temp += $scope.limit;
+                console.log($scope.offset, temp);
+                if (temp <= $scope.pages.length * $scope.limit) {
+                    $scope.resetPosts(temp);
+                }
+            },
             resetPosts: function (offset) {
                 if (!offset) {
                     offset = 0;
@@ -48,7 +64,6 @@ angular.module('root')
                 if ($scope.useFilter) {
                     tags = updateTags();
                 }
-
                 let obj = {'tags[]': tags, offset: offset, limit: $scope.limit};
                 let p = $httpParamSerializer(obj);
                 $scope.data.process = true;
@@ -57,6 +72,7 @@ angular.module('root')
                     $scope.pages = res.data.pages;
                     $scope.total = res.data.total;
                     $scope.posts = res.data.list;
+                    $scope.offset = res.data.offset;
                     $scope.fetched = true;
                     $scope.gender = $scope.genderTemp = res.data.gender;
                     $scope.height = $scope.heightTemp = res.data.height;

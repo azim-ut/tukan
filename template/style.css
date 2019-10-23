@@ -12317,8 +12317,10 @@ del .amount {
   position: relative;
   display: block;
   margin: 10px 0 20px 0;
-  border: #b9c5c2 1px dashed;
-  border-radius: 12px;
+  border: none;
+  border-right: #b9c5c2 1px solid;
+  border-bottom: #b9c5c2 1px solid;
+  border-radius: 0px;
   overflow: hidden;
 }
 .product-item h5 {
@@ -12350,18 +12352,13 @@ del .amount {
 .product-item .heart {
   color: #989898;
   font-size: 150%;
-  border-radius: 50%;
-  border: #f1e5e5 5px solid;
-  width: 70px;
-  height: 70px;
   padding: 5px 0 0;
-  margin-top: -40px;
   outline: none;
   background: #fff;
 }
 
 .product-item .cart{
-  border: #FFA500 5px solid;
+  border: transparent 5px solid;
   color: #FFA500;
   font-size: 150%;
   font-weight: 700;
@@ -12387,6 +12384,7 @@ del .amount {
   color: #fffd0a !important;
   border: #333 3px solid;
 }
+.product-item .heart:hover,
 .product-item .cart:hover{
   border: #A86D00 5px solid;
 }
@@ -13074,11 +13072,13 @@ del .amount {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  padding: 5px;
+  background: #fff;
 }
 .product-img .main-img {
   display: block;
   width: auto;
-  height: 340px;
+  height: 200px;
   overflow: hidden;
 }
 .product-img .main-img img {

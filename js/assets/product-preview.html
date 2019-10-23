@@ -2,8 +2,8 @@
      style="visibility: visible; animation-duration: 1s; animation-delay: 0ms; animation-name: fadeInUp;">
     <div class="inner-wrap">
         <div class="product-outner">
-            <div class="product-inner" style="position: relative;">
-                <div class="product-img-wrap">
+            <div class="product-inner" style="position: relative; background: #fff;">
+                <div class="product-img-wrap" style="background: #ccc; overflow:hidden;">
                     <div class="product-img-wrap-inner">
                         <div class="product-img" style="position: relative;">
                             <div style="height: 50px; position: absolute; right: 0px; z-index: 2;">
@@ -12,14 +12,16 @@
                             <a href="/product/{{id}}"
                                title="{{title}}">
                                 <div class="main-img"
-                                     style="background: transparent url({{img}}) no-repeat center center/cover">
+                                     style="background: transparent url({{img}}) no-repeat center center/contain">
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
-                <cart-button product="{{id}}" price="{{price}}" style="position: absolute; right: 10px; bottom: 10px;"></cart-button>
-                <wish-button product="{{id}}" title="{{title}}" style="position: absolute; left: 10px; bottom: 5px;"></wish-button>
+                <div style="border-top: #eaeaea 1px solid; margin: 0 10px; overflow: hidden;">
+                    <wish-button product="{{id}}" title="{{title}}" class="pull-left"></wish-button>
+                    <cart-button product="{{id}}" price="{{price}}" class="pull-right"></cart-button>
+                </div>
 
 
                 <!-- Clone Group btns for layout List -->
