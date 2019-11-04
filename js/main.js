@@ -18,6 +18,9 @@ angular.module('root')
             tags: [],
             wishes: [],
             posts: [],
+            showFilterModal: function(){
+                $("#CatalogFilterModal").modal("show");
+            },
             updateFilter: function (heightVal, genderVal) {
                 if (heightVal !== undefined) {
                     $cookies.put(heightCookieName, heightVal, {path: "/"});

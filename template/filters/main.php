@@ -37,7 +37,7 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
 
                 <div class="col-xs-4 padding-top-15"
                      style="font-size: 140%;">
-                    <div class="height tool" data-toggle="modal" data-target="#CatalogFilterModal">
+                    <div class="height tool" ng-click="showFilterModal()">
                         <span ng-if="!height">Рост: -</span>
                         <span ng-if="height"><span class="toolsTtl">Рост: </span>{{height}}cm</span>
                     </div>
@@ -55,7 +55,7 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
                 </div>
             </div>
             <div class="col-xs-4 text-right padding-top-10" style="font-size: 80%;">
-                <div class="tool" data-toggle="modal" data-target="#CatalogFilterModal">
+                <div class="tool" ng-click="showFilterModal()">
                     <div ng-if="gender === 2">Для девочек</div>
                     <div ng-if="gender === 1">Для мальчиков</div>
                     <div ng-if="gender === 3 || gender === 0">Для мальчиков и девочек</div>
