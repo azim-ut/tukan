@@ -14,7 +14,7 @@ try{
 include_once __DIR__ . "/nav/start.php";
 
 ?>
-    <div ng-controller="AuthBlockController" ng-cloak class="nasa-single-product-scroll">
+    <div ng-controller="AuthBlockController" ng-cloak class="nasa-single-product-scroll HeadContentPage">
 
         <div class="row">
             <div class="col-xs-1">
@@ -22,15 +22,19 @@ include_once __DIR__ . "/nav/start.php";
             </div>
 
             <div class="col-xs-3">
-                &nbsp;
+                <div class="list-group">
+                    <a href="/cart" class="list-group-item">Корзина</a>
+                    <a href="/orders" class="list-group-item">Мои заказы</a>
+                    <a href="/addresses" class="list-group-item">Адреса доставки</a>
+                </div>
                 <div class="list-group">
                     <a href="/logout" class="list-group-item">Выйти</a>
                 </div>
             </div>
 
 
-            <div class="col-xs-7 margin-bottom-30">
-                <?=$user->name()?>
+            <div class="col-xs-7">
+                Привет, <?=$user->name()?>!
             </div>
 
             <div class="col-xs-1">

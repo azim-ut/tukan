@@ -117,6 +117,16 @@ angular.module('root')
                 },
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
+            },
+            address: {
+                method: 'POST',
+                url: "/core/rest/user/address",
+                params: {
+                    data: '@text',
+                    id:'@id'
+                },
+                isArray: false,
+                headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             }
         });
     })

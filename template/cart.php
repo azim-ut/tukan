@@ -1,12 +1,12 @@
 <? include_once __DIR__ . "/nav/start.php" ?>
     <link type="text/css" rel="stylesheet" href="/web/css/cart_empty.css?t=<?=$version?>"/>
 
-    <div ng-controller="CartListController" ng-cloak class="nasa-single-product-scroll">
+    <div ng-controller="CartListController" ng-cloak class="nasa-single-product-scroll HeadContentPage">
         <div ng-if="cart.items.length == 0" style="text-align: center;">
             <div class="emptyCart">
                 <div class="example">
                     <b class="icon icon-basket"></b>
-                    Cart is empty
+                    Корзина пуста
                 </div>
             </div>
         </div>
@@ -39,9 +39,19 @@
 
                                 <div style="border-top: #eaeaea 1px solid;">
                                     <div style="line-height: 35px;">Доставка:</div>
-                                    <textarea style="width: 100%; height: 90px; line-height: normal;"
-                                              placeholder="Адрес доставки и телефон для связи:"
-                                              ng-model="cart.address"></textarea>
+
+                                    <div ng-repeat=" row in cart.address" class="addressBlock">
+                                        {{row.data}}
+                                        <div class="btn btn-xs btn-icon-only btn-primary" ng-click="setAddress(row.id, row.data)">
+                                            <i class="glyphicon glyphicon-edit"></i>
+                                        </div>
+                                    </div>
+                                    <div class="addressBlock">
+                                        <textarea style="width: 100%; height: 90px; line-height: normal;"
+                                                  placeholder="Адрес доставки и телефон для связи:"
+                                                  ng-model="newAddress"></textarea>
+                                        <div class="btn btn-xs btn-primary btn-group-justified" ng-click="setAddress(0, newAddress)">Добавить адрес</div>
+                                    </div>
                                 </div>
 
                                 <hr style="border: none;border-top: #eaeaea 1px solid;margin: 20px 0 0;"/>

@@ -1,7 +1,7 @@
 <? include_once __DIR__ . "/nav/start.php" ?>
     <link type="text/css" rel="stylesheet" href="/web/css/wishlist_empty.css" />
 
-    <div>
+    <div class="HeadContentPage">
         <div class="row">
             <div class="large-12 columns">
                 <div ng-controller="WishesListController">

@@ -44,7 +44,7 @@ switch($post->brand){
 $heights = $post->enabledHeights();
 ?>
 
-    <div class="large-12 columns nasa-single-product-scroll nasa-single-product-2-columns"
+    <div class="large-12 columns nasa-single-product-scroll nasa-single-product-2-columns HeadContentPage"
          data-num_main="2"
          ng-controller="ProductController"
          data-num_thumb="4"
@@ -116,15 +116,17 @@ $heights = $post->enabledHeights();
                                             </div>
                                         <? } ?>
                                     </td>
-                                    <td>
+                                    <td class="text-right">
                                         <? if($post->gender === 3 || $post->gender === 1){ ?>
-                                            <div style="height: 45px; width: 40px; float: left; background: transparent url('/web/img/boy_girl.png') no-repeat center 0px;"></div>
+                                            <div style="height: 45px; width: 40px; float: right; background: transparent url('/web/img/boy_girl.png') no-repeat center 0px;"></div>
                                         <? } ?>
                                         <? if($post->gender === 3 || $post->gender === 2){ ?>
-                                            <div style="height: 45px; width: 40px; float: left; background: transparent url('/web/img/boy_girl.png') no-repeat center -55px;"></div>
+                                            <div style="height: 45px; width: 40px; float: right; background: transparent url('/web/img/boy_girl.png') no-repeat center -55px;"></div>
                                         <? } ?>
                                     </td>
-                                    <td width="30%">
+                                </tr>
+                                <tr>
+                                    <td class="text-center" colspan="2">
                                         <? if($brandSrc != null){ ?>
                                             <img src="/web/img/brands/<?=$brandSrc?>"/>
                                         <? } ?>

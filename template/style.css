@@ -3491,7 +3491,6 @@ html {
 body {
   min-height: 100%;
   overflow-y: scroll;
-  background-color: #fffdf6 !important;
 }
 body.bg-full-size {
   background-size: cover;
@@ -12370,18 +12369,17 @@ del .amount {
 
 .product-item .cart.on,
 .product-item .heart.on{
-  background-color: #ff0000;
-  color: #fff;
-  /*border-color: #464343;*/
-  border-color: #ffcc00;
+  background-color: #fff;
+  color: #ff0000;
+  border-color: transparent;
 }
 .product-item .cart.on{
   background-color: #8f8bdc;
 }
 .product-item .cart.on:hover,
 .product-item .heart.on:hover{
-  color: #fffd0a !important;
-  border: #333 3px solid;
+  color: #2e2e02 !important;
+  border: transparent 3px solid;
 }
 .product-item .heart:hover,
 .product-item .cart:hover{

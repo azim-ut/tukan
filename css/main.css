@@ -5,6 +5,16 @@
 .navbar{
     background: #fff;
 }
+*:-moz-focusring,
+*::-moz-focus-inner,
+*:focus-within,
+*:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    outline: 0;
+}
 a, a:hover, a:active, a:visited, a:focus {
     text-decoration:none;
 }
@@ -42,6 +52,10 @@ hr.line3{
     background: transparent url(/web/img/fancyline1.png) no-repeat center center/contain;
     padding: 20px 0 0 ;
     opacity: .6;
+}
+
+.addressBlock{
+    background: #eaeaea; border-radius: 7px; padding: 10px; margin-bottom: 2px;
 }
 
 .btn-icon-only.btn-circle{
@@ -451,7 +465,7 @@ footer {
     }
 
     .product-item .cart, .product-item .heart{
-        font-size: 110%; border-width: 3px;
+        font-size: 110%; border-width: 3px; border-radius: 0;
     }
 
     .product-item .heart{

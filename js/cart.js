@@ -21,6 +21,11 @@ angular.module('root')
             toProduct: function (id) {
                 location.href = "/product/" + id;
             },
+            setAddress: function (id, text) {
+                CartFactory.address({},{id: 0, text: text}).$promise.then(function (res) {
+                    $rootScope.$broadcast('updateCart', {});
+                });
+            },
             submit: function (cart) {
                 CartFactory.submit({},{address: cart.address}).$promise.then(function (res) {
                     if (res.code === 401) {
