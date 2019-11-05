@@ -12359,9 +12359,8 @@ del .amount {
 
 .product-item .cart{
   border: transparent 5px solid;
-  color: #FFA500;
+  color: #383531;
   font-size: 150%;
-  font-weight: 700;
 }
 
 .product-item .heart{
@@ -12386,7 +12385,7 @@ del .amount {
 }
 .product-item .heart:hover,
 .product-item .cart:hover{
-  border: #A86D00 5px solid;
+  border: transparent 5px solid;
 }
 .product-item .info .name {
   padding: 5px 0 10px 0;
