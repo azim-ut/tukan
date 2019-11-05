@@ -8,6 +8,7 @@
 a, a:hover, a:active, a:visited, a:focus {
     text-decoration:none;
 }
+h2{font-weight: bolder;}
 .product-item{margin: 0;}
 .navbar-header {overflow: hidden; font-size: 150%;}
 
@@ -319,14 +320,11 @@ button.gender:hover{
 }
 
 .mainLogo{
-    background: #fff url(/web/img/logo2.jpg) no-repeat center center;
+    background: #fff url(/web/img/tukan.jpg) no-repeat center 10px/contain;
     position: absolute;
-    width: 120px;
+    width: 130px;
     top: 0;
-    height: 79px;
-    border-radius: 0 0 30px 30px;
-    border-bottom: #cdcdcd 3px solid;
-    border-top: none;
+    height: 52px;
 }
 .mainLogo:hover{
     background-color: #fff;
@@ -375,13 +373,17 @@ button.gender:hover{
 #CatalogFilter{
     background: #fff; width: 500px; overflow: hidden; text-align: center; margin: 20px 0; display: inline-block; border: #ccc 1px solid;
 }
-.subFooter{
-    background: #333;
-}
+.subFooter{ background: #333; overflow: hidden;}
+.subFooter a{ color: #eaeaea; }
+.subFooter ul { display: inline-flex;  width: 100%; list-style: none;}
+.subFooter ul li{ padding: 10px 30px;}
 
 footer {
     background: #f78522 !important; color: #fff;
 }
+
+.HeadContentPage{padding: 40px 0;}
+.HeadContentPage p {margin-bottom: 10px;}
 
 .arrowPager{ background: #ccc; line-height: 26px; height: 45px; font-weight: bold; font-size: 200%; color: #fff; cursor: ponter;}
 .arrowPager:hover{ background: #f78522; color: #333;}
@@ -389,6 +391,7 @@ footer {
 .pagerFilterBlock:hover{color: #f78522;}
 
 @media screen and (max-width: 700px){
+    .HeadContentPage{padding: 70px 10px;}
     .ProductInfo{
         margin-top: 20px;
     }

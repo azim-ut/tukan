@@ -25,8 +25,7 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
 ?>
 
 
-    <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController"
-         ng-cloak>
+<div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController" ng-cloak>
     <? require "main_filters.php"?>
     <div class="row" style="border-top: #b9c5c2 1px solid; border-left: #b9c5c2 1px solid;">
         <div class="nasa-col large-12 columns right">
@@ -103,6 +102,6 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
             </form>
         </div>
     </div>
-    </div>
+</div>
 
 <? include_once __DIR__ . "/../nav/footer.php" ?>

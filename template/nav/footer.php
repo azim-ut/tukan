@@ -41,11 +41,12 @@
         </div>
     </div>
 </footer>
-<div class="padding-top-10 padding-bottom-10 row subFooter">
+<div class="padding-top-10 padding-bottom-10 subFooter" style="width: 100%;">
     <div class="col-xs-6 padding-top-5 text-right small text-uppercase">
-        <ul style="list-style: none;">
+        <ul>
             <li><a href="/">На главную</a><br/></li>
-            <li><a href="/policy">Policy</a></li>
+            <li><a href="/traderules">Правила</a></li>
+            <li><a href="/policy">Политика конфиденциальности</a></li>
         </ul>
     </div>
     <div class="col-xs-6">
