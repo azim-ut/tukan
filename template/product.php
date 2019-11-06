@@ -44,7 +44,7 @@ switch($post->brand){
 $heights = $post->enabledHeights();
 ?>
 
-    <div class="large-12 columns nasa-single-product-scroll nasa-single-product-2-columns HeadContentPage"
+    <div class="large-12 columns margin-bottom-50 nasa-single-product-scroll nasa-single-product-2-columns HeadContentPage"
          data-num_main="2"
          ng-controller="ProductController"
          data-num_thumb="4"

@@ -41,7 +41,7 @@
         </div>
     </div>
 </footer>
-<div class="padding-top-10 padding-bottom-10 subFooter" style="width: 100%;">
+<div class="padding-top-10 subFooter" style="width: 100%;">
     <div class="col-xs-6 padding-top-5 text-right small text-uppercase">
         <ul>
             <li><a href="/">На главную</a><br/></li>
@@ -50,7 +50,7 @@
         </ul>
     </div>
     <div class="col-xs-6">
-        <div class="sharethis-inline-follow-buttons" style="text-align: center;"></div>
+        <div class="sharethis-inline-follow-buttons" style="text-align: right;"></div>
     </div>
 </div>
 <!-- END MAIN FOOTER -->
