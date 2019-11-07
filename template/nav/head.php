@@ -47,6 +47,7 @@ use core\service\App; ?>
 	<script type="text/javascript">angular.module("root", ['infinite-scroll', 'ngRoute', 'ngResource', 'ngCookies']);</script>
 
 	<link rel="stylesheet" type="text/css" href="/web/css/main.css?t=<?=$version?>"/>
+	<link rel="stylesheet" type="text/css" href="/web/css/checklist.css?t=<?=$version?>"/>
     <script type="text/javascript" src="/web/js/service.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/common.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/data.js?t=<?=$version?>"></script>

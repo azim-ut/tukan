@@ -1,7 +1,7 @@
 
 <div id="fb-root"></div>
 
-<div ng-controller="AuthBlockController" ng-cloak="" ng-init="check()">
+<div ng-controller="AuthBlockController" ng-cloak="" ng-init="check()" class="no-print">
 
     <div class="modal fade" tabindex="-1" role="dialog" id="AuthForm">
         <div class="modal-dialog modal-sm" role="document">

@@ -1,0 +1,32 @@
+.checkList{
+    font-family: "Calibri Light"; font-size: 120%;
+}
+.checkList tr th{
+    vertical-align: middle !important;
+}
+.checkList tr td{
+    border-right: #ccc 1px solid;
+}
+.checkList tr:first-child td{
+    border-right: none;
+}
+.checkList tr td:nth-child(3){
+    border-left: #ccc 1px solid;
+}
+.checkList tr:last-child th,
+.checkList tr:last-child td{
+    border: none;
+    border-bottom: #ccc 1px solid;
+}
+.checkList tr td:first-child,
+.checkList tr td:last-child{
+    border-right:none;
+}
+.checkListIcon{
+    width: 1%;
+}
+.checkListIcon div{
+    width: 72px;
+    height: 72px;
+    border: #ccc 1px solid;
+}

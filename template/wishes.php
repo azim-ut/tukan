@@ -1,5 +1,5 @@
 <? include_once __DIR__ . "/nav/start.php" ?>
-    <link type="text/css" rel="stylesheet" href="/web/css/wishlist_empty.css" />
+    <link type="text/css" rel="stylesheet" href="/web/css/wishlist_empty.css"/>
 
     <div class="HeadContentPage">
         <div class="row">
@@ -14,13 +14,14 @@
                             </div>
                         </div>
 
-
-                        <div ng-repeat="row in data.wishes.list" class="col-sm-3">
-                            <product-preview id="row.id"
-                                             title="row.title"
-                                             img="row.img"
-                                             price="row.price"
-                                             fullprice="row.fullprice"></product-preview>
+                        <div style="border-top: #b9c5c2 1px solid; border-left: #b9c5c2 1px solid; overflow: hidden;">
+                            <div ng-repeat="row in data.wishes.list" class="col-sm-3" style="padding: 0;">
+                                <product-preview id="row.id"
+                                                 title="row.title"
+                                                 img="row.img"
+                                                 price="row.price"
+                                                 fullprice="row.fullprice"></product-preview>
+                            </div>
                         </div>
                         <div class="block pointer"
                              ng-repeat="row in data.wishes.list"

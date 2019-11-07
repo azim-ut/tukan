@@ -8,7 +8,7 @@
 </div>
 
 <!-- MAIN FOOTER -->
-<footer id="nasa-footer" class="footer-wrapper" style="overflow: hidden;">
+<footer id="nasa-footer" class="footer-wrapper no-print" style="overflow: hidden;">
     <br/>
     <br/>
     <div class="row" style="padding-bottom: 30px;">
@@ -41,13 +41,24 @@
         </div>
     </div>
 </footer>
-<div class="padding-top-10 subFooter" style="width: 100%;">
+<div class="padding-top-10 subFooter no-print" style="width: 100%;">
     <div class="col-xs-6 padding-top-5 text-right small text-uppercase">
-        <ul>
-            <li><a href="/">На главную</a><br/></li>
-            <li><a href="/traderules">Правила</a></li>
-            <li><a href="/policy">Политика конфиденциальности</a></li>
-        </ul>
+        <div class="row">
+            <div class="col-sm-4">
+                <h4 class="text-left text-color-white">О нас</h4>
+                <ul>
+                    <li><a href="/">На главную</a><br/></li>
+                    <li><a href="/traderules">Правила</a></li>
+                    <li><a href="/policy">Политика<br/>конфиденциальности</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h4 class="text-left text-color-white">Чеклисты</h4>
+                <ul>
+                    <li><a href="/checklist/daily">Ежедневные дела для детей</a><br/></li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div class="col-xs-6">
         <div class="sharethis-inline-follow-buttons" style="text-align: right;"></div>

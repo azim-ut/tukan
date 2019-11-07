@@ -6,8 +6,8 @@
       class="home page-template page-template-page-visual-composer page-template-page-visual-composer-php page page-id-1705 woocommerce-no-js antialiased wpb-js-composer js-comp-ver-5.5.4 vc_responsive">
 
 <a id="top"></a>
-<div ng-controller="CommonController" ng-init="fetchVisitsData()" id="HeadTop"></div>
-<div id="nasa-before-load">
+<div class="no-print" ng-controller="CommonController" ng-init="fetchVisitsData()" id="HeadTop"></div>
+<div id="nasa-before-load" class="no-print">
     <div class="nasa-relative nasa-center">
         <div class="nasa-loader">
             <div class="nasa-line"></div>
@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div ng-controller="AuthBlockController" ng-cloak>
+<div ng-controller="AuthBlockController" ng-cloak class="no-print">
     <div id="MobileHeadMenu">
         <div class="userBtn pointer">
             <a data-enable="1"
@@ -115,7 +115,7 @@
     </nav>
 </div>
 <a id="start"></a>
-<div id="header-content" class="site-header" style="min-height: 51px;">
+<div id="header-content" class="site-header no-print" style="min-height: 51px;">
 
 </div>
 <? include_once __DIR__ . "/auth.php" ?>
