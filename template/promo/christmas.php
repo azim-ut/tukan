@@ -14,12 +14,14 @@
 				<!-- THE NEW SLIDE -->
 				<!-- THE FIRST SLIDE -->
 				<li data-transition="fade"
-                    style="height: 480px;"
+                    style="height: 480px; background: #da9310;"
 				    data-slotamount="8" data-masterspeed="700"
                     data-delay="400">
 					<!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
 
-                    <div class="tp-bgimg defaultimg " data-bgcolor="undefined" style="background-repeat: no-repeat; background-image: url(&quot;/web/img/family-celebrating-christmas-D7UKJJ4_1024x768.jpg&quot;); background-size: cover; background-position: center bottom; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;" src="/web/img/family-celebrating-christmas-D7UKJJ4_1024x768.jpg"></div>
+                    <div class="tp-bgimg defaultimg "
+                         data-bgcolor="grey"
+                         style="background-repeat: no-repeat; background-image: url(/web/img/family-celebrating-christmas-D7UKJJ4_1024x768.jpg); background-size: revert; background-position: center bottom; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;" src="/web/img/family-celebrating-christmas-D7UKJJ4_1024x768.jpg"></div>
 
 					<div class="caption lft slide_title slide_item_left white_bg"
 					     style="font-size: 180%; line-height: 50px; font-weight: bold; padding: 5px 20px;"
