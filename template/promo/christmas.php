@@ -16,14 +16,15 @@
 				<li data-transition="fade"
                     style="height: 480px;"
 				    data-slotamount="8" data-masterspeed="700"
-                    data-delay="9400">
+                    data-delay="400">
 					<!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
-                    <video id="sampleMovie" width="100%" height="100%" src="/web/video/christmas-E4EVEQS.webm" autoplay style="object-fit: cover;"></video>
+
+                    <div class="tp-bgimg defaultimg " data-bgcolor="undefined" style="background-repeat: no-repeat; background-image: url(&quot;/web/img/family-celebrating-christmas-D7UKJJ4_1024x768.jpg&quot;); background-size: cover; background-position: center bottom; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;" src="/web/img/family-celebrating-christmas-D7UKJJ4_1024x768.jpg"></div>
 
 					<div class="caption lft slide_title slide_item_left white_bg"
 					     style="font-size: 180%; line-height: 50px; font-weight: bold; padding: 5px 20px;"
-					     data-x="100"
-					     data-y="105"
+					     data-x="20"
+					     data-y="255"
 					     data-speed="600"
 					     data-start="1500"
 					     data-easing="easeOutExpo">
@@ -31,8 +32,8 @@
 					</div>
 					<div class="caption lft slide_btn slide_item_left"
                          style="background: #FFA500; color: #333; font-size: 180%;"
-					     data-x="100"
-					     data-y="180"
+					     data-x="20"
+					     data-y="320"
 					     data-speed="800"
 					     data-start="1800"
 					     data-easing="easeOutExpo">
@@ -40,8 +41,8 @@
 					</div>
 					<div class="caption lft slide_btn slide_item_left"
                          style="background: #FFA500; color: #333; font-size: 180%;"
-					     data-x="100"
-					     data-y="240"
+					     data-x="20"
+					     data-y="360"
 					     data-speed="1000"
 					     data-start="2100"
 					     data-easing="easeOutExpo">
