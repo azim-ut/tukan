@@ -3,6 +3,7 @@ angular.module('root')
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         let heightCookieName = "heightFilter";
         let genderCookieName = "genderFilter";
+        let brandCookieName = "brandFilter";
 
         angular.extend($scope, {
             lastFetchInterval: null,
@@ -11,6 +12,7 @@ angular.module('root')
             useFilter: true,
             gender: $cookies.get(genderCookieName),
             height: $cookies.get(heightCookieName),
+            brand: $cookies.get(brandCookieName),
             post: 0,
             limit: 18,
             offset: 0,
@@ -18,20 +20,19 @@ angular.module('root')
             tags: [],
             wishes: [],
             posts: [],
-            showFilterModal: function(){
+            showFilterModal: function () {
                 $("#CatalogFilterModal").modal("show");
             },
-            updateFilter: function (heightVal, genderVal) {
-                if (heightVal !== undefined) {
-                    $cookies.put(heightCookieName, heightVal, {path: "/"});
+            updateFilter: function (heightVal, genderVal, brandVal) {
+                if(heightVal === undefined || genderVal === undefined || brandVal === undefined){
+                    return;
                 }
-                if (genderVal !== undefined) {
-                    $cookies.put(genderCookieName, genderVal, {path: "/"});
-                }
-                if (heightVal !== $scope.height || genderVal !== $scope.gender) {
+                $cookies.put(heightCookieName, heightVal, {path: "/"});
+                $cookies.put(genderCookieName, genderVal, {path: "/"});
+                $cookies.put(brandCookieName, brandVal, {path: "/"});
+                if (heightVal !== $scope.height || genderVal !== $scope.gender || brandVal !== $scope.brand) {
                     $scope.resetPosts();
                 }
-                $("#CatalogFilterModal").modal("hide");
             },
             clickOnTag: function (tag) {
                 $scope.tags.forEach(function (row) {
@@ -42,23 +43,12 @@ angular.module('root')
                 tag.on = true;
                 $scope.resetPosts();
             },
-            backList: function () {
-                let temp = $scope.offset;
-                temp -= $scope.limit;
-                console.log(temp);
-                if (temp >= 0) {
-                    $scope.resetPosts(temp);
+            extendList: function () {
+                if(!$scope.data.process){
+                    $scope.extendPosts($scope.posts.length);
                 }
             },
-            forwardList: function () {
-                let temp = $scope.offset;
-                temp += $scope.limit;
-                console.log($scope.offset, temp);
-                if (temp <= $scope.pages.length * $scope.limit) {
-                    $scope.resetPosts(temp);
-                }
-            },
-            resetPosts: function (offset) {
+            extendPosts: function (offset) {
                 if (!offset) {
                     offset = 0;
                 }
@@ -74,14 +64,36 @@ angular.module('root')
                     $scope.data.process = false;
                     $scope.pages = res.data.pages;
                     $scope.total = res.data.total;
+                    $scope.posts = $scope.posts.concat(res.data.list);
+                    $scope.offset = res.data.offset;
+                    $scope.fetched = true;
+                    $scope.gender = $scope.genderTemp = res.data.gender;
+                    $scope.height = $scope.heightTemp = res.data.height;
+                    $scope.brand = $scope.brandTemp = res.data.brand;
+                    console.log($scope.posts);
+                });
+            },
+            resetPosts: function (offset) {
+                if (!offset) {
+                    offset = 0;
+                }
+                let tags = [];
+
+                if ($scope.useFilter) {
+                    tags = updateTags();
+                }
+                let obj = {'tags[]': tags, offset: offset, limit: $scope.limit};
+                let p = $httpParamSerializer(obj);
+                $scope.data.process = true;
+                ViewFactory.posts(p).$promise.then(function (res) {
+                    $scope.pages = res.data.pages;
+                    $scope.total = res.data.total;
                     $scope.posts = res.data.list;
                     $scope.offset = res.data.offset;
                     $scope.fetched = true;
                     $scope.gender = $scope.genderTemp = res.data.gender;
                     $scope.height = $scope.heightTemp = res.data.height;
-                    if ($scope.heightTemp === 0) {
-                        $scope.heightTemp = undefined;
-                    }
+                    $scope.brand = $scope.brandTemp = res.data.brand;
 
                     let newHash = 'HeadTop';
                     if ($location.hash() !== newHash) {
@@ -89,6 +101,7 @@ angular.module('root')
                     } else {
                         $anchorScroll();
                     }
+                    $scope.data.process = false;
                 });
             },
 

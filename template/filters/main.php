@@ -27,7 +27,7 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
 
 <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController" ng-cloak>
     <? require "main_filters.php"?>
-    <div class="row" style="border-top: #b9c5c2 1px solid; border-left: #b9c5c2 1px solid;">
+    <div class="row margin-bottom-20" style="border-top: #b9c5c2 1px solid; border-left: #b9c5c2 1px solid;">
         <div class="nasa-col large-12 columns right">
             <div class="wpb_wrapper">
 
@@ -38,6 +38,7 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
                             <div class="large-12 columns">
 
                                 <div class="row">
+
                                     <div ng-repeat="row in posts" class="col-sm-2 col-xs-6" style="padding: 0px;">
                                         <product-preview id="row.id"
                                                          title="row.title"
@@ -65,7 +66,11 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
         </div>
     </div>
 
-    <? require "main_filters.php"?>
+    <div class="row" ng-if="total > posts.length">
+        <button class="btn btn-danger btn-group-justified margin-bottom-20" ng-click="extendList()">
+            <i class="glyphicon glyphicon-plus"></i> Еще {{total - posts.length}}
+        </button>
+    </div>
 
     <div class="modal fade" tabindex="-1" id="CatalogFilterModal" role="dialog">
         <div class="modal-dialog modal-sm" role="document">

@@ -1,39 +1,54 @@
 <?php
+
+use core\service\App;
+
+$brands  = preg_split("#,#", App::context()->settingsByName("brands") ?? "");
+$height  = [70, 76, 82, 88, 93, 98, 104, 110, 116, 122, 128, 134, 140, 146, 152];
+$genders = [0 => 'Для мальчиков и девочек', 1 => 'Для мальчиков', 2 => 'Для девочек'];
 ?>
 <div style="text-align: center;">
-	<div class="row" style="padding: 0;" id="CatalogFilter">
-		<div class="col-xs-2 padding-top-10 arrowPager text-center" ng-click="backList()">
-			<span class="bold">&lt;</span>
-		</div>
+    <div class="row padding-top-15 padding-bottom-15" style="padding: 0;">
 
-		<div class="col-xs-4 padding-top-15 pagerFilterBlock"
-		     style="font-size: 140%;">
-			<div class="height tool" ng-click="showFilterModal()">
-				<span ng-if="!height">Рост: -</span>
-				<span ng-if="height"><span class="toolsTtl">Рост: </span>{{height}}cm</span>
-			</div>
-		</div>
-		<div style="position: fixed; margin-top: -12px; left: 0; right: 0; text-align: center; display: inline-block;">
-			<div style="
-                    display: inline-block;
-                    background: #fff;
-                    padding: 2px 5px;
-                    font-size: small;
-                    border: #ccc 1px solid;
-                    class=" text-center
-			">
-			<span class="bold">c {{offset}} по {{offset + limit}} из {{total}}</span>
-		</div>
-	</div>
-	<div class="col-xs-4 text-right padding-top-10 pagerFilterBlock" style="font-size: 80%; height: 45px;">
-		<div class="tool" ng-click="showFilterModal()">
-			<div ng-if="gender === 2">Для девочек</div>
-			<div ng-if="gender === 1">Для мальчиков</div>
-			<div ng-if="gender === 3 || gender === 0">Для мальчиков и девочек</div>
-		</div>
-	</div>
-	<div class="col-xs-2 padding-top-10 arrowPager text-center" ng-click="forwardList()">
-		<span class="bold">&gt;</span>
-	</div>
-</div>
+        <div class="col-sm-3 padding-bottom-5">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Рост</span>
+                <select class="form-control" ng-model="heightTemp">
+                    <option ng-value="0">Все</option>
+                    <? foreach($height as $key => $val){ ?>
+                        <option ng-value="<?=$val?>"><?=$val?></option>
+                    <? } ?>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-3 padding-bottom-5">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Пол</span>
+                <select class="form-control" ng-model="genderTemp">
+                    <? foreach($genders as $key => $val){ ?>
+                        <option ng-value="<?=$key?>"><?=$val?></option>
+                    <? } ?>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-3 padding-bottom-5">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Бренд</span>
+                <select class="form-control" ng-model="brandTemp">
+                    <option ng-value="0">Все</option>
+                    <?
+                    foreach($brands as $i => $brand){
+                        ?>
+                        <option ng-value="<?=$i+1?>"><?=$brand?></option>
+                    <? } ?>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-3 padding-bottom-5">
+            <button class="btn btn-primary btn-group-justified"
+                    style="font-size: 100%; letter-spacing: normal;"
+                    ng-click="updateFilter(heightTemp, genderTemp, brandTemp)">
+                <i class="glyphicon glyphicon-search"></i> Показать
+            </button>
+        </div>
+    </div>
 </div>
