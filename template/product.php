@@ -1,6 +1,7 @@
 <? use assets\services\WebCatalogService;
 use core\Engine;
 use core\utils\SafeUtils;
+use core\utils\StringUtils;
 
 include_once __DIR__ . "/nav/start.php" ?>
 
@@ -181,7 +182,7 @@ $heights = $post->enabledHeights();
                                                     background: transparent url(<?=$item->img?>) no-repeat center center/contain;
                                                     border: #c3cc36 1px solid; margin: 4px; padding: 5px;
                                                     width: 100px; height: 100px;"></div>
-                                        <b><?=$item->title?></b>
+                                        <b><?=StringUtils::crop2($item->title, 16)?></b>
                                         <br/>&euro; <?=$item->price?>
                                     </a>
                                 </div>
