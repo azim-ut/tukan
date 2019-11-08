@@ -4,6 +4,7 @@ angular.module('root')
         angular.extend($scope, {
             wished: false,
             size: null,
+            more: [],
             needSize: false,
             toggleSize: function (size) {
                 $scope.needSize = false;
@@ -19,7 +20,7 @@ angular.module('root')
                     $scope.fetchProduct(productId);
                 });
             },
-            toCart: function (id, size) {
+            toCart: function (id, size, gender) {
                 if(size === null){
                     $scope.needSize = true;
                     return;
@@ -27,7 +28,20 @@ angular.module('root')
 
                 CartFactory.add(null, {post: id, size:size}).$promise.then(function (res) {
                     $rootScope.$broadcast('updateCartIds', {});
+                    $("#ItemAddedToCart").modal("show");
+                    $scope.checkMore(id, size, gender);
                 })
+            },
+            checkMore: function (exclude, size, gender) {
+                let params = $.param({id:exclude,size:size, gender:gender});
+                ViewFactory.advices({}, params).$promise.then(
+                    function(res){
+                        $scope.more = res.data;
+                    }
+                );
+            },
+            closeAdvices: function () {
+                $("#ItemAddedToCart").modal("hide");
             },
             fetchProduct: function (id) {
                 WishFactory.total({post:id}).$promise.then(function(res){

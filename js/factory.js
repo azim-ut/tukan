@@ -16,6 +16,17 @@ angular.module('root')
                 method: 'GET',
                 url: "/shop/rest/posts/product/:id",
                 isArray: false
+            },
+            advices: {
+                method: 'POST',
+                url: "/shop/rest/posts/advices",
+                params: {
+                    id: '@id',
+                    size: '@size',
+                    gender: '@gender'
+                },
+                headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
+                isArray: false
             }
         })
     })

@@ -8,7 +8,7 @@
 <script src="/web/js/promo.js?t=<?=$version?>" type="text/javascript"></script>
 
 <div class="page-slider promoHead">
-	<div class="fullwidthbanner-container revolution-slider">
+	<div class="fullwidthbanner-container revolution-slider" style="height: 500px !important;">
 		<div class="fullwidthabnner">
 			<ul id="revolutionul">
 				<!-- THE NEW SLIDE -->
@@ -21,12 +21,12 @@
 
                     <div class="tp-bgimg defaultimg "
                          data-bgcolor="grey"
-                         style="background-repeat: no-repeat; background-image: url(/web/img/family-celebrating-christmas-D7UKJJ4_1024x768.jpg); background-size: auto; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;" src="/web/img/family-celebrating-christmas-D7UKJJ4_1024x768.jpg"></div>
+                         style="background-repeat: no-repeat; background-image: url(/web/img/family-celebrating-christmas-D7UKJJ4_1024x768.jpg); background-size: cover; background-position: center bottom; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;" src="/web/img/family-celebrating-christmas-D7UKJJ4_1024x768.jpg"></div>
 
 					<div class="caption lft slide_title slide_item_left white_bg"
 					     style="font-size: 180%; line-height: 50px; font-weight: bold; padding: 5px 20px;"
 					     data-x="20"
-					     data-y="255"
+					     data-y="300"
 					     data-speed="600"
 					     data-start="1500"
 					     data-easing="easeOutExpo">
@@ -35,7 +35,7 @@
 					<div class="caption lft slide_btn slide_item_left"
                          style="background: #FFA500; color: #333; font-size: 180%;"
 					     data-x="20"
-					     data-y="320"
+					     data-y="370"
 					     data-speed="800"
 					     data-start="1800"
 					     data-easing="easeOutExpo">
@@ -44,7 +44,7 @@
 					<div class="caption lft slide_btn slide_item_left"
                          style="background: #FFA500; color: #333; font-size: 180%;"
 					     data-x="20"
-					     data-y="360"
+					     data-y="420"
 					     data-speed="1000"
 					     data-start="2100"
 					     data-easing="easeOutExpo">

@@ -1,4 +1,5 @@
-<? use core\Engine;
+<? use assets\services\WebCatalogService;
+use core\Engine;
 use core\utils\SafeUtils;
 
 include_once __DIR__ . "/nav/start.php" ?>
@@ -18,6 +19,11 @@ if(!$id){
 }
 $post = new CatalogItem($id);
 
+$filter = new CatalogFilter();
+$filter->sizes($post->enabledSizes());
+$filter->gender($post->gender);
+$filter->exclude($post->id);
+$more = WebCatalogService::getInstance()->getPosts($filter, [], 0, 15);
 
 $brandSrc = null;
 switch($post->brand){
@@ -43,10 +49,9 @@ switch($post->brand){
 
 $heights = $post->enabledHeights();
 ?>
-
+<div ng-controller="ProductController">
     <div class="large-12 columns margin-bottom-50 nasa-single-product-scroll nasa-single-product-2-columns HeadContentPage"
          data-num_main="2"
-         ng-controller="ProductController"
          data-num_thumb="4"
          data-speed="300">
         <div class="row ProductInfo">
@@ -148,7 +153,7 @@ $heights = $post->enabledHeights();
                                         </button>
                                     </div>
                                     <div class="btn-group">
-                                        <button type="button" ng-click="toCart(<?=$id?>, size)"
+                                        <button type="button" ng-click="toCart(<?=$id?>, size, <?=$post->gender?>)"
                                                 class="btn btn-lg btn-warning">В корзину
                                         </button>
                                     </div>
@@ -163,12 +168,76 @@ $heights = $post->enabledHeights();
                                 </div>
                             </div>
                         </div>
-
+                        <hr/>
+                        <div class="row margin-top-30" style="overflow: hidden;">
+                            <div>
+                                <h5>С этим товаром часто смотрят:</h5>
+                                <br/>
+                            </div>
+                            <?foreach($more as $item){?>
+                                <div style="float: left;" class="text-center">
+                                    <a href="/product/<?=$item->id?>">
+                                        <div style="
+                                                    background: transparent url(<?=$item->img?>) no-repeat center center/contain;
+                                                    border: #c3cc36 1px solid; margin: 4px; padding: 5px;
+                                                    width: 100px; height: 100px;"></div>
+                                        <b><?=$item->title?></b>
+                                        <br/>&euro; <?=$item->price?>
+                                    </a>
+                                </div>
+                            <?}?>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="ItemAddedToCart">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <table width="100%">
+                        <tr>
+                            <td width="1%" class="text-center">
+                                <div style="
+                                        background: transparent url(<?=$post->images[0]->path?>) no-repeat center center/contain;
+                                        border: #c3cc36 1px solid; margin: 4px; padding: 5px;
+                                        width: 100px; height: 100px;"></div>
+                                <?=$post->post_title?><br/>
+                                &euro; <?=$post->price?><br/>
+                                <b>Товар добавлен к корзину</b>
+                            </td>
+                            <td style="width: 5px;padding: 10px 25px;">
+                                <div style="border-left: #9cc2cb 1px solid; height: 150px;">&nbsp;</div>
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div style="float: left;" class="text-center" ng-repeat="row in more">
+                                        <a href="/product/{{row.id}}">
+                                        <div style="
+                                                background: transparent url({{row.img}}) no-repeat center center/contain;
+                                                border: #c3cc36 1px solid; margin: 4px; padding: 5px;
+                                                width: 100px; height: 100px;"></div>
+                                            <b>{{row.title}}</b>
+                                            <br/>&euro; {{row.price}}
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div>
+                                    <button type="button" class="btn btn-default" ng-click="closeAdvices()">Перейти к сайту</button>
+                                    <a href="/cart"><button type="button" class="btn btn-danger">Перейти в корзину</button></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <script>
         $(function () {
             $('#imageGallery').lightSlider({
@@ -183,4 +252,4 @@ $heights = $post->enabledHeights();
         });
     </script>
 
-<? include_once __DIR__ . "/nav/footer_empty.php" ?>
+<? include_once __DIR__ . "/nav/footer.php" ?>
