@@ -144,28 +144,19 @@ $heights = $post->enabledHeights();
                                 <div class="error" ng-if="needSize" style="padding: 5px;">
                                     <span ng-if="needSize === true">Пожалуйста, выберите рост</span>&nbsp;
                                 </div>
-                                <div class="btn-group btn-group-justified">
-                                    <div class="btn-group" ng-if="false">
-                                        <button type="button" class="btn btn-lg btn-danger">Купить сейчас</button>
-                                    </div>
-                                    <div class="btn-group" style="width: 2px;">
-                                        <button type="button" class="btn btn-lg btn-default" ng-click="goBack()">
-                                            <i class="icon-arrow-left"></i>
-                                        </button>
-                                    </div>
-                                    <div class="btn-group">
-                                        <button type="button" ng-click="toCart(<?=$id?>, size, <?=$post->gender?>)"
-                                                class="btn btn-lg btn-warning">В корзину
-                                        </button>
-                                    </div>
-                                    <div class="btn-group" style="width: 2px;">
-                                        <button type="button" class="btn btn-lg btn-default"
-                                                ng-click="toggleProductWish(<?=$id?>)">
-                                            <span ng-if="wished"><i class="glyphicon glyphicon-heart text-danger"></i> {{totalWished}}</span>
-                                            <span ng-if="!wished"><i class="glyphicon glyphicon-heart-empty"></i> <span
-                                                        ng-if="totalWished>0">{{totalWished}}</span></span>
-                                        </button>
-                                    </div>
+                                <div class="btn-group btn-group-justified btn-block">
+                                    <button type="button"
+                                            ng-if="false"
+                                            class="btn btn-lg btn-danger btn-secondary">Купить сейчас</button>
+                                    <button type="button" class="btn btn-lg btn-default btn-outline-secondary" ng-click="goBack()">
+                                        <i class="icon-arrow-left"></i></button>
+                                    <button type="button" ng-click="toCart(<?=$id?>, size, <?=$post->gender?>)"
+                                            class="btn btn-lg btn-warning btn-secondary">В корзину</button>
+                                    <button type="button" class="btn btn-lg btn-outline-secondary"
+                                            ng-click="toggleProductWish(<?=$id?>)">
+                                        <span ng-if="wished"><i class="fa fa-heart text-danger"></i> {{totalWished}}</span>
+                                        <span ng-if="!wished"><i class="fa fa-heart-o"></i> <span
+                                                    ng-if="totalWished>0">{{totalWished}}</span></span></button>
                                 </div>
                             </div>
                         </div>

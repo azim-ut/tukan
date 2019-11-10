@@ -11,7 +11,7 @@ $genders = [0 => 'Для мальчиков и девочек', 1 => 'Для м�
 
         <div class="col-sm-3 padding-bottom-5">
             <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Рост</span>
+                <span class="input-group-addon input-group-text" id="basic-addon1">Рост</span>
                 <select class="form-control" ng-model="heightTemp">
                     <option ng-value="0">Все</option>
                     <? foreach($height as $key => $val){ ?>
@@ -22,7 +22,7 @@ $genders = [0 => 'Для мальчиков и девочек', 1 => 'Для м�
         </div>
         <div class="col-sm-3 padding-bottom-5">
             <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Пол</span>
+                <span class="input-group-text" id="basic-addon1">Пол</span>
                 <select class="form-control" ng-model="genderTemp">
                     <? foreach($genders as $key => $val){ ?>
                         <option ng-value="<?=$key?>"><?=$val?></option>
@@ -32,7 +32,7 @@ $genders = [0 => 'Для мальчиков и девочек', 1 => 'Для м�
         </div>
         <div class="col-sm-3 padding-bottom-5">
             <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Бренд</span>
+                <span class="input-group-text" id="basic-addon1">Бренд</span>
                 <select class="form-control" ng-model="brandTemp">
                     <option ng-value="0">Все</option>
                     <?
@@ -44,7 +44,7 @@ $genders = [0 => 'Для мальчиков и девочек', 1 => 'Для м�
             </div>
         </div>
         <div class="col-sm-3 padding-bottom-5">
-            <button class="btn btn-primary btn-group-justified"
+            <button class="btn btn-primary btn-block"
                     style="font-size: 100%; letter-spacing: normal;"
                     ng-click="updateFilter(heightTemp, genderTemp, brandTemp)">
                 <i class="glyphicon glyphicon-search"></i> Показать

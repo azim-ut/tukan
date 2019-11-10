@@ -38,12 +38,18 @@
                                 </div>
 
                                 <div style="border-top: #eaeaea 1px solid;">
-                                    <div style="line-height: 35px;">Доставка:</div>
-
-                                    <div ng-repeat=" row in cart.address" class="addressBlock">
-                                        {{row.data}}
-                                        <div class="btn btn-xs btn-icon-only btn-primary" ng-click="setAddress(row.id, row.data)">
-                                            <i class="glyphicon glyphicon-edit"></i>
+                                    <div style="line-height: 35px;">Адрес доставки:</div>
+                                    <div class="item" style="overflow: hidden;">
+                                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-caption addressBlock" ng-repeat=" row in cart.address">
+                                                <h3>...</h3>
+                                                <p>
+                                                    {{row.data}}
+                                                </p>
+                                                <div class="btn btn-xs btn-icon-only btn-primary" ng-click="setAddress(row.id, row.data)">
+                                                    <i class="glyphicon glyphicon-edit"></i>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="addressBlock">

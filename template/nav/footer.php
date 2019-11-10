@@ -15,7 +15,7 @@
         <div class="col-xs-6">
             &nbsp;
         </div>
-        <div class="col-xs-6 text-right" style="line-height: 20px; font-size: 140%;">
+        <div class="col-xs-6 text-right" style="line-height: 20px; font-size: 140%; padding: 0 20px;">
             <table>
                 <tr>
                     <td>
@@ -63,6 +63,9 @@
     <div class="col-xs-6">
         <div class="sharethis-inline-follow-buttons" style="text-align: right;"></div>
     </div>
+    <br/>
+    <br/>
+    <br/>
 </div>
 <!-- END MAIN FOOTER -->
 <!-- Global site tag (gtag.js) - Google Analytics -->

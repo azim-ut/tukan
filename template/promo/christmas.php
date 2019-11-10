@@ -7,7 +7,7 @@
 <link href="/web/css/promo1.css?t=<?=$version?>" rel="stylesheet" type="text/css"/>
 <script src="/web/js/promo.js?t=<?=$version?>" type="text/javascript"></script>
 
-<div class="page-slider promoHead">
+<div class="page-slider">
 	<div class="fullwidthbanner-container revolution-slider" style="height: 500px !important;">
 		<div class="fullwidthabnner">
 			<ul id="revolutionul">

@@ -342,7 +342,7 @@ button.gender:hover{
     position: absolute;
     width: 130px;
     top: 0;
-    height: 52px;
+    height: 48px;
 }
 .mainLogo:hover{
     background-color: #fff;
@@ -352,22 +352,16 @@ button.gender:hover{
     min-height: 240px;
 }
 
-#MobileHeadMenu {
-    overflow: hidden; display: none; height: 40px; padding-top: 0; top:0; z-index: 100; width: 160px;
-}
 
 .userBtn,
 .wishHeadBtn,
 .cartHeadBtn{
-    font-size: 150% !important;
+    font-size: 150% !important; float: left; width: 50px;
 }
-#MobileHeadMenu .userBtn,
-#MobileHeadMenu .wishHeadBtn,
-#MobileHeadMenu .cartHeadBtn{
-    height: 39px; float: left; padding: 5px 10px;color: hotpink; cursor: pointer; width: 50px; font-size: 150% !important;
-}
-#MobileHeadMenu .userBtn{
-    text-align: center; font-weight: bolder;
+.userBtn a,
+.wishHeadBtn a,
+.cartHeadBtn a{
+    color: #00cc13;
 }
 
 
@@ -407,7 +401,6 @@ footer {
 .arrowPager:hover{ background: #f78522; color: #333;}
 .pagerFilterBlock{color: #ccc;}
 .pagerFilterBlock:hover{color: #f78522;}
-.promoHead{margin-top: 0px;}
 
 .btn,
 .input-group-addon,
@@ -420,7 +413,6 @@ footer {
 
 @media screen and (max-width: 700px){
 
-    .promoHead{margin-top: 50px;}
     .HeadContentPage{padding: 0px 0px;}
     .HeadTextPage{padding: 70px 10px;}
     .ProductInfo{
@@ -456,26 +448,12 @@ footer {
 
     .lSPager{display: none;}
 
-    .nasa-single-product-scroll{margin-top: 60px;}
+    .nasa-single-product-scroll{margin-top: 0px;}
     .section-element{ margin: 0px 0 0 0 !important; }
 
     .btnRows{position: fixed; bottom: 0; background: white; left: 0; right:0; overflow: hidden;}
     .btnRows .btn {font-size: 150%; font-family: "Calibri Light";}
 
-    #MobileHeadMenu{ display: block; margin-top: 12px; right: 0px; z-index: 10000; position: fixed;}
-    #header-content{display: none;}
-
-    .nav .userBtn,
-    .nav .cartHeadBtn,
-    .nav .wishHeadBtn{
-        display: none !important;
-    }
-
-    .mainLogo{
-        background: transparent url(/web/img/logo_txt.jpg) no-repeat 0 center;
-        height: 50px;
-        border: none; border-radius: 0;
-    }
 
     .main-img{
         min-height: 200px;

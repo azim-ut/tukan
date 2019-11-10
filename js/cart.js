@@ -95,3 +95,7 @@ angular.module('root')
             templateUrl: '/web/js/assets/cart-button.html?t=' + now.getTime()
         };
     });
+
+$('.carousel').carousel({
+    interval: 2000
+})

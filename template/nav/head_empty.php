@@ -8,21 +8,21 @@ $version = time();
 	<link rel="profile" href="//gmpg.org/xfn/11"/>
 	<link rel="pingback" href="https://tukan.store/xmlrpc.php"/>
 
-    <script type="text/javascript" src="/web/template/assets/js/jquery.js"></script>
-    <script type="text/javascript" src="/web/template/assets/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="/web/template/assets/js/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="/web/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/web/assets/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/web/assets/js/jquery-migrate.min.js"></script>
     <link rel="shortcut icon" href="icon/favicon.ico"/>
 
 
-    <link href="/web/template/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="/web/template/assets/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/web/assets/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/web/assets/bootstrap-4.3.1/js/bootstrap.min.js"></script>
 
-	<link href="/web/template/assets/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="/web/template/assets/bootstrap-toastr/toastr.min.js"></script>
+	<link href="/web/assets/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/web/assets/bootstrap-toastr/toastr.min.js"></script>
 
 
-	<link href="/web/template/assets/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css"/>
-	<link href="/web/template/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+	<link href="/web/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
+	<link href="/web/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
     
     <title>«Tukan» - магазин детской итальянской одежды</title>
 </head>

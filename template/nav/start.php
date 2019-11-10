@@ -18,104 +18,71 @@
     </div>
 </div>
 
-<div ng-controller="AuthBlockController" ng-cloak class="no-print">
-    <div id="MobileHeadMenu">
-        <div class="userBtn pointer">
-            <a data-enable="1"
-               data-toggle="modal"
-               ng-if="!data.user"
-               data-target="#AuthForm">
-                <span class="icon-user"></span>
-            </a>
-            <a href="/my"
-               class="toMy"
-               ng-if="data.user" style="margin-left: 15px; font-size: 120%; font-weight: bold;">
-                {{data.user.name.charAt(0)}}
+<div ng-controller="AuthBlockController" ng-cloak class="no-print" style="border-bottom: #333 1px solid;">
+
+
+    <div class="row" style="height: 50px;">
+
+        <div class="col-4" alt="www.Tukan.Store" style="padding: 0;">
+            <a href="/">
+                <div class="header_logo mainLogo"></div>
             </a>
         </div>
-        <div class="cartHeadBtn pointer">
-            <a href="/cart">
-                <i class="icon-basket"></i>
-                <div ng-show="data.cart.ids.length" class="subIconCount blue">{{data.cart.ids.length}}</div>
-            </a>
-        </div>
-        <div class="wishHeadBtn pointer">
-            <a href="/wishes">
-                <i class="icon-heart"></i>
-                <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}</div>
-            </a>
+        <div class="col-8 text-right margin-top-10">
+            <ul class="nav navbar-nav navbar-right" style="display: inline-block;">
+                <li class="userBtn">
+                    <a data-enable="1"
+                       data-toggle="modal"
+                       ng-if="!data.user"
+                       data-target="#AuthForm">
+                        <span class="fa fa-user-circle"></span>
+                    </a>
+
+                    <a href="/my"
+                       class="toMy"
+                       ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold;">
+                        {{data.user.name.charAt(0)}}
+                    </a>
+                </li>
+                <li class="cartHeadBtn"><a href="/cart">
+                        <i class="fa fa-shopping-cart"></i>
+                        <div ng-show="data.cart.ids.length" class="subIconCount blue">{{data.cart.ids.length}}</div>
+                    </a>
+                </li>
+                <li class="wishHeadBtn"><a href="/wishes">
+                        <i class="fa fa-heart"></i>
+                        <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+        <div>
+            <div ng-if="data.user.current">
+                <div class="text-right">
+                    <div id="AuthBlock">
+                        <ul>
+                            <li class="menu-item color">
+                                <span class="icon-user"></span>
+                                <span class="nasa-login-title">{{data.user.name}}</span>
+                            </li>
+                            <li class="menu-item color" ng-if="data.user">
+                                <a href="/wishes">
+                                    <span class="icon-heart"></span> Мой список
+                                    <span ng-if="data.user.wishes.length>"
+                                          style="font-weight: 700;">({{data.user.wishes.length}})</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-    <nav class="navbar navbar-default navbar-fixed-top" style="background: #fff;">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand pointer" href="/">
-                    <div class="header_logo mainLogo" alt="www.Tukan.Store"></div>
-                </a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="userBtn">
-                        <a data-enable="1"
-                           data-toggle="modal"
-                           ng-if="!data.user"
-                           data-target="#AuthForm">
-                            <span class="icon-user"></span>
-                        </a>
-
-                        <a href="/my"
-                           class="toMy"
-                           ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold;">
-                            {{data.user.name.charAt(0)}}
-                        </a>
-                    </li>
-                    <li class="cartHeadBtn"><a href="/cart">
-                            <i class="icon-basket"></i>
-                            <div ng-show="data.cart.ids.length" class="subIconCount blue">{{data.cart.ids.length}}</div>
-                        </a>
-                    </li>
-                    <li class="wishHeadBtn"><a href="/wishes">
-                            <i class="icon-heart"></i>
-                            <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div><!--/.nav-collapse -->
-            <div>
-                <div ng-if="data.user.current">
-                    <div class="text-right">
-                        <div id="AuthBlock">
-                            <ul>
-                                <li class="menu-item color">
-                                    <span class="icon-user"></span>
-                                    <span class="nasa-login-title">{{data.user.name}}</span>
-                                </li>
-                                <li class="menu-item color" ng-if="data.user">
-                                    <a href="/wishes">
-                                        <span class="icon-heart"></span> Мой список
-                                        <span ng-if="data.user.wishes.length>"
-                                              style="font-weight: 700;">({{data.user.wishes.length}})</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </nav>
 </div>
 <a id="start"></a>
-<div id="header-content" class="site-header no-print" style="min-height: 51px;">
+<div id="header-content" class="site-header no-print">
 
 </div>
 <? include_once __DIR__ . "/auth.php" ?>

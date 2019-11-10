@@ -7,51 +7,50 @@
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <h4 class="modal-title">&nbsp;</h4>
                 </div>
                 <div class="modal-body">
-
                     <div ng-if="tab == 'login'">
                         <form ng-submit="login(email, pwd, save)">
 
                             <div class="form-group">
                                 <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="glyphicon glyphicon-envelope"></i>
+                                    <div class="input-group-text">
+                                        <i class="fa fa-envelope"></i>
                                     </div>
                                     <input type="text" class="form-control" placeholder="Email" ng-model="email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="glyphicon glyphicon-lock"></i>
+                                    <div class="input-group-text">
+                                        <i class="fa fa-lock"></i>
                                     </div>
                                     <input type="password" class="form-control" placeholder="Password" ng-model="pwd">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-warning btn-group-justified">Вход</button>
+                                <button type="submit" class="btn btn-outline-success btn-block">Вход</button>
                             </div>
 
-                            <div class="form-group overflow">
-                                <label for="nasa_rememberme" class="pull-left">
-                                    <input ng-model="save" type="checkbox" id="nasa_rememberme" value="forever">
-                                    Запомнить меня
-                                </label>
+                            <div class="form-group">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" ng-model="save" class="form-check-input" id="saveMeCheck">
+                                    <label class="form-check-label" for="saveMeCheck">Запомнить меня</label>
+                                </div>
                                 <a class="small pull-right" ng-click="setTab('forgot')">Забыли пароль?</a>
                             </div>
+                            <hr/>
+                            <div class="form-group">
+                                <button ng-click="setTab('registration')"
+                                        type="button"
+                                        class="btn btn-success btn-block">Регистрация</button>
+                            </div>
                         </form>
-                        <hr/>
-                        <div class="form-group">
-                            <input ng-click="setTab('registration')"
-                                   type="button"
-                                   value="Регистрация"
-                                   class="btn btn-default btn-group-justified">
-                        </div>
                     </div>
 
                     <div ng-if="tab === 'forgot'">
@@ -59,7 +58,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <i class="glyphicon glyphicon-envelope"></i>
+                                        <i class="fa fa-envelope"></i>
                                     </div>
                                     <input type="text" class="form-control" placeholder="Email" ng-model="email">
                                 </div>
@@ -83,7 +82,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <i class="glyphicon glyphicon-user"></i>
+                                        <i class="fa fa-user"></i>
                                     </div>
                                     <input type="text" class="form-control" placeholder="Имя" ng-model="name">
                                 </div>
@@ -91,7 +90,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <i class="glyphicon glyphicon-envelope"></i>
+                                        <i class="fa fa-envelope"></i>
                                     </div>
                                     <input type="text" class="form-control" placeholder="Email" ng-model="email">
                                 </div>
@@ -99,7 +98,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <i class="glyphicon glyphicon-lock"></i>
+                                        <i class="fa fa-lock"></i>
                                     </div>
                                     <input type="password" class="form-control" placeholder="Пароль" ng-model="pwd1">
                                 </div>
@@ -107,7 +106,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <i class="glyphicon glyphicon-lock"></i>
+                                        <i class="fa fa-lock"></i>
                                     </div>
                                     <input type="password" class="form-control" placeholder="Повторите пароль"
                                            ng-model="pwd2">
@@ -130,7 +129,7 @@
                         <b>или</b>
                     </div>
                     <div class="row">
-                        <button type="button" ng-click="loginFB()" class="btn btn-default btn-group-justified btn-primary"><i class="icon-social-facebook"></i> Facebook вход </button>
+                        <button type="button" ng-click="loginFB()" class="btn btn-default btn-block btn-primary"><i class="icon-social-facebook"></i> Facebook вход </button>
                     </div>
                 </div>
             </div>
