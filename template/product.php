@@ -67,9 +67,9 @@ $heights = $post->enabledHeights();
                                 <?
                                 foreach($post->images as $image){
                                     ?>
-                                    <li data-thumb="/<?=$image->path?>"
-                                        data-src="/<?=$image->path?>">
-                                        <div class="imageProductBlock" style="background: transparent url(/<?=$image->path?>) no-repeat center center/contain;"
+                                    <li data-thumb="<?=$image->path?>"
+                                        data-src="<?=$image->path?>">
+                                        <div class="imageProductBlock" style="background: transparent url(<?=$image->path?>) no-repeat center center/contain;"
 
                                         ></div>
                                     </li>
