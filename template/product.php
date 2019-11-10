@@ -199,41 +199,33 @@ $heights = $post->enabledHeights();
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <table width="100%">
-                        <tr>
-                            <td width="1%" class="text-center">
+                    <div class="row">
+                        <div class="col-sm-3 margin-bottom-20 text-center">
+                            <i class="glyphicon glyphicon-ok-circle" style="color: #c3cc36; font-size: 200%;"></i>
+                            <br/>
+                            <b>Товар добавлен к корзину</b>
+                        </div>
+                        <div class="col-sm-9 margin-bottom-20">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default" ng-click="closeAdvices()">Перейти к сайту</button>
+                                <a href="/cart" class="btn btn-danger">Перейти в корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <b>Вместе с этим часто покупают:</b>
+                    <div class="row overflow" style="height: 140px;">
+                        <div style="float: left;" class="text-center" ng-repeat="row in more">
+                            <a href="/product/{{row.id}}">
                                 <div style="
-                                        background: transparent url(<?=$post->images[0]->path?>) no-repeat center center/contain;
-                                        border: #c3cc36 1px solid; margin: 4px; padding: 5px;
-                                        width: 100px; height: 100px;"></div>
-                                <?=$post->post_title?><br/>
-                                &euro; <?=$post->price?><br/>
-                                <b>Товар добавлен к корзину</b>
-                            </td>
-                            <td style="width: 5px;padding: 10px 25px;">
-                                <div style="border-left: #9cc2cb 1px solid; height: 150px;">&nbsp;</div>
-                            </td>
-                            <td>
-                                <div class="row">
-                                    <div style="float: left;" class="text-center" ng-repeat="row in more">
-                                        <a href="/product/{{row.id}}">
-                                        <div style="
                                                 background: transparent url({{row.img}}) no-repeat center center/contain;
                                                 border: #c3cc36 1px solid; margin: 4px; padding: 5px;
                                                 width: 100px; height: 100px;"></div>
-                                            <b>{{row.title}}</b>
-                                            <br/>&euro; {{row.price}}
-                                        </a>
-                                    </div>
-                                </div>
-                                <hr/>
-                                <div>
-                                    <button type="button" class="btn btn-default" ng-click="closeAdvices()">Перейти к сайту</button>
-                                    <a href="/cart"><button type="button" class="btn btn-danger">Перейти в корзину</button></a>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                                <b>{{row.title}}</b>
+                                <br/>&euro; {{row.price}}
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6440,12 +6440,11 @@ body button,
 body .button,
 body input[type="submit"] {
   padding: 12px 40px;
-  letter-spacing: 2px;
+  letter-spacing: normal;
   font-weight: bold;
   background-color: #f76b6a;
   border-width: 1px;
   color: #FFF;
-  text-transform: uppercase;
 }
 body #submit.small,
 body button.small,
@@ -28461,7 +28460,6 @@ blockquote p {
 }
 #submit, button, .button, input[type="submit"] {
   border: 2px solid;
-  text-transform: capitalize;
   cursor: pointer;
   font-family: inherit;
   font-weight: bold;

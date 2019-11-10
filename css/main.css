@@ -460,7 +460,7 @@ footer {
     .section-element{ margin: 0px 0 0 0 !important; }
 
     .btnRows{position: fixed; bottom: 0; background: white; left: 0; right:0; overflow: hidden;}
-    .btnRows .btn {font-size: 100%; font-family: "Calibri Light";}
+    .btnRows .btn {font-size: 150%; font-family: "Calibri Light";}
 
     #MobileHeadMenu{ display: block; margin-top: 12px; right: 0px; z-index: 10000; position: fixed;}
     #header-content{display: none;}
