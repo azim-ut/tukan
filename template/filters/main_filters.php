@@ -22,7 +22,7 @@ $genders = [0 => 'Для мальчиков и девочек', 1 => 'Для м�
         </div>
         <div class="col-sm-3 padding-bottom-5">
             <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Пол</span>
+                <span class="input-group-addon input-group-text" id="basic-addon1">Пол</span>
                 <select class="form-control" ng-model="genderTemp">
                     <? foreach($genders as $key => $val){ ?>
                         <option ng-value="<?=$key?>"><?=$val?></option>
@@ -32,7 +32,7 @@ $genders = [0 => 'Для мальчиков и девочек', 1 => 'Для м�
         </div>
         <div class="col-sm-3 padding-bottom-5">
             <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Бренд</span>
+                <span class="input-group-addon input-group-text" id="basic-addon1">Бренд</span>
                 <select class="form-control" ng-model="brandTemp">
                     <option ng-value="0">Все</option>
                     <?

@@ -28,7 +28,7 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
     <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController"
          ng-cloak>
         <? require "main_filters.php" ?>
-        <div class="row margin-bottom-20" style="border-top: #b9c5c2 1px solid; border-left: #b9c5c2 1px solid;">
+        <div class="row margin-bottom-20" style="border-top: #EEE 1px solid;">
             <div class="nasa-col large-12 columns right">
                 <div class="wpb_wrapper">
 
@@ -37,7 +37,7 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
                         <div class="inner-content">
 
                             <div class="row">
-                                <div ng-repeat="row in posts" class="col-4 col-sm-2" style="padding: 0px;">
+                                <div ng-repeat="row in posts" class="col-6 col-sm-3 productPreview" style="padding: 0px;">
                                     <product-preview id="row.id"
                                                      title="row.title"
                                                      img="row.img"

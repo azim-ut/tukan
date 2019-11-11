@@ -18,9 +18,12 @@
                         </div>
                     </div>
                 </div>
-                <div style="border-top: #eaeaea 1px solid; margin: 0 10px; overflow: hidden;">
-                    <wish-button product="{{id}}" title="{{title}}" class="pull-left"></wish-button>
-                    <cart-button product="{{id}}" price="{{price}}" class="pull-right"></cart-button>
+                <div class="padding-top-10" style="margin: 0 10px; overflow: hidden;">
+                    {{title}}
+                </div>
+                <div style="overflow: hidden;">
+                    <wish-button product="{{id}}" title="{{title}}" class="left"></wish-button>
+                    <cart-button product="{{id}}" price="{{price}}" class="right"></cart-button>
                 </div>
 
 

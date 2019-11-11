@@ -12316,8 +12316,8 @@ del .amount {
   display: block;
   margin: 10px 0 20px 0;
   border: none;
-  border-right: #b9c5c2 1px solid;
-  border-bottom: #b9c5c2 1px solid;
+  border-right: #eee 1px solid;
+  border-bottom: #eee 1px solid;
   border-radius: 0px;
   overflow: hidden;
 }

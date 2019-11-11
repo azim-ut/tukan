@@ -20,6 +20,8 @@ a, a:hover, a:active, a:visited, a:focus {
 }
 h2{font-weight: bolder;}
 .product-item{margin: 0;}
+.productPreview{PADDING: 100px;}
+.productPreview:nth-child(4n) .product-item{ border-right: 0 !important; }
 .navbar-header {overflow: hidden; font-size: 150%;}
 
 .menu-item a:hover{
@@ -470,4 +472,5 @@ footer {
     .toolsTtl{display: none;}
     #main-content{ min-height: 500px !important; }
     .pagination{display: none !important;}
+    .productPreview:nth-child(2n) .product-item{ border-right: 0 !important; }
 }

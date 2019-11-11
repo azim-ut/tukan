@@ -12,7 +12,7 @@
                             Wish list is empty
                         </div>
                     </div>
-                    <div class="row" style="border-top: #b9c5c2 1px solid; border-left: #b9c5c2 1px solid; overflow: hidden;">
+                    <div class="row" style="border-top: #b9c5c2 1px solid; overflow: hidden;">
                         <div ng-repeat="row in data.wishes.list" class="col-3" style="padding: 0;">
                             <product-preview id="row.id"
                                              title="row.title"

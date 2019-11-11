@@ -14,7 +14,7 @@ angular.module('root')
             height: $cookies.get(heightCookieName),
             brand: $cookies.get(brandCookieName),
             post: 0,
-            limit: 18,
+            limit: 20,
             offset: 0,
             tagsOn: [],
             tags: [],
