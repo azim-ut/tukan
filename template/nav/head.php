@@ -9,6 +9,7 @@ use core\service\App; ?>
 	<link rel="profile" href="//gmpg.org/xfn/11"/>
 	<link rel="pingback" href="https://tukan.store/xmlrpc.php"/>
     <link href="/web/assets/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/web/img/icon_only.ico" type="image/x-icon">
 
     <script type="text/javascript" src="/web/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/web/assets/js/jquery.cookie.js"></script>
