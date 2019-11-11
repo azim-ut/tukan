@@ -50,10 +50,10 @@ $genders = [0 => 'Для мальчиков и девочек', 1 => 'Для м�
             </div>
         </div>
         <div class="col-sm-3 padding-bottom-5">
-            <button class="btn btn-primary btn-block"
+            <button class="btn btn-outline-success btn-block"
                     style="font-size: 100%; letter-spacing: normal;"
                     ng-click="updateFilter(heightTemp, genderTemp, brandTemp)">
-                <i class="glyphicon glyphicon-search"></i> Показать
+                <i class="fa fa-search"></i> Показать
             </button>
         </div>
     </div>
