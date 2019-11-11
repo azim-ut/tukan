@@ -16,16 +16,13 @@
                             </a>
                             <div style="white-space: nowrap;">€ {{product.price}}</div>
                         </td>
-                        <td class="text-center" ng-click="del(product.post, product.size)" style="width: 1%;">
-                            <i class="icon-trash" style="font-weight: bolder;"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center" style="width: 1%;">
-                            <!--                    <i class="icon-heart" style="font-weight: bolder;"></i>-->
-                        </td>
                     </tr>
                 </table>
+            </td>
+            <td width="1%">
+                <button class="btn btn-icon-only btn-outline-success" ng-click="del(product.post, product.size)">
+                    <i class="fa fa-trash-o"></i>
+                </button>
             </td>
         </tr>
     </table>

@@ -1,4 +1,3 @@
-
 <div id="fb-root"></div>
 
 <div ng-controller="AuthBlockController" ng-cloak="" ng-init="check()" class="no-print">
@@ -37,18 +36,25 @@
                                 <button type="submit" class="btn btn-outline-success btn-block">Вход</button>
                             </div>
 
-                            <div class="form-group">
-                                <div class="form-group form-check">
-                                    <input type="checkbox" ng-model="save" class="form-check-input" id="saveMeCheck">
-                                    <label class="form-check-label" for="saveMeCheck">Запомнить меня</label>
+                            <div class="form-check">
+                                <div class="left">
+                                    <input class="form-check-input" type="checkbox" value="" id="saveMeCheck">
+                                    <label class="form-check-label" for="saveMeCheck" style="margin-left: 20px;">
+                                        Запомнить меня
+                                    </label>
                                 </div>
-                                <a class="small pull-right" ng-click="setTab('forgot')">Забыли пароль?</a>
+                                <div class="right" style="margin-left: 40px;">
+                                    <a class="form-check-label" ng-click="setTab('forgot')">
+                                        <label>Забыли пароль?</label>
+                                    </a>
+                                </div>
                             </div>
                             <hr/>
                             <div class="form-group">
                                 <button ng-click="setTab('registration')"
                                         type="button"
-                                        class="btn btn-success btn-block">Регистрация</button>
+                                        class="btn btn-success btn-block">Регистрация
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -57,7 +63,7 @@
                         <form ng-submit="resetPassword(email)">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <div class="input-group-addon">
+                                    <div class="input-group-addon input-group-text">
                                         <i class="fa fa-envelope"></i>
                                     </div>
                                     <input type="text" class="form-control" placeholder="Email" ng-model="email">
@@ -65,7 +71,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-warning btn-group-justified">Выслать новый пароль</button>
+                                <button type="submit" class="btn btn-warning btn-block">Выслать новый пароль</button>
                             </div>
                         </form>
                         <hr/>
@@ -73,7 +79,7 @@
                             <input ng-click="setTab('login')"
                                    type="button"
                                    value="Вход"
-                                   class="btn btn-default btn-group-justified">
+                                   class="btn btn-outline-success btn-block">
                         </div>
                     </div>
                     <div id="nasa_customer_login" class="nasa-relative" ng-if="tab == 'registration'">
@@ -81,7 +87,7 @@
 
                             <div class="form-group">
                                 <div class="input-group">
-                                    <div class="input-group-addon">
+                                    <div class="input-group-addon input-group-text">
                                         <i class="fa fa-user"></i>
                                     </div>
                                     <input type="text" class="form-control" placeholder="Имя" ng-model="name">
@@ -89,7 +95,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <div class="input-group-addon">
+                                    <div class="input-group-addon input-group-text">
                                         <i class="fa fa-envelope"></i>
                                     </div>
                                     <input type="text" class="form-control" placeholder="Email" ng-model="email">
@@ -97,7 +103,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <div class="input-group-addon">
+                                    <div class="input-group-addon input-group-text">
                                         <i class="fa fa-lock"></i>
                                     </div>
                                     <input type="password" class="form-control" placeholder="Пароль" ng-model="pwd1">
@@ -105,7 +111,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <div class="input-group-addon">
+                                    <div class="input-group-addon input-group-text">
                                         <i class="fa fa-lock"></i>
                                     </div>
                                     <input type="password" class="form-control" placeholder="Повторите пароль"
@@ -113,7 +119,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-warning btn-group-justified">Зарегистрироваться</button>
+                                <button class="btn btn-warning btn-block">Зарегистрироваться</button>
                             </div>
 
                         </form>
@@ -122,14 +128,16 @@
                             <input ng-click="setTab('login')"
                                    type="button"
                                    value="Вход"
-                                   class="btn btn-default btn-group-justified">
+                                   class="btn btn-outline-success btn-block">
                         </div>
                     </div>
                     <div class="text-center margin-bottom-10">
                         <b>или</b>
                     </div>
                     <div class="row">
-                        <button type="button" ng-click="loginFB()" class="btn btn-default btn-block btn-primary"><i class="icon-social-facebook"></i> Facebook вход </button>
+                        <button type="button" ng-click="loginFB()" class="btn btn-default btn-block btn-primary"><i
+                                    class="icon-social-facebook"></i> Facebook вход
+                        </button>
                     </div>
                 </div>
             </div>

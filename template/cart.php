@@ -47,7 +47,7 @@
                                                     {{row.data}}
                                                 </p>
                                                 <div class="btn btn-xs btn-icon-only btn-primary" ng-click="setAddress(row.id, row.data)">
-                                                    <i class="glyphicon glyphicon-edit"></i>
+                                                    <i class="fa fa-edit"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -56,7 +56,7 @@
                                         <textarea style="width: 100%; height: 90px; line-height: normal;"
                                                   placeholder="Адрес доставки и телефон для связи:"
                                                   ng-model="newAddress"></textarea>
-                                        <div class="btn btn-xs btn-primary btn-group-justified" ng-click="setAddress(0, newAddress)">Добавить адрес</div>
+                                        <div class="btn btn-xs btn-outline-success btn-block" ng-click="setAddress(0, newAddress)">Добавить адрес</div>
                                     </div>
                                 </div>
 
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <br/>
-                        <div class="row">
+                        <div class="row padding-right-15 padding-left-15">
                             Доступные способы и время доставки можно уточнить по телефону:
                             <div style="line-height: 30px; font-weight: bold; margin: 10px 0;">
                                 (372) 5818 5225
