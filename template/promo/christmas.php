@@ -8,7 +8,7 @@
 <script src="/web/js/promo.js?t=<?=$version?>" type="text/javascript"></script>
 
 <div class="page-slider">
-	<div class="fullwidthbanner-container revolution-slider" style="height: 500px !important;">
+	<div class="fullwidthbanner-container revolution-slider" style="height: 600px !important;">
 		<div class="fullwidthabnner">
 			<ul id="revolutionul">
 				<!-- THE NEW SLIDE -->
