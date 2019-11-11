@@ -12297,17 +12297,16 @@ del .amount {
 }
 
 .subIconCount{
-  font-weight: 700;
   background: #9c8b8b;
   border-radius: 20px;
   text-align: center;
-  font-size: 11px;
+  font-size: 10px;
   color: #fff;
-  padding: 7px 7px;
+  padding: 7px 5px;
   position: absolute;
   margin-top: -15px;
-  line-height: 5px;
-  margin-left: 44px;
+  line-height: 1px;
+  margin-left: 45px;
 }
 
 /* Product item */
