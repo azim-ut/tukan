@@ -40,7 +40,7 @@
 
                     <a href="/my"
                        class="toMy"
-                       ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold;">
+                       ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold; line-height: 30px;">
                         {{data.user.name.charAt(0)}}
                     </a>
                 </li>

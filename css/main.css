@@ -409,11 +409,26 @@ footer {
 .form-control,
 .modal-content{border-radius: 0;}
 
+.grid2{border-top: #eaeaea 1px solid;}
+.grid2 .cnt{font-size: 150%; padding-bottom: 20px;}
+.grid2 div.block{
+    padding: 30px 10px;font-size: 90%;
+    border-right: #eaeaea 1px solid;
+    border-bottom: #eaeaea 1px solid;
+}
+.grid2 div:last-child{
+    border-right: none;
+}
+
 @media print{
     .no-print{display: none;}
 }
 
 @media screen and (max-width: 700px){
+
+    .grid2 div:nth-child(2n){
+        border-right: none;
+    }
 
     .HeadContentPage{padding: 0px 0px;}
     .HeadTextPage{padding: 70px 10px;}

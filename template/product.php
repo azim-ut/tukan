@@ -50,41 +50,42 @@ switch($post->brand){
 
 $heights = $post->enabledHeights();
 ?>
-<div ng-controller="ProductController">
-    <div class="large-12 columns margin-bottom-50 nasa-single-product-scroll nasa-single-product-2-columns HeadContentPage"
-         data-num_main="2"
-         data-num_thumb="4"
-         data-speed="300">
-        <div class="row ProductInfo">
+    <div ng-controller="ProductController">
+        <div class="large-12 columns margin-bottom-50 nasa-single-product-scroll nasa-single-product-2-columns HeadContentPage"
+             data-num_main="2"
+             data-num_thumb="4"
+             data-speed="300">
+            <div class="row ProductInfo">
 
-            <div class="large-5 small-12 columns product-gallery rtl-right">
+                <div class="large-5 small-12 columns product-gallery rtl-right">
 
-                <div class="images">
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <more-button product="<?=$id?>"></more-button>
-                            <ul id="imageGallery">
-                                <?
-                                foreach($post->images as $image){
-                                    ?>
-                                    <li data-thumb="<?=$image->path?>"
-                                        data-src="<?=$image->path?>">
-                                        <div class="imageProductBlock" style="background: transparent url(<?=$image->path?>) no-repeat center center/contain;"
-
-                                        ></div>
-                                    </li>
+                    <div class="images">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <more-button product="<?=$id?>"></more-button>
+                                <ul id="imageGallery">
                                     <?
-                                }
-                                ?>
-                            </ul>
+                                    foreach($post->images as $image){
+                                        ?>
+                                        <li data-thumb="<?=$image->path?>"
+                                            data-src="<?=$image->path?>">
+                                            <div class="imageProductBlock"
+                                                 style="background: transparent url(<?=$image->path?>) no-repeat center center/contain;"
 
+                                            ></div>
+                                        </li>
+                                        <?
+                                    }
+                                    ?>
+                                </ul>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="large-7 small-12 columns product-info rtl-left">
-                <div class="nasa-product-info-wrap">
-                    <div class="nasa-product-info-scroll" style="margin-top: 0px; overflow-y: inherit;">
+                <div class="large-7 small-12 columns product-info rtl-left">
+                    <div class="nasa-product-info-wrap">
+                        <p class="nasa-product-info-scroll" style="margin-top: 0px; overflow-y: inherit;">
                         <div class="ProductLabel">
 
                             <table class="margin-bottom-0">
@@ -147,14 +148,18 @@ $heights = $post->enabledHeights();
                                 <div class="btn-group btn-group-justified btn-block">
                                     <button type="button"
                                             ng-if="false"
-                                            class="btn btn-lg btn-danger btn-secondary">Купить сейчас</button>
-                                    <button type="button" class="btn btn-lg btn-default btn-outline-secondary" ng-click="goBack()">
+                                            class="btn btn-lg btn-danger btn-secondary">Купить сейчас
+                                    </button>
+                                    <button type="button" class="btn btn-lg btn-default btn-outline-secondary"
+                                            ng-click="goBack()">
                                         <i class="icon-arrow-left"></i></button>
                                     <button type="button" ng-click="toCart(<?=$id?>, size, <?=$post->gender?>)"
-                                            class="btn btn-lg btn-warning btn-secondary">В корзину</button>
+                                            class="btn btn-lg btn-warning btn-secondary">В корзину
+                                    </button>
                                     <button type="button" class="btn btn-lg btn-outline-secondary"
                                             ng-click="toggleProductWish(<?=$id?>)">
-                                        <span ng-if="wished"><i class="fa fa-heart text-danger"></i> {{totalWished}}</span>
+                                        <span ng-if="wished"><i
+                                                    class="fa fa-heart text-danger"></i> {{totalWished}}</span>
                                         <span ng-if="!wished"><i class="fa fa-heart-o"></i> <span
                                                     ng-if="totalWished>0">{{totalWished}}</span></span></button>
                                 </div>
@@ -162,22 +167,36 @@ $heights = $post->enabledHeights();
                         </div>
                         <hr/>
                         <div class="row margin-top-30" style="overflow: hidden;">
+                            <p>
+                                Вы смотрите <?=mb_strtolower($post->title())?>
+                                <? switch($post->gender){
+                                    case 1:
+                                        echo "для мальчиков.";
+                                        break;
+                                    case 2:
+                                        echo "для девочек.";
+                                        break;
+                                    default:
+                                        echo "для детей.";
+                                        break;
+                                } ?>
+                                Данная модель доступна в размерах (см): <?=$post->enabledHeightsString()?>. С этим
+                                товаром часто смотрят:
+                            </p>
                             <div>
-                                <h5>С этим товаром часто смотрят:</h5>
-                                <br/>
-                            </div>
-                            <?foreach($more as $item){?>
-                                <div style="float: left;" class="text-center">
-                                    <a href="/product/<?=$item->id?>">
-                                        <div style="
+                                <? foreach($more as $i => $item){ ?>
+                                    <div style="float: left;" class="text-center <?=$active?>">
+                                        <a href="/product/<?=$item->id?>">
+                                            <div style="
                                                     background: transparent url(<?=$item->img?>) no-repeat center center/contain;
                                                     border: #c3cc36 1px solid; margin: 4px; padding: 5px;
                                                     width: 100px; height: 100px;"></div>
-                                        <b><?=StringUtils::crop2($item->title, 16)?></b>
-                                        <br/>&euro; <?=$item->price?>
-                                    </a>
-                                </div>
-                            <?}?>
+                                            <b><?=StringUtils::crop2($item->title, 16)?></b>
+                                            <br/>&euro; <?=$item->price?>
+                                        </a>
+                                    </div>
+                                <? } ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -198,7 +217,9 @@ $heights = $post->enabledHeights();
                         </div>
                         <div class="col-sm-9 margin-bottom-20">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-default" ng-click="closeAdvices()">Перейти к сайту</button>
+                                <button type="button" class="btn btn-default" ng-click="closeAdvices()">Перейти к
+                                    сайту
+                                </button>
                                 <a href="/cart" class="btn btn-danger">Перейти в корзину</a>
                             </div>
                         </div>
@@ -221,7 +242,7 @@ $heights = $post->enabledHeights();
             </div>
         </div>
     </div>
-</div>
+    </div>
     <script>
         $(function () {
             $('#imageGallery').lightSlider({

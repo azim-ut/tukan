@@ -3011,7 +3011,6 @@ footer,
 header,
 hgroup,
 main,
-nav,
 section,
 summary {
   display: block;
@@ -14718,20 +14717,6 @@ ins {
   font-size: 160%;
   margin-bottom: 25px;
   text-align: left;
-}
-.nasa-combo-row nav {
-  display: inline-block;
-  padding: 11px 15px;
-  border: 1px solid #ddd;
-  border-radius: 99px;
-  -webkit-transition: all 350ms ease;
-  -moz-transition: all 350ms ease;
-  transition: all 350ms ease;
-  cursor: pointer;
-}
-.nasa-combo-row nav:hover {
-  border: 1px solid #000;
-  color: #000;
 }
 .nasa-combo-row a.nasa-combo-view-more {
   display: block;

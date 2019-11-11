@@ -18,16 +18,34 @@ angular.module('root')
         angular.extend($scope, {
             cart: null,
             msg: null,
+            selectAddress: undefined,
+            editAddress: undefined,
             toProduct: function (id) {
                 location.href = "/product/" + id;
             },
+            needNewAddress: function () {
+                $scope.editAddress = undefined;
+                $scope.selectAddress = undefined;
+            },
+            useAddress: function (ind) {
+                $scope.editAddress = undefined;
+                $scope.selectAddress = ind;
+            },
+            showAddressEditForm: function (row) {
+                $scope.editAddress = angular.copy(row);
+            },
             setAddress: function (id, text) {
-                CartFactory.address({},{id: 0, text: text}).$promise.then(function (res) {
+                CartFactory.address({},{id: id, text: text}).$promise.then(function (res) {
                     $rootScope.$broadcast('updateCart', {});
                 });
             },
             submit: function (cart) {
-                CartFactory.submit({},{address: cart.address}).$promise.then(function (res) {
+                let address = null;
+                if(cart.address.length && cart.address[$scope.selectAddress] !== undefined){
+                    address = cart.address[$scope.selectAddress].data;
+                }
+
+                CartFactory.submit({},{address: address}).$promise.then(function (res) {
                     if (res.code === 401) {
                         $("#AuthForm").modal("show");
                     }
@@ -42,6 +60,13 @@ angular.module('root')
         $scope.$on("updateCart", function (event, args) {
             CartFactory.list().$promise.then(function (res) {
                 $scope.cart = res.data;
+                $scope.editAddress = undefined;
+                if($scope.cart.address.length>0 && $scope.selectAddress === undefined){
+                    $scope.selectAddress = 0;
+                }
+                if($scope.cart.address.length === 0){
+                    $scope.selectAddress = undefined;
+                }
             });
         });
         $rootScope.$broadcast('updateCart', {});
