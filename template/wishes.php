@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="row" style="border-top: #b9c5c2 1px solid; overflow: hidden;">
-                        <div ng-repeat="row in data.wishes.list" class="col-3" style="padding: 0;">
+                        <div ng-repeat="row in data.wishes.list" class="col-6 col-sm-3 productPreview" style="padding: 0;">
                             <product-preview id="row.id"
                                              title="row.title"
                                              img="row.img"
