@@ -16,8 +16,8 @@
                 &nbsp;
             </div>
 
-
-            <div class="col-sm-5" style="border-right: #ccc 1px solid;">
+            
+            <div class="col-sm-5">
                 <div style="overflow: hidden; border: #ccc 1px solid;">
                     <cart-row ng-repeat="row in cart.items" cart="cart" product="row"></cart-row>
                 </div>
