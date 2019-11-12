@@ -50,122 +50,117 @@ switch($post->brand){
 
 $heights = $post->enabledHeights();
 ?>
-    <div ng-controller="ProductController">
-        <div class="large-12 columns margin-bottom-50 nasa-single-product-scroll nasa-single-product-2-columns HeadContentPage"
+    <div ng-controller="ProductController" class="container">
+        <div class="margin-bottom-50 HeadContentPage container"
              data-num_main="2"
              data-num_thumb="4"
              data-speed="300">
             <div class="row ProductInfo">
 
-                <div class="large-5 small-12 columns product-gallery rtl-right">
+                <div class="col-12 col-sm-5 columns product-gallery">
 
                     <div class="images">
-                        <div class="row">
-                            <div class="large-12 columns">
-                                <more-button product="<?=$id?>"></more-button>
-                                <ul id="imageGallery">
-                                    <?
-                                    foreach($post->images as $image){
-                                        ?>
-                                        <li data-thumb="<?=$image->path?>"
-                                            data-src="<?=$image->path?>">
-                                            <div class="imageProductBlock"
-                                                 style="background: transparent url(<?=$image->path?>) no-repeat center center/contain;"
+                        <more-button product="<?=$id?>"></more-button>
+                        <ul id="imageGallery">
+                            <?
+                            foreach($post->images as $image){
+                                ?>
+                                <li data-thumb="<?=$image->path?>"
+                                    data-src="<?=$image->path?>">
+                                    <div class="imageProductBlock"
+                                         style="background: transparent url(<?=$image->path?>) no-repeat center center/contain;"
 
-                                            ></div>
-                                        </li>
-                                        <?
-                                    }
-                                    ?>
-                                </ul>
+                                    ></div>
+                                </li>
+                                <?
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-7 product-info">
 
+                    <div class="ProductLabel">
+
+                        <table class="margin-bottom-0">
+                            <tr>
+                                <td>
+
+                                    <h1 class="productTitle"><?=ucfirst($post->title())?></h1>
+                                    <div>
+                                        <b>EAN:</b> <?=$post->barcode?>
+                                    </div>
+                                    <div>
+                                        <b>ID:</b> <?=$post->id?><br/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="amount text-right" style="font-size: 200%;">
+                                        <b style="padding-right: 5px;">€</b><?=$post->price()?>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="margin-bottom-0">
+                            <tr>
+                                <td>
+
+                                    <? if(sizeof($heights)){ ?>
+                                        <div>
+                                            <b>Рост:</b>
+                                            <ul class="heightList">
+                                                <? foreach($post->enabledHeights() as $item){ ?>
+                                                    <li ng-class="{'pointer':true, 'on': size==='<?=$item->size?>'}"
+                                                        ng-click="toggleSize('<?=$item->size?>')"><?=$item->height?></li>
+                                                <? } ?>
+                                            </ul>
+                                        </div>
+                                    <? } ?>
+                                </td>
+                                <td class="text-right">
+                                    <? if($post->gender === 3 || $post->gender === 1){ ?>
+                                        <div style="height: 45px; width: 40px; float: right; background: transparent url('/web/img/boy_girl.png') no-repeat center 0px;"></div>
+                                    <? } ?>
+                                    <? if($post->gender === 3 || $post->gender === 2){ ?>
+                                        <div style="height: 45px; width: 40px; float: right; background: transparent url('/web/img/boy_girl.png') no-repeat center -55px;"></div>
+                                    <? } ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center" colspan="2">
+                                    <? if($brandSrc != null){ ?>
+                                        <img src="/web/img/brands/<?=$brandSrc?>"/>
+                                    <? } ?>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="btnRows" role="group">
+                            <div class="error" ng-if="needSize" style="padding: 5px;">
+                                <span ng-if="needSize === true">Пожалуйста, выберите рост</span>&nbsp;
+                            </div>
+                            <div class="btn-group btn-group-justified btn-block">
+                                <button type="button"
+                                        ng-if="false"
+                                        class="btn btn-lg btn-danger btn-secondary">Купить сейчас
+                                </button>
+                                <button type="button" class="btn btn-lg btn-default btn-outline-secondary"
+                                        ng-click="goBack()">
+                                    <i class="icon-arrow-left"></i></button>
+                                <button type="button" ng-click="toCart(<?=$id?>, size, <?=$post->gender?>)"
+                                        class="btn btn-lg btn-warning btn-secondary">В корзину
+                                </button>
+                                <button type="button" class="btn btn-lg btn-outline-secondary"
+                                        ng-click="toggleProductWish(<?=$id?>)">
+                                        <span ng-if="wished"><i
+                                                    class="fa fa-heart text-danger"></i> {{totalWished}}</span>
+                                    <span ng-if="!wished"><i class="fa fa-heart-o"></i> <span
+                                                ng-if="totalWished>0">{{totalWished}}</span></span></button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="large-7 small-12 columns product-info rtl-left">
-                    <div class="nasa-product-info-wrap">
-                        <p class="nasa-product-info-scroll" style="margin-top: 0px; overflow-y: inherit;">
-                        <div class="ProductLabel">
-
-                            <table class="margin-bottom-0">
-                                <tr>
-                                    <td>
-
-                                        <h1 class="productTitle"><?=ucfirst($post->title())?></h1>
-                                        <div>
-                                            <b>EAN:</b> <?=$post->barcode?>
-                                        </div>
-                                        <div>
-                                            <b>ID:</b> <?=$post->id?><br/>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="amount text-right" style="font-size: 200%;">
-                                            <b style="padding-right: 5px;">€</b><?=$post->price()?>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table class="margin-bottom-0">
-                                <tr>
-                                    <td>
-
-                                        <? if(sizeof($heights)){ ?>
-                                            <div>
-                                                <b>Рост:</b>
-                                                <ul class="heightList">
-                                                    <? foreach($post->enabledHeights() as $item){ ?>
-                                                        <li ng-class="{'pointer':true, 'on': size==='<?=$item->size?>'}"
-                                                            ng-click="toggleSize('<?=$item->size?>')"><?=$item->height?></li>
-                                                    <? } ?>
-                                                </ul>
-                                            </div>
-                                        <? } ?>
-                                    </td>
-                                    <td class="text-right">
-                                        <? if($post->gender === 3 || $post->gender === 1){ ?>
-                                            <div style="height: 45px; width: 40px; float: right; background: transparent url('/web/img/boy_girl.png') no-repeat center 0px;"></div>
-                                        <? } ?>
-                                        <? if($post->gender === 3 || $post->gender === 2){ ?>
-                                            <div style="height: 45px; width: 40px; float: right; background: transparent url('/web/img/boy_girl.png') no-repeat center -55px;"></div>
-                                        <? } ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center" colspan="2">
-                                        <? if($brandSrc != null){ ?>
-                                            <img src="/web/img/brands/<?=$brandSrc?>"/>
-                                        <? } ?>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <div class="btnRows" role="group">
-                                <div class="error" ng-if="needSize" style="padding: 5px;">
-                                    <span ng-if="needSize === true">Пожалуйста, выберите рост</span>&nbsp;
-                                </div>
-                                <div class="btn-group btn-group-justified btn-block">
-                                    <button type="button"
-                                            ng-if="false"
-                                            class="btn btn-lg btn-danger btn-secondary">Купить сейчас
-                                    </button>
-                                    <button type="button" class="btn btn-lg btn-default btn-outline-secondary"
-                                            ng-click="goBack()">
-                                        <i class="icon-arrow-left"></i></button>
-                                    <button type="button" ng-click="toCart(<?=$id?>, size, <?=$post->gender?>)"
-                                            class="btn btn-lg btn-warning btn-secondary">В корзину
-                                    </button>
-                                    <button type="button" class="btn btn-lg btn-outline-secondary"
-                                            ng-click="toggleProductWish(<?=$id?>)">
-                                        <span ng-if="wished"><i
-                                                    class="fa fa-heart text-danger"></i> {{totalWished}}</span>
-                                        <span ng-if="!wished"><i class="fa fa-heart-o"></i> <span
-                                                    ng-if="totalWished>0">{{totalWished}}</span></span></button>
-                                </div>
-                            </div>
-                        </div>
-                        <hr/>
+                    <hr/>
+                    <div class="container">
                         <div class="row margin-top-30" style="overflow: hidden;">
                             <p>
                                 Вы смотрите <?=mb_strtolower($post->title())?>
@@ -185,7 +180,7 @@ $heights = $post->enabledHeights();
                             </p>
                             <div>
                                 <? foreach($more as $i => $item){ ?>
-                                    <div style="float: left;" class="text-center <?=$active?>">
+                                    <div style="float: left;" class="text-center">
                                         <a href="/product/<?=$item->id?>">
                                             <div style="
                                                     background: transparent url(<?=$item->img?>) no-repeat center center/contain;

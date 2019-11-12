@@ -28,7 +28,7 @@
                 </a>
             </td>
             <td align="right">
-                <ul style="display: inline-block;">
+                <ul style="display: inline-block; width: 180px; margin-top: 5px;">
                     <li class="userBtn">
                         <a data-toggle="modal"
                            ng-if="!data.user"
@@ -37,7 +37,7 @@
                         </a>
                         <a href="/my"
                            class="toMy"
-                           ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold; line-height: 30px;">
+                           ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold; line-height: 20px;">
                             {{data.user.name.charAt(0)}}
                         </a>
                     </li>

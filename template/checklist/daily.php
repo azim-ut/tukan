@@ -1,15 +1,17 @@
 <? include_once __DIR__ . "/../nav/start.php" ?>
 
-    <div id="content" class="HeadTextPage">
+    <div id="content" class="HeadTextPage container overflow">
         <div class="row">
-	        <table style="width: 100%;" class="margin-bottom-0">
+	        <table class="table" style="width: 100%;">
 		        <tr>
 			        <td style="font-size: 150%;">Ежедневные дела</td>
 			        <td width="1%">&nbsp;<button type="button"
 			                                     onclick="window.print()"
-			                                     class="btn btn-primary no-print"><i class="glyphicon glyphicon-print"></i> Распечатать</button></td>
+			                                     class="btn btn-primary no-print"><i class="glyphicon glyphicon-print"></i> Распечатать</button>
+                    </td>
 		        </tr>
 	        </table>
+            <hr/>
             <table class="table table table-cell checkList">
                 <tr>
                     <td class="text-center">Иконка</td>

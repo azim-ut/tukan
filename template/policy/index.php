@@ -1,5 +1,5 @@
 <? include_once __DIR__ . "/../nav/start.php" ?>
-    <div id="content" class="HeadTextPage">
+    <div id="content" class="HeadTextPage container">
         <div class="row">
             <div>
                 <h1>Privacy Policy</h1>

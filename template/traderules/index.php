@@ -1,6 +1,6 @@
 <? include_once __DIR__ . "/../nav/start.php" ?>
 
-    <div id="content" class="HeadTextPage" ng-init="contents = []">
+    <div id="content" class="HeadTextPage container" ng-init="contents = []">
         <div class="row">
             <div>
                 <h1>Правила</h1>
