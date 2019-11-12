@@ -37,7 +37,7 @@
                         </a>
                         <a href="/my"
                            class="toMy"
-                           ng-if="data.user" style="margin-left: 15px; font-size: 200%; font-weight: bold; line-height: 20px;">
+                           ng-if="data.user" style="margin-left: 15px; font-size: 120%; font-weight: bold; line-height: 20px;">
                             {{data.user.name.charAt(0)}}
                         </a>
                     </li>
