@@ -29,11 +29,10 @@
                 Mustakivi Keskus<br/>
                 Mahtra 1, 13811 Tallinn, Estonia<br/>
                 2-й этаж, бокс 24
+
+                <div class="sharethis-inline-follow-buttons" style="text-align: right; padding-top: 20px;"></div>
             </div>
         </div>
-    </div>
-    <div class="col-xs-6" style="padding-top: 20px;">
-        <div class="sharethis-inline-follow-buttons" style="text-align: right;"></div>
     </div>
     <br/>
     <br/>
