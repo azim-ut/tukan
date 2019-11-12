@@ -31,6 +31,10 @@ angular.module('root')
                 $scope.editAddress = undefined;
                 $scope.selectAddress = ind;
             },
+            closeEditAddress: function () {
+                $scope.editAddress = undefined;
+                $scope.selectAddress = ind;
+            },
             showAddressEditForm: function (row) {
                 $scope.editAddress = angular.copy(row);
             },

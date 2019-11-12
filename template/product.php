@@ -82,32 +82,31 @@ $heights = $post->enabledHeights();
 
                     <div class="ProductLabel">
 
-                        <table class="margin-bottom-0">
+                        <table class="margin-bottom-0" width="100%">
                             <tr>
                                 <td>
 
                                     <h1 class="productTitle"><?=ucfirst($post->title())?></h1>
                                     <div>
-                                        <b>EAN:</b> <?=$post->barcode?>
+                                        <span class="thin-font">EAN:</span> <?=$post->barcode?>
                                     </div>
                                     <div>
-                                        <b>ID:</b> <?=$post->id?><br/>
+                                        <span class="thin-font">ID:</span> <?=$post->id?><br/>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="amount text-right" style="font-size: 200%;">
-                                        <b style="padding-right: 5px;">€</b><?=$post->price()?>
+                                    <div class="amount thin-font text-right" style="font-size: 200%;">
+                                        <span class="thin-font" style="padding-right: 5px;">€</span><?=$post->price()?>
                                     </div>
                                 </td>
                             </tr>
                         </table>
-                        <table class="margin-bottom-0">
+                        <table class="margin-bottom-0" width="100%;">
                             <tr>
                                 <td>
-
                                     <? if(sizeof($heights)){ ?>
                                         <div>
-                                            <b>Рост:</b>
+                                            <span class="thin-font">Рост:</span>
                                             <ul class="heightList">
                                                 <? foreach($post->enabledHeights() as $item){ ?>
                                                     <li ng-class="{'pointer':true, 'on': size==='<?=$item->size?>'}"
@@ -129,7 +128,9 @@ $heights = $post->enabledHeights();
                             <tr>
                                 <td class="text-center" colspan="2">
                                     <? if($brandSrc != null){ ?>
-                                        <img src="/web/img/brands/<?=$brandSrc?>"/>
+                                        <div style="width: 100%; height: 100px; background: transparent url(/web/img/brands/<?=$brandSrc?>) no-repeat center center/contain"
+                                             &nbsp;
+                                        </div>
                                     <? } ?>
                                 </td>
                             </tr>
@@ -186,7 +187,7 @@ $heights = $post->enabledHeights();
                                                     background: transparent url(<?=$item->img?>) no-repeat center center/contain;
                                                     border: #c3cc36 1px solid; margin: 4px; padding: 5px;
                                                     width: 100px; height: 100px;"></div>
-                                            <b><?=StringUtils::crop2($item->title, 16)?></b>
+                                            <span class="thin-font"><?=StringUtils::crop2($item->title, 16)?></span>
                                             <br/>&euro; <?=$item->price?>
                                         </a>
                                     </div>
@@ -208,7 +209,7 @@ $heights = $post->enabledHeights();
                         <div class="col-sm-3 margin-bottom-20 text-center">
                             <i class="glyphicon glyphicon-ok-circle" style="color: #c3cc36; font-size: 200%;"></i>
                             <br/>
-                            <b>Товар добавлен к корзину</b>
+                            <span class="thin-font">Товар добавлен к корзину</span>
                         </div>
                         <div class="col-sm-9 margin-bottom-20">
                             <div class="btn-group">
@@ -220,17 +221,19 @@ $heights = $post->enabledHeights();
                         </div>
                     </div>
                     <hr/>
-                    <b>Вместе с этим часто покупают:</b>
-                    <div class="row overflow" style="height: 140px;">
-                        <div style="float: left;" class="text-center" ng-repeat="row in more">
-                            <a href="/product/{{row.id}}">
-                                <div style="
+                    <span class="thin-font">Вместе с этим часто покупают:</span>
+                    <div class="container">
+                        <div class="row overflow" style="height: 140px;">
+                            <div style="float: left;" class="text-center" ng-repeat="row in more">
+                                <a href="/product/{{row.id}}">
+                                    <div style="
                                                 background: transparent url({{row.img}}) no-repeat center center/contain;
                                                 border: #c3cc36 1px solid; margin: 4px; padding: 5px;
                                                 width: 100px; height: 100px;"></div>
-                                <b>{{row.title}}</b>
-                                <br/>&euro; {{row.price}}
-                            </a>
+                                    <span class="thin-font">{{row.title}}</span>
+                                    <br/>&euro; {{row.price}}
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
