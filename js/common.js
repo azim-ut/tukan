@@ -29,7 +29,7 @@ angular.module('root')
     .directive('productPreview', function () {
         let now = new Date();
         return {
-            restrict: "E",
+            restrict: "A",
             scope: {
                 id: "=",
                 title: "=",

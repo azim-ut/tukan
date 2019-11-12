@@ -5,6 +5,11 @@
 .navbar{
     background: #fff;
 }
+
+.card{position: relative;}
+.card-body-price{}
+.cardItemPreview{width: 20%; border-radius: 0; position: relative;}
+.card-img-top {width: 100%; height: 300px;}
 *:-moz-focusring,
 *::-moz-focus-inner,
 *:focus-within,
@@ -21,7 +26,7 @@ a, a:hover, a:active, a:visited, a:focus {
 }
 h2{font-weight: bolder;}
 .product-item{margin: 0;}
-.productPreview{PADDING: 100px;}
+.productPreview{PADDING: 0px;}
 .productPreview:nth-child(4n) .product-item{ border-right: 0 !important; }
 .navbar-header {overflow: hidden; font-size: 150%;}
 
@@ -341,11 +346,11 @@ button.gender:hover{
 }
 
 .mainLogo{
-    background: #fff url(/web/img/tukan.jpg) no-repeat center 10px/contain;
+    background: #fff url(/web/img/tukan.jpg) no-repeat center 5px/contain;
     position: absolute;
     width: 130px;
     top: 0;
-    height: 48px;
+    height: 44px;
 }
 .mainLogo:hover{
     background-color: #fff;
@@ -354,7 +359,8 @@ button.gender:hover{
 .main-img{
     min-height: 240px;
 }
-
+.card-title{padding: 0 10px;}
+.card-body{ }
 
 .userBtn,
 .wishHeadBtn,
@@ -439,7 +445,7 @@ footer {
 }
 
 @media screen and (max-width: 700px){
-
+    .cardItemPreview{width: 50%;}
     .grid2 div:nth-child(2n){
         border-right: none;
     }

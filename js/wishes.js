@@ -16,7 +16,7 @@ angular.module('root')
     .directive('wishButton', function () {
         let now = new Date();
         return {
-            restrict: "E",
+            restrict: "A",
             scope: {
                 product: "@"
             },

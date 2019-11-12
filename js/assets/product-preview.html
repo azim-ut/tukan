@@ -1,42 +1,12 @@
-<div class="wow fadeInUp product-item grid animated"
-     style="visibility: visible; animation-duration: 1s; animation-delay: 0ms; animation-name: fadeInUp;">
-    <div class="inner-wrap">
-        <div class="product-outner">
-            <div class="product-inner" style="position: relative; background: #fff;">
-                <div class="product-img-wrap" style="overflow:hidden;">
-                    <div class="product-img-wrap-inner">
-                        <div class="product-img" style="position: relative;">
-                            <div style="height: 50px; position: absolute; right: 0px; z-index: 2;">
-                                <more-button product="{{id}}"></more-button>
-                            </div>
-                            <a href="/product/{{id}}"
-                               title="{{title}}">
-                                <div class="main-img"
-                                     style="background: transparent url({{img}}) no-repeat center center/contain">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="padding-top-10" style="margin: 0 10px; overflow: hidden;">
-                    {{title}}
-                </div>
-                <div style="overflow: hidden;">
-                    <wish-button product="{{id}}" title="{{title}}" class="left"></wish-button>
-                    <cart-button product="{{id}}" price="{{price}}" class="right margin-right-15"></cart-button>
-                </div>
-
-
-                <!-- Clone Group btns for layout List -->
-                <div class="hidden-tag nasa-list-stock-wrap">
-                    <p class="nasa-list-stock-status instock">
-                        AVAILABILITY: <span>In stock</span></p>
-                </div>
-                <div class="group-btn-in-list-wrap hidden-tag">
-                    <div class="group-btn-in-list"></div>
-                </div>
-
-            </div>
-        </div>
+<div class="card" style="width: 18rem;">
+    <a href="/product/{{id}}" title="{{title}}">
+        <img src="{{img}}" class="card-img-top" alt="...">
+    </a>
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+    </div>
+    <div class="card-body">
+        <wish-button product="{{id}}" title="{{title}}" class="left"></wish-button>
+        <cart-button product="{{id}}" price="{{price}}" class="right margin-right-15"></cart-button>
     </div>
 </div>

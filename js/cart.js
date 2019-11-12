@@ -101,7 +101,7 @@ angular.module('root')
     .directive('cartButton', function () {
         let now = new Date();
         return {
-            restrict: "E",
+            restrict: "A",
             scope: {
                 price: "@",
                 product: "@"

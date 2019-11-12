@@ -14,9 +14,9 @@ $types  = $ts->getClothesTypeTags();
 
 
 if(!$ts->isAgeExists($age, $gender) || !$ts->isValidGender($gender)){
-    include_once __DIR__ . "/../404.php";
+	include_once __DIR__ . "/../404.php";
 
-    return;
+	return;
 }
 $tags = $ts->getHeightTagsByAge($age, $gender);
 array_push($tags, $gender);
@@ -25,49 +25,46 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
 ?>
 
 
-    <div id="content" class="section-element desktop-margin-top-100 nasa-clear-both" ng-controller="MainPageController"
-         ng-cloak>
-        <? require "main_filters.php" ?>
-        <div class="row margin-bottom-20" style="border-top: #EEE 1px solid;">
-            <div class="nasa-col large-12 columns right">
-                <div class="wpb_wrapper">
+    <div id="content" ng-controller="MainPageController" ng-cloak>
+		<? require "main_filters.php" ?>
+        <div class="margin-bottom-20 overflow">
+            <div ng-repeat="row in posts"
+                 style="float: left;"
+                 class="card cardItemPreview">
+                <a href="/product/{{row.id}}" title="{{row.title}}">
+                    <div style="background: transparent url({{row.img}}) no-repeat center center/contain    ;"
+                         class="card-img-top"></div>
+                </a>
+                <div class="card-body card-body-price" style="padding: 0;">
+                    <div class="card-title bold">{{row.title}}</div>
+                    <table width="100%;">
+                        <tr>
+                            <td>
+                                <div wish-button product="{{row.id}}" title="{{row.title}}" class="left"></div>
+                            </td>
+                            <td align="right">
+                                <div cart-button product="{{row.id}}" price="{{row.price}}" class="right"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
-                    <div class="products woocommerce">
-
-                        <div class="inner-content">
-
-                            <div class="row">
-                                <div ng-repeat="row in posts" class="col-6 col-sm-3 productPreview" style="padding: 0px;">
-                                    <product-preview id="row.id"
-                                                     title="row.title"
-                                                     img="row.img"
-                                                     price="row.price"
-                                                     fullprice="row.price"></product-preview>
-                                </div>
-
-                                <div class="row text-center"
-                                     style="background: #fff;"
-                                     ng-if="!posts.length && fetched && !data.process">
-                                    <div class="subProduct"
-                                         style="width: 100%; height: 350px; background: transparent url(/web/img/empty_list_2.png) no-repeat center center/contain; border: none;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
+            <div class="row text-center"
+                 style="background: #fff;"
+                 ng-if="!posts.length && fetched && !data.process">
+                <div class="subProduct"
+                     style="width: 100%; height: 350px; background: transparent url(/web/img/empty_list_2.png) no-repeat center center/contain; border: none;">
                 </div>
             </div>
         </div>
-
-        <div class="row" ng-if="total > posts.length">
-            <button class="btn btn-danger btn-block margin-bottom-20" ng-click="extendList()">
-                <i class="glyphicon glyphicon-plus"></i> Еще {{total - posts.length}}
-            </button>
-        </div>
-
+        <br/>
+        <button class="btn btn-danger btn-block margin-bottom-20 margin-top-10"
+                ng-if="total > posts.length"
+                ng-click="extendList()">
+            <i class="glyphicon glyphicon-plus"></i> Еще {{total - posts.length}}
+        </button>
+        <br/>
         <div class="modal fade" tabindex="-1" id="CatalogFilterModal" role="dialog">
             <div class="modal-dialog modal-sm" role="document">
                 <form ng-submit="updateFilter(heightTemp, genderTemp)">
