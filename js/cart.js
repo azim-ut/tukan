@@ -43,7 +43,7 @@ angular.module('root')
                     $rootScope.$broadcast('updateCart', {});
                 });
             },
-            submit: function (cart) {
+            checkout: function (cart) {
                 let address = null;
                 if(cart.address.length && cart.address[$scope.selectAddress] !== undefined){
                     address = cart.address[$scope.selectAddress].data;
@@ -54,7 +54,9 @@ angular.module('root')
                         $("#AuthForm").modal("show");
                     }
                     if (res.data) {
-                        location.href = "/orders";
+                        $scope.cart = res.data;
+                        $("#CartCheckouted").modal("show");
+                        //location.href = "/orders";
                     }
                     $scope.msg = res.msg;
                 });

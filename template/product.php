@@ -199,40 +199,45 @@ $heights = $post->enabledHeights();
             </div>
         </div>
 
-    </div>
-
-    <div class="modal fade" tabindex="-1" role="dialog" id="ItemAddedToCart">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-sm-3 margin-bottom-20 text-center">
-                            <i class="glyphicon glyphicon-ok-circle" style="color: #c3cc36; font-size: 200%;"></i>
-                            <br/>
-                            <span class="thin-font">Товар добавлен к корзину</span>
-                        </div>
-                        <div class="col-sm-9 margin-bottom-20">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default" ng-click="closeAdvices()">Перейти к
-                                    сайту
-                                </button>
-                                <a href="/cart" class="btn btn-danger">Перейти в корзину</a>
+        <div class="modal fade" tabindex="-1" role="dialog" id="ItemAddedToCart">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-4 margin-bottom-20 text-center">
+                                    <i class="fa fa-check" style="color: #c3cc36; font-size: 200%;"></i>
+                                    <br/>
+                                    <div class="thin-font">Товар добавлен к корзину</div>
+                                    <br/>
+                                </div>
+                                <div class="col-sm-4 margin-bottom-20">
+                                        <button type="button" class="btn btn-outline-success btn-block" ng-click="closeAdvices()">Перейти к
+                                            сайту
+                                        </button>
+                                    <br/>
+                                </div>
+                                <div class="col-sm-4 margin-bottom-20">
+                                    <a href="/cart" class="btn btn-outline-success btn-block">Перейти в корзину</a>
+                                    <br/>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr/>
-                    <span class="thin-font">Вместе с этим часто покупают:</span>
-                    <div class="container">
-                        <div class="row overflow" style="height: 140px;">
-                            <div style="float: left;" class="text-center" ng-repeat="row in more">
-                                <a href="/product/{{row.id}}">
-                                    <div style="
-                                                background: transparent url({{row.img}}) no-repeat center center/contain;
-                                                border: #c3cc36 1px solid; margin: 4px; padding: 5px;
-                                                width: 100px; height: 100px;"></div>
-                                    <span class="thin-font">{{row.title}}</span>
-                                    <br/>&euro; {{row.price}}
-                                </a>
+                        <hr/>
+                        <span class="thin-font">Вместе с этим часто покупают:</span>
+                        <div class="container" style="display: contents;">
+                            <div class="row overflow" style="height: 140px;">
+
+                                <div style="float: left;" class="text-center" ng-repeat="row in more">
+                                    <a href="/product/{{row.id}}">
+                                        <div style="
+                                                    background: transparent url({{row.img}}) no-repeat center center/contain;
+                                                    border: #c3cc36 1px solid; margin: 4px; padding: 5px;
+                                                    width: 100px; height: 100px;"></div>
+                                        <span class="thin-font">{{row.title}}</span>
+                                        <br/>&euro; {{row.price}}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -240,7 +245,7 @@ $heights = $post->enabledHeights();
             </div>
         </div>
     </div>
-    </div>
+
     <script>
         $(function () {
             $('#imageGallery').lightSlider({

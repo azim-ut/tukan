@@ -1,7 +1,8 @@
 <? include_once __DIR__ . "/nav/start.php" ?>
     <link type="text/css" rel="stylesheet" href="/web/css/cart_empty.css?t=<?=$version?>"/>
 
-    <div ng-controller="CartListController" ng-cloak class="nasa-single-product-scroll HeadContentPage" style="padding-right: 20px; padding-left: 20px; background: linear-gradient(#e5e8ed, #a1b3c1);">
+    <div ng-controller="CartListController" ng-cloak class="nasa-single-product-scroll HeadContentPage"
+         style="padding-right: 20px; padding-left: 20px; background: linear-gradient(#e5e8ed, #a1b3c1);">
         <div ng-if="cart.items.length == 0" style="text-align: center;">
             <div class="emptyCart">
                 <div class="example">
@@ -99,7 +100,7 @@
                 <br/>
 
                 <div ng-show="msg" class="msg">{{msg}}</div>
-                <button class="btn btn-block btn-primary" ng-click="submit(cart)">
+                <button class="btn btn-block btn-primary" ng-click="checkout(cart)">
                     <i class="fa fa-credit-card"></i> Оплатить
                 </button>
 
@@ -108,5 +109,41 @@
                 &nbsp;
             </div>
         </div>
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="CartCheckouted">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <b>TukanStore OU</b>
+                            <table class="table">
+                                <tr ng-repeat="row in cart.items">
+                                    <td class="text-left">{{row.title}}&nbsp;x&nbsp;{{row.cnt}}</td>
+                                    <td width="1%" class="text-nowrap">&euro; {{row.price*row.cnt}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-left"><i class="fa fa-tshirt"></i> x {{cart.totalCount}}</th>
+                                    <th class="text-nowrap">&euro; {{cart.totalPrice}}</th>
+                                    </th>
+                            </table>
+                            <div class="thin-font">Спасибо за покупку!</div>
+                            <br/>
+                            <div class="thin-font">Заказ можно отслеживать в вашем кабинете.</div>
+                            <br/>
+                            <a href="/my">
+                                <button type="button" class="btn btn-outline-info btn-block"><i class="fa fa-user-circle"></i>&nbsp;
+                                    Мой кабинет
+                                </button>
+                            </a>
+                            <br/>
+                            <button type="button" class="btn btn-outline-info btn-block"><i class="fa fa-close"></i>&nbsp;
+                                Закрыть
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 <? include_once __DIR__ . "/nav/footer.php" ?>

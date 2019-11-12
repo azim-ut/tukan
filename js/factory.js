@@ -122,7 +122,7 @@ angular.module('root')
             },
             submit: {
                 method: 'POST',
-                url: "/shop/rest/cart/submit",
+                url: "/shop/rest/order/checkout",
                 params: {
                     address: '@address'
                 },
