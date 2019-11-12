@@ -36,18 +36,18 @@
                             <span class="fa fa-user-circle"></span>
                         </a>
                         <a href="/my"
-                           class="toMy"
+                           class="toMy text-uppercase"
                            ng-if="data.user" style="margin-left: 15px; font-size: 120%; font-weight: bold; line-height: 20px;">
                             {{data.user.name.charAt(0)}}
                         </a>
                     </li>
                     <li class="cartHeadBtn"><a href="/cart">
-                            <i class="fa fa-shopping-cart"></i>
+                            <i class="icon icon-basket"></i>
                             <div ng-show="data.cart.ids.length" class="subIconCount blue">{{data.cart.ids.length}}</div>
                         </a>
                     </li>
                     <li class="wishHeadBtn"><a href="/wishes">
-                            <i class="fa fa-heart"></i>
+                            <i class="icon icon-heart"></i>
                             <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}
                             </div>
                         </a>
