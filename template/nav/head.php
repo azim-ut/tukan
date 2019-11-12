@@ -31,8 +31,7 @@ use core\service\App; ?>
 	<link rel='dns-prefetch' href='//s.w.org'/>
 	<link rel="alternate" type="application/rss+xml" title="tukan.store &raquo; Лента"
 	      href="https://tukan.store/feed/"/>
-	<link rel='stylesheet' id='elessi-style-css'
-	      href='/web/template/style.css?ver=<?=$version?>' media='all'/>
+<!--	<link rel='stylesheet' id='elessi-style-css' href='/web/template/style.css?ver=--><?//=$version?><!--' media='all'/>-->
 
 
     <link type="text/css" rel="stylesheet" href="/web/assets/lightslider-master/src/css/lightslider.css" />
