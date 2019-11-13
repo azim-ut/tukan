@@ -39,7 +39,7 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
                          class="card-img-top"></div>
                 </a>
                 <div class="card-body card-body-price" style="padding: 0;">
-                    <div class="card-title bold">{{row.title}}-{{($index)>=3?($index+1)%3:($index + 1)}}-{{($index%3)}}</div>
+                    <div class="card-title bold">{{row.title}}</div>
                     <table width="100%;">
                         <tr>
                             <td>
