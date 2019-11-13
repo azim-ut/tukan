@@ -20,7 +20,7 @@
                 </ul>
             </div>
             <div class="col-sm-4">
-                <h4 class="text-left text-color-white">Чеклисты</h4>
+                <h4 class="text-left text-color-white">Checklist</h4>
                 <ul>
                     <li><a href="/checklist/daily">Ежедневные дела для детей</a><br/></li>
                 </ul>
