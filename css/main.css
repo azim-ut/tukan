@@ -11,12 +11,16 @@
     width: 100%;
     background: #fff;
     top: 0;
-    z-index: 2;
+    z-index: 3;
 }
 
 .gb_Rd {
     -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
     box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+}
+.gb_Rd_sm {
+    -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 1px 2px -1px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 2px 2px -1px rgba(0,0,0,0.2);
 }
 body{
     padding-top: 74px;
@@ -454,6 +458,38 @@ footer {
 .grid2 div:last-child{
     border-right: none;
 }
+
+.catalogItemPromoIcon{
+    position: absolute; top: 5px; right: 5px; width: 50px; height: 50px;border: #fff 4px solid; border-radius: 15px;
+    z-index: 2;
+    background: #e5e8ed url(/web/img/promo_chr_2019/1.svg) no-repeat center center/cover;
+}
+
+.catalogItemPromoIcon:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+    cursor: pointer;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite; background-color: #ffcc00;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(-5deg); }
+    60% { transform: translate(1px, 1px) rotate(5deg); }
+    100% { transform: translate(1px, 1px) rotate(-5deg); }
+}
+
+.catalogItemPromoIcon.icon2{ background-image: url(/web/img/promo_chr_2019/2.svg); }
+.catalogItemPromoIcon.icon3{ background-image: url(/web/img/promo_chr_2019/3.svg); }
+.catalogItemPromoIcon.icon4{ background-image: url(/web/img/promo_chr_2019/4.svg); }
+.catalogItemPromoIcon.icon5{ background-image: url(/web/img/promo_chr_2019/5.svg); }
+.catalogItemPromoIcon.icon6{ background-image: url(/web/img/promo_chr_2019/6.svg); }
+.catalogItemPromoIcon.icon7{ background-image: url(/web/img/promo_chr_2019/7.svg); }
+.catalogItemPromoIcon.icon8{ background-image: url(/web/img/promo_chr_2019/8.svg); }
+.catalogItemPromoIcon.icon9{ background-image: url(/web/img/promo_chr_2019/9.svg); }
+.catalogItemPromoIcon.icon10{ background-image: url(/web/img/promo_chr_2019/10.svg); }
+.catalogItemPromoIcon.icon11{ background-image: url(/web/img/promo_chr_2019/11.svg); }
+.catalogItemPromoIcon.icon12{ background-image: url(/web/img/promo_chr_2019/12.svg); }
 
 @media print{
     .no-print{display: none;}

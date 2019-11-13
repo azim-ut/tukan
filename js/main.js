@@ -34,6 +34,9 @@ angular.module('root')
                     $scope.resetPosts();
                 }
             },
+            showChristmasPromo: function (row) {
+                console.log(row);
+            },
             clickOnTag: function (tag) {
                 $scope.tags.forEach(function (row) {
                     if (row.group === 'gender') {
