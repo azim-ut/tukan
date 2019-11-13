@@ -6,6 +6,21 @@
     background: #fff;
 }
 
+.head{
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    top: 0;
+    z-index: 2;
+}
+
+.gb_Rd {
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+}
+body{
+    padding-top: 74px;
+}
 .card{position: relative;}
 .card-body-price{}
 .cardItemPreview{width: 20%; border-radius: 0; position: relative;}
@@ -346,11 +361,11 @@ button.gender:hover{
 }
 
 .mainLogo{
-    background: #fff url(/web/img/tukan.jpg) no-repeat center 5px/contain;
+    background: #fff url(/web/img/tukan.jpg) no-repeat center center/contain;
     position: absolute;
     width: 130px;
     top: 0;
-    height: 44px;
+    height: 72px;
 }
 .mainLogo:hover{
     background-color: #fff;
@@ -365,7 +380,7 @@ button.gender:hover{
 .userBtn,
 .wishHeadBtn,
 .cartHeadBtn{
-    font-size: 150% !important; float: left; width: 50px;
+    font-size: 150% !important; float: left; width: 50px; line-height: 60px;
 }
 .userBtn a,
 .wishHeadBtn a,
@@ -419,9 +434,9 @@ footer {
     color: #fff;
     padding: 7px 5px;
     position: absolute;
-    margin-top: -15px;
+    margin-top: -25px;
     line-height: 1px;
-    margin-left: 45px;
+    margin-left: 35px;
 }
 
 .btn,

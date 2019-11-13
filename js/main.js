@@ -139,3 +139,14 @@ angular.module('root')
             return tags;
         }
     });
+
+$(function(){
+    setMinHeight();
+});
+function setMinHeight(){
+    console.log(window.innerHeight);
+    $(".HeadContentPage").css("min-height", (3*window.innerHeight)/4+"px");
+}
+window.onresize = function(){
+    setMinHeight();
+};

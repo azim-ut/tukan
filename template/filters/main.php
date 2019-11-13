@@ -29,7 +29,7 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
 		<? require "main_filters.php" ?>
         <div class="margin-bottom-20 overflow">
             <div ng-repeat="row in posts"
-                 style="float: left;"
+                 style="float: left; padding: 10px;"
                  class="card cardItemPreview">
                 <a href="/product/{{row.id}}" title="{{row.title}}">
                     <div style="background: transparent url({{row.img}}) no-repeat center center/contain    ;"

@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div ng-controller="AuthBlockController" ng-cloak class="no-print" style="border-bottom: #333 1px solid;">
+<div ng-controller="AuthBlockController" ng-cloak class="head no-print gb_Rd">
 
     <table width="100%">
         <tr>
@@ -29,7 +29,7 @@
             </td>
             <td align="right">
                 <ul style="display: inline-block; width: 180px; margin-top: 5px;">
-                    <li class="userBtn">
+                    <li class="userBtn text-center">
                         <a data-toggle="modal"
                            ng-if="!data.user"
                            data-target="#AuthForm">
@@ -41,12 +41,12 @@
                             {{data.user.name.charAt(0)}}
                         </a>
                     </li>
-                    <li class="cartHeadBtn"><a href="/cart">
+                    <li class="cartHeadBtn text-center"><a href="/cart">
                             <i class="icon icon-basket"></i>
                             <div ng-show="data.cart.ids.length" class="subIconCount blue">{{data.cart.ids.length}}</div>
                         </a>
                     </li>
-                    <li class="wishHeadBtn"><a href="/wishes">
+                    <li class="wishHeadBtn text-center"><a href="/wishes">
                             <i class="icon icon-heart"></i>
                             <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}
                             </div>

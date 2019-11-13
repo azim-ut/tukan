@@ -9,7 +9,6 @@ angular.module('root')
         });
 
         WishFactory.list().$promise.then(function (res) {
-            console.log(res);
             $scope.data.wishes.list = res.data;
         });
     })
