@@ -31,15 +31,15 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
             <div ng-repeat="row in posts track by $index"
                  style="float: left; padding: 10px; position: relative;"
                  class="card cardItemPreview">
-                <div class="catalogItemPromoIcon gb_Rd"
+                <div class="catalogItemPromoIcon"
                      ng-click="showChristmasPromo(row)"
-                     style="background-image: url(/web/img/promo_chr_2019/{{($index)>=40?($index+1)%40:($index + 1)}}.svg);">&nbsp;</div>
+                     style="background-image: url(/web/img/promo_chr_2019/{{($index)>=3?($index%3+1):($index + 1)}}.svg);">&nbsp;</div>
                 <a href="/product/{{row.id}}" title="{{row.title}}">
                     <div style="background: transparent url({{row.img}}) no-repeat center center/contain    ;"
                          class="card-img-top"></div>
                 </a>
                 <div class="card-body card-body-price" style="padding: 0;">
-                    <div class="card-title bold">{{row.title}}-{{($index)>=40?($index+1)%40:($index + 1)}}-{{($index%40)}}</div>
+                    <div class="card-title bold">{{row.title}}-{{($index)>=3?($index+1)%3:($index + 1)}}-{{($index%3)}}</div>
                     <table width="100%;">
                         <tr>
                             <td>

@@ -460,9 +460,10 @@ footer {
 }
 
 .catalogItemPromoIcon{
-    position: absolute; top: 5px; right: 5px; width: 50px; height: 50px;border: #fff 4px solid; border-radius: 15px;
+    position: absolute; top: 5px; right: 5px; width: 60px; height: 60px;
+    border: #fff 4px solid; border-radius: 15px;
     z-index: 2;
-    background: #e5e8ed url(/web/img/promo_chr_2019/1.svg) no-repeat center center/cover;
+    background: #fff url(/web/img/promo_chr_2019/1.svg) no-repeat center center/cover;
 }
 
 .catalogItemPromoIcon:hover {
@@ -470,7 +471,8 @@ footer {
     animation: shake 0.5s;
     cursor: pointer;
     /* When the animation is finished, start again */
-    animation-iteration-count: infinite; background-color: #ffcc00;
+    animation-iteration-count: infinite;
+    /*background-color: #ffcc00;*/
 }
 
 @keyframes shake {
@@ -478,18 +480,6 @@ footer {
     60% { transform: translate(1px, 1px) rotate(5deg); }
     100% { transform: translate(1px, 1px) rotate(-5deg); }
 }
-
-.catalogItemPromoIcon.icon2{ background-image: url(/web/img/promo_chr_2019/2.svg); }
-.catalogItemPromoIcon.icon3{ background-image: url(/web/img/promo_chr_2019/3.svg); }
-.catalogItemPromoIcon.icon4{ background-image: url(/web/img/promo_chr_2019/4.svg); }
-.catalogItemPromoIcon.icon5{ background-image: url(/web/img/promo_chr_2019/5.svg); }
-.catalogItemPromoIcon.icon6{ background-image: url(/web/img/promo_chr_2019/6.svg); }
-.catalogItemPromoIcon.icon7{ background-image: url(/web/img/promo_chr_2019/7.svg); }
-.catalogItemPromoIcon.icon8{ background-image: url(/web/img/promo_chr_2019/8.svg); }
-.catalogItemPromoIcon.icon9{ background-image: url(/web/img/promo_chr_2019/9.svg); }
-.catalogItemPromoIcon.icon10{ background-image: url(/web/img/promo_chr_2019/10.svg); }
-.catalogItemPromoIcon.icon11{ background-image: url(/web/img/promo_chr_2019/11.svg); }
-.catalogItemPromoIcon.icon12{ background-image: url(/web/img/promo_chr_2019/12.svg); }
 
 @media print{
     .no-print{display: none;}
