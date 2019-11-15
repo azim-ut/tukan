@@ -9,7 +9,7 @@ use core\service\FacebookAuthService;
 include_once __DIR__ . "/../nav/start_empty.php" ?>
 <?
 $user = UserManager::current();
-FacebookAuthService::getInstance()->log($_GET);
+FacebookAuthService::getInstance()->log("income", $_GET);
 $appID       = App::context()->facebookAuthAppID();
 $appSecret   = App::context()->facebookAuthSecret();
 $redirectUrl = App::context()->facebookLoginRedirectURL();
@@ -24,14 +24,15 @@ $expiresIn   = ParamsManager::getParam("expires_in");
 if(!$user && $state === SessionManager::id() && $code != null){
 	$getTokenPath = FacebookConstants::changeCodeToAccessTokenPath($appID, $appSecret, $code, $redirectUrl);
 	$content      = file_get_contents($getTokenPath);
+    FacebookAuthService::getInstance()->log($getTokenPath, $content);
 	$res          = json_decode($content);
-	FacebookAuthService::getInstance()->log($res);
 	$accessToken = $res->access_token ?? null;
 
 	/** got access_token and */
 	if($code != null && SessionManager::id() === $state && $appSecret != null){
 		$checkTokenPath = FacebookConstants::getCodeDebugPath($accessToken, $accessToken);
 		$content        = file_get_contents($checkTokenPath);
+        FacebookAuthService::getInstance()->log($checkTokenPath, $content);
 		$res            = json_decode($content);
 		if(boolval($res->data->is_valid ?? false)){
 			$infoPath = FacebookConstants::getUserInfoPath($accessToken);
@@ -44,7 +45,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
 				$user = UserManager::facebook($info->id, $email, $name);
 				FacebookAuthService::getInstance()->appendToSession(SessionManager::id(), $user->getId(), $token, $accessToken);
 			}catch(BadResultException | NoUserException $e){
-				FacebookAuthService::getInstance()->log($e);
+				FacebookAuthService::getInstance()->log($infoPath, $e);
 			}
 			header("Location:/");
 		}

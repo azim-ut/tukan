@@ -88,6 +88,15 @@ angular.module('root')
             }
         });
     })
+    .factory('PayFactory', function ($resource) {
+        return $resource('/shop/rest', null, {
+            init: {
+                method: 'GET',
+                url: "/shop/rest/ep/init",
+                isArray: false
+            }
+        });
+    })
     .factory('CartFactory', function ($resource) {
         return $resource('/shop/rest', null, {
             add: {

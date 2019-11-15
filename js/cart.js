@@ -13,7 +13,7 @@ angular.module('root')
             }
         });
     })
-    .controller("CartListController", function ($rootScope, $scope, $controller, $interval, $anchorScroll, CartService, CartFactory) {
+    .controller("CartListController", function ($rootScope, $scope, $controller, $interval, $anchorScroll, CartService, CartFactory, PayFactory) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
             cart: null,
@@ -41,6 +41,11 @@ angular.module('root')
             setAddress: function (id, text) {
                 CartFactory.address({},{id: id, text: text}).$promise.then(function (res) {
                     $rootScope.$broadcast('updateCart', {});
+                });
+            },
+            pay: function (cart) {
+                PayFactory.init({},{}).$promise.then(function(res){
+                    console.log(res);
                 });
             },
             checkout: function (cart) {

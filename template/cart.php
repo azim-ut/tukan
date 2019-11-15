@@ -1,7 +1,10 @@
 <? include_once __DIR__ . "/nav/start.php" ?>
     <link type="text/css" rel="stylesheet" href="/web/css/cart_empty.css?t=<?=$version?>"/>
+    <script src="/web/js/every_pay.js?t=<?=$version?>" type="text/javascript"></script>
 
-    <div ng-controller="CartListController" ng-cloak class="nasa-single-product-scroll HeadContentPage"
+    <div ng-controller="CartListController"
+         ng-cloak
+         class="nasa-single-product-scroll HeadContentPage"
          style="padding-right: 20px; padding-left: 20px; background: linear-gradient(#e5e8ed, #a1b3c1);">
         <div ng-if="cart.items.length == 0" style="text-align: center;">
             <div class="emptyCart">
@@ -19,19 +22,19 @@
 
 
             <div class="col-sm-5">
-                <div style="overflow: hidden; border: #ccc 1px solid;">
+                <div class="gb_Rd_sm overflow-h">
                     <cart-row ng-repeat="row in cart.items" cart="cart" product="row"></cart-row>
                 </div>
                 <br/>
             </div>
             <div class="col-sm-4">
 
-                <div class="text-right addressBlock">
+                <div class="text-right addressBlock gb_Rd_sm">
                     <span style="float: left;">Товары</span>
                     <span class="text-right">x {{cart.items.length}}</span>
                 </div>
                 <br/>
-                <div style="border-top: #eaeaea 1px solid;" class="addressBlock">
+                <div style="border-top: #eaeaea 1px solid;" class="addressBlock gb_Rd_sm">
                     <div style="line-height: 35px;">Адрес доставки:</div>
                     <div class="text-center center center-block"
                          style="overflow: hidden; text-align: center;">
@@ -91,7 +94,7 @@
                 </div>
 
                 <br/>
-                <div class="text-right addressBlock"
+                <div class="text-right addressBlock gb_Rd_sm"
                      style="font-weight: bold; line-height: 50px; font-size: 130%;">
                     <span style="float: left;">Итого</span>
                     <span class="text-right">€ {{cart.totalPrice}}</span>
@@ -100,7 +103,7 @@
                 <br/>
 
                 <div ng-show="msg" class="msg">{{msg}}</div>
-                <button class="btn btn-block btn-primary" ng-click="checkout(cart)">
+                <button class="btn btn-block btn-primary gb_Rd_sm" ng-click="pay(cart)">
                     <i class="fa fa-credit-card"></i> Оплатить
                 </button>
 
@@ -131,7 +134,8 @@
                             <div class="thin-font">Заказ можно отслеживать в вашем кабинете.</div>
                             <br/>
                             <a href="/my">
-                                <button type="button" class="btn btn-outline-info btn-block"><i class="fa fa-user-circle"></i>&nbsp;
+                                <button type="button" class="btn btn-outline-info btn-block"><i
+                                            class="fa fa-user-circle"></i>&nbsp;
                                     Мой кабинет
                                 </button>
                             </a>
@@ -143,6 +147,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div id="iframe-payment-container" style="border: 0px; min-width: 460px; min-height: 325px">
+            <iframe width="460" height="325" style="border: 0px; height: 325; width: 460"></iframe>
         </div>
 
     </div>
