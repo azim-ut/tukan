@@ -38,6 +38,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
 		if(boolval($res->data->is_valid ?? false)){
 			$infoPath = FacebookConstants::getUserInfoPath($a_token);
 			$content  = file_get_contents($infoPath);
+            FacebookAuthService::getInstance()->log($infoPath, $content);
 			$info     = json_decode($content);
 			$id       = $info->id ?? 0;
 			$name     = $info->name;
