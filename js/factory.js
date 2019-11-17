@@ -91,9 +91,10 @@ angular.module('root')
     .factory('PayFactory', function ($resource) {
         return $resource('/shop/rest', null, {
             init: {
-                method: 'GET',
+                method: 'POST',
                 url: "/shop/rest/ep/init",
-                isArray: false
+                isArray: false,
+                headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
             }
         });
     })
@@ -124,9 +125,9 @@ angular.module('root')
                 url: "/shop/rest/cart/ids",
                 isArray: false
             },
-            list: {
+            cart: {
                 method: 'GET',
-                url: "/shop/rest/cart/list",
+                url: "/shop/rest/cart/cart",
                 isArray: false
             },
             submit: {
@@ -140,6 +141,19 @@ angular.module('root')
             },
             address: {
                 method: 'POST',
+                url: "/shop/rest/cart/address",
+                params: {
+                    data: '@data'
+                },
+                isArray: false,
+                headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
+            }
+        });
+    })
+    .factory('CoreFactory', function ($resource) {
+        return $resource('/core/rest', null, {
+            address: {
+                method: 'POST',
                 url: "/core/rest/user/address",
                 params: {
                     data: '@text',
@@ -147,11 +161,7 @@ angular.module('root')
                 },
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
-            }
-        });
-    })
-    .factory('AuthFactory', function ($resource) {
-        return $resource('/core/rest', null, {
+            },
             register: {
                 method: 'POST',
                 url: "/core/rest/user/new",

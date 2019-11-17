@@ -41,8 +41,8 @@
 
                         <div class="addressBlock"
                              style="position: relative;"
-                             ng-repeat=" row in cart.address track by $index"
-                             ng-if="$index == selectAddress && editAddress === undefined">
+                             ng-repeat=" row in cart.addresses track by $index"
+                             ng-if="row.data == cart.address && editAddress === undefined">
                             <p>{{row.data}}</p>
                             <div class="btn btn-xs btn-icon-only"
                                  style="position: absolute; right: 0; top: 0; color: #ccc;"
@@ -75,16 +75,17 @@
                                 <i class="fa fa-close"></i>
                             </div>
                         </div>
-                        <div class="btn-group btn-group-sm btn-block margin-top-10" ng-if="cart.address.length > 0">
+                        <div class="btn-group btn-group-sm btn-block margin-top-10 carAddressList"
+                             ng-if="cart.addresses.length > 0">
                             <button type="button"
-                                    ng-class="{'btn btn-icon-only':true, 'active': selectAddress === $index}"
-                                    ng-repeat="row in cart.address track by $index"
-                                    ng-click="useAddress($index)">
+                                    ng-class="{'btn btn-icon-only':true, 'active': (cart.address === row.data)}"
+                                    ng-repeat="row in cart.addresses track by $index"
+                                    ng-click="useAddress(row.data)">
                                 <i class="fa fa-address-card" style="border: none;"></i>
                             </button>
                             <button type="button"
                                     class="btn btn-icon-only"
-                                    ng-click="needNewAddress()">
+                                    ng-click="showNewAddressForm()">
                                 <i class="fa fa-plus" style="border: none;"></i>
                             </button>
                             </ul>
@@ -103,13 +104,54 @@
                 <br/>
 
                 <div ng-show="msg" class="msg">{{msg}}</div>
-                <button class="btn btn-block btn-primary gb_Rd_sm" ng-click="pay(cart)">
-                    <i class="fa fa-credit-card"></i> Оплатить
-                </button>
 
+                <form action="/pay/everypay" target="iframe-payment-container" method="POST" name="cartSubmit">
+                    <button class="btn btn-block btn-primary gb_Rd_sm" type="button" ng-click="initPay(this)">
+                        <i class="fa fa-credit-card"></i> Оплатить
+                    </button>
+                </form>
             </div>
             <div class="col-xs-1">
                 &nbsp;
+            </div>
+        </div>
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="PayForm">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <iframe id="iframe-payment-container" name="iframe-payment-container"
+                                width="400"
+                                border="0"
+                                height="400"
+                                style="border: none;height: 600px;width: 448px;overflow-x: hidden;"
+                                sandbox="allow-top-navigation allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="NewAddressForm">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <form ng-submit="setAddress(0, newAddress)">
+                                <h4>Новый адрес</h4>
+                                <textarea ng-model="newAddress" class="form-control"></textarea>
+                                <hr/>
+                                <div class="btn-group btn-block" ng-click="hideNewAddressForm()">
+                                    <button type="button" class="btn btn-outline-info">
+                                        <i class="fa fa-close"></i>
+                                    </button>
+                                    <button type="submit" class="btn btn-outline-info">
+                                        <i class="fa fa-save"></i> Добавить
+                                    </button>
+                                    <br/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

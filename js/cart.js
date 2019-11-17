@@ -13,48 +13,46 @@ angular.module('root')
             }
         });
     })
-    .controller("CartListController", function ($rootScope, $scope, $controller, $interval, $anchorScroll, CartService, CartFactory, PayFactory) {
+    .controller("CartListController", function ($rootScope, $scope, $controller, $interval, $anchorScroll, CartService, CartFactory, CoreFactory, PayFactory) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
             cart: null,
             msg: null,
+            pay: {},
             selectAddress: undefined,
             editAddress: undefined,
             toProduct: function (id) {
                 location.href = "/product/" + id;
             },
-            needNewAddress: function () {
-                $scope.editAddress = undefined;
-                $scope.selectAddress = undefined;
+            hideNewAddressForm: function () {
+                $("#NewAddressForm").modal("hide");
             },
-            useAddress: function (ind) {
-                $scope.editAddress = undefined;
-                $scope.selectAddress = ind;
+            showNewAddressForm: function () {
+                $("#NewAddressForm").modal("show");
+            },
+            useAddress: function (data) {
+                CartFactory.address({},{data: data}).$promise.then(function (res) {
+                    $rootScope.$broadcast('updateCart', {});
+                });
             },
             closeEditAddress: function () {
                 $scope.editAddress = undefined;
-                $scope.selectAddress = ind;
             },
             showAddressEditForm: function (row) {
                 $scope.editAddress = angular.copy(row);
             },
             setAddress: function (id, text) {
-                CartFactory.address({},{id: id, text: text}).$promise.then(function (res) {
+                $scope.useAddress(text);
+                CoreFactory.address({},{id: id, text: text}).$promise.then(function (res) {
                     $rootScope.$broadcast('updateCart', {});
                 });
             },
-            pay: function (cart) {
-                PayFactory.init({},{}).$promise.then(function(res){
-                    console.log(res);
-                });
+            initPay: function (t) {
+                $("#PayForm").modal("show");
+                document.cartSubmit.submit();
             },
             checkout: function (cart) {
-                let address = null;
-                if(cart.address.length && cart.address[$scope.selectAddress] !== undefined){
-                    address = cart.address[$scope.selectAddress].data;
-                }
-
-                CartFactory.submit({},{address: address}).$promise.then(function (res) {
+                CartFactory.submit({},{address: cart.address}).$promise.then(function (res) {
                     if (res.code === 401) {
                         $("#AuthForm").modal("show");
                     }
@@ -69,13 +67,13 @@ angular.module('root')
         });
 
         $scope.$on("updateCart", function (event, args) {
-            CartFactory.list().$promise.then(function (res) {
+            CartFactory.cart().$promise.then(function (res) {
                 $scope.cart = res.data;
                 $scope.editAddress = undefined;
-                if($scope.cart.address.length>0 && $scope.selectAddress === undefined){
+                if($scope.cart.addresses.length>0 && $scope.selectAddress === undefined){
                     $scope.selectAddress = 0;
                 }
-                if($scope.cart.address.length === 0){
+                if($scope.cart.addresses.length === 0){
                     $scope.selectAddress = undefined;
                 }
             });

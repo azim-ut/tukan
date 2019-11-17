@@ -1,11 +1,11 @@
 angular.module('root')
-    .controller("AuthBlockController", function ($scope, $controller, $interval, $anchorScroll, AuthFactory, ToastService, $httpParamSerializer) {
+    .controller("AuthBlockController", function ($scope, $controller, $interval, $anchorScroll, CoreFactory, ToastService, $httpParamSerializer) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
             tab: 'login',
             resetPassword: function (email) {
                 let params = $.param({email: email});
-                return AuthFactory.resetPwd(params).$promise.then(function (res) {
+                return CoreFactory.resetPwd(params).$promise.then(function (res) {
                 });
             },
             setTab: function (val) {
@@ -16,26 +16,26 @@ angular.module('root')
             },
             register: function (name, email, pwd1, pwd2, terms) {
                 let params = $.param({name: name, email: email, pwd1: pwd1, pwd2: pwd2, terms: 1});
-                return AuthFactory.register(params).$promise.then(function (res) {
+                return CoreFactory.register(params).$promise.then(function (res) {
                     if (ToastService.check(res)) {
                         location.reload();
                     }
                 });
             },
             logout: function () {
-                return AuthFactory.logout().$promise.then(function (res) {
+                return CoreFactory.logout().$promise.then(function (res) {
                     $scope.data.user = null;
                 });
             },
             login: function (email, pwd, save) {
-                return AuthFactory.login({}, {email: email, pass: pwd, save: save}).$promise.then(function (res) {
+                return CoreFactory.login({}, {email: email, pass: pwd, save: save}).$promise.then(function (res) {
                     ToastService.check(res);
                     $scope.data.user = res.data.user;
                     location.reload();
                 });
             },
             check: function () {
-                return AuthFactory.check().$promise.then(function (res) {
+                return CoreFactory.check().$promise.then(function (res) {
                     $scope.data.user = null;
                     if (res.data) {
                         $scope.data.user = res.data;
@@ -43,7 +43,7 @@ angular.module('root')
                 });
             },
             loginFB: function () {
-                AuthFactory.fbLoginLink().$promise.then(function (res) {
+                CoreFactory.fbLoginLink().$promise.then(function (res) {
                     if (res.data) {
                         console.log(res.data);
                         location.href = res.data;
