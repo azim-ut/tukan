@@ -24,7 +24,7 @@ $expiresIn   = ParamsManager::getParam("expires_in");
 if(!$user && $state === SessionManager::id() && $code != null){
 	$getTokenPath = FacebookConstants::changeCodeToAccessTokenPath($appID, $appSecret, $code, $redirectUrl);
 	$content      = file_get_contents($getTokenPath);
-    FacebookAuthService::getInstance()->log($getTokenPath, $content);
+    FacebookAuthService::getInstance()->log($getTokenPath, $content,1);
 	$res          = json_decode($content);
 	$accessToken = $res->access_token ?? null;
 
@@ -33,12 +33,12 @@ if(!$user && $state === SessionManager::id() && $code != null){
 	    $a_token = "EAAGipka04bgBAHASuftyl5pcMvT5r92qtBgCoZBRWenWslhAN4WyyQTKox8vqVKilcruoZCytCSn9BpbgJZBJSnPGrBz9CLFmcTS72hRq1vtvvgv9qNAOwzw5eOZA8b9z1QTNcbEM027dWS3ZBZAENSc8YypnMc4AespE5k7sZBcgZDZD";
 		$checkTokenPath = FacebookConstants::getCodeDebugPath($accessToken, $a_token);
 		$content        = file_get_contents($checkTokenPath);
-        FacebookAuthService::getInstance()->log($checkTokenPath, $content);
+        FacebookAuthService::getInstance()->log($checkTokenPath, $content, 2);
 		$res            = json_decode($content);
 		if(boolval($res->data->is_valid ?? false)){
 			$infoPath = FacebookConstants::getUserInfoPath($accessToken);
 			$content  = file_get_contents($infoPath);
-            FacebookAuthService::getInstance()->log($infoPath, $content);
+            FacebookAuthService::getInstance()->log($infoPath, $content, 3);
 			$info     = json_decode($content);
 			$id       = $info->id ?? 0;
 			$name     = $info->name;
@@ -47,7 +47,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
 				$user = UserManager::facebook($info->id, $email, $name);
 				FacebookAuthService::getInstance()->appendToSession(SessionManager::id(), $user->getId(), $token, $accessToken);
 			}catch(BadResultException | NoUserException $e){
-				FacebookAuthService::getInstance()->log($infoPath, $e);
+				FacebookAuthService::getInstance()->log($infoPath, $e, 4);
 			}
 			header("Location:/");
 		}
