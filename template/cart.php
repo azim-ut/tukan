@@ -121,10 +121,9 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <iframe id="iframe-payment-container" name="iframe-payment-container"
-                                width="400"
-                                border="0"
+                                width="100%"
                                 height="400"
-                                style="border: none;height: 600px;width: 448px;overflow-x: hidden;"
+                                style="border: none; height: 600px;width: 100%;overflow-x: hidden;"
                                 sandbox="allow-top-navigation allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
                     </div>
                 </div>

@@ -1,7 +1,13 @@
-<? include_once __DIR__ . "/nav/start.php"
-
-use assets\services\OrderService;use core\manager\ParamsManager;use core\manager\UserManager; ?>
 <?
+
+use assets\services\OrderService;
+use core\manager\ParamsManager;
+use core\manager\UserManager;
+
+?>
+<?
+include_once __DIR__ . "/nav/start.php";
+
 $orderService = OrderService::getInstance();
 $id           = ParamsManager::getParam("id");
 $list         = $orderService->list(UserManager::currentId());
@@ -29,9 +35,9 @@ if($order){
                             ?>
                             <tr>
                                 <td class="text-left"><?=$row->title()?>&nbsp;x&nbsp;<?=$row->count?></td>
-                                <td width="1%" class="text-nowrap">&euro; <?=$row->price()*$row->count?></td>
+                                <td width="1%" class="text-nowrap">&euro; <?=$row->price() * $row->count?></td>
                             </tr>
-                        <?
+                            <?
                         }
                         ?>
                         <tr>
