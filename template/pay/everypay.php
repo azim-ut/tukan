@@ -15,7 +15,7 @@ $data = $ePay->getFields([
     "billing_address" => $cart->address,
     "delivery_address" => $cart->address,
     "order_reference" => $cart->id,
-    "callback_url" => "https://" . App::context()->getDomain() . "/card/everypay",
+    "callback_url" => "https://" . App::context()->getDomain() . "/callback/everypay",
     "customer_url" => "https://" . App::context()->getDomain() . "/check?id=".$cart->id,
     "skin_name" => App::context()->param("everypay.skin.name"),
     "user_ip" => ServerUtils::getIP(),
