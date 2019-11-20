@@ -12,6 +12,9 @@ angular.module('root')
                 WishFactory.ids().$promise.then(function(res){$scope.data.wishes.ids = res.data});
                 CartService.fetchIds();
             },
+            toProduct: function (id) {
+                location.href = "/product/" + id;
+            },
             goBack: function () {
                 window.history.back();
             },
