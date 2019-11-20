@@ -14,9 +14,9 @@ $data = $ePay->getFields([
     "amount" => 1.5,
     "billing_address" => $cart->address,
     "delivery_address" => $cart->address,
-    "order_reference" => $cart->id,
+    "order_reference" => $cart->nonce,
     "callback_url" => "https://" . App::context()->getDomain() . "/callback/everypay",
-    "customer_url" => "https://" . App::context()->getDomain() . "/check?id=".$cart->id,
+    "customer_url" => "https://" . App::context()->getDomain() . "/check?id=".$cart->nonce,
     "skin_name" => App::context()->param("everypay.skin.name"),
     "user_ip" => ServerUtils::getIP(),
     "hmac_fields" => "account_id"
