@@ -10,11 +10,12 @@ $ePay = EveryPayService::getInstance();
 $ePay->init(App::context()->param("everypay.api.username"), App::context()->param("everypay.api.secret"), ['transaction_type' => 'charge']);
 $data = $ePay->getFields([
     "account_id" => 'EUR3D1',
-    "amount" => $cart->totalPrice,
+//    "amount" => $cart->totalPrice,
+    "amount" => 1.5,
     "billing_address" => $cart->address,
     "delivery_address" => $cart->address,
     "order_reference" => $cart->id,
-    "callback_url" => "https://" . App::context()->getDomain() . "/shop/card/callback.php",
+    "callback_url" => "https://" . App::context()->getDomain() . "/card/everypay",
     "customer_url" => "https://" . App::context()->getDomain() . "/check?id=".$cart->id,
     "skin_name" => App::context()->param("everypay.skin.name"),
     "user_ip" => ServerUtils::getIP(),
