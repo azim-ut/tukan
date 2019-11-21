@@ -152,6 +152,16 @@ angular.module('root')
     })
     .factory('CoreFactory', function ($resource) {
         return $resource('/core/rest', null, {
+            addresses: {
+                method: 'GET',
+                url: "/core/rest/user/addresses",
+                isArray: false,
+            },
+            addressDel: {
+                method: 'DELETE',
+                url: "/core/rest/user/address/:id",
+                isArray: false,
+            },
             address: {
                 method: 'POST',
                 url: "/core/rest/user/address",

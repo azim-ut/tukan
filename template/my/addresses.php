@@ -14,29 +14,9 @@ try{
     exit();
 }
 include_once __DIR__ . "/../nav/start.php";
-$list = OrderService::getInstance()->orders($user->getId());
-$total = sizeof($list);
-$checkouted = 0;
-$pack = 0;
-$sent = 0;
-$claim = 0;
-$delivered = 0;
-foreach($list as $row){
-    if($row->checkout){
-        $checkouted++;
-    }
-    if($row->pack){
-        $pack++;
-    }
-    if($row->sent){
-        $sent++;
-    }
-    if($row->claim){
-        $claim++;
-    }
-}
 ?>
-    <div ng-controller="AuthBlockController" ng-cloak class="HeadContentPage">
+    <script type="text/javascript" src="/web/js/addresses.js?t=<?=$version?>"></script>
+    <div ng-controller="AddressesBlockController" ng-cloak class="HeadContentPage">
         <div class="container">
             <div class="row">
                 <div class="col-sm-1">
@@ -49,41 +29,11 @@ foreach($list as $row){
 
 
                 <div class="col-sm-7 padding-left-15" style="padding: 20px;">
-                    <?
-                    if(!StringUtils::isEmpty($user->name())){
-                        ?>Привет, <?=$user->name()?>!<?
-                    }else{
-                        echo "Приветствуем!";
-                    }
-                    ?>
-
-                    <div class="row grid2 margin-top-15">
-                        <div class="block text-center col-6 col-sm-2">
-                            <div class="cnt"><?=$total?></div>
-                            Все заказы
-                        </div>
-                        <div class="block text-center col-6 col-sm-2">
-                            <div class="cnt"><?=$checkouted?></div>
-                            Обработка заказа
-                        </div>
-                        <div class="block text-center col-6 col-sm-2">
-                            <div class="cnt"><?=$pack?></div>
-                            Упаковка
-                        </div>
-                        <div class="block text-center col-6 col-sm-2">
-                            <div class="cnt"><?=$sent?></div>
-                            Заказ отправлен
-                        </div>
-                        <div class="block text-center col-6 col-sm-2">
-                            <div class="cnt"><?=$delivered?></div>
-                            Достлен
-                        </div>
-                        <div class="block text-center col-6 col-sm-2">
-                            <div class="cnt"><?=$claim?></div>
-                            Открытые спорты
+                    <div class="container">
+                        <div class="col-sm-4" ng-repeat="row in list">
+                            {{row}}
                         </div>
                     </div>
-
                 </div>
 
                 <div class="col-sm-1">

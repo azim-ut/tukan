@@ -33,7 +33,7 @@ include_once __DIR__ . "/../nav/start.php";
                     <table class="table table-striped">
                         <tr ng-repeat="row in items">
                             <td width="1%">
-                                <div style="width: 80px; height: 80px; border: #eaeaea 2px solid; background: #fff url('{{row.img}}') no-repeat center center/cover"
+                                <div style="width: 80px; height: 80px; border: #eaeaea 2px solid; background: #fff url('{{row.img}}') no-repeat center 0/cover"
                                 ></div>
                             </td>
                             <td width="*">
