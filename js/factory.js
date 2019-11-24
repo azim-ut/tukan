@@ -150,6 +150,20 @@ angular.module('root')
             }
         });
     })
+    .factory('CountryFactory', function ($resource) {
+        return $resource('/core/rest', null, {
+            countries: {
+                method: 'GET',
+                url: "/core/rest/countries",
+                isArray: false,
+            },
+            regions: {
+                method: 'GET',
+                url: "/core/rest/countries/regions/:code",
+                isArray: false,
+            }
+        })
+    })
     .factory('CoreFactory', function ($resource) {
         return $resource('/core/rest', null, {
             addresses: {
@@ -165,10 +179,6 @@ angular.module('root')
             address: {
                 method: 'POST',
                 url: "/core/rest/user/address",
-                params: {
-                    data: '@text',
-                    id:'@id'
-                },
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
             },

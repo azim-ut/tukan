@@ -22,6 +22,27 @@ angular.module('root')
                 WishFactory.toggle({id:productId}).$promise.then(function(res){
                     $scope.data.wishes.ids = res.data;
                 });
+            },
+            openEmptyForm: function(form, ext){
+                $scope.data.temp = null;
+                if(ext){
+                    $scope.data.temp = angular.copy(ext);
+                }
+                $(form).modal("show");
+            },
+            openForm: function (form, obj, ext) {
+                $scope.data.temp = angular.copy(obj);
+                if(ext){
+                    angular.extend($scope.data.temp, angular.copy(ext));
+                }
+                $(form).modal("show");
+            },
+            closeForm: function (form) {
+                $(form).modal("hide");
+                $scope.data.temp = null;
+            },
+            setTemp: function (obj) {
+                $scope.data.temp = angular.copy(obj);
             }
         });
         $scope.$on("updateCartIds", function (event, args) {
