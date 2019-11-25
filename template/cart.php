@@ -37,18 +37,11 @@
                 <div style="border-top: #eaeaea 1px solid;" class="addressBlock gb_Rd_sm">
                     <div style="line-height: 35px;">Адрес доставки:</div>
                     <div class="text-center center center-block"
-                         style="overflow: hidden; text-align: center;">
-
+                         style="border-top: #ccc 1px solid; overflow: hidden; text-align: center;">
                         <div class="addressBlock"
                              style="position: relative;"
-                             ng-repeat=" row in cart.addresses track by $index"
-                             ng-if="row.data == cart.address && editAddress === undefined">
-                            <p>{{row.data}}</p>
-                            <div class="btn btn-xs btn-icon-only"
-                                 style="position: absolute; right: 0; top: 0; color: #ccc;"
-                                 ng-click="showAddressEditForm(row)">
-                                <i class="fa fa-edit"></i>
-                            </div>
+                             ng-repeat=" row in cart.addresses track by $index">
+                            <pre>{{row}}</pre>
                         </div>
 
                         <div class="addressBlock" ng-if="selectAddress === undefined">
@@ -80,7 +73,7 @@
                             <button type="button"
                                     ng-class="{'btn btn-icon-only':true, 'active': (cart.address === row.data)}"
                                     ng-repeat="row in cart.addresses track by $index"
-                                    ng-click="useAddress(row.data)">
+                                    ng-click="useAddress(row)">
                                 <i class="fa fa-address-card" style="border: none;"></i>
                             </button>
                             <button type="button"

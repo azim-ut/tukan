@@ -28,7 +28,8 @@ include_once __DIR__ . "/../nav/start.php";
                 <div class="col-sm-9">
                     <button type="button"
                             class="btn btn-success btn-lg"
-                            ng-click="openForm('#NewAddressForm')">Добавить адрес</button>
+                            ng-click="openForm('#NewAddressForm')">Добавить адрес
+                    </button>
                     <hr/>
                     <div class="row">
                         <div class="container">
