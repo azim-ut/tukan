@@ -143,7 +143,7 @@ angular.module('root')
                 method: 'POST',
                 url: "/shop/rest/cart/address",
                 params: {
-                    data: '@data'
+                    id: '@id'
                 },
                 isArray: false,
                 headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}

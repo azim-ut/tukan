@@ -1,10 +1,38 @@
 angular.module('root')
-    .controller("AddressesBlockController", function ($scope, $controller, $interval, $anchorScroll, CoreFactory, CountryFactory) {
+    .controller("EditAddressController", function ($scope, $rootScope, $controller, $interval, $anchorScroll, CoreFactory, CountryFactory) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
-            items: null,
             countries: [],
             regions:[],
+            closeForm: function(){
+                $scope.closeForm('#EditAddressForm');
+                $scope.closeForm('#NewAddressForm');
+            },
+            update: function (address) {
+                if(address.id === undefined){
+                    address.id = 0;
+                }
+                if(address.countryObj){
+                    address.country = address.countryObj.name;
+                }
+                if(address.regionObj){
+                    address.region = address.regionObj.name;
+                }
+                let params = $.param(address);
+                CoreFactory.address(params).$promise.then(function (res) {
+                    if (res.data) {
+                        $rootScope.$broadcast('addressesUpdated', res.data);
+                        $scope.closeForm();
+                    }
+                });
+            },
+            getRegions: function (code) {
+                CountryFactory.regions({code:code}).$promise.then(function (res) {
+                    if (res.data) {
+                        $scope.regions = res.data;
+                    }
+                });
+            },
             fetchCountries: function () {
                 CountryFactory.countries().$promise.then(function (res) {
                     if (res.data) {
@@ -12,7 +40,8 @@ angular.module('root')
                     }
                 });
             },
-            openEditForm: function (obj) {
+            openEditForm: function (event, obj) {
+                console.log(event, obj);
                 $scope.countries.forEach(function(val){
                     if(val.name === obj.country){
                         obj.countryObj = val;
@@ -34,13 +63,21 @@ angular.module('root')
                     $scope.openForm('#EditAddressForm', obj)
                 }
             },
-            getRegions: function (code) {
-                CountryFactory.regions({code:code}).$promise.then(function (res) {
-                    if (res.data) {
-                        $scope.regions = res.data;
-                    }
-                });
-            },
+            openNewForm: function(){
+                $scope.openForm('#NewAddressForm');
+            }
+        });
+        $scope.fetchCountries();
+
+        $scope.$on('closeAddressForm', $scope.closeForm);
+        $scope.$on('editAddressForm', $scope.openEditForm);
+        $scope.$on('newAddressForm', $scope.openNewForm);
+        $scope.$on('addressesUpdated', $scope.onAddressUpdated);
+    })
+    .controller("AddressesBlockController", function ($scope, $rootScope, $controller, $interval, $anchorScroll, CoreFactory, CountryFactory) {
+        angular.extend(this, $controller("CommonController", {$scope: $scope}));
+        angular.extend($scope, {
+            items: null,
             showAddressEditForm: function (row) {
                 $scope.editAddress = angular.copy(row);
             },
@@ -49,38 +86,26 @@ angular.module('root')
                     $scope.delAddress(id);
                 }
             },
+            openEditForm: function (obj) {
+                $rootScope.$broadcast('editAddressForm', obj);
+            },
+            openNewAddressForm: function () {
+                $rootScope.$broadcast('newAddressForm', obj);
+            },
             delAddress: function (id) {
                 CoreFactory.addressDel({id:id}).$promise.then(function (res) {
                     if (res.data) {
-                        $scope.$broadcast('updateAddressesList', {});
+                        $scope.$broadcast('addressesUpdated', {});
                     }
                 });
             },
-            update: function (address) {
-                if(address.id === undefined){
-                    address.id = 0;
-                }
-                if(address.countryObj){
-                    address.country = address.countryObj.name;
-                }
-                if(address.regionObj){
-                    address.region = address.regionObj.name;
-                }
-                let params = $.param(address);
-                CoreFactory.address(params).$promise.then(function (res) {
-                    if (res.data) {
-                        $scope.$broadcast('updateAddressesList', {});
-                    }
-                });
+            onAddressUpdated: function(event, args){
+                    CoreFactory.addresses().$promise.then(function (res) {
+                        $scope.list = res.data;
+                        $rootScope.$broadcast('closeAddressForm', $scope.onAddressUpdated);
+                    });
             }
         });
-        $scope.fetchCountries();
-        $scope.$on("updateAddressesList", function (event, args) {
-            CoreFactory.addresses().$promise.then(function (res) {
-                $scope.list = res.data;
-                $scope.closeForm('#NewAddressForm');
-                $scope.closeForm('#EditAddressForm');
-            });
-        });
-        $scope.$broadcast('updateAddressesList', {});
+        $scope.$on("addressesUpdated", $scope.onAddressUpdated);
+        $scope.$broadcast('addressesUpdated', $scope.onAddressUpdated);
     });

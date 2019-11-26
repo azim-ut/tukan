@@ -7,7 +7,9 @@ angular.module('root')
                     fetched = true;
                     CartFactory.ids().$promise.then(function (res) {
                         Data.cart.ids = res.data;
-                        setTimeout(function(){fetched = false;}, 200);
+                        setTimeout(function () {
+                            fetched = false;
+                        }, 200);
                     })
                 }
             }
@@ -19,40 +21,30 @@ angular.module('root')
             cart: null,
             msg: null,
             pay: {},
+            selectedAddress:0,
             selectAddress: undefined,
             editAddress: undefined,
             toProduct: function (id) {
                 location.href = "/product/" + id;
             },
-            hideNewAddressForm: function () {
-                $("#NewAddressForm").modal("hide");
-            },
             showNewAddressForm: function () {
-                $("#NewAddressForm").modal("show");
+                $rootScope.$broadcast('newAddressForm', $scope.onAddressUpdated);
             },
-            useAddress: function (data) {
-                CartFactory.address({},{data: data}).$promise.then(function (res) {
-                    $rootScope.$broadcast('updateCart', {});
+            useAddress: function (id) {
+                $scope.selectedAddress = id;
+                CartFactory.address({}, {id: $scope.selectedAddress}).$promise.then(function (res) {
+                    $rootScope.$broadcast('updateCart');
                 });
-            },
-            closeEditAddress: function () {
-                $scope.editAddress = undefined;
             },
             showAddressEditForm: function (row) {
-                $scope.editAddress = angular.copy(row);
-            },
-            setAddress: function (id, text) {
-                $scope.useAddress(text);
-                CoreFactory.address({},{id: id, text: text}).$promise.then(function (res) {
-                    $rootScope.$broadcast('updateCart', {});
-                });
+                $rootScope.$broadcast('editAddressForm', row);
             },
             initPay: function (t) {
                 $("#PayForm").modal("show");
                 document.cartSubmit.submit();
             },
             checkout: function (cart) {
-                CartFactory.submit({},{address: cart.address}).$promise.then(function (res) {
+                CartFactory.submit({}, {address: cart.address}).$promise.then(function (res) {
                     if (res.code === 401) {
                         $("#AuthForm").modal("show");
                     }
@@ -63,21 +55,25 @@ angular.module('root')
                     }
                     $scope.msg = res.msg;
                 });
+            },
+            updateCartData: function () {
+                CartFactory.cart().$promise.then(function (res) {
+                    $scope.cart = res.data;
+                    $scope.editAddress = undefined;
+                    if ($scope.cart.addresses.length > 0 && $scope.selectAddress === undefined) {
+                        $scope.selectAddress = 0;
+                    }
+                    if ($scope.cart.addresses.length === 0) {
+                        $scope.selectAddress = undefined;
+                    }
+                });
             }
         });
 
-        $scope.$on("updateCart", function (event, args) {
-            CartFactory.cart().$promise.then(function (res) {
-                $scope.cart = res.data;
-                $scope.editAddress = undefined;
-                if($scope.cart.addresses.length>0 && $scope.selectAddress === undefined){
-                    $scope.selectAddress = 0;
-                }
-                if($scope.cart.addresses.length === 0){
-                    $scope.selectAddress = undefined;
-                }
-            });
+        $scope.$on("addressesUpdated", function (data) {
+            $scope.useAddress($scope.selectedAddress);
         });
+        $scope.$on("updateCart", $scope.updateCartData);
         $rootScope.$broadcast('updateCart', {});
     })
     .directive('cartRow', function () {

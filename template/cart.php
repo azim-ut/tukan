@@ -1,6 +1,7 @@
 <? include_once __DIR__ . "/nav/start.php" ?>
     <link type="text/css" rel="stylesheet" href="/web/css/cart_empty.css?t=<?=$version?>"/>
     <script src="/web/js/every_pay.js?t=<?=$version?>" type="text/javascript"></script>
+    <script src="/web/js/addresses.js?t=<?=$version?>" type="text/javascript"></script>
 
     <div ng-controller="CartListController"
          ng-cloak
@@ -40,40 +41,22 @@
                          style="border-top: #ccc 1px solid; overflow: hidden; text-align: center;">
                         <div class="addressBlock"
                              style="position: relative;"
-                             ng-repeat=" row in cart.addresses track by $index">
-                            <pre>{{row}}</pre>
+                             ng-if="cart.addr === row.id"
+                             ng-repeat="row in cart.addresses track by $index">
+                            <div class="btn btn-xs btn-icon-only"
+                                 style="position: absolute; right: 0; top: 0; color: #ccc;"
+                                 ng-click="showAddressEditForm(row)">
+                                <i class="fa fa-edit"></i>
+                            </div>
+                            <p style="padding: 0 30px;">{{row.data}}</p>
                         </div>
 
-                        <div class="addressBlock" ng-if="selectAddress === undefined">
-                                            <textarea style="width: 100%; height: 90px; line-height: normal;"
-                                                      placeholder="Адрес доставки и телефон для связи:"
-                                                      ng-model="newAddress"></textarea>
-                            <div class="btn btn-xs btn-outline-success btn-block"
-                                 ng-click="setAddress(0, newAddress)">Добавить адрес
-                            </div>
-                        </div>
-                        <div class="addressBlock" ng-if="editAddress !== undefined" style="position: relative;">
-                                            <textarea style="width: 100%; height: 90px; line-height: normal;"
-                                                      placeholder="Адрес доставки и телефон для связи:"
-                                                      ng-model="editAddress.data"></textarea>
-                            <div class="btn-block btn-group">
-                                <div class="btn btn-xs btn-outline-success btn-block"
-                                     ng-click="setAddress(editAddress.id, editAddress.data)">
-                                    <i class="fa fa-save"></i> Сохранить
-                                </div>
-                            </div>
-                            <div class="btn btn-xs btn-icon-only"
-                                 style="position: absolute; right: 0; top: 0;"
-                                 ng-click="closeEditAddress()">
-                                <i class="fa fa-close"></i>
-                            </div>
-                        </div>
                         <div class="btn-group btn-group-sm btn-block margin-top-10 carAddressList"
                              ng-if="cart.addresses.length > 0">
                             <button type="button"
                                     ng-class="{'btn btn-icon-only':true, 'active': (cart.address === row.data)}"
                                     ng-repeat="row in cart.addresses track by $index"
-                                    ng-click="useAddress(row)">
+                                    ng-click="useAddress(row.id)">
                                 <i class="fa fa-address-card" style="border: none;"></i>
                             </button>
                             <button type="button"
@@ -123,30 +106,6 @@
             </div>
         </div>
 
-        <div class="modal fade" tabindex="-1" role="dialog" id="NewAddressForm">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="text-center">
-                            <form ng-submit="setAddress(0, newAddress)">
-                                <h4>Новый адрес</h4>
-                                <textarea ng-model="newAddress" class="form-control"></textarea>
-                                <hr/>
-                                <div class="btn-group btn-block" ng-click="hideNewAddressForm()">
-                                    <button type="button" class="btn btn-outline-info">
-                                        <i class="fa fa-close"></i>
-                                    </button>
-                                    <button type="submit" class="btn btn-outline-info">
-                                        <i class="fa fa-save"></i> Добавить
-                                    </button>
-                                    <br/>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="modal fade" tabindex="-1" role="dialog" id="CartCheckouted">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -188,4 +147,7 @@
         </div>
 
     </div>
+
+<? include_once __DIR__ . "/forms/address.php" ?>
+
 <? include_once __DIR__ . "/nav/footer.php" ?>
