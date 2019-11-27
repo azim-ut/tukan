@@ -10,9 +10,6 @@ include_once __DIR__ . "/../nav/start_empty.php" ?>
 <?
 $user = UserManager::current();
 FacebookAuthService::getInstance()->log("income", $_GET);
-$appID       = App::context()->facebookAuthAppID();
-$appSecret   = App::context()->facebookAuthSecret();
-$redirectUrl = App::context()->facebookLoginRedirectURL();
 $code        = ParamsManager::getParam("code");
 $state       = ParamsManager::getParam("state");
 $token       = ParamsManager::getParam("token");
@@ -22,14 +19,14 @@ $expiresIn   = ParamsManager::getParam("expires_in");
 
 /** got code, but still has no access_token */
 if(!$user && $state === SessionManager::id() && $code != null){
-	$getTokenPath = FacebookConstants::changeCodeToAccessTokenPath($appID, $version, $appSecret, $code, $redirectUrl);
+	$getTokenPath = FacebookConstants::changeCodeToAccessTokenPath($code);
 	$content      = file_get_contents($getTokenPath);
     FacebookAuthService::getInstance()->log($getTokenPath, $content,1);
 	$res          = json_decode($content);
 	$accessToken = $res->access_token ?? null;
 
 	/** got access_token and */
-	if($code != null && SessionManager::id() === $state && $appSecret != null){
+	if($code != null && SessionManager::id() === $state){
 	    $a_token = "EAAGipka04bgBAHASuftyl5pcMvT5r92qtBgCoZBRWenWslhAN4WyyQTKox8vqVKilcruoZCytCSn9BpbgJZBJSnPGrBz9CLFmcTS72hRq1vtvvgv9qNAOwzw5eOZA8b9z1QTNcbEM027dWS3ZBZAENSc8YypnMc4AespE5k7sZBcgZDZD";
 		$checkTokenPath = FacebookConstants::getCodeDebugPath($accessToken, $a_token);
 		$content        = file_get_contents($checkTokenPath);
