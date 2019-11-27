@@ -22,7 +22,7 @@ $expiresIn   = ParamsManager::getParam("expires_in");
 
 /** got code, but still has no access_token */
 if(!$user && $state === SessionManager::id() && $code != null){
-	$getTokenPath = FacebookConstants::changeCodeToAccessTokenPath($appID, $appSecret, $code, $redirectUrl);
+	$getTokenPath = FacebookConstants::changeCodeToAccessTokenPath($appID, $version, $appSecret, $code, $redirectUrl);
 	$content      = file_get_contents($getTokenPath);
     FacebookAuthService::getInstance()->log($getTokenPath, $content,1);
 	$res          = json_decode($content);
