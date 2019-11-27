@@ -9,7 +9,7 @@ use core\service\FacebookAuthService;
 include_once __DIR__ . "/../nav/start_empty.php" ?>
 <?
 $user = UserManager::current();
-FacebookAuthService::getInstance()->log("income", $_GET);
+FacebookAuthService::getInstance()->log("income", ParamsManager::paramsToString(), 0);
 $code        = ParamsManager::getParam("code");
 $state       = ParamsManager::getParam("state");
 $token       = ParamsManager::getParam("token");
@@ -19,6 +19,7 @@ $expiresIn   = ParamsManager::getParam("expires_in");
 
 /** got code, but still has no access_token */
 if(!$user && $state === SessionManager::id() && $code != null){
+
 	$getTokenPath = FacebookConstants::changeCodeToAccessTokenPath($code);
 	$content      = file_get_contents($getTokenPath);
     FacebookAuthService::getInstance()->log($getTokenPath, $content,1);
