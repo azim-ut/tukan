@@ -14,7 +14,7 @@ $prize = LotteryService::getInstance()->getWin(UserManager::currentId(), 1);
     <div class="text-center container" style="position: relative;" ng-controller="LotteryController">
         <br/>
         <div id="wheel">
-            <canvas id="canvas" width="330" height="330"></canvas>
+            <canvas id="canvas" width="280" height="280"></canvas>
         </div>
         <br/>
 		<?

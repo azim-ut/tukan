@@ -66,7 +66,7 @@ var wheel = {
     angleCurrent: 0,
     angleDelta: 0,
 
-    size: 155,
+    size: 130,
 
     canvasContext: null,
 
@@ -85,8 +85,8 @@ var wheel = {
 
     frames: 0,
 
-    centerX: 164,
-    centerY: 165,
+    centerX: 140,
+    centerY: 140,
 
     winnerIndex: function(){
         let len = wheel.segments.length;
