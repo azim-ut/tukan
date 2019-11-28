@@ -6,7 +6,7 @@ use core\utils\ServerUtils;
 
 $cart = new Cart(UserManager::currentId());
 $ePay = EveryPayService::getInstance();
-
+$endpoint = App::context()->param("everypay.api.endpoint");
 $ePay->init(App::context()->param("everypay.api.username"), App::context()->param("everypay.api.secret"), ['transaction_type' => 'charge']);
 $data = $ePay->getFields([
     "account_id" => 'EUR3D1',
@@ -25,7 +25,7 @@ $data = $ePay->getFields([
 
 <iframe id="iframe-payment-container" name="iframe-payment-container" width="400"
         height="400" sandbox="allow-top-navigation allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
-<form action="https://igw-demo.every-pay.com/transactions" id="iframe_form" method="post"
+<form action="<?=$endpoint?>" id="iframe_form" method="post"
       style="display: none" target="iframe-payment-container">
     <?
     foreach($data as $key => $val){
