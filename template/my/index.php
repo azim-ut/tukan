@@ -49,13 +49,10 @@ foreach($list as $row){
 
 
                 <div class="col-sm-7 padding-left-15" style="padding: 20px;">
-                    <?
-                    if(!StringUtils::isEmpty($user->name())){
-                        ?>Привет, <?=$user->name()?>!<?
-                    }else{
-                        echo "Приветствуем!";
-                    }
-                    ?>
+                    <div class="MyBarHead">
+                        <img src="<?=$user->icon()?>">
+                        <div class="name">Привет, <?=$user->name()?>!</div>
+                    </div>
 
                     <div class="row grid2 margin-top-15">
                         <div class="block text-center col-6 col-sm-2">

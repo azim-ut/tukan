@@ -5,6 +5,21 @@
 .navbar{
     background: #fff;
 }
+.imageIcon{
+    width: 60px; height: 60px; float: left; border-radius: 50%;border: #ccc 2px solid; margin-right: 80px;
+}
+
+.MyBarHead{
+    margin-bottom: 30px;
+}
+
+.MyBarHead img{
+    position: absolute; margin: -15px 0 0 10px; border-radius: 50px; border: #ddd 5px solid;
+}
+
+.MyBarHead .name{
+    padding: 5px 5px 5px 80px; background-color: #ccc;
+}
 
 .head{
     position: fixed;

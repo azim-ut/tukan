@@ -29,7 +29,7 @@
             </td>
             <td align="right">
                 <ul style="display: inline-block; width: 180px; margin-top: 5px;">
-                    <li class="userBtn text-center">
+                    <li class="userBtn text-center" style="width: 60px;">
                         <a data-toggle="modal"
                            ng-if="!data.user"
                            data-target="#AuthForm">
@@ -37,8 +37,11 @@
                         </a>
                         <a href="/my"
                            class="toMy text-uppercase"
-                           ng-if="data.user" style="margin-left: 15px; font-size: 120%; font-weight: bold; line-height: 20px;">
-                            {{data.user.name.charAt(0)}}
+                           ng-if="data.user" style="font-size: 120%; font-weight: bold; line-height: 20px;display: contents;">
+                            <div class="imageIcon"
+                                 ng-if="data.user.icon"
+                                 ng-style="{'background': 'transparent url('+data.user.icon+') no-repeat center center'}"></div>
+                            <div ng-if="!data.user.icon">{{data.user.name.charAt(0)}}</div>
                         </a>
                     </li>
                     <li class="cartHeadBtn text-center"><a href="/cart">
