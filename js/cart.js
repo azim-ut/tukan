@@ -21,7 +21,7 @@ angular.module('root')
             cart: null,
             msg: null,
             pay: {},
-            selectedAddress:0,
+            selectedAddress: 0,
             selectAddress: undefined,
             editAddress: undefined,
             toProduct: function (id) {
@@ -69,20 +69,14 @@ angular.module('root')
                 });
             }
         });
-        window.addEventListener('message', function(event){
+        window.addEventListener('message', function (event) {
             if (event.origin !== "https://igw-demo.every-pay.com" && event.origin !== "https://pay.every-pay.eu") {
                 return;
             }
-            console.log(123, event);
-            switch(event.data) {
-                case "transaction_result":
-                    console.log(111, data);
-                    console.log(222, event);
-                    if(data.transaction_result === 'completed'){
-                        console.log(333, data);
-                        $rootScope.$broadcast('updateCart', {});
-                    }
-                    break;
+            let message = JSON.parse(event.data);
+            if (message.transaction_result === "completed") {
+                console.log(333, data);
+                $rootScope.$broadcast('updateCart', {});
             }
         }, false);
 
