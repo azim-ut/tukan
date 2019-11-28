@@ -43,14 +43,8 @@ if(!$user && $state === SessionManager::id() && $code != null){
 			$name     = $info->name;
 			$email    = $info->email ?? null;
 			$icon     = $info->picture->data->url ?? null;
-			$iconPath = null;
 			try{
-				if($icon){
-					$dir = __DIR__ . App::context()->settingsByName("avatar.images.dir");
-					FileManager::loadFile($icon, $dir . $info->id . ".jpg");
-					$iconPath = App::context()->settingsByName("avatar.images.url").$info->id . ".jpg";
-                }
-				$user = UserManager::facebook($info->id, $email, $name, $iconPath);
+				$user = UserManager::facebook($info->id, $email, $name, $icon);
 				FacebookAuthService::getInstance()->appendToSession(SessionManager::id(), $user->getId(), $token, $accessToken);
 			}catch(BadResultException | NoUserException $e){
 				FacebookAuthService::getInstance()->log($infoPath, $e->getMessage() . "\n" . $e->getTraceAsString(), 4);
