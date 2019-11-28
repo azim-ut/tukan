@@ -74,8 +74,8 @@ angular.module('root')
                 return;
             }
             let message = JSON.parse(event.data);
-            if (message.transaction_result === "completed") {
-                console.log(333, data);
+            if (message.transaction_result) {
+                console.log(333, message);
                 $rootScope.$broadcast('updateCart', {});
             }
         }, false);
