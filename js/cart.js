@@ -70,6 +70,7 @@ angular.module('root')
             }
         });
         window.addEventListener('message', function(event){
+            console.log(123, event);
             switch(event.data) {
                 case "transaction_result":
                     console.log(111, data);
