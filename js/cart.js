@@ -69,14 +69,19 @@ angular.module('root')
                 });
             }
         });
-        window.addEventListener('transaction_result', function(event, data){
-            console.log(111, data);
-            console.log(222, event);
-            if(data.transaction_result === 'completed'){
-                console.log(333, data);
-                $rootScope.$broadcast('updateCart', {});
+        window.addEventListener('message', function(event){
+            switch(event.data) {
+                case "transaction_result":
+                    console.log(111, data);
+                    console.log(222, event);
+                    if(data.transaction_result === 'completed'){
+                        console.log(333, data);
+                        $rootScope.$broadcast('updateCart', {});
+                    }
+                    break;
             }
         }, false);
+
         $scope.$on("addressesUpdated", function (data) {
             $scope.useAddress($scope.selectedAddress);
         });
