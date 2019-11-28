@@ -164,11 +164,11 @@ var wheel = {
                 this.centerY = 200;
                 this.size = 180;
             }else if(W <= 500){
-                canvas.width = 300;
-                canvas.height = 300;
-                this.centerX = 150;
-                this.centerY = 150;
-                this.size = 140;
+                canvas.width = 280;
+                canvas.height = 280;
+                this.centerX = 140;
+                this.centerY = 140;
+                this.size = 130;
             }
             wheel.initWheel();
             wheel.initAudio();
