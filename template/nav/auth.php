@@ -131,13 +131,17 @@
                                    class="btn btn-outline-success btn-block">
                         </div>
                     </div>
-                    <div class="text-center margin-bottom-10">
-                        <b>или</b>
+                    <div class="text-center padding-bottom-20">
+                        <span>или</span>
+                        <br/>
+                        <br/>
                     </div>
-                    <div class="row">
-                        <button type="button" ng-click="loginFB()" class="btn btn-default btn-block btn-primary"><i
-                                    class="icon-social-facebook"></i> Facebook вход
-                        </button>
+                    <div class="container">
+                        <div class="row">
+                            <button type="button" ng-click="loginFB()" class="btn btn-default btn-block btn-primary"><i
+                                        class="icon-social-facebook"></i> Facebook вход
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
