@@ -9,7 +9,12 @@ use core\service\FacebookAuthService;
 
 include_once __DIR__ . "/../nav/start_empty.php" ?>
 <?
-$user = UserManager::current();
+$user = null;
+try{
+	$user = UserManager::current();
+}catch(NoUserException $e){
+
+}
 FacebookAuthService::getInstance()->log("income", ParamsManager::paramsToString(), 0);
 $code      = ParamsManager::getParam("code");
 $state     = ParamsManager::getParam("state");
