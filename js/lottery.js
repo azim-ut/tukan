@@ -56,7 +56,7 @@ String.prototype.hashCode = function () {
 Number.prototype.mod = function (n) {
     return ((this % n) + n) % n;
 };
-
+let W = window.innerWidth;
 
 // WHEEL!
 var wheel = {
@@ -157,6 +157,19 @@ var wheel = {
 
     init: function (optionList) {
         try {
+            if(W > 500){
+                canvas.width = 400;
+                canvas.height = 400;
+                this.centerX = 200;
+                this.centerY = 200;
+                this.size = 180;
+            }else if(W <= 500){
+                canvas.width = 300;
+                canvas.height = 300;
+                this.centerX = 150;
+                this.centerY = 150;
+                this.size = 140;
+            }
             wheel.initWheel();
             wheel.initAudio();
             wheel.initCanvas();
@@ -434,3 +447,9 @@ $(function () {
         $(this).parent().next('div').find('input').prop('checked', $(this).prop('checked')).trigger("change");
     });
 });
+
+window.onresize = function(event) {
+    W = window.innerWidth;
+    console.log(W);
+    wheel.init();
+};
