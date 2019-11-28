@@ -66,8 +66,8 @@ let EveryPay = {
         if (event.origin !== "https://igw-demo.every-pay.com" && event.origin !== "https://pay.every-pay.eu") {
             return;
         }
-
         let message = JSON.parse(event.data);
+        console.log(message);
         /*
         1. An "expand" message is sent from the iframe page when 3D secure page is going to be displayed.
           The size of the iframe should be adjusted to hold 3D secure page
@@ -95,6 +95,7 @@ window.addEventListener('message', EveryPay.messageHandler.bind(EveryPay), false
 
 EveryPay.iframe = jQuery('#iframe-payment-container iframe');
 EveryPay.messageCallback = function(message){
+    console.log(message);
     // An example of a possible way to process message data. Note, all fields, except transaction_result, are locale dependent -
     // the texts are returned in the language specified in the API request locale parameter.
     if (message.transaction_result) {

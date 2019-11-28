@@ -15,7 +15,7 @@ angular.module('root')
             }
         });
     })
-    .controller("CartListController", function ($rootScope, $scope, $controller, $interval, $anchorScroll, CartService, CartFactory, CoreFactory, PayFactory) {
+    .controller("CartListController", function ($rootScope, $scope, $controller, $interval, $anchorScroll, CartService, CartFactory, $window) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
             cart: null,
@@ -69,7 +69,6 @@ angular.module('root')
                 });
             }
         });
-
         $scope.$on("addressesUpdated", function (data) {
             $scope.useAddress($scope.selectedAddress);
         });
@@ -128,4 +127,9 @@ angular.module('root')
 
 $('.carousel').carousel({
     interval: 2000
-})
+});
+
+window.addEventListener('transaction_result', function(event, row){
+    console.log(event, row);
+    $rootScope.$broadcast('updateCart', {});
+}, false);
