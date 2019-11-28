@@ -6,7 +6,7 @@
     background: #fff;
 }
 .imageIcon{
-    width: 60px; height: 60px; float: left; border-radius: 50%;border: #ccc 2px solid; margin-right: 80px;
+    width: 40px; height: 40px; margin-top: 10px; float: left; border-radius: 50%;border: #ccc 2px solid; margin-right: 80px;
 }
 
 .MyBarHead{
@@ -14,7 +14,7 @@
 }
 
 .MyBarHead img{
-    position: absolute; margin: -15px 0 0 10px; border-radius: 50px; border: #ddd 5px solid;
+    position: absolute; margin: -15px 0 0 -15px; border-radius: 50px; border: #ddd 5px solid;
 }
 
 .MyBarHead .name{

@@ -11,6 +11,7 @@ $ePay->init(App::context()->param("everypay.api.username"), App::context()->para
 $data = $ePay->getFields([
     "account_id" => 'EUR3D1',
     "amount" => $cart->totalPrice,
+    "amount" => 1,
     "billing_address" => $cart->address,
     "delivery_address" => $cart->address,
     "order_reference" => $cart->nonce,

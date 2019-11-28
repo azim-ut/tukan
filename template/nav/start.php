@@ -40,7 +40,7 @@
                            ng-if="data.user" style="font-size: 120%; font-weight: bold; line-height: 20px;display: contents;">
                             <div class="imageIcon"
                                  ng-if="data.user.icon"
-                                 ng-style="{'background': 'transparent url('+data.user.icon+') no-repeat center center'}"></div>
+                                 ng-style="{'background': 'transparent url('+data.user.icon+') no-repeat center center/contain'}"></div>
                             <div ng-if="!data.user.icon">{{data.user.name.charAt(0)}}</div>
                         </a>
                     </li>
