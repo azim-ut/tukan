@@ -54,7 +54,7 @@
                         <div class="btn-group btn-group-sm btn-block margin-top-10 carAddressList"
                              ng-if="cart.addresses.length > 0">
                             <button type="button"
-                                    ng-class="{'btn btn-icon-only':true, 'active': (cart.address === row.data)}"
+                                    ng-class="{'btn btn-icon-only':true, 'active': (cart.addr === row.id)}"
                                     ng-repeat="row in cart.addresses track by $index"
                                     ng-click="useAddress(row.id)">
                                 <i class="fa fa-address-card" style="border: none;"></i>

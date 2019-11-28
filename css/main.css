@@ -496,7 +496,7 @@ footer {
     100% { transform: translate(1px, 1px) rotate(-5deg); }
 }
 
-.carAddressList .btn{ color: #2779d3; opacity: .7;}
+.carAddressList .btn{ color: #2779d3; opacity: .4;}
 .carAddressList .btn.active{ color: #1d4f8e;
     opacity: 1;}
 
