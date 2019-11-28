@@ -2,6 +2,7 @@
 
 use assets\services\LotteryService;
 use assets\services\PresetsService;
+use core\exception\NoUserException;
 use core\manager\ParamsManager;
 use core\manager\UserManager;
 use core\service\App;
@@ -31,6 +32,9 @@ class RestLottery extends RestBase{
         $ind = ParamsManager::getParamInt("ind");
         SafeUtils::checkNumbers($ind);
         $uid = UserManager::currentId();
+        if(!$uid){
+            throw new NoUserException();
+        }
         $prize = $service->getWin($uid, self::$promo);
         if(!$prize){
             $prizes = App::context()->propArray("prizes");
