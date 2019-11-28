@@ -20,9 +20,10 @@
                 </ul>
             </div>
             <div class="col-sm-4">
-                <h4 class="text-left text-color-white">Checklist</h4>
+                <h4 class="text-left text-color-white">Интересное</h4>
                 <ul>
                     <li><a href="/checklist/daily">Ежедневные дела для детей</a><br/></li>
+                    <li><a href="/lottery">Лоттерея скидок!</a><br/></li>
                 </ul>
             </div>
             <div class="col-sm-4 text-color-white">
