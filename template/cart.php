@@ -1,6 +1,6 @@
 <? include_once __DIR__ . "/nav/start.php" ?>
     <link type="text/css" rel="stylesheet" href="/web/css/cart_empty.css?t=<?=$version?>"/>
-    <script src="/web/js/every_pay.js?t=<?=$version?>" type="text/javascript"></script>
+<!--    <script src="/web/js/every_pay.js?t=--><?//=$version?><!--" type="text/javascript"></script>-->
     <script src="/web/js/addresses.js?t=<?=$version?>" type="text/javascript"></script>
 
     <div ng-controller="CartListController"
