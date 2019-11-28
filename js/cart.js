@@ -70,6 +70,9 @@ angular.module('root')
             }
         });
         window.addEventListener('message', function(event){
+            if (event.origin !== "https://igw-demo.every-pay.com" && event.origin !== "https://pay.every-pay.eu") {
+                return;
+            }
             console.log(123, event);
             switch(event.data) {
                 case "transaction_result":
