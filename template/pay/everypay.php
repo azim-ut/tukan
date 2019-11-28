@@ -11,8 +11,8 @@ $ePay->init(App::context()->param("everypay.api.username"), App::context()->para
 $data = $ePay->getFields([
     "account_id" => 'EUR3D1',
     "amount" => $cart->totalPrice,
-    "billing_address" => $cart->address,
-    "delivery_address" => $cart->address,
+    "billing_address" => $cart->addr,
+    "delivery_address" => $cart->addr,
     "order_reference" => $cart->nonce,
     "callback_url" => "https://" . App::context()->getDomain() . "/callback/everypay",
     "customer_url" => "https://" . App::context()->getDomain() . "/check?id=".$cart->nonce,
