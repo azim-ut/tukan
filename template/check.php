@@ -1,14 +1,16 @@
 <?
 
 use assets\services\OrderService;
-use core\manager\ParamsManager;
+use core\Engine;
 use core\manager\UserManager;
 
 
 $orderService = OrderService::getInstance();
-$id           = ParamsManager::getParam("id");
+$nonce        = Engine::getDir(1);
+$id           = $orderService->hasOrderNonce($nonce, UserManager::currentId());
 $order        = null;
-if($orderService->hasOrder($id, UserManager::currentId())){
+
+if($id){
     $order = new Order($id);
 }
 include_once __DIR__ . "/nav/start.php";
@@ -54,7 +56,7 @@ if($order){
                             </th>
                         </tr>
                         <tr>
-                            <td class="text-left"  style="border: none;" colspan="2"><?=$order->address?></td>
+                            <td class="text-left" style="border: none;" colspan="2"><?=$order->address?></td>
                         </tr>
                     </table>
 
