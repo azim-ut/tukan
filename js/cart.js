@@ -69,9 +69,9 @@ angular.module('root')
                 return;
             }
             let message = JSON.parse(event.data);
-            if (message.transaction_result) {
-                console.log(333, message);
-                location.href = "/chack/" + $scope.cart.nonce;
+            console.log(message);
+            if (message.transaction_result === 'completed') {
+                location.href = "/check/" + $scope.cart.nonce;
                 // $rootScope.$broadcast('updateCart', {});
             }
         }, false);
