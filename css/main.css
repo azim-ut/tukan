@@ -6,7 +6,7 @@
     background: #fff;
 }
 .imageIcon{
-    width: 40px; height: 40px; margin-top: 10px; float: left; border-radius: 50%;border: #ccc 2px solid; margin-right: 80px;
+    width: 40px; height: 40px; margin-top: 10px; float: left; border-radius: 50%;border: #ccc 2px solid;
 }
 .padding-bottom-25{padding-bottom: 25px;}
 .padding-bottom-10{padding-bottom: 25px;}
@@ -399,7 +399,7 @@ button.gender:hover{
     background: #fff url(/web/img/tukan.jpg) no-repeat center center/contain;
     position: absolute;
     width: 140px;
-    margin-left: 10px;
+    margin-left: 4px;
     top: 0;
     height: 72px;
 }

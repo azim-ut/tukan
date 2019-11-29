@@ -28,8 +28,8 @@
                 </a>
             </td>
             <td align="right">
-                <ul style="display: inline-block; width: 180px; margin-top: 5px;">
-                    <li class="userBtn text-center" style="width: 60px;">
+                <ul style="display: inline-block; width: 160px; margin-top: 5px;">
+                    <li class="userBtn text-center" style="width: 40px;">
                         <a data-toggle="modal"
                            ng-if="!data.user"
                            data-target="#AuthForm">
