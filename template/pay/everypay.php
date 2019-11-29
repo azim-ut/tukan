@@ -8,10 +8,14 @@ $cart = new Cart(UserManager::currentId());
 $ePay = EveryPayService::getInstance();
 $endpoint = App::context()->param("everypay.api.endpoint");
 $ePay->init(App::context()->param("everypay.api.username"), App::context()->param("everypay.api.secret"), ['transaction_type' => 'charge']);
+$amount = $cart->totalPrice;
+$user = UserManager::current();
+if($user && $user->dev()){
+    $amount = 0.5;
+}
 $data = $ePay->getFields([
     "account_id" => 'EUR3D1',
-    "amount" => $cart->totalPrice,
-    "amount" => 1,
+    "amount" => $amount,
     "billing_address" => $cart->addr,
     "delivery_address" => $cart->addr,
     "order_reference" => $cart->nonce,
