@@ -61,13 +61,13 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
                 </div>
             </div>
         </div>
-        <br/>
+
         <button class="btn btn-danger btn-block margin-bottom-20 margin-top-10"
                 ng-if="total > posts.length"
                 ng-click="extendList()">
             <i class="glyphicon glyphicon-plus"></i> Еще {{total - posts.length}}
         </button>
-        <br/>
+
         <div class="modal fade" tabindex="-1" id="CatalogFilterModal" role="dialog">
             <div class="modal-dialog modal-sm" role="document">
                 <form ng-submit="updateFilter(heightTemp, genderTemp)">

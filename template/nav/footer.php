@@ -13,13 +13,13 @@
         <div class="row">
             <div class="col-sm-4">
                 <h4 class="text-left text-color-white">О нас</h4>
-                <ul>
+                <ul class="padding-bottom-25">
                     <li><a href="/">На главную</a><br/></li>
                     <li><a href="/traderules">Правила</a></li>
                     <li><a href="/policy">Политика<br/>конфиденциальности</a></li>
                 </ul>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 margin-bottom-30">
                 <h4 class="text-left text-color-white">Интересное</h4>
                 <ul>
                     <li><a href="/checklist/daily">Ежедневные дела для детей</a><br/></li>
