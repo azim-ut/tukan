@@ -81,7 +81,7 @@
                 <div ng-show="msg" class="msg">{{msg}}</div>
                 <div ng-if="data.user">
                     <form action="/pay/everypay" target="iframe-payment-container" method="POST" name="cartSubmit">
-                        <button class="btn btn-block btn-primary gb_Rd_sm" type="button" ng-click="initPay(this)">
+                        <button class="btn btn-block btn-primary gb_Rd_sm" type="button" ng-click="checkout()">
                             <i class="fa fa-credit-card"></i> Оплатить
                         </button>
                     </form>
@@ -151,7 +151,7 @@
             </div>
         </div>
 
-        <div id="iframe-payment-container" style="border: 0px; min-width: 460px; min-height: 325px">
+        <div id="iframe-payment-container" style="display: none; border: 0px; min-width: 460px; min-height: 325px">
             <iframe width="460" height="325" style="border: 0px; height: 325; width: 460"></iframe>
         </div>
 

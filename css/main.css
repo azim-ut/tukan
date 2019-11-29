@@ -10,16 +10,17 @@
 }
 .padding-bottom-25{padding-bottom: 25px;}
 .padding-bottom-10{padding-bottom: 25px;}
+
 .MyBarHead{
     margin-bottom: 30px;
 }
 
 .MyBarHead img{
-    position: absolute; margin: -15px 0 0 -15px; border-radius: 50px; border: #ddd 5px solid;
+    position: absolute; margin: -15px 0 0 -5px; border-radius: 50px; border: #ddd 5px solid;
 }
 
 .MyBarHead .name{
-    padding: 5px 5px 5px 80px; background-color: #ccc;
+    padding: 5px 5px 5px 60px; background-color: #ccc;
 }
 
 .head{

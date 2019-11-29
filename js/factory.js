@@ -130,14 +130,10 @@ angular.module('root')
                 url: "/shop/rest/cart/cart",
                 isArray: false
             },
-            submit: {
-                method: 'POST',
-                url: "/shop/rest/order/checkout",
-                params: {
-                    address: '@address'
-                },
-                isArray: false,
-                headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
+            try: {
+                method: 'GET',
+                url: "/shop/rest/cart/try",
+                isArray: false
             },
             address: {
                 method: 'POST',

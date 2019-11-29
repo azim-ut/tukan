@@ -39,19 +39,14 @@ angular.module('root')
             showAddressEditForm: function (row) {
                 $rootScope.$broadcast('editAddressForm', row);
             },
-            initPay: function (t) {
-                $("#PayForm").modal("show");
-                document.cartSubmit.submit();
-            },
-            checkout: function (cart) {
-                CartFactory.submit({}, {address: cart.address}).$promise.then(function (res) {
+            checkout: function () {
+                CartFactory.try().$promise.then(function (res) {
                     if (res.code === 401) {
                         $("#AuthForm").modal("show");
                     }
                     if (res.data) {
-                        $scope.cart = res.data;
-                        $("#CartCheckouted").modal("show");
-                        //location.href = "/orders";
+                        $("#PayForm").modal("show");
+                        document.cartSubmit.submit();
                     }
                     $scope.msg = res.msg;
                 });

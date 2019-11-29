@@ -218,7 +218,7 @@ $heights = $post->enabledHeights();
                                     <br/>
                                 </div>
                                 <div class="col-sm-4 margin-bottom-20">
-                                    <a href="/cart" class="btn btn-outline-success btn-block">Перейти в корзину</a>
+                                    <a href="/cart" class="btn btn-success btn-block">Перейти в корзину</a>
                                     <br/>
                                 </div>
                             </div>
