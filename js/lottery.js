@@ -7,6 +7,7 @@ angular.module('root')
             spin: function () {
                 window.wheel.spin();
                 LotteryFactory.spin().$promise.then(function (res) {
+                    console.log(res.data.index);
                     window.wheel.setPrize(res.data);
                 });
             }
@@ -104,7 +105,7 @@ var wheel = {
         return wheel.segments[wheel.winnerIndex()];
     },
     setPrize: function (val) {
-        return wheel.prize = prize;
+        return wheel.prize = val;
     },
 
     spin: function () {
@@ -133,7 +134,7 @@ var wheel = {
                 progress = duration / wheel.upTime;
                 wheel.angleDelta = wheel.maxSpeed * Math.sin(progress * halfPI);
             } else {
-                wheel.angleDelta = wheel.maxSpeed * Math.sin(1 * halfPI);
+                wheel.angleDelta = wheel.maxSpeed * Math.sin(halfPI);
             }
         } else{
             progress = duration / wheel.downTime;
@@ -148,7 +149,8 @@ var wheel = {
             // Keep the angle in a reasonable range
             wheel.angleCurrent -= doublePI;
         }
-        if (finished) {
+        if (finished && wheel.winnerIndex() === wheel.prize.index) {
+            console.log(wheel.winnerIndex(), wheel.prize.index);
             clearInterval(wheel.timerHandle);
             if (console) {
                 var element = angular.element($("#canvas"));

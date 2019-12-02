@@ -40,7 +40,9 @@ class LotteryService extends BaseRestService{
     public function randomCoupon($promo){
         $list = CouponService::getInstance()->getCoupons($promo);
         $ind = random_int(0, sizeof($list)-1);
-        return $list[$ind];
+        $res = $list[$ind];
+        $res->index = $ind;
+        return $res;
     }
 
     public function setWin($uid, $couponId){
