@@ -31,22 +31,21 @@ class LotteryService extends BaseRestService{
         return self::$instance;
     }
 
-    public function setWin($uid, $promo, $name, $discount, $free){
-        $coupon           = new Coupon();
-        $coupon->uid      = $uid;
-        $coupon->promo    = $promo;
-        $coupon->name     = $name;
-        $coupon->discount = $discount;
-        $coupon->free     = $free;
-        $coupon->datetime = time();
-
-        return CouponService::getInstance()->addCoupon($coupon);
+    /**
+     * @param $promo
+     *
+     * @return Coupon
+     * @throws \Exception
+     */
+    public function randomCoupon($promo){
+        $list = CouponService::getInstance()->getCoupons($promo);
+        $ind = random_int(0, sizeof($list)-1);
+        return $list[$ind];
     }
 
-    public function parseDiscount($name){
-        preg_match_all("#([^%]+\d)+%#", $name, $res);
-
-        return ($res[1][0] ?? 0) * 1;
+    public function setWin($uid, $couponId){
+        $exp = time() + 1000*60*60*24*31;//+month
+        return CouponService::getInstance()->addCoupon($uid, $couponId, $exp);
     }
 
     public function parseFree($name){
@@ -57,7 +56,7 @@ class LotteryService extends BaseRestService{
         return 0;
     }
 
-    public function getWin($uid, $promo){
+    public function getCoupon($uid, $promo){
         return CouponService::getInstance()->getCoupon($uid, $promo);
     }
 

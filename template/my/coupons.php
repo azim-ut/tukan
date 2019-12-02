@@ -1,9 +1,7 @@
 <? use assets\services\CouponService;
-use assets\services\OrderService;
 use core\exception\BadResultException;
 use core\exception\NoUserException;
 use core\manager\UserManager;
-use core\utils\StringUtils;
 
 try{
     $user = UserManager::current();
@@ -26,19 +24,28 @@ $list = CouponService::getInstance()->getCoupons(UserManager::currentId());
                 </div>
 
                 <div class="col-sm-3 margin-bottom-15">
-                    <?require_once "menu.php"?>
+                    <? require_once "menu.php" ?>
                 </div>
 
 
                 <div class="col-sm-7 padding-left-15" style="padding: 20px;">
                     <?
                     foreach($list as $row){
-                        var_dump($row);
-                        ?>
-                        <hr/>
-                        <?
-                    }
                     ?>
+
+                        <div class="col-12">
+                            <div class="mt-element-ribbon bg-grey-steel">
+                                <div class="ribbon ribbon-right ribbon-shadow ribbon-border-dash ribbon-round ribbon-color-danger uppercase">
+                                    <?=$row->name?>
+                                </div>
+                                <p class="ribbon-content text-right">
+                                    <small><?=date("d M Y", $row->datetime)?></small>
+                                </p>
+                            </div>
+                        </div>
+                        <?
+                        }
+                        ?>
 
                 </div>
 

@@ -3,12 +3,12 @@
 use assets\services\CouponService;
 use assets\services\LotteryService;
 use core\manager\UserManager;
-use core\service\App;
 
 ?>
 <? include_once __DIR__ . "/nav/start.php" ?>
 <?
-$prize = CouponService::getInstance()->getCoupon(UserManager::currentId(), LotteryService::firstLotteryName());
+$prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), LotteryService::firstLotteryName());
+
 ?>
 <div class="HeadContentPage">
     <script src="//cdnjs.cloudflare.com/ajax/libs/p2.js/0.6.0/p2.min.js"></script>
@@ -18,20 +18,10 @@ $prize = CouponService::getInstance()->getCoupon(UserManager::currentId(), Lotte
             <canvas id="canvas" width="280" height="280"></canvas>
         </div>
         <br/>
-        <?
-        if(!$prize){
-            ?>
-            <button type="button"
-                    ng-click="spin()"
-                    class="btn btn-primary btn-block">Крутить
-            </button>
-            <?
-        }
-        ?>
-        <br/>
-        <div ng-if="prize" id="PrizeBlock">
-            {{prize}}
-        </div>
+        <button type="button"
+                ng-click="spin()"
+                class="btn btn-primary btn-block">Крутить
+        </button>
     </div>
 
     <div style="display: none;">
@@ -44,17 +34,17 @@ $prize = CouponService::getInstance()->getCoupon(UserManager::currentId(), Lotte
     </div>
     <div id="counter"></div>
     <script>
-        var prizesNames = <?=json_encode(App::context()->propArray("prizes"))?>;
+        var prizesNames = <?=json_encode(CouponService::getInstance()->getCoupons("FirstLottery"))?>;
 
         var prize = '';
         <?
-        if($prize){?>
-        prize = '<?=$prize->name?>';
+        if(sizeof($prizes)){?>
+        prize = <?=json_encode($prizes[0])?>;
         <?}
         ?>
         var prizes = [];
         prizesNames.forEach(function (row) {
-            prizes.push({name: row, type: "Discount"})
+            prizes.push({name: row.name, type: row.grp})
         })
     </script>
     <script src="/web/js/lottery.js?t=<?=$version?>" type="text/javascript"></script>

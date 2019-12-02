@@ -1,23 +1,30 @@
-
 angular.module('root')
     .controller("LotteryController", function ($scope, $rootScope, $controller, LotteryFactory) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
             items: null,
             prize: prize,
-            spin : function(){
+            spin: function () {
                 window.wheel.spin();
+                LotteryFactory.spin().$promise.then(function (res) {
+                    window.wheel.setPrize(res.data);
+                });
             }
         });
 
         $scope.$on("prizeWon", function (event, data) {
-            LotteryFactory.won({},{ind: data}).$promise.then(function(res){
+            LotteryFactory.won({}, {ind: data}).$promise.then(function (res) {
                 $scope.prize = res.data;
             });
         });
     })
     .factory('LotteryFactory', function ($resource) {
         return $resource('/web/rest', null, {
+            spin: {
+                method: 'GET',
+                url: "/web/rest/lottery/spin",
+                isArray: false,
+            },
             won: {
                 method: 'POST',
                 url: "/web/rest/lottery/won",
@@ -84,23 +91,26 @@ var wheel = {
     spinStart: 0,
 
     frames: 0,
+    prize: undefined,
 
     centerX: 140,
     centerY: 140,
 
-    winnerIndex: function(){
+    winnerIndex: function () {
         let len = wheel.segments.length;
         return len - Math.floor((wheel.angleCurrent / doublePI) * len) - 1;
     },
-    winner: function(){
+    winner: function () {
         return wheel.segments[wheel.winnerIndex()];
+    },
+    setPrize: function (val) {
+        return wheel.prize = prize;
     },
 
     spin: function () {
         // Start the wheel only if it's not already spinning
         if (wheel.timerHandle === 0) {
-
-            console.log(wheel.winner());
+            wheel.win = undefined;
             wheel.spinStart = new Date().getTime();
             wheel.maxSpeed = Math.PI / (16 + Math.random()); // Randomly vary how hard the spin is
             wheel.frames = 0;
@@ -118,14 +128,16 @@ var wheel = {
         wheel.frames++;
         wheel.draw();
 
-        if (duration < wheel.upTime) {
-            progress = duration / wheel.upTime;
-            wheel.angleDelta = wheel.maxSpeed
-                * Math.sin(progress * halfPI);
-        } else {
+        if (wheel.prize === undefined || duration < wheel.upTime) {
+            if (wheel.prize !== undefined) {
+                progress = duration / wheel.upTime;
+                wheel.angleDelta = wheel.maxSpeed * Math.sin(progress * halfPI);
+            } else {
+                wheel.angleDelta = wheel.maxSpeed * Math.sin(1 * halfPI);
+            }
+        } else{
             progress = duration / wheel.downTime;
-            wheel.angleDelta = wheel.maxSpeed
-                * Math.sin(progress * halfPI + halfPI);
+            wheel.angleDelta = wheel.maxSpeed * Math.sin(progress * halfPI + halfPI);
             if (progress >= 1) {
                 finished = true;
             }
@@ -157,13 +169,13 @@ var wheel = {
 
     init: function (optionList) {
         try {
-            if(W > 500){
+            if (W > 500) {
                 canvas.width = 400;
                 canvas.height = 400;
                 this.centerX = 200;
                 this.centerY = 200;
                 this.size = 180;
-            }else if(W <= 500){
+            } else if (W <= 500) {
                 canvas.width = 280;
                 canvas.height = 280;
                 this.centerX = 140;
@@ -448,7 +460,7 @@ $(function () {
     });
 });
 
-window.onresize = function(event) {
+window.onresize = function (event) {
     W = window.innerWidth;
     console.log(W);
     wheel.init();
