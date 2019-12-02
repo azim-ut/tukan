@@ -17,7 +17,6 @@ use rest\src\RestBase;
  */
 class RestLottery extends RestBase{
     protected static $instance = null;
-    private static $promo = 1;
 
     public function GET_speed($from){
         $this->out->data = pi() / (16 + rand());
@@ -35,13 +34,13 @@ class RestLottery extends RestBase{
         if(!$uid){
             throw new NoUserException();
         }
-        $prize = $service->getWin($uid, self::$promo);
+        $prize = $service->getWin($uid, LotteryService::firstLotteryName());
         if(!$prize){
             $prizes = App::context()->propArray("prizes");
             $discount = $service->parseDiscount($prizes[$ind]);
             $free = $service->parseFree($prizes[$ind]);
-            $service->setWin($uid, self::$promo, $prizes[$ind], $discount, $free);
-            $prize = $service->getWin($uid, self::$promo);
+            $service->setWin($uid, LotteryService::firstLotteryName(), $prizes[$ind], $discount, $free);
+            $prize = $service->getWin($uid, LotteryService::firstLotteryName());
         }
         $this->out->data = $prize;
     }

@@ -2,9 +2,8 @@
 
 namespace assets\services;
 
-use Cassandra\Exception\AlreadyExistsException;
-use CatalogFilter;
 use core\service\MySqlService;
+use Coupon;
 
 /**
  * Created by PhpStorm.
@@ -14,39 +13,52 @@ use core\service\MySqlService;
  */
 class LotteryService extends BaseRestService{
 
-	protected static $instance = null;
+    public static function firstLotteryName(){
+        return "FirstLottery";
+    }
+
+    protected static $instance = null;
 
     /**
      * @return LotteryService
      */
-	public static function getInstance(){
-		if(!self::$instance){
-			self::$instance      = new self();
-			self::$instance->sql = MySqlService::getInstance();
-		}
-
-		return self::$instance;
-	}
-
-	public function setWin($uid, $promo, $name, $discount, $free){
-	    return $this->sql->smart_query("INSERT INTO lottery(uid,name,discount,free,promo,datetime) VALUES(%d,%s,%d,%d,%s,%d)", $uid, $name, $discount, $free, $promo, time());
-    }
-
-	public function parseDiscount($name){
-	    preg_match_all("#([^%]+\d)+%#", $name, $res);
-	    return ($res[1][0]??0)*1;
-    }
-
-	public function parseFree($name){
-	    if(preg_match("#\+1%#", $name)){
-	        return 1;
+    public static function getInstance(){
+        if(!self::$instance){
+            self::$instance      = new self();
+            self::$instance->sql = MySqlService::getInstance();
         }
-	    return 0;
+
+        return self::$instance;
     }
 
-	public function getWin($uid, $promo){
-	    $exists = $this->sql->smart_select_row("SELECT *  FROM lottery WHERE uid=%d AND promo=%s", $uid, $promo);
-	    return $exists;
+    public function setWin($uid, $promo, $name, $discount, $free){
+        $coupon           = new Coupon();
+        $coupon->uid      = $uid;
+        $coupon->promo    = $promo;
+        $coupon->name     = $name;
+        $coupon->discount = $discount;
+        $coupon->free     = $free;
+        $coupon->datetime = time();
+
+        return CouponService::getInstance()->addCoupon($coupon);
+    }
+
+    public function parseDiscount($name){
+        preg_match_all("#([^%]+\d)+%#", $name, $res);
+
+        return ($res[1][0] ?? 0) * 1;
+    }
+
+    public function parseFree($name){
+        if(preg_match("#\+1%#", $name)){
+            return 1;
+        }
+
+        return 0;
+    }
+
+    public function getWin($uid, $promo){
+        return CouponService::getInstance()->getCoupon($uid, $promo);
     }
 
 }

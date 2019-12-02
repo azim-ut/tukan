@@ -1,5 +1,6 @@
 <?
 
+use assets\services\CouponService;
 use assets\services\LotteryService;
 use core\manager\UserManager;
 use core\service\App;
@@ -7,7 +8,7 @@ use core\service\App;
 ?>
 <? include_once __DIR__ . "/nav/start.php" ?>
 <?
-$prize = LotteryService::getInstance()->getWin(UserManager::currentId(), 1);
+$prize = CouponService::getInstance()->getCoupon(UserManager::currentId(), LotteryService::firstLotteryName());
 ?>
 <div class="HeadContentPage">
     <script src="//cdnjs.cloudflare.com/ajax/libs/p2.js/0.6.0/p2.min.js"></script>
@@ -17,16 +18,16 @@ $prize = LotteryService::getInstance()->getWin(UserManager::currentId(), 1);
             <canvas id="canvas" width="280" height="280"></canvas>
         </div>
         <br/>
-		<?
-		if(!$prize){
-			?>
+        <?
+        if(!$prize){
+            ?>
             <button type="button"
                     ng-click="spin()"
                     class="btn btn-primary btn-block">Крутить
             </button>
-			<?
-		}
-		?>
+            <?
+        }
+        ?>
         <br/>
         <div ng-if="prize" id="PrizeBlock">
             {{prize}}
@@ -46,11 +47,11 @@ $prize = LotteryService::getInstance()->getWin(UserManager::currentId(), 1);
         var prizesNames = <?=json_encode(App::context()->propArray("prizes"))?>;
 
         var prize = '';
-		<?
-		if($prize){?>
+        <?
+        if($prize){?>
         prize = '<?=$prize->name?>';
-		<?}
-		?>
+        <?}
+        ?>
         var prizes = [];
         prizesNames.forEach(function (row) {
             prizes.push({name: row, type: "Discount"})
