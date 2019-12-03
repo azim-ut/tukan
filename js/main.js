@@ -85,7 +85,7 @@ angular.module('root')
                 if ($scope.useFilter) {
                     tags = updateTags();
                 }
-                let obj = {'tags[]': tags, offset: offset, limit: $scope.limit};
+                let obj = {'tags[]': tags, brand: $scope.brand, offset: offset, limit: $scope.limit};
                 let p = $httpParamSerializer(obj);
                 $scope.data.process = true;
                 ViewFactory.posts(p).$promise.then(function (res) {
@@ -109,6 +109,11 @@ angular.module('root')
             },
 
         });
+        let startBrand = findGetParameter('brand');
+        if(startBrand){
+            console.log(startBrand);
+            $scope.brand = startBrand;
+        }
         $scope.resetPosts();
 
         function updateTags() {

@@ -2,9 +2,12 @@
 
 
 <?// include_once __DIR__ . "/nav/promo.php" ?>
-<? include_once __DIR__ . "/promo/christmas.php" ?>
+<?// include_once __DIR__ . "/promo/christmas.php" ?>
 
+<? include_once __DIR__ . "/promo/intro.php" ?>
+<? include_once __DIR__ . "/promo/brands.php" ?>
 <? include_once __DIR__ . "/filters/main.php" ?>
+
 
 
 

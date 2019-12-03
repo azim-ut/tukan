@@ -11,6 +11,31 @@
 .padding-bottom-25{padding-bottom: 25px;}
 .padding-bottom-10{padding-bottom: 25px;}
 
+.brand-lg{
+    width: 100%; height: 100px; background: transparent none no-repeat center center/contain
+}
+.brand-lg.street-gang{
+    background-image: url(/web/img/brands/street-gang.png);
+}
+.brand-lg.y-clu{
+    background-image: url(/web/img/brands/y_clu_img.png);
+}
+.brand-lg.to-bee-too{
+    background-image: url(/web/img/brands/to_be_too.png);
+}
+.brand-lg.gaialuna{
+    background-image: url(/web/img/brands/gaialuna-logo.png);
+}
+.brand-lg.ronnie-kay{
+    background-image: url(/web/img/brands/ronnie-kay_logo-2.png);
+}
+.brand-lg.jeckerson{
+    background-image: url(/web/img/brands/jeckerson.png);
+}
+.brand-lg.om{
+    background-image: url(/web/img/brands/marines1_2.png);
+}
+
 .MyBarHead{
     margin-bottom: 30px;
 }

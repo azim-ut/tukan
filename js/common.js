@@ -88,3 +88,16 @@ $(function(){
 function arraysIsMatch(arr1, arr2){
     return arr1.length === arr2.length && arr1.sort().every(function(value, index) { return value === arr2.sort()[index]});;
 }
+
+function findGetParameter(parameterName) {
+    var result = undefined,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}

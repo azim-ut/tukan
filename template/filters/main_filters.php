@@ -40,11 +40,10 @@ $genders = [0 => 'Для мальчиков и девочек', 1 => 'Для м�
                       style="width: 7   0px;"
                       id="basic-addon1">Бренд</span>
                 <select class="form-control" ng-model="brandTemp">
-                    <option ng-value="0">Все</option>
                     <?
                     foreach($brands as $i => $brand){
                         ?>
-                        <option ng-value="<?=$i+1?>"><?=$brand?></option>
+                        <option ng-value="<?=$i?>"><?=$brand?></option>
                     <? } ?>
                 </select>
             </div>
