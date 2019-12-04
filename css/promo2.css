@@ -27,10 +27,10 @@
 #vid{
     position: absolute;
     top: 40%;
-    left: 20%;
+    left: 0%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    min-width: 100%;
+    min-width: 210%;
     min-height: 400px;
     width: auto;
     height: auto;
@@ -51,7 +51,7 @@
 }
 
 .brandsContent .content{
-    position: absolute; background-color: #00cc13; width: 100%; padding: 10px; bottom: 0; color: #0b2e13; height: 120px;
+    position: absolute; width: 100%; padding: 10px; bottom: 0; color: #0b2e13; height: 120px;
 }
 
 /* Style the button used to pause/play the video */
