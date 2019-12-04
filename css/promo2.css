@@ -51,7 +51,7 @@
 }
 
 .brandsContent .content{
-    position: absolute; width: 100%; padding: 10px; bottom: 0; color: #0b2e13;
+    position: absolute; width: 100%; padding: 10px; bottom: 0; color: #0b2e13; background: rgba(177, 177, 177, 0.3);
 }
 
 /* Style the button used to pause/play the video */
