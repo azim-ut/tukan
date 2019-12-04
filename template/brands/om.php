@@ -7,7 +7,7 @@
                     <div class="col-3">
                         <h3>1983</h3>
                         <div class="brand-lg om">&nbsp;</div>
-                        <a href="/?brand=1" class="btn btn-block btn-outline-success align-bottom">Каталог</a>
+                        <a href="/catalog?brand=1" class="btn btn-block btn-outline-success align-bottom">Каталог</a>
                         <p class="padding-top-10">Начали с простой белой футболки. Теперь это культовый продукт бренда. С 1983 по 1992 продано
                             около 25 миллионов единиц одежды.</p>
                     </div>
