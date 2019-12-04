@@ -6,7 +6,8 @@
       class="home page-template page-template-page-visual-composer page-template-page-visual-composer-php page page-id-1705 woocommerce-no-js antialiased wpb-js-composer js-comp-ver-5.5.4 vc_responsive">
 
 <a id="top"></a>
-<div class="no-print" ng-controller="CommonController" ng-init="fetchVisitsData()" id="HeadTop"></div>
+<a id="HeadTop"></a>
+<div class="no-print" ng-controller="CommonController" ng-init="fetchVisitsData()"></div>
 <div id="nasa-before-load" class="no-print">
     <div class="nasa-relative nasa-center">
         <div class="nasa-loader">

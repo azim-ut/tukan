@@ -100,9 +100,9 @@ angular.module('root')
 
                     let newHash = 'HeadTop';
                     if ($location.hash() !== newHash) {
-                        $location.hash('HeadTop');
+                        // $location.hash('HeadTop');
                     } else {
-                        $anchorScroll();
+                        //$anchorScroll();
                     }
                     $scope.data.process = false;
                 });

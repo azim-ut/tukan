@@ -6,7 +6,8 @@ $brands  = preg_split("#,#", App::context()->settingsByName("brands") ?? "");
 $height  = [70, 76, 82, 88, 93, 98, 104, 110, 116, 122, 128, 134, 140, 146, 152];
 $genders = [0 => 'Для мальчиков и девочек', 1 => 'Для мальчиков', 2 => 'Для девочек'];
 ?>
-<div style="margin: 10px 0;text-align: center;" class="container">
+<div class="align-center" style="background: #f9f9f9; border-top: #eaeaea 1px solid;">
+<div class="container">
     <div class="row padding-top-15 padding-bottom-15">
 
         <div class="col-sm-3 padding-bottom-5">
@@ -56,4 +57,5 @@ $genders = [0 => 'Для мальчиков и девочек', 1 => 'Для м�
             </button>
         </div>
     </div>
+</div>
 </div>

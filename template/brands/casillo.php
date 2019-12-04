@@ -1,6 +1,6 @@
 <div class="container padding-bottom-20 padding-top-20">
     <div class="row">
-        <div class="col-12 shadow padding-top-40" style="border: #c5c77a 2px solid; overflow: hidden; background: #f2f2f296;">
+        <div class="col-12 shadow padding-top-40" style="border: #c5c77a 2px solid; overflow: hidden;">
             <div class="container">
                 <div class="row">
                     <div class="col-3">

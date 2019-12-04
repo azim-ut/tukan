@@ -1,7 +1,8 @@
-<div class="container padding-bottom-20 padding-top-20">
+<div class="container">
     <div class="row">
-        <div class="col-12 shadow p-3 mb-5 bg-white rounded">
-            <h5 class="card-title">Наши преимущества</h5>
+        <div class="col-12 p-3 mb-5 bg-white advantage"
+             style="background: #fff url(/web/img/online_shopping.png) no-repeat right bottom/contain">
+
             <p class="card-text">
             <ul>
                 <li>Отличные цены</li>

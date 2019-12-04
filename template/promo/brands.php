@@ -1,26 +1,30 @@
+<link href="/web/css/promo2.css?t=<?=$version?>" rel="stylesheet" type="text/css"/>
 <div class="container padding-bottom-20 padding-top-20">
     <div class="row">
-        <div class="col-4">
-            <div class="card shadow-sm">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Бренды нашего магазина</h5>
+        <div class="col-sm-4 margin-bottom-15 pointer" onclick="location.href='/brands';">
+            <div class="card shadow-sm brandsContent">
+                <video autoplay muted loop id="vid">
+                    <source src="/web/video/MVI_4856-commercial_HD.mp4" type="video/mp4">
+                </video>
+
+                <!-- Optional: some overlay text to describe the video -->
+                <div class="content">
+                    <h1>Бренды нашего магазина</h1>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="col-sm-4 margin-bottom-15 pointer" onclick="location.href='/lottery';">
+            <div class="card shadow-sm brandsContent" style="background: transparent url(/web/img/lottery.jpg) no-repeat center center/cover;">
+                <div class="content">
+                    <h1>Лотерея скидок!</h1>
                 </div>
             </div>
         </div>
-        <div class="col-4">
-            <div class="card shadow-sm">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Лотерея скидок!</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card shadow-sm">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Каталог</h5>
+        <div class="col-sm-4 margin-bottom-15 pointer" onclick="location.href='/catalog';">
+            <div class="card shadow-sm brandsContent" style="background: transparent url(/web/img/store.jpg) no-repeat center center/cover;">
+                <div class="content">
+                    <h1>Каталог</h1>
                 </div>
             </div>
         </div>

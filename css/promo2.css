@@ -1,0 +1,71 @@
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+}
+
+.video-overlay amp-video {
+    width: 100%;
+    height: auto;
+    max-height: auto;
+}
+
+.video-overlay amp-video .i-amphtml-fill-content {
+    width: 100%;
+    height: auto;
+    max-height: none;
+}
+
+#myVideo {
+    position: absolute;
+    width: 400px;
+    min-height: 200px;
+}
+#vid{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%;
+    min-height: 400px;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
+
+/* Add some content at the bottom of the video/page */
+.brandsContent {
+    position: relative;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    height: 400px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.brandsContent .content{
+    position: absolute; background-color: #00cc13; width: 100%; padding: 10px; bottom: 0; color: #0b2e13; height: 120px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
