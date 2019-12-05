@@ -10,7 +10,9 @@ use core\manager\UserManager;
 $prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), LotteryService::firstLotteryName());
 
 ?>
-<div class="HeadContentPage">
+
+<link href="/web/css/lottery.css" rel="stylesheet" type="text/css"/>
+<div class="HeadContentPage" style="background: transparent url(/web/img/christmas_1024x768.jpg) no-repeat center center/cover">
     <script src="//cdnjs.cloudflare.com/ajax/libs/p2.js/0.6.0/p2.min.js"></script>
     <div class="text-center container" style="position: relative;" ng-controller="LotteryController">
         <br/>
@@ -18,10 +20,12 @@ $prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(),
             <canvas id="canvas" width="280" height="280"></canvas>
         </div>
         <br/>
-        <button type="button"
-                ng-click="spin()"
-                class="btn btn-primary btn-block">Крутить
-        </button>
+        <div class="align-center">
+            <div class="spinBtn align-center" ng-click="spin()">
+                <button class="ttl shadow"><span>Крутить</span></button>
+            </div>
+        </div>
+
     </div>
 
     <div style="display: none;">

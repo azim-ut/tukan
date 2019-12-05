@@ -39,7 +39,7 @@ angular.module('root')
 
 
 // Helpers
-var blackHex = '#333',
+var blackHex = '#fff',
     whiteHex = '#fff',
     shuffle = function (o) {
         for (var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x)
@@ -265,6 +265,11 @@ var wheel = {
         ctx.lineTo(centerSize + 10, centerY + 10);
         ctx.closePath();
 
+        ctx.shadowColor = "black";
+        ctx.shadowBlur = 1;
+        ctx.shadowOffsetX = 1;
+        ctx.shadowOffsetY = 1;
+
         ctx.stroke();
         ctx.fill();
 
@@ -310,7 +315,7 @@ var wheel = {
         ctx.rotate((lastAngle + angle) / 2);
 
         ctx.fillStyle = whiteHex;
-        ctx.fillText(value.substr(0, 20), size - 15, 0);
+        ctx.fillText(value.substr(0, 20), size - 25, 0);
         ctx.restore();
     },
 
@@ -329,7 +334,7 @@ var wheel = {
         ctx.strokeStyle = blackHex;
         ctx.textBaseline = "middle";
         ctx.textAlign = "right";
-        ctx.font = "1em Arial";
+        ctx.font = "1.2em Arial";
 
         for (i = 1; i <= len; i++) {
             angle = doublePI * (i / len) + angleCurrent;

@@ -1,4 +1,5 @@
 <? use assets\services\CouponService;
+use assets\services\LotteryService;
 use core\exception\BadResultException;
 use core\exception\NoUserException;
 use core\manager\UserManager;
@@ -13,7 +14,7 @@ try{
     exit();
 }
 include_once __DIR__ . "/../nav/start.php";
-$list = CouponService::getInstance()->getCoupons(UserManager::currentId());
+$list = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), LotteryService::firstLotteryName());
 
 ?>
     <div ng-cloak class="HeadContentPage">
@@ -34,12 +35,14 @@ $list = CouponService::getInstance()->getCoupons(UserManager::currentId());
                     ?>
 
                         <div class="col-12">
-                            <div class="mt-element-ribbon bg-grey-steel">
+                            <div class="mt-element-ribbon bg-grey-steel shadow-sm" style="border: #ccc 1px solid;">
                                 <div class="ribbon ribbon-right ribbon-shadow ribbon-border-dash ribbon-round ribbon-color-danger uppercase">
                                     <?=$row->name?>
                                 </div>
                                 <p class="ribbon-content text-right">
-                                    <small><?=date("d M Y", $row->datetime)?></small>
+                                    <?=$row->details?>
+                                    <br/>
+                                    <small><?=date("d M Y", $row->added)?></small>
                                 </p>
                             </div>
                         </div>

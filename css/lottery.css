@@ -20,3 +20,27 @@ canvas{
         width: 280px; height: 280px;
     }
 }
+
+.spinBtn{
+    position: relative; overflow: hidden;
+}
+.spinBtn .ttl {
+    padding: 10px 15px;
+    width: 300px;
+    background: gold;
+    color: darkgoldenrod;
+    font-size: 2em;
+    transition: background .3s linear;
+    border-radius: 10px;
+    border: darkgoldenrod 4px solid;
+    border-top: #FFF306  3px solid;
+    border-left: #FFF306  3px solid;
+    overflow: hidden;
+}
+
+.spinBtn .ttl:active {
+
+    border: #FFF306 4px solid;
+    border-top: darkgoldenrod  3px solid;
+    border-left: darkgoldenrod  3px solid;
+}
