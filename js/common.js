@@ -1,6 +1,6 @@
 angular.module('root')
-    .filter('num', function() {
-        return function(input) {
+    .filter('num', function () {
+        return function (input) {
             return parseInt(input, 10);
         };
     })
@@ -8,8 +8,10 @@ angular.module('root')
         angular.extend($scope, {
             data: Data,
             process: false,
-            fetchVisitsData: function(){
-                WishFactory.ids().$promise.then(function(res){$scope.data.wishes.ids = res.data});
+            fetchVisitsData: function () {
+                WishFactory.ids().$promise.then(function (res) {
+                    $scope.data.wishes.ids = res.data
+                });
                 CartService.fetchIds();
             },
             toProduct: function (id) {
@@ -19,20 +21,20 @@ angular.module('root')
                 window.history.back();
             },
             toggleWish: function (productId) {
-                WishFactory.toggle({id:productId}).$promise.then(function(res){
+                WishFactory.toggle({id: productId}).$promise.then(function (res) {
                     $scope.data.wishes.ids = res.data;
                 });
             },
-            openEmptyForm: function(form, ext){
+            openEmptyForm: function (form, ext) {
                 $scope.data.temp = null;
-                if(ext){
+                if (ext) {
                     $scope.data.temp = angular.copy(ext);
                 }
                 $(form).modal("show");
             },
             openForm: function (form, obj, ext) {
                 $scope.data.temp = angular.copy(obj);
-                if(ext){
+                if (ext) {
                     angular.extend($scope.data.temp, angular.copy(ext));
                 }
                 $(form).modal("show");
@@ -49,6 +51,16 @@ angular.module('root')
             CartService.fetchIds();
         });
         $("#nasa-before-load").hide();
+    })
+    .directive('coupon', function () {
+        let now = new Date();
+        return {
+            restrict: "E",
+            scope: {
+                data: "="
+            },
+            templateUrl: '/web/js/assets/coupon.html?t=' + now.getTime()
+        };
     })
     .directive('productPreview', function () {
         let now = new Date();
@@ -70,8 +82,8 @@ angular.module('root')
     });
 
 
-$(function(){
-    if($("#heart-path").size()){
+$(function () {
+    if ($("#heart-path").size()) {
         let bar = new ProgressBar.Path('#heart-path', {
             easing: 'easeInOut',
             duration: 1400
@@ -85,8 +97,11 @@ $(function(){
 
 });
 
-function arraysIsMatch(arr1, arr2){
-    return arr1.length === arr2.length && arr1.sort().every(function(value, index) { return value === arr2.sort()[index]});;
+function arraysIsMatch(arr1, arr2) {
+    return arr1.length === arr2.length && arr1.sort().every(function (value, index) {
+        return value === arr2.sort()[index]
+    });
+    ;
 }
 
 function findGetParameter(parameterName) {

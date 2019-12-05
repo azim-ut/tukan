@@ -354,7 +354,7 @@ var wheel = {
         ctx.strokeStyle = blackHex;
         ctx.textBaseline = "middle";
         ctx.textAlign = "right";
-        ctx.font = "1em Arial";
+        ctx.font = "1.2em Arial";
 
         for (i = 1; i <= len; i++) {
             angle = doublePI * (i / len) + angleCurrent;
@@ -378,9 +378,6 @@ var wheel = {
 
         gradient = ctx.createLinearGradient(0, 0, wheel.centerX, wheel.centerY);
         gradient.addColorStop(0, '#eaeaea');
-        gradient.addColorStop(.9, 'gold');
-        gradient.addColorStop(.95, 'white');
-        gradient.addColorStop(.98, 'gold');
         gradient.addColorStop(1, 'gold');
 
         ctx.shadowColor = "black";

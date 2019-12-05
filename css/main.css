@@ -36,6 +36,19 @@
     background-image: url(/web/img/brands/marines1_2.png);
 }
 
+.couponTicket{
+    /*stitching*/
+    outline: 1px dashed #98abb9;
+    outline-offset: -5px;
+
+    background-color: #556068;
+
+    /*shadow*/
+    -webkit-box-shadow: 2px 2px 2px #000;
+    -moz-box-shadow: 2px 2px 2px #000;
+    box-shadow: 2px 2px 2px #000;
+}
+
 .MyBarHead{
     margin-bottom: 30px;
 }
@@ -53,7 +66,7 @@
     width: 100%;
     background: #fff;
     top: 0;
-    z-index: 3;
+    z-index: 10;
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{font-weight: 100;}
 

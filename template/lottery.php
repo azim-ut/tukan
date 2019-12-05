@@ -12,20 +12,33 @@ $prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(),
 ?>
 
 <link href="/web/css/lottery.css" rel="stylesheet" type="text/css"/>
-<div class="HeadContentPage" style="background: transparent url(/web/img/christmas_1024x768.jpg) no-repeat center center/cover" ng-controller="LotteryController">
+<div class="HeadContentPage"
+     style="background: transparent url(/web/img/christmas_1024x768.jpg) no-repeat center center/cover"
+     ng-controller="LotteryController">
+
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/p2.js/0.6.0/p2.min.js"></script>
     <div class="text-center container" style="position: relative;">
         <br/>
         <div id="wheel">
-            <canvas id="canvas" width="280" height="280"></canvas>
+            <div ng-class="{'disabled':prize}">
+                <canvas id="canvas" width="280" height="280"></canvas>
+            </div>
         </div>
         <br/>
         <div class="align-center">
-            <div class="spinBtn align-center" ng-click="spin()">
+            <div class="spinBtn align-center" ng-click="spin()" ng-if="!prize">
                 <button class="ttl shadow"><span>Крутить</span></button>
             </div>
         </div>
 
+    </div>
+
+    <div ng-if="prize" class="couponBlock">
+        <h2>Ваш приз!</h2>
+        <a href="/my/coupons" class="pointer">
+            <coupon data="prize"></coupon>
+        </a>
     </div>
 
     <div style="display: none;">
@@ -55,23 +68,19 @@ $prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(),
     <div class="modal fade" tabindex="-1" role="dialog" id="ShowPrize">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form ng-submit="update(data.temp)">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="text-center">
-                            <div class="form-group row" ng-if="data.user" style="display: block;">
-                                {{prize}}
-                            </div>
+                <div class="modal-header">
+                    <span>Поздравляем!</span>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <div class="form-group row" ng-if="data.user" style="padding: 0 20px;">
+                            <coupon data="prize"></coupon>
                         </div>
                     </div>
-                    <div class="modal-footer text-center btn-group btn-group-justified">
-                        <button type="button" class="btn btn-outline-success" data-dismiss="modal">Закрыть</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>

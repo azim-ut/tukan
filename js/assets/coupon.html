@@ -1,0 +1,14 @@
+<div class="margin-bottom-0 mt-element-ribbon bg-grey-steel shadow-sm couponTicket shadow-lg" style="border: #ccc 1px solid; width: 100%;">
+    <div class="ribbon ribbon-right ribbon-shadow ribbon-border-dash ribbon-round ribbon-color-danger uppercase">
+        {{data.name}}
+    </div>
+    <p class="ribbon-content text-right">
+        {{data.details}}
+        <br/>
+        <small>{{data.rules}}</small>
+        <hr/>
+        <div class="text-right" style="padding: 0 10px;">
+            <small ng-if="data.duration>=0">Использовать до: {{data.duration | date : 'dd MMMM yyyy hh:mm:ss'}}</small>
+        </div>
+    </p>
+</div>
