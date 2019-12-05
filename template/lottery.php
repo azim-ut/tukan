@@ -12,9 +12,9 @@ $prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(),
 ?>
 
 <link href="/web/css/lottery.css" rel="stylesheet" type="text/css"/>
-<div class="HeadContentPage" style="background: transparent url(/web/img/christmas_1024x768.jpg) no-repeat center center/cover">
+<div class="HeadContentPage" style="background: transparent url(/web/img/christmas_1024x768.jpg) no-repeat center center/cover" ng-controller="LotteryController">
     <script src="//cdnjs.cloudflare.com/ajax/libs/p2.js/0.6.0/p2.min.js"></script>
-    <div class="text-center container" style="position: relative;" ng-controller="LotteryController">
+    <div class="text-center container" style="position: relative;">
         <br/>
         <div id="wheel">
             <canvas id="canvas" width="280" height="280"></canvas>
@@ -51,6 +51,31 @@ $prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(),
             prizes.push({name: row.name, type: row.grp})
         })
     </script>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="ShowPrize">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form ng-submit="update(data.temp)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <div class="form-group row" ng-if="data.user" style="display: block;">
+                                {{prize}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer text-center btn-group btn-group-justified">
+                        <button type="button" class="btn btn-outline-success" data-dismiss="modal">Закрыть</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script src="/web/js/lottery.js?t=<?=$version?>" type="text/javascript"></script>
 </div>
 

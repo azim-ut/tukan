@@ -1,22 +1,33 @@
 angular.module('root')
-    .controller("LotteryController", function ($scope, $rootScope, $controller, LotteryFactory) {
+    .controller("LotteryController", function ($scope, $rootScope, $controller, $timeout, LotteryFactory, CoreFactory) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
             items: null,
             prize: prize,
             spin: function () {
                 window.wheel.spin();
-                LotteryFactory.spin().$promise.then(function (res) {
-                    console.log(res.data.index);
-                    window.wheel.setPrize(res.data);
+                $timeout(function () {
+                    LotteryFactory.spin().$promise.then(function (res) {
+                        $scope.prize = res.data;
+                        window.wheel.setPrize(res.data);
+                    });
+                }, 2000);
+            },
+            loginFB: function () {
+                CoreFactory.fbLoginLink().$promise.then(function (res) {
+                    if (res.data) {
+                        location.href = res.data;
+                    }
                 });
             }
         });
 
         $scope.$on("prizeWon", function (event, data) {
-            LotteryFactory.won({}, {ind: data}).$promise.then(function (res) {
-                $scope.prize = res.data;
-            });
+            if ($scope.data.user === null) {
+                $("#AuthForm").modal("show");
+            } else {
+                $("#ShowPrize").modal("show");
+            }
         });
     })
     .factory('LotteryFactory', function ($resource) {
@@ -96,6 +107,7 @@ var wheel = {
 
     centerX: 140,
     centerY: 140,
+    lastAngleDelta: 0,
 
     winnerIndex: function () {
         let len = wheel.segments.length;
@@ -106,6 +118,9 @@ var wheel = {
     },
     setPrize: function (val) {
         return wheel.prize = val;
+    },
+    dropPrize: function () {
+        return wheel.prize = undefined;
     },
 
     spin: function () {
@@ -122,41 +137,41 @@ var wheel = {
     },
 
     onTimerTick: function () {
-        var duration = (new Date().getTime() - wheel.spinStart),
-            progress = 0,
-            finished = false;
+        var duration = (new Date().getTime() - wheel.spinStart);
+        var progress = 0;
+        var finished = false;
 
         wheel.frames++;
         wheel.draw();
 
-        if (wheel.prize === undefined || duration < wheel.upTime) {
-            if (wheel.prize !== undefined) {
-                progress = duration / wheel.upTime;
-                wheel.angleDelta = wheel.maxSpeed * Math.sin(progress * halfPI);
-            } else {
-                wheel.angleDelta = wheel.maxSpeed * Math.sin(halfPI);
+        if (wheel.prize !== undefined) {
+            wheel.angleDelta = wheel.lastAngleDelta;
+            wheel.angleDelta = (9 * wheel.lastAngleDelta) / 10;
+            if (wheel.angleDelta < 0.05) {
+                wheel.angleDelta = wheel.lastAngleDelta;
+                if (wheel.winnerIndex() === wheel.prize.index) {
+                    finished = true;
+                }
             }
-        } else{
-            progress = duration / wheel.downTime;
-            wheel.angleDelta = wheel.maxSpeed * Math.sin(progress * halfPI + halfPI);
-            if (progress >= 1) {
-                finished = true;
-            }
+        } else {
+            wheel.angleDelta = wheel.maxSpeed * Math.sin(halfPI);
         }
 
+        wheel.lastAngleDelta = wheel.angleDelta;
         wheel.angleCurrent += wheel.angleDelta;
         while (wheel.angleCurrent >= doublePI) {
             // Keep the angle in a reasonable range
             wheel.angleCurrent -= doublePI;
         }
-        if (finished && wheel.winnerIndex() === wheel.prize.index) {
-            console.log(wheel.winnerIndex(), wheel.prize.index);
+        if (finished) {
+            wheel.dropPrize();
             clearInterval(wheel.timerHandle);
             if (console) {
                 var element = angular.element($("#canvas"));
                 var scope = element.scope();
                 scope.$root.$broadcast('prizeWon', wheel.winnerIndex());
                 console.log("You won! " + wheel.winner());
+
             }
             wheel.timerHandle = 0;
             wheel.angleDelta = 0;
@@ -266,9 +281,9 @@ var wheel = {
         ctx.closePath();
 
         ctx.shadowColor = "black";
-        ctx.shadowBlur = 1;
-        ctx.shadowOffsetX = 1;
-        ctx.shadowOffsetY = 1;
+        ctx.shadowBlur = 2;
+        ctx.shadowOffsetX = .1;
+        ctx.shadowOffsetY = .1;
 
         ctx.stroke();
         ctx.fill();
@@ -280,7 +295,7 @@ var wheel = {
         ctx.textAlign = "left";
         ctx.textBaseline = "middle";
         ctx.fillStyle = blackHex;
-        ctx.font = "2em Arial";
+        ctx.font = "1em Arial";
         winner = wheel.segments[i] || 'Choose at least 1 Venue';
         ctx.fillText(winner, centerSize + 20, centerY);
     },
@@ -305,7 +320,13 @@ var wheel = {
         //ctx.clip(); // It would be best to clip, but we can double performance without it
         ctx.closePath();
 
-        ctx.fillStyle = colors[key];
+        var sz = size/2;
+        var gradient = ctx.createRadialGradient(wheel.centerX-sz, wheel.centerY-sz, size, wheel.centerX + sz, wheel.centerY + sz, size);
+            gradient.addColorStop(0, 'black');
+            gradient.addColorStop(.6, colors[key]);
+            gradient.addColorStop(1, colors[key]);
+
+        ctx.fillStyle = gradient;
         ctx.fill();
         ctx.stroke();
 
@@ -334,7 +355,7 @@ var wheel = {
         ctx.strokeStyle = blackHex;
         ctx.textBaseline = "middle";
         ctx.textAlign = "right";
-        ctx.font = "1.2em Arial";
+        ctx.font = "1em Arial";
 
         for (i = 1; i <= len; i++) {
             angle = doublePI * (i / len) + angleCurrent;
@@ -347,10 +368,16 @@ var wheel = {
         ctx.arc(centerX, centerY, 20, 0, doublePI, false);
         ctx.closePath();
 
-        ctx.fillStyle = whiteHex;
-        //ctx.strokeStyle = blackHex;
+        var gradient = ctx.createRadialGradient(wheel.centerX-30, wheel.centerY-30, 20, wheel.centerX + 30, wheel.centerY + 30, 20);
+            gradient.addColorStop(0, 'white');
+            gradient.addColorStop(.2, 'darkgoldenrod');
+            gradient.addColorStop(1, 'gold');
+        ctx.fillStyle = gradient;
         ctx.fill();
         ctx.stroke();
+
+        ctx.fillStyle = "#00ff00";
+        ctx.strokeStyle = blackHex;
 
         // Draw outer circle
         ctx.beginPath();
@@ -469,6 +496,6 @@ $(function () {
 
 window.onresize = function (event) {
     W = window.innerWidth;
-    console.log(W);
+    // console.log(W);
     wheel.init();
 };
