@@ -122,7 +122,6 @@ var wheel = {
     dropPrize: function () {
         return wheel.prize = undefined;
     },
-
     spin: function () {
         // Start the wheel only if it's not already spinning
         if (wheel.timerHandle === 0) {
@@ -320,11 +319,11 @@ var wheel = {
         //ctx.clip(); // It would be best to clip, but we can double performance without it
         ctx.closePath();
 
-        var sz = size/2;
-        var gradient = ctx.createRadialGradient(wheel.centerX-sz, wheel.centerY-sz, size, wheel.centerX + sz, wheel.centerY + sz, size);
-            gradient.addColorStop(0, 'black');
-            gradient.addColorStop(.6, colors[key]);
-            gradient.addColorStop(1, colors[key]);
+        var sz = size / 2;
+        var gradient = ctx.createRadialGradient(wheel.centerX - sz, wheel.centerY - sz, size, wheel.centerX + sz, wheel.centerY + sz, size);
+        gradient.addColorStop(0, 'black');
+        gradient.addColorStop(.6, colors[key]);
+        gradient.addColorStop(1, colors[key]);
 
         ctx.fillStyle = gradient;
         ctx.fill();
@@ -368,23 +367,35 @@ var wheel = {
         ctx.arc(centerX, centerY, 20, 0, doublePI, false);
         ctx.closePath();
 
-        var gradient = ctx.createRadialGradient(wheel.centerX-30, wheel.centerY-30, 20, wheel.centerX + 30, wheel.centerY + 30, 20);
-            gradient.addColorStop(0, 'white');
-            gradient.addColorStop(.2, 'darkgoldenrod');
-            gradient.addColorStop(1, 'gold');
+        var gradient = ctx.createRadialGradient(wheel.centerX - 5, wheel.centerY - 5, 0, wheel.centerX - 5, wheel.centerY - 5, 25);
+        gradient.addColorStop(0, 'gold');
+        gradient.addColorStop(.6, 'goldenrod');
+        gradient.addColorStop(.9, 'darkgoldenrod');
+        gradient.addColorStop(1, '#7D540A');
         ctx.fillStyle = gradient;
         ctx.fill();
         ctx.stroke();
 
-        ctx.fillStyle = "#00ff00";
-        ctx.strokeStyle = blackHex;
+        gradient = ctx.createLinearGradient(0, 0, wheel.centerX, wheel.centerY);
+        gradient.addColorStop(0, '#eaeaea');
+        gradient.addColorStop(.9, 'gold');
+        gradient.addColorStop(.95, 'white');
+        gradient.addColorStop(.98, 'gold');
+        gradient.addColorStop(1, 'gold');
+
+        ctx.shadowColor = "black";
+        ctx.shadowBlur = 2;
+        ctx.shadowOffsetX = .1;
+        ctx.shadowOffsetY = .1;
+
+        ctx.strokeStyle = gradient;
 
         // Draw outer circle
         ctx.beginPath();
-        ctx.arc(centerX, centerY, size, 0, doublePI, false);
+        ctx.arc(centerX, centerY, size - 10, 0, doublePI, false);
         ctx.closePath();
 
-        ctx.lineWidth = 10;
+        ctx.lineWidth = 12;
         //ctx.strokeStyle = blackHex;
         ctx.stroke();
     }
