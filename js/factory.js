@@ -100,6 +100,11 @@ angular.module('root')
     })
     .factory('CartFactory', function ($resource) {
         return $resource('/shop/rest', null, {
+            couponNext: {
+                method: 'POST',
+                url: "/shop/rest/cart/coupon/next",
+                isArray: false
+            },
             add: {
                 method: 'POST',
                 url: "/shop/rest/cart/add",

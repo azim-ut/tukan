@@ -35,16 +35,7 @@ $list = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), L
                     ?>
 
                         <div class="col-12">
-                            <div class="mt-element-ribbon bg-grey-steel shadow-sm couponTicket" style="border: #ccc 1px solid;">
-                                <div class="ribbon ribbon-right ribbon-shadow ribbon-border-dash ribbon-round ribbon-color-danger uppercase">
-                                    <?=$row->name?>
-                                </div>
-                                <p class="ribbon-content text-right">
-                                    <?=$row->details?>
-                                    <br/>
-                                    <small><?=date("d M Y", $row->added)?></small>
-                                </p>
-                            </div>
+                            <coupon data='<?=json_encode($row)?>'></coupon>
                         </div>
                         <?
                         }

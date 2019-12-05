@@ -62,6 +62,16 @@ angular.module('root')
             templateUrl: '/web/js/assets/coupon.html?t=' + now.getTime()
         };
     })
+    .directive('couponmini', function () {
+        let now = new Date();
+        return {
+            restrict: "E",
+            scope: {
+                data: "="
+            },
+            templateUrl: '/web/js/assets/coupon-mini.html?t=' + now.getTime()
+        };
+    })
     .directive('productPreview', function () {
         let now = new Date();
         return {
