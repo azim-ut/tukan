@@ -83,8 +83,8 @@ canvas{
 
 .couponBlock coupon{
     position: absolute;
-    transform: rotate(-20deg);
-    margin-top: 10px;
+    transform: rotate(-5deg);
+    margin-top: -10px;
     left: 40%;
     opacity: 1;
     border: #a38b8b 2px solid;
