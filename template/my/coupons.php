@@ -2,6 +2,7 @@
 use assets\services\LotteryService;
 use core\exception\BadResultException;
 use core\exception\NoUserException;
+use core\manager\SessionManager;
 use core\manager\UserManager;
 
 try{
@@ -14,7 +15,7 @@ try{
     exit();
 }
 include_once __DIR__ . "/../nav/start.php";
-$list = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), LotteryService::firstLotteryName());
+$list = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), SessionManager::id(), LotteryService::firstLotteryName());
 
 ?>
     <div ng-cloak class="HeadContentPage">

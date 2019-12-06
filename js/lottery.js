@@ -3,12 +3,13 @@ angular.module('root')
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
         angular.extend($scope, {
             items: null,
+            temp : null,
             prize: prize,
             spin: function () {
                 window.wheel.spin();
                 $timeout(function () {
                     LotteryFactory.spin().$promise.then(function (res) {
-                        $scope.prize = res.data;
+                        $scope.temp = res.data;
                         window.wheel.setPrize(res.data);
                     });
                 }, 2000);
@@ -23,11 +24,10 @@ angular.module('root')
         });
 
         $scope.$on("prizeWon", function (event, data) {
-            if ($scope.data.user === null) {
-                $("#AuthForm").modal("show");
-            } else {
-                $("#ShowPrize").modal("show");
-            }
+            salut();
+            $timeout(function(){
+                $scope.prize = $scope.temp;
+            }, 2000);
         });
     })
     .factory('LotteryFactory', function ($resource) {
@@ -76,6 +76,7 @@ Number.prototype.mod = function (n) {
     return ((this % n) + n) % n;
 };
 let W = window.innerWidth;
+let H = window.innerHeight;
 
 // WHEEL!
 var wheel = {
@@ -507,3 +508,229 @@ window.onresize = function (event) {
     // console.log(W);
     wheel.init();
 };
+
+function random(limit){
+    return Math.random() * limit;
+}
+
+function salut() {
+
+    var fireworks = [];
+    var gravity;
+
+    function Firework() { //Основная функция
+        this.intensity = random (255);
+        this.firework = new Fireball(random(W), H, this.intensity, true);
+        this.exploded = false;
+        this.fireballs = [];
+
+        this.done = function() {
+            if (this.exploded && this.fireballs.length === 0) return true;
+            else return false;
+        }
+
+        this.getCongratulationDate = function () {
+            return '';
+        }
+
+        this.putText = function () { //Вывод текста
+            var s = this.getCongratulationDate();
+            textSize (64); textStyle(ITALIC); //textAlign (CENTER);
+            var color = this.intensity;
+            noFill();
+            stroke (color,255,255);
+            strokeWeight (1);
+            text (s, 8, 64);
+        }
+
+        this.update = function() {
+            if (random(1)<0.01) this.putText();
+
+            if (!this.exploded) {
+                this.firework.applyForce(gravity);
+                this.firework.update();
+                if (this.firework.vel.y >= 0) {
+                    this.exploded = true;
+                    this.explode();
+                }
+            }
+            for (var i = this.fireballs.length-1; i >= 0; i--) {
+                this.fireballs[i].applyForce(gravity);
+                this.fireballs[i].update();
+                if (this.fireballs[i].done()) {
+                    this.fireballs.splice(i, 1);
+                }
+            }
+        }
+
+        this.explode = function() {
+            var n = 100 + random(200); //количество разлетающихся огоньков
+            for (var i = 0; i < n; i++) {
+                var p = new Fireball(this.firework.pos.x, this.firework.pos.y, this.intensity, false);
+                this.fireballs.push (p);
+            }
+        }
+
+        this.show = function() {
+            if (!this.exploded) {
+                this.firework.show();
+            }
+            for (var i = this.fireballs.length-1; i >= 0; i--) {
+                this.fireballs[i].show();
+            }
+        }
+    }
+
+    function setup() {
+        createCanvas(windowWidth, windowHeight);
+        gravity = createVector (0, 0.1);
+        colorMode (HSB);
+        stroke (255);
+        strokeWeight (4);
+        background (0);
+    }
+
+    function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+    }
+
+    function draw() {
+        colorMode(RGB);
+        background(0, 0, 0, 25);
+        if (random(1) < 0.09) {
+            //частота появления нового объекта, чем меньше число, тем реже
+            fireworks.push(new Firework());
+        }
+        for (var i = fireworks.length-1; i >= 0; i--) {
+            fireworks[i].update();
+            fireworks[i].show();
+            if (fireworks[i].done()) fireworks.splice(i, 1);
+        }
+    }
+
+    function Fireball (x, y, intensity, firework) { //Один взрыв
+        this.pos = createVector (x, y);
+        this.firework = firework;
+        this.lifespan = 100 + random(-50,200); //Время жизни объекта
+        this.intensity = intensity;
+
+        if (this.firework) {
+            this.vel = createVector (0, random(-12, -8));
+        }
+        else {
+            this.vel = p5.Vector.random2D();
+            this.vel.mult(random(5, 20));
+        }
+        this.acc = createVector(0, 0);
+
+        this.applyForce = function(force) {
+            this.acc.add(force);
+        }
+
+        this.update = function() {
+            if (!this.firework) {
+                this.vel.mult (0.95+random(-0.05,0.04));
+                this.lifespan -= 4;
+            }
+            this.vel.add (this.acc);
+            this.pos.add (this.vel);
+            this.acc.mult (0);
+        }
+
+        this.done = function() {
+            if (this.lifespan < 0) return true;
+            else return false;
+        }
+
+        this.show = function() {
+            colorMode(HSB);
+            if (!this.firework) {
+                strokeWeight (2);
+                stroke (intensity, 255, 255, this.lifespan);
+            }
+            else {
+                strokeWeight (4);
+                stroke (intensity, intensity, intensity);
+            }
+            point (this.pos.x, this.pos.y);
+        }
+    }
+
+    onload = Firework(); //Запустить по загрузке окна
+}
+
+// Promises
+var _eid_promises = {};
+// Turn the incoming message from extension
+// into pending Promise resolving
+window.addEventListener("message", function(event) {
+    if(event.source !== window) return;
+    if(event.data.src && (event.data.src === "background.js")) {
+        console.log("Page received: ");
+        console.log(event.data);
+        // Get the promise
+        if(event.data.nonce) {
+            var p = _eid_promises[event.data.nonce];
+            // resolve
+            if(event.data.result === "ok") {
+                if(event.data.signature !== undefined) {
+                    p.resolve({hex: event.data.signature});
+                } else if(event.data.version !== undefined) {
+                    p.resolve(event.data.extension + "/" + event.data.version);
+                } else if(event.data.cert !== undefined) {
+                    p.resolve({hex: event.data.cert});
+                } else {
+                    console.log("No idea how to handle message");
+                    console.log(event.data);
+                }
+            } else {
+                // reject
+                p.reject(new Error(event.data.result));
+            }
+            delete _eid_promises[event.data.nonce];
+        } else {
+            console.log("No nonce in event msg");
+        }
+    }
+}, false);
+
+
+function TokenSigning() {
+    function nonce() {
+        var val = "";
+        var hex = "abcdefghijklmnopqrstuvwxyz0123456789";
+        for(var i = 0; i < 16; i++) val += hex.charAt(Math.floor(Math.random() * hex.length));
+        return val;
+    }
+
+    function messagePromise(msg) {
+        return new Promise(function(resolve, reject) {
+            // amend with necessary metadata
+            msg["nonce"] = nonce();
+            msg["src"] = "page.js";
+            // send message
+            window.postMessage(msg, "*");
+            // and store promise callbacks
+            _eid_promises[msg.nonce] = {
+                resolve: resolve,
+                reject: reject
+            };
+        });
+    }
+    this.getCertificate = function(options) {
+        var msg = {type: "CERT", lang: options.lang, filter: options.filter};
+        console.log("getCertificate()");
+        return messagePromise(msg);
+    };
+    this.sign = function(cert, hash, options) {
+        var msg = {type: "SIGN", cert: cert.hex, hash: hash.hex, hashtype: hash.type, lang: options.lang, info: options.info};
+        console.log("sign()");
+        return messagePromise(msg);
+    };
+    this.getVersion = function() {
+        console.log("getVersion()");
+        return messagePromise({
+            type: "VERSION"
+        });
+    };
+}

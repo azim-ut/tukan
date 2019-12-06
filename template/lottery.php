@@ -2,15 +2,16 @@
 
 use assets\services\CouponService;
 use assets\services\LotteryService;
+use core\manager\SessionManager;
 use core\manager\UserManager;
 
 ?>
 <? include_once __DIR__ . "/nav/start.php" ?>
 <?
-$prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), LotteryService::firstLotteryName());
+$prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), SessionManager::id(), LotteryService::firstLotteryName());
 
 ?>
-
+<script src="/web/assets/fireworks.js"></script>
 <link href="/web/css/lottery.css" rel="stylesheet" type="text/css"/>
 <div class="HeadContentPage"
      style="background: transparent url(/web/img/christmas_1024x768.jpg) no-repeat center center/cover"
@@ -51,7 +52,7 @@ $prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(),
     </div>
     <div id="counter"></div>
     <script>
-        var prizesNames = <?=json_encode(CouponService::getInstance()->getCoupons("FirstLottery"))?>;
+        var prizesNames = <?=json_encode(CouponService::getInstance()->getCoupons(LotteryService::firstLotteryName()))?>;
 
         var prize = '';
         <?
@@ -84,7 +85,7 @@ $prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(),
             </div>
         </div>
     </div>
-
+    <canvas id="defaultCanvas0" width="1588" height="1444" style="width: 794px; height: 722px;"></canvas>
     <script src="/web/js/lottery.js?t=<?=$version?>" type="text/javascript"></script>
 </div>
 

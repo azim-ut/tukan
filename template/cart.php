@@ -38,8 +38,8 @@
                 <div class="text-right addressBlock gb_Rd_sm" ng-if="cart.coupons.length>0">
                     <div class="container margin-bottom-15">
                         <div class="row">
-                            <div class="col-8 text-left">Купон</div>
-                            <div class="col-2 text-right pointer" ng-click="skipCoupon()"><i class="icon icon-arrow-left"></i></div>
+                            <div class="col-10 text-left">Купон</div>
+                            <div class="col-2 text-right pointer" ng-click="skipCoupon()"><i class="icon icon-arrow-right"></i></div>
                         </div>
                     </div>
 
