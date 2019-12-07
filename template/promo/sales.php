@@ -6,7 +6,7 @@
             <div style="display: inline-block; vertical-align: middle; position: relative; top: 30%;">
                 <div style="font-size: 300%; text-transform: uppercase;">Распродажа</div>
                 <div class="text-right"
-                     style="font-size: 150%; color: #00ff00; font-weight: 500; line-height: 20%;"><?=date('d/m/Y')?></div>
+                     style="font-size: 150%; color: #00ff00; font-weight: 500; line-height: 50%;"><?=date('d/m/Y')?></div>
             </div>
         </div>
     </div>
