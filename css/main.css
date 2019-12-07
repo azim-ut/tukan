@@ -459,7 +459,7 @@ button.gender:hover{
 .main-img{
     min-height: 240px;
 }
-.card-title{padding: 0 10px;}
+.card-title{padding: 0 10px; height: 30px;}
 .card-body{ }
 
 .userBtn,
