@@ -7,8 +7,8 @@
 }
 
 .headPromoBoyGirls{}
-.headPromoBoyGirls .ttl{position: relative; font-size: 190%;font-weight: 300; color: #fff; display: unset;}
-.headPromoBoyGirls .ttl span{font-size: 70%; color: #333;position: absolute; right: 0; bottom: -25px;}
+.headPromoBoyGirls .ttl{position: relative; font-size: 150%;font-weight: 300; color: #fff; display: unset;}
+.headPromoBoyGirls .ttl span{font-size: 70%; color: #333;position: absolute; right: 0; bottom: -20px; font-weight: 300;}
 
 .imageIcon{
     width: 40px; height: 40px; margin-top: 10px; float: left; border-radius: 50%;border: #ccc 2px solid;

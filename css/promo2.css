@@ -48,6 +48,7 @@
     height: 400px;
     padding: 0px;
     overflow: hidden;
+    border-radius: 0;
 }
 
 .brandsContent .content{

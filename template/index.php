@@ -7,6 +7,7 @@
 <? include_once __DIR__ . "/promo/intro.php" ?>
 <? include_once __DIR__ . "/promo/sales.php" ?>
 <? include_once __DIR__ . "/promo/brands.php" ?>
+<? include_once __DIR__ . "/promo/about.php" ?>
 
 
 
