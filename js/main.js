@@ -31,6 +31,9 @@ angular.module('root')
                 $cookies.put(genderCookieName, genderVal, {path: "/"});
                 $cookies.put(brandCookieName, brandVal, {path: "/"});
                 if (heightVal !== $scope.height || genderVal !== $scope.gender || brandVal !== $scope.brand) {
+                    $scope.gender = genderVal;
+                    $scope.height = heightVal;
+                    $scope.brand = brandVal;
                     $scope.resetPosts();
                 }
             },
