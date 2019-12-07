@@ -75,13 +75,10 @@ angular.module('root')
     .directive('productPreview', function () {
         let now = new Date();
         return {
-            restrict: "A",
+            restrict: "E",
             scope: {
-                id: "=",
-                title: "=",
-                img: "=",
-                price: "=",
-                fullprice: "=",
+                index: "=",
+                product: "="
             },
             controller: function ($scope, $controller, Data, $interval, $anchorScroll, WishFactory) {
                 angular.extend(this, $controller("CommonController", {$scope: $scope, Data, WishFactory}));

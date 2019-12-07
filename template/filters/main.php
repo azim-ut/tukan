@@ -37,30 +37,12 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
     <div id="content" ng-controller="MainPageController" ng-cloak>
 		<? require "main_filters.php" ?>
         <div class="margin-bottom-20 overflow">
-            <div ng-repeat="row in posts track by $index"
-                 style="float: left; padding: 10px; position: relative;"
-                 class="card cardItemPreview">
-                <div class="catalogItemPromoIcon"
-                     ng-click="showChristmasPromo(row)"
-                     style="background-image: url(/web/img/promo_chr_2019/{{($index)>=3?($index%3+1):($index + 1)}}.svg);">&nbsp;</div>
-                <a href="/product/{{row.id}}" title="{{row.title}}">
-                    <div style="background: transparent url({{row.img}}) no-repeat center center/contain    ;"
-                         class="card-img-top"></div>
-                </a>
-                <div class="card-body card-body-price" style="padding: 0;">
-                    <div class="card-title bold">{{row.title}}</div>
-                    <table width="100%;">
-                        <tr>
-                            <td>
-                                <div wish-button product="{{row.id}}" title="{{row.title}}" class="left"></div>
-                            </td>
-                            <td align="right">
-                                <div cart-button product="{{row.id}}" price="{{row.price}}" class="right"></div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+            <product-preview style="height: 200px;"
+                             ng-repeat="row in posts track by $index"
+                             product="row"
+                             index="$index"></product-preview>
+
+
 
             <div class="row text-center"
                  style="background: #fff;"

@@ -1,13 +1,23 @@
-<div class="card" style="width: 18rem; position: relative;">
-    <div class="christmasIcon"></div>
-    <a href="/product/{{id}}" title="{{title}}">
-        <img src="{{img}}" class="card-img-top" alt="...">
+<div style="float: left; padding: 10px; position: relative;"
+     class="card cardItemPreview">
+    <div class="catalogItemPromoIcon"
+         ng-click="showChristmasPromo(product)"
+         style="background-image: url(/web/img/promo_chr_2019/{{(index)>=3?(index%3+1):(index + 1)}}.svg);">&nbsp;</div>
+    <a href="/product/{{product.id}}" title="{{product.title}}">
+        <div style="background: transparent url({{product.img}}) no-repeat center center/contain    ;"
+             class="card-img-top"></div>
     </a>
-    <div class="card-body">
-        <h5 class="card-title">{{title}}</h5>
-    </div>
-    <div class="card-body">
-        <wish-button product="{{id}}" title="{{title}}" class="left"></wish-button>
-        <cart-button product="{{id}}" price="{{price}}" class="right margin-right-15"></cart-button>
+    <div class="card-body card-body-price" style="padding: 0;">
+        <div class="card-title bold">{{product.title}}</div>
+        <table width="100%;">
+            <tr>
+                <td>
+                    <div wish-button product="{{product.id}}" title="{{product.title}}" class="left"></div>
+                </td>
+                <td align="right">
+                    <div cart-button product="{{product.id}}" price="{{product.price}}" class="right"></div>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
