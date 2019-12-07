@@ -27,9 +27,6 @@ angular.module('root')
                 if(heightVal === undefined || genderVal === undefined || brandVal === undefined){
                     return;
                 }
-                $cookies.put(heightCookieName, heightVal, {path: "/"});
-                $cookies.put(genderCookieName, genderVal, {path: "/"});
-                $cookies.put(brandCookieName, brandVal, {path: "/"});
                 if (heightVal !== $scope.height || genderVal !== $scope.gender || brandVal !== $scope.brand) {
                     $scope.gender = genderVal;
                     $scope.height = heightVal;
@@ -100,7 +97,9 @@ angular.module('root')
                     $scope.gender = $scope.genderTemp = res.data.gender;
                     $scope.height = $scope.heightTemp = res.data.height;
                     $scope.brand = $scope.brandTemp = res.data.brand;
-
+                    if(location.search && location.search.length>2){
+                        location.href="/catalog";
+                    }
                     let newHash = 'HeadTop';
                     if ($location.hash() !== newHash) {
                         // $location.hash('HeadTop');
