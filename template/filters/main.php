@@ -20,10 +20,15 @@ if(!$ts->isAgeExists($age, $gender) || !$ts->isValidGender($gender)){
 }
 $tags = $ts->getHeightTagsByAge($age, $gender);
 $brand = ParamsManager::getParam("brand");
+$gender = ParamsManager::getParam("gender");
+
 array_push($tags, $gender);
 $filter = new CatalogFilter();
 if($brand){
     $filter->brand($brand);
+}
+if($gender){
+    $filter->gender($gender);
 }
 $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
 ?>

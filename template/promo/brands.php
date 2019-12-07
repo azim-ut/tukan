@@ -2,7 +2,7 @@
 <div style="">
     <div class="container padding-bottom-20 padding-top-20">
         <div class="row">
-            <div class="col-sm-4 margin-bottom-15 pointer" onclick="location.href='/brands';">
+            <div class="col-sm-4 margin-bottom-15 pointer" style="padding: 0;" onclick="location.href='/brands';">
                 <div class="card shadow-sm brandsContent">
                     <video autoplay muted loop id="vid">
                         <source src="/web/video/MVI_4856-commercial_HD.mp4" type="video/mp4">
@@ -15,7 +15,7 @@
                 </div>
                 </a>
             </div>
-            <div class="col-sm-4 margin-bottom-15 pointer" onclick="location.href='/lottery';">
+            <div class="col-sm-4 margin-bottom-15 pointer" style="padding: 0;" onclick="location.href='/lottery';">
                 <div class="card shadow-sm brandsContent"
                      style="background: transparent url(/web/img/lottery.jpg) no-repeat center center/cover;">
                     <div class="content">
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 margin-bottom-15 pointer" onclick="location.href='/catalog';">
+            <div class="col-sm-4 margin-bottom-15 pointer" style="padding: 0;" onclick="location.href='/catalog';">
                 <div class="card shadow-sm brandsContent"
                      style="background: transparent url(/web/img/store.jpg) no-repeat center center/cover;">
                     <div class="content">
