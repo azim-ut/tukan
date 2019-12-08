@@ -20,7 +20,7 @@
                                                      product="row"
                                                      index="$index"></product-preview>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="block pointer"
