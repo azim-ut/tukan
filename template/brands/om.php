@@ -9,9 +9,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3">
-                        <p class="padding-top-10">Начали с простой белой футболки. Теперь это культовый продукт бренда. С 1983 по 1992 продано
-                            около 25 миллионов единиц одежды.</p>
                         <a href="/catalog?brand=1" class="btn btn-block btn-outline-success align-bottom">Каталог</a>
+                        <p class="padding-top-10">
+                            Начали с простой белой футболки. Теперь это культовый продукт бренда. С 1983 по 1992 продано
+                            около 25 миллионов единиц одежды.</p>
                     </div>
                     <div class="col-sm-3">
                         <p>
