@@ -47,7 +47,7 @@ class LotteryService extends BaseRestService{
     }
 
     public function setWin($uid, $sid, $couponId){
-        $exp = time() + 1000*60*60*24*31;//+month
+        $exp = time() + 60*60*24*31;//+month
         return CouponService::getInstance()->addCoupon($uid, $sid, $couponId, $exp);
     }
 
