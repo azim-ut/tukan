@@ -69,7 +69,7 @@
 
                 </div>
                 <br/>
-                <div class="text-right addressBlock gb_Rd_sm" ng-if="cart.coupons.length>0 && false">
+                <div class="text-right addressBlock gb_Rd_sm margin-bottom-20" ng-if="cart.coupons.length>0 && false">
                     <div class="container margin-bottom-15">
                         <div class="row">
                             <div class="col-10 text-left">Купон скидок</div>
@@ -86,7 +86,6 @@
                     </div>
                 </div>
 
-                <br/>
                 <div class="text-right addressBlock gb_Rd_sm"
                      style="font-weight: bold; line-height: 50px; font-size: 130%;">
                     <span style="float: left;">Итого</span>
