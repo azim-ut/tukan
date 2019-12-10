@@ -35,21 +35,6 @@
                     <span class="text-right">x {{cart.items.length}}</span>
                 </div>
                 <br/>
-                <div class="text-right addressBlock gb_Rd_sm" ng-if="cart.coupons.length>0">
-                    <div class="container margin-bottom-15">
-                        <div class="row">
-                            <div class="col-10 text-left">Купон</div>
-                            <div class="col-2 text-right pointer" ng-click="skipCoupon()"><i class="icon icon-arrow-right"></i></div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div ng-repeat="row in cart.coupons">
-                            <couponmini data="row"></couponmini>
-                        </div>
-                    </div>
-                </div>
-                <br/>
                 <div style="border-top: #eaeaea 1px solid;" class="addressBlock gb_Rd_sm" ng-if="data.user">
                     <div style="line-height: 35px;">Адрес доставки:</div>
                     <div class="text-center center center-block"
@@ -82,6 +67,23 @@
                         </div>
                     </div>
 
+                </div>
+                <br/>
+                <div class="text-right addressBlock gb_Rd_sm" ng-if="cart.coupons.length>0 && false">
+                    <div class="container margin-bottom-15">
+                        <div class="row">
+                            <div class="col-10 text-left">Купон скидок</div>
+                            <div class="col-2 text-right pointer"
+                                 ng-if="cart.coupons.length>1"
+                                 ng-click="skipCoupon()"><i class="icon icon-arrow-right"></i></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div ng-repeat="row in cart.coupons">
+                            <couponmini data="row"></couponmini>
+                        </div>
+                    </div>
                 </div>
 
                 <br/>

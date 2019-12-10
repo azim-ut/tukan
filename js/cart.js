@@ -39,6 +39,11 @@ angular.module('root')
             showAddressEditForm: function (row) {
                 $rootScope.$broadcast('editAddressForm', row);
             },
+            skipCoupon: function () {
+                CartFactory.skip_coupon().$promise.then(function (res) {
+                    $rootScope.$broadcast('updateCart');
+                });
+            },
             checkout: function () {
                 CartFactory.try().$promise.then(function (res) {
                     if (res.code === 401) {

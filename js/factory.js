@@ -135,6 +135,11 @@ angular.module('root')
                 url: "/shop/rest/cart/cart",
                 isArray: false
             },
+            skip_coupon: {
+                method: 'GET',
+                url: "/shop/rest/cart/skip/coupon",
+                isArray: false
+            },
             try: {
                 method: 'GET',
                 url: "/shop/rest/cart/try",
