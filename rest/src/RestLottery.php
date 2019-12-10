@@ -31,7 +31,7 @@ class RestLottery extends RestBase{
         $coupon = $service->randomCoupon($group);
         $exists = $service->getCoupon($uid, SessionManager::id(), LotteryService::firstLotteryName());
         if(!$exists){
-//            $service->setWin($uid, SessionManager::id(), $coupon->id);
+            $service->setWin($uid, SessionManager::id(), $coupon->id);
         }
         $this->out->data = $coupon;
     }
