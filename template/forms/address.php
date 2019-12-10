@@ -199,11 +199,11 @@
                                 <label class="col-sm-4 col-form-label text-right">
                                     Телефон 1:
                                 </label>
-                                <div class="col-sm-2">
+                                <div class="col-4 col-sm-2">
                                     <input type="text" ng-model="data.temp.phone_code"
                                            class="form-control form-control-sm"/>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-8 col-sm-6">
                                     <input type="text" ng-model="data.temp.phone_number"
                                            class="form-control form-control-sm"/>
                                 </div>
@@ -212,11 +212,11 @@
                                 <label class="col-sm-4 col-form-label text-right">
                                     Телефон 2:
                                 </label>
-                                <div class="col-sm-2">
+                                <div class="col-4 col-sm-2">
                                     <input type="text" ng-model="data.temp.phone_code_2"
                                            class="form-control form-control-sm"/>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-8 col-sm-6">
                                     <input type="text" ng-model="data.temp.phone_number_2"
                                            class="form-control form-control-sm"/>
                                 </div>
