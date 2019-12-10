@@ -85,7 +85,6 @@ $prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(),
             </div>
         </div>
     </div>
-    <canvas id="defaultCanvas0" width="1588" height="1444" style="width: 794px; height: 722px;"></canvas>
     <script src="/web/js/lottery.js?t=<?=$version?>" type="text/javascript"></script>
 </div>
 
