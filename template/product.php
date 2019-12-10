@@ -86,7 +86,15 @@ $heights = $post->enabledHeights();
                             <tr>
                                 <td>
 
-                                    <h1 class="productTitle"><?=ucfirst($post->title())?></h1>
+                                    <h1 class="productTitle"><?=ucfirst($post->title())?>
+                                        <?
+                                        if($post->sale){
+                                            ?>
+                                            <span class="sale">-<?=$post->sale?>%</span>
+                                            <?
+                                        }
+                                        ?>
+                                    </h1>
                                     <div>
                                         <span class="thin-font">EAN:</span> <?=$post->barcode?>
                                     </div>
@@ -95,9 +103,24 @@ $heights = $post->enabledHeights();
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="amount thin-font text-right" style="font-size: 200%;">
-                                        <span class="thin-font" style="padding-right: 5px;">€</span><?=$post->price()?>
-                                    </div>
+                                    <?
+                                    if($post->sale){
+                                        ?>
+                                        <div class="amount thin-font text-right" style="font-size: 150%; color: #ccc;">
+                                            <del><span class="thin-font" style="padding-right: 5px;">€</span><?=$post->price()?></del>
+                                        </div>
+                                        <div class="amount thin-font text-right" style="font-size: 200%;">
+                                            <span class="thin-font" style="padding-right: 5px;">€</span><?=$post->new_price()?>
+                                        </div>
+                                        <?
+                                    }else{
+                                        ?>
+                                        <div class="amount thin-font text-right" style="font-size: 200%;">
+                                            <span class="thin-font" style="padding-right: 5px;">€</span><?=$post->price()?>
+                                        </div>
+                                        <?
+                                    }
+                                    ?>
                                 </td>
                             </tr>
                         </table>

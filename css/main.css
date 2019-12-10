@@ -2,6 +2,11 @@
 .pointer{
     cursor: pointer;
 }
+
+#wrapper{
+    overflow: hidden;
+}
+
 .navbar{
     background: #fff;
 }
@@ -385,6 +390,10 @@ button.gender:hover{
     -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
+}
+
+.ProductLabel .sale{
+    padding: 2px 7px; background: #ff0000; color: #fff; font-size: 60%;
 }
 
 .ProductLabel .error{
@@ -1247,3 +1256,38 @@ footer {
 
 .modal-header,
 .modal-footer{border: none;}
+
+.sales{
+    padding: 10px;
+    color: #333;
+    border-right: #0d638f 1px solid;
+    border-bottom: #0d638f 1px solid;
+    position: relative;
+}
+.sales .photo{
+    background: #ffffff none no-repeat center center/contain;
+    height: 200px;
+    color: #fff;
+}
+.sales .price{
+    font-size: 90%;
+}
+.sales .new_price{
+    font-size: 110%;
+}
+.sales .info{
+    background: #ff0000;
+    position: absolute;
+    padding: 2px 10px;
+    border-radius: 12px;
+    line-height: 40px;
+    top: -5px;
+    right: -5px;
+    color: #fff;
+    transform: rotate(25deg);
+    font-size: 100%;
+    font-weight: 700;
+}
+.sales.lastInRow{
+    border-right: none;
+}

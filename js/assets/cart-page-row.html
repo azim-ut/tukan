@@ -14,7 +14,9 @@
                             <a href="/product/{{product.post}}" style="font-weight: bold; text-decoration: underline;">
                                 {{product.title}}
                             </a>
-                            <div style="white-space: nowrap;">€ {{product.price}}</div>
+                            <div style="white-space: nowrap;" ng-if="!product.sale">€ {{product.price}}</div>
+                            <div style="white-space: nowrap;" ng-if="product.sale"><del>€ {{product.price}}</del></div>
+                            <div style="white-space: nowrap;" ng-if="product.sale">€ {{product.new_price}}</div>
                         </td>
                     </tr>
                 </table>
