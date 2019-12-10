@@ -15,8 +15,8 @@
                                 {{product.title}}
                             </a>
                             <div style="white-space: nowrap;" ng-if="!product.sale">€ {{product.price}}</div>
-                            <div style="white-space: nowrap;" ng-if="product.sale"><del>€ {{product.price}}</del></div>
-                            <div style="white-space: nowrap;" ng-if="product.sale">€ {{product.new_price}}</div>
+                            <div style="white-space: nowrap;" ng-if="product.sale"><del>€ {{product.from_price}}</del></div>
+                            <div style="white-space: nowrap;" ng-if="product.sale">€ {{product.price}}</div>
                         </td>
                     </tr>
                 </table>
