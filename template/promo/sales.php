@@ -16,7 +16,7 @@ if(sizeof($list) % 2 === 0){
         <div class="col-6 text-center"
              style="background: #ffffff url(/web/img/red_bg.jpg) no-repeat center top/cover; color: #fff; position: relative;">
             <div style="display: inline-block; vertical-align: middle; position: relative; top: 30%;">
-                <div style="font-size: 350%; text-transform: uppercase;">SALES</div>
+                <div style="font-size: 300%; text-transform: uppercase;">SALES</div>
             </div>
         </div>
         <?
