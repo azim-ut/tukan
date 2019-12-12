@@ -36,9 +36,6 @@ angular.module('root')
                     $rootScope.$broadcast('updateCart');
                 });
             },
-            showAddressEditForm: function (row) {
-                $rootScope.$broadcast('editAddressForm', row);
-            },
             skipCoupon: function () {
                 CartFactory.skip_coupon().$promise.then(function (res) {
                     $rootScope.$broadcast('updateCart');

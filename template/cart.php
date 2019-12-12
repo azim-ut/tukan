@@ -40,15 +40,13 @@
                     <div class="text-center center center-block"
                          style="border-top: #ccc 1px solid; overflow: hidden; text-align: center;">
                         <div class="addressBlock"
-                             style="position: relative;"
-                             ng-if="cart.addr === row.id"
-                             ng-repeat="row in cart.addresses track by $index">
+                             style="position: relative;">
                             <div class="btn btn-xs btn-icon-only"
                                  style="position: absolute; right: 0; top: 0; color: #ccc;"
-                                 ng-click="showAddressEditForm(row)">
+                                 onclick="location.href='/my/addresses';">
                                 <i class="fa fa-edit"></i>
                             </div>
-                            <p style="padding: 0 30px;">{{row.data}}</p>
+                            <p style="padding: 0 30px;">{{cart.address}}</p>
                         </div>
 
                         <div class="btn-group btn-group-sm btn-block margin-top-10 carAddressList">
@@ -69,27 +67,34 @@
 
                 </div>
                 <br/>
-                <div class="text-right addressBlock gb_Rd_sm margin-bottom-20" ng-if="cart.coupons.length>0 && false">
-                    <div class="container margin-bottom-15">
-                        <div class="row">
-                            <div class="col-10 text-left">Купон скидок</div>
-                            <div class="col-2 text-right pointer"
-                                 ng-if="cart.coupons.length>1"
-                                 ng-click="skipCoupon()"><i class="icon icon-arrow-right"></i></div>
-                        </div>
-                    </div>
+                <div class="text-right addressBlock gb_Rd_sm margin-bottom-20">
+                    <table width="100%" cellpadding="0" cellspacing="0" class="margin-bottom-10">
+                        <tr>
+                            <td align="left">Купон скидок</td>
+                            <td ng-click="skipCoupon()">&nbsp;<i class="icon icon-arrow-right"></i>&nbsp;</td>
+                        </tr>
+                    </table>
 
-                    <div>
-                        <div ng-repeat="row in cart.coupons">
-                            <couponmini data="row"></couponmini>
-                        </div>
+                    <div ng-if="cart.coupon">
+                        <couponmini data="cart.coupon"></couponmini>
                     </div>
                 </div>
 
                 <div class="text-right addressBlock gb_Rd_sm"
                      style="font-weight: bold; line-height: 50px; font-size: 130%;">
-                    <span style="float: left;">Итого</span>
-                    <span class="text-right">€ {{cart.totalPrice}}</span>
+
+                    <div class="text-right small clear" ng-if="cart.disccount">
+                        <span style="float: left;"></span>
+                        <small>- &euro;{{cart.disccount}}</small>
+                    </div>
+                    <div class="text-right small clear" ng-if="cart.sale">
+                        <span style="float: left;">SALE</span>
+                        <small>-{{cart.sale}}%</small>
+                    </div>
+                    <div>
+                        <span style="float: left;">Итого</span>
+                        <span class="text-right">€ {{cart.totalPrice}}</span>
+                    </div>
                 </div>
 
                 <br/>

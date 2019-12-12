@@ -4,7 +4,7 @@ angular.module('root')
         angular.extend($scope, {
             countries: [],
             regions:[],
-            closeForm: function(){
+            closeAllForms: function(){
                 $scope.closeForm('#EditAddressForm');
                 $scope.closeForm('#NewAddressForm');
             },
@@ -22,7 +22,7 @@ angular.module('root')
                 CoreFactory.address(params).$promise.then(function (res) {
                     if (res.data) {
                         $rootScope.$broadcast('addressesUpdated', res.data);
-                        $scope.closeForm();
+                        $scope.closeAllForms();
                     }
                 });
             },
@@ -69,7 +69,7 @@ angular.module('root')
         });
         $scope.fetchCountries();
 
-        $scope.$on('closeAddressForm', $scope.closeForm);
+        $scope.$on('closeAddressForm', $scope.closeAllForms);
         $scope.$on('editAddressForm', $scope.openEditForm);
         $scope.$on('newAddressForm', $scope.openNewForm);
         $scope.$on('addressesUpdated', $scope.onAddressUpdated);
