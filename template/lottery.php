@@ -96,6 +96,16 @@ if($uid){
         <br/>
         <div class="spinBtn align-center" ng-click="loginRedirectFB('lottery')" style="text-align: center; padding-top: 0%;">
             <button class="fbBtn shadow"><span>f</span></button>
+            <br/>
+
+            <div align="center" style="background: #fff; display: block; padding: 10px; font-size: 120%; line-height: normal; overflow: hidden; margin: 10px 50px;">
+                <div ng-if="data.locale!=='ru-RU'">
+                    <b ng-click="loginRedirectFB('lottery')">Login</b> and <b>Spin</b> to get additional discount!
+                </div>
+                <div ng-if="data.locale==='ru-RU'">
+                    <b ng-click="loginRedirectFB('lottery')">Зарегистрируйтесь</b> и <b>Крутите</b> барабан!
+                </div>
+            </div>
         </div>
 
     </div>
