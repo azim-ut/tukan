@@ -2,13 +2,12 @@
 
 use assets\services\CouponService;
 use assets\services\LotteryService;
-use core\manager\SessionManager;
 use core\manager\UserManager;
 
 ?>
 <? include_once __DIR__ . "/nav/start.php" ?>
 <?
-$prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), SessionManager::id(), LotteryService::firstLotteryName());
+$prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), LotteryService::firstLotteryName());
 $uid    = UserManager::currentId();
 if($uid){
     ?>
