@@ -1,11 +1,9 @@
 <?php
 
-use assets\services\CouponService;
 use assets\services\LotteryService;
 use assets\services\PresetsService;
 use core\exception\NoUserException;
 use core\manager\ParamsManager;
-use core\manager\SessionManager;
 use core\manager\UserManager;
 use core\service\App;
 use core\utils\SafeUtils;
@@ -26,12 +24,12 @@ class RestLottery extends RestBase{
 
     public function GET_spin(){
         $service = LotteryService::getInstance();
-        $uid = UserManager::currentId();
-        $group = "FirstLottery";
-        $coupon = $service->randomCoupon($group);
-        $exists = $service->getCoupon($uid, SessionManager::id(), LotteryService::firstLotteryName());
+        $uid     = UserManager::currentId();
+        $group   = "FirstLottery";
+        $coupon  = $service->randomCoupon($group);
+        $exists  = $service->getCoupon($uid, LotteryService::firstLotteryName());
         if(!$exists){
-            $service->setWin($uid, SessionManager::id(), $coupon->id);
+            $service->setWin($uid, $coupon->id);
         }
         $this->out->data = $coupon;
     }
@@ -42,17 +40,17 @@ class RestLottery extends RestBase{
 
     public function POST_won(){
         $service = LotteryService::getInstance();
-        $ind = ParamsManager::getParamInt("ind");
+        $ind     = ParamsManager::getParamInt("ind");
         SafeUtils::checkNumbers($ind);
         $uid = UserManager::currentId();
         if(!$uid){
             throw new NoUserException();
         }
-        $prize = $service->getCoupon($uid, SessionManager::id(), LotteryService::firstLotteryName());
+        $prize = $service->getCoupon($uid, LotteryService::firstLotteryName());
         if(!$prize){
             $couponId = 0;
             $service->setWin($uid, $couponId);
-            $prize = $service->getCoupon($uid, SessionManager::id(), LotteryService::firstLotteryName());
+            $prize = $service->getCoupon($uid, LotteryService::firstLotteryName());
         }
         $this->out->data = $prize;
     }

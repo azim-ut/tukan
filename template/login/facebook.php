@@ -33,7 +33,7 @@ if(!$user && $state === SessionManager::id() && $code != null){
 	$accessToken = $res->access_token ?? null;
 
 	/** got access_token and */
-	if($code != null && SessionManager::id() === $state){
+	if($code != null && (SessionManager::id() === $state || $state === 'lottery')){
 		$app_token      = "EAAGipka04bgBAHASuftyl5pcMvT5r92qtBgCoZBRWenWslhAN4WyyQTKox8vqVKilcruoZCytCSn9BpbgJZBJSnPGrBz9CLFmcTS72hRq1vtvvgv9qNAOwzw5eOZA8b9z1QTNcbEM027dWS3ZBZAENSc8YypnMc4AespE5k7sZBcgZDZD";
 		$checkTokenPath = FacebookConstants::getCodeDebugPath($accessToken, $app_token);
 		$content        = file_get_contents($checkTokenPath);
@@ -54,7 +54,12 @@ if(!$user && $state === SessionManager::id() && $code != null){
 			}catch(BadResultException | NoUserException $e){
 				FacebookAuthService::getInstance()->log($infoPath, $e->getMessage() . "\n" . $e->getTraceAsString(), 4);
 			}
-			header("Location:/");
+			if($state === 'lottery'){
+                header("Location:/lottery");
+            }else{
+                header("Location:/");
+            }
+            exit();
 		}
 	}
 	header("Location:/");

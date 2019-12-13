@@ -2,7 +2,6 @@
 
 namespace assets\services;
 
-use core\manager\SessionManager;
 use core\service\MySqlService;
 use Coupon;
 
@@ -46,9 +45,9 @@ class LotteryService extends BaseRestService{
         return $res;
     }
 
-    public function setWin($uid, $sid, $couponId){
+    public function setWin($uid, $couponId){
         $exp = time() + 60*60*24*31;//+month
-        return CouponService::getInstance()->addCoupon($uid, $sid, $couponId, $exp);
+        return CouponService::getInstance()->addCoupon($uid, $couponId, $exp);
     }
 
     public function parseFree($name){
@@ -59,8 +58,8 @@ class LotteryService extends BaseRestService{
         return 0;
     }
 
-    public function getCoupon($uid, $sid, $promo){
-        return CouponService::getInstance()->getUserCoupons($uid, $sid, $promo);
+    public function getCoupon($uid, $promo){
+        return CouponService::getInstance()->getUserCoupons($uid, $promo);
     }
 
 }
