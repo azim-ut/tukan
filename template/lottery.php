@@ -94,8 +94,8 @@ if($uid){
     <div class="HeadContentPage"
          ng-controller="AuthBlockController"
          style="background: transparent url(/web/img/christmas_1024x768.jpg) no-repeat center center/cover">
-
-        <div class="spinBtn align-center" ng-click="loginFB('lottery')" style="text-align: center; padding-top: 40%;">
+        <br/>
+        <div class="spinBtn align-center" ng-click="loginRedirectFB('lottery')" style="text-align: center; padding-top: 0%;">
             <button class="fbBtn shadow"><span>f</span></button>
         </div>
 

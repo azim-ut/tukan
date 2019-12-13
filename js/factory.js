@@ -223,7 +223,12 @@ angular.module('root')
             },
             fbLoginLink: {
                 method: 'GET',
-                url: "/core/rest/facebook/login/:more",
+                url: "/core/rest/facebook/login",
+                isArray: false
+            },
+            fbRedirectLoginLink: {
+                method: 'GET',
+                url: "/core/rest/facebook/redirect/login/:more",
                 isArray: false
             }
         })

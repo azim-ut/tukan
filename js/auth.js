@@ -42,8 +42,15 @@ angular.module('root')
                     }
                 });
             },
-            loginFB: function (more) {
-                CoreFactory.fbLoginLink({more:more}).$promise.then(function (res) {
+            loginFB: function () {
+                CoreFactory.fbLoginLink().$promise.then(function (res) {
+                    if (res.data) {
+                        location.href = res.data;
+                    }
+                });
+            },
+            loginRedirectFB: function (more) {
+                CoreFactory.fbRedirectLoginLink({more:more}).$promise.then(function (res) {
                     if (res.data) {
                         location.href = res.data;
                     }
