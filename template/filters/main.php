@@ -22,6 +22,13 @@ $tags = $ts->getHeightTagsByAge($age, $gender);
 $brand = ParamsManager::getParam("brand");
 $gender = ParamsManager::getParam("gender");
 
+if(Engine::getDir(0) === 'girls'){
+    $gender = 2;
+}else if(Engine::getDir(0) === 'boys'){
+    $gender = 1;
+}
+
+
 array_push($tags, $gender);
 $filter = new CatalogFilter();
 if($brand){
