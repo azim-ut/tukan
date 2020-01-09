@@ -15,8 +15,12 @@ if(sizeof($list) % 2 === 0){
     <div class="row" style="border-top: #000 2px solid;border-bottom: #000 2px solid;">
         <div class="col-6 text-center"
              style="background: #ffffff url(/web/img/red_bg.jpg) no-repeat center top/cover; color: #fff; position: relative;">
-            <div style="display: inline-block; vertical-align: middle; position: relative; top: 30%;">
-                <div style="font-size: 300%; text-transform: uppercase;">SALES</div>
+            <div style="display: inline-block; vertical-align: middle; position: relative; top: 7%;">
+                <div style="font-size: 200%; text-transform: uppercase;">TOTAL SALES</div>
+                <div style="font-size: 100%; color: #fff; text-transform: uppercase;">Только до 31/01/2020</div>
+                <div style="font-size: 400%; text-transform: uppercase; transform: rotate(-15deg);">50%</div>
+                <div style="font-size: 110%; text-transform: uppercase;">Mustakivi keskus</div>
+                <div style="font-size: 110%; text-transform: uppercase;">Mahtra 1, 2-й этаж</div>
             </div>
         </div>
         <?
