@@ -18,6 +18,7 @@
                     <li><a href="/traderules">Правила</a></li>
                     <li><a href="/policy">Политика<br/>конфиденциальности</a></li>
                 </ul>
+                <div style="background: transparent url(/web/img/Itella_Smartpost_valge.png) no-repeat center center/contain; width: 100px; height: 100px;"></div>
             </div>
             <div class="col-sm-4 margin-bottom-30">
                 <h4 class="text-left text-color-white">Интересное</h4>
