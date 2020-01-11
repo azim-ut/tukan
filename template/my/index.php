@@ -73,7 +73,7 @@ foreach($list as $row){
                         </div>
                         <div class="block text-center col-6 col-sm-2">
                             <div class="cnt"><?=$delivered?></div>
-                            Достлен
+                            Доставлен
                         </div>
                         <div class="block text-center col-6 col-sm-2">
                             <div class="cnt"><?=$claim?></div>
