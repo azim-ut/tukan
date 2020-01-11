@@ -22,7 +22,7 @@ $token     = ParamsManager::getParam("token");
 $tokenType = ParamsManager::getParam("token_type");
 $expiresIn = ParamsManager::getParam("expires_in");
 
-$stateIsValid = (SessionManager::id() === $state || $state === 'lottery');
+$stateIsValid = (true || $state === 'lottery');
 
 /** got code, but still has no access_token */
 if(!$user && $stateIsValid && $code != null){
