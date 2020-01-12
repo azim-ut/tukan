@@ -1,0 +1,2121 @@
+<!DOCTYPE places_info [
+        <!ELEMENT places_info (place+)>
+        <!ELEMENT place (place_id,name,city,address,latitude,longitude,opened,group_id,group_name,group_sort,description,active,inactive_reason,created_date,updated_date)>
+        <!ELEMENT place_id (#PCDATA)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT city (#PCDATA)>
+        <!ELEMENT address (#PCDATA)>
+        <!ELEMENT latitude (#PCDATA)>
+        <!ELEMENT longitude (#PCDATA)>
+        <!ELEMENT opened (#PCDATA)>
+        <!ELEMENT group_id (#PCDATA)>
+        <!ELEMENT group_name (#PCDATA)>
+        <!ELEMENT group_sort (#PCDATA)>
+        <!ELEMENT description (#PCDATA)>
+        <!ELEMENT active (#PCDATA)>
+        <!ELEMENT inactive_reason (#PCDATA)>
+        <!ELEMENT created_date (#PCDATA)>
+        <!ELEMENT updated_date (#PCDATA)>
+        ]>
+<places_info>
+    <place>
+        <place_id>234</place_id>
+        <name>Tallinna Finest ärimaja</name>
+        <city>Tallinn</city>
+        <address>Pärnu mnt 22</address>
+        <latitude>59.4316385</latitude>
+        <longitude>24.7452321</longitude>
+        <opened>E-P 7:30-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>0. korrusel Rimi vastas eskalaatorite all</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-06-10 13:05:41.762058</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>183</place_id>
+        <name>Jüri Konsum</name>
+        <city>Jüri</city>
+        <address>Aruküla tee 29, Jüri</address>
+        <latitude>59.3579653</latitude>
+        <longitude>24.9121106</longitude>
+        <opened>E-P 9.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-09-06 10:57:35.397323</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>240</place_id>
+        <name>Kehra Grossi Toidukaubad</name>
+        <city>Kehra</city>
+        <address>Kose maantee 7</address>
+        <latitude>59.3345525</latitude>
+        <longitude>25.3331962</longitude>
+        <opened>E-P 7:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Peasissepääsu kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-09-12 14:30:26.612089</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>217</place_id>
+        <name>Keila Grossi Toidukaubad</name>
+        <city>Keila</city>
+        <address>Piiri 7, Keila</address>
+        <latitude>59.31322995</latitude>
+        <longitude>24.422027958048</longitude>
+        <opened>E-P 08:00 -22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel, peaukse kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-12-13 15:37:47.850077</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>134</place_id>
+        <name>Keila Selver</name>
+        <city>Keila</city>
+        <address>Piiri 12</address>
+        <latitude>59.31322995</latitude>
+        <longitude>24.422027958048</longitude>
+        <opened>E-P 08.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>apteegi vastas boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-22 13:05:47.376</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>242</place_id>
+        <name>Kiili Maxima</name>
+        <city>Kiili</city>
+        <address>Vaela tee 4</address>
+        <latitude>59.309999</latitude>
+        <longitude>24.834304404091</longitude>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Kassade vastas boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-09-16 15:40:16.284192</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>205</place_id>
+        <name>Kuusalu Grossi Toidukaubad</name>
+        <city>Kuusalu</city>
+        <address>Mäe 1, Kuusalu</address>
+        <latitude>59.4477243</latitude>
+        <longitude>25.42295</longitude>
+        <opened>E-P 8:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Kassade kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2017-11-21 17:05:57.911255</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>133</place_id>
+        <name>Laagri Maksimarket</name>
+        <city>Laagri</city>
+        <address>Pärnu mnt 558a</address>
+        <latitude>59.341346</latitude>
+        <longitude>24.613152804974</longitude>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>kassade kõrval koridori lõpus</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>203</place_id>
+        <name>Laagri Selver</name>
+        <city>Laagri</city>
+        <address>Pärnu mnt. 554, Tallinn</address>
+        <latitude>59.353402</latitude>
+        <longitude>24.6285812</longitude>
+        <opened>E-P 8.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Pizzapoiste vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-01-30 10:48:21.265015</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>207</place_id>
+        <name>Loo Gross</name>
+        <city>Tallinn</city>
+        <address>Saha tee 9, Loo</address>
+        <latitude>59.4358105</latitude>
+        <longitude>24.9422153</longitude>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2017-11-08 20:59:03.103576</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>161</place_id>
+        <name>Maardu Maxima</name>
+        <city>Maardu</city>
+        <address>Keemikute 2</address>
+        <latitude>59.4735476</latitude>
+        <longitude>25.0198472</longitude>
+        <opened>E-P 8:00-23:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>esimesel korrusel, kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2012-09-12 22:39:19.793751</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>219</place_id>
+        <name>Maardu Pärli Keskus</name>
+        <city>Maardu</city>
+        <address>Nurga 3, Maardu</address>
+        <latitude>59.4870666</latitude>
+        <longitude>25.0186801</longitude>
+        <opened>E-P 9:00 - 22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel, Hesburgeri vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-12-11 15:17:41.277977</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>178</place_id>
+        <name>Muuga Maxima</name>
+        <city>Tallinn</city>
+        <address>Altmetsa 1, Muuga</address>
+        <latitude>59.4653316</latitude>
+        <longitude>24.9619629</longitude>
+        <opened>E-P 8.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-09-06 10:58:35.868852</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>179</place_id>
+        <name>Peetri Selver</name>
+        <city>Harjumaa</city>
+        <address>Veesaare tee 2, Rae vald</address>
+        <opened>E-P 08.00-23.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Selverisse sissepääsu juures, Kika loomapoe kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-11-14 09:02:49.41446</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>174</place_id>
+        <name>Raudalu Konsum</name>
+        <city>Tallinn</city>
+        <address>Viljandi mnt. 41a, Tallinn</address>
+        <opened>E-P 8.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1.korrusel koridori lõpus, Peetri Pizza vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-07-28 11:46:00.990358</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>156</place_id>
+        <name>Saku Selver</name>
+        <city>Saku</city>
+        <address>Üksnurme tee 2</address>
+        <latitude>59.293307</latitude>
+        <longitude>24.65626145307</longitude>
+        <opened>E-P 08.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Lillepoe kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2012-06-05 11:13:51.291209</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>177</place_id>
+        <name>Saue Maxima</name>
+        <city>Saue</city>
+        <address>Ladva 1a, Saue</address>
+        <latitude>59.293307</latitude>
+        <longitude>24.65626145307</longitude>
+        <opened>E-L 8.00-22.00, P 9.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-08-30 13:46:30.312857</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>180</place_id>
+        <name>Tabasalu Rimi</name>
+        <city>Tabasalu</city>
+        <address>Klooga mnt 10b, Tabasalu</address>
+        <opened>E-P 8:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel Pitsapoiste kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2014-02-19 11:35:48.788256</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>225</place_id>
+        <name>Tallinna Arsenali Keskus</name>
+        <city>Tallinn</city>
+        <address>Erika 14, Tallinn</address>
+        <opened>E-P 08:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Esimesel korrusel, Erika tänava poolse sissepääsu juures</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-09-24 09:37:07.425214</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>228</place_id>
+        <name>Tallinna Astangu Rimi</name>
+        <city>Tallinn</city>
+        <address>Kotermaa tn 4, Tallinn</address>
+        <opened>E-P 07:30 - 22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Esimesel korrusel juuksuri kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-09-24 09:37:46.78498</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>208</place_id>
+        <name>Balti Jaama Turg</name>
+        <city>Tallinn</city>
+        <address>Kopli 1, Tallinn</address>
+        <opened>E-R 6:30-23:00 L-P 8:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>0. korrusel MyFitnessi kõrval boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2017-11-08 21:02:08.766304</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>121</place_id>
+        <name>Tallinna Haabersti Rimi</name>
+        <city>Tallinn</city>
+        <address>Haabersti 1</address>
+        <opened>E-P 08.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>peasissepääsu kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>214</place_id>
+        <name>Tallinna Hiiu Rimi</name>
+        <city>Tallinn</city>
+        <address>Pärnu mnt. 386</address>
+        <opened>E-P 8:00 - 22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel WC-de vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-06-13 14:22:08.156493</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>126</place_id>
+        <name>Tallinna Järve Keskus</name>
+        <city>Tallinn</city>
+        <address>Pärnu mnt. 238</address>
+        <opened>E-P 08.00-23.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>teisel korrusel, Humana kaupluse kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>185</place_id>
+        <name>Tallinna Kadaka Selver</name>
+        <city>Tallinn</city>
+        <address>Kadaka tee 56A, Tallinn</address>
+        <opened>E-P 8:00 - 23:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel infoleti kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2014-02-19 11:37:43.520305</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>213</place_id>
+        <name>Tallinna Kakumäe Selver</name>
+        <city>Tallinn</city>
+        <address>Rannamõisa tee 6e, Tallinn</address>
+        <opened>E-P 8:00 - 23:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>-1. korrusel travelaatori kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-05-08 11:35:34.968695</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>160</place_id>
+        <name>Tallinna Kaubamaja</name>
+        <city>Tallinn</city>
+        <address>Gonsiori 2</address>
+        <opened>E-P 9.00 -21.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Laikmaa tänava sissepääsu juures I korrusel</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2012-10-17 21:25:10.383609</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>233</place_id>
+        <name>Tallinna Kolde Selver</name>
+        <city>Tallinn</city>
+        <address>Sõle tn 31</address>
+        <opened>E-P 8:00-23:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel Selveri kassade kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-10-30 13:52:38.440799</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>146</place_id>
+        <name>Tallinna Kristiine Keskus 1.korrus</name>
+        <city>Tallinn</city>
+        <address>Endla 45</address>
+        <opened>E-P 08.00-23.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Prisma iseteeninduskassade vastas, SEB kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2010-10-20 14:57:08.754248</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>227</place_id>
+        <name>Tallinna Kristiine Keskus 2.korrus</name>
+        <city>Tallinn</city>
+        <address>Endla 45</address>
+        <opened>E-P 08.00-21.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>2. korrusel Sportlandi kõrval, treppidest üles, liftide juures</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-10-17 13:55:30.617358</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>199</place_id>
+        <name>Tallinna Kärberi Selver</name>
+        <city>Tallinn</city>
+        <address>K. Kärberi 20/20a, Tallinn</address>
+        <opened>E-P 09:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Sun Grill söögikoha vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2016-10-04 10:14:39.215066</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>120</place_id>
+        <name>Tallinna Lasnamäe Centrum (RIMI)</name>
+        <city>Tallinn</city>
+        <address>Mustakivi tee 13</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korruse koridoris, enne WC-sid</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-09-18 17:33:15.175825</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>220</place_id>
+        <name>Tallinna Lasnamäe Maksimarket</name>
+        <city>Tallinn</city>
+        <address>J. Smuuli tee 43</address>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel peasissepääsu juures</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-08-22 09:59:22.351628</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>103</place_id>
+        <name>Tallinna Lasnamäe Prisma</name>
+        <city>Tallinn</city>
+        <address>Mustakivi tee 17</address>
+        <opened>E-P 24h</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>vasakpoolse sissepääsu vastas, taaraautomaadi juures</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>175</place_id>
+        <name>Tallinna Läänemere Selver</name>
+        <city>Tallinn</city>
+        <address>Tallinn, Läänemere tee 28</address>
+        <opened>E-P 09:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1.korrusel, Apotheka apteegi kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-08-13 10:08:09.399899</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>164</place_id>
+        <name>Tallinna Magistrali Keskus</name>
+        <city>Tallinn</city>
+        <address>Sõpruse pst 201/203</address>
+        <opened>E-L 10:00 - 21:00, P 10:00 - 19:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>0 - korrusel, sissepääsu juures</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2012-07-24 16:42:21.355122</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>206</place_id>
+        <name>Tallinna Marja Gross</name>
+        <city>Tallinn</city>
+        <address>Mustamäe tee 41, Tallinn</address>
+        <opened>E-P 8:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Tamburis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2017-11-06 19:52:33.544538</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>102</place_id>
+        <name>Tallinna Merimetsa Selver</name>
+        <city>Tallinn</city>
+        <address>Paldiski mnt 56</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Hoone parempoolses tiivas, Merimetsa Selveri fuajees</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>195</place_id>
+        <name>Tallinna Mustamäe Keskus</name>
+        <city>Tallinn</city>
+        <address>A. H. Tammsaare tee 104a, Tallinn</address>
+        <opened>E-P kell 08:00-23:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel kauplus MARILYN kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2016-01-22 16:08:02.126233</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>138</place_id>
+        <name>Tallinna Mustika Prisma</name>
+        <city>Tallinn</city>
+        <address>Tammsaare tee 116</address>
+        <opened>E-P 24h</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>keskuse peaukse juures, infoleti kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2010-05-31 10:46:06.651</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>231</place_id>
+        <name>Tallinna Männiku Rimi</name>
+        <city>Tallinn</city>
+        <address>Männiku tee 100</address>
+        <opened>E-P 08:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Peasissepääsu kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-10-14 11:03:12.504407</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>230</place_id>
+        <name>Tallinna Nautica Keskus</name>
+        <city>Tallinn</city>
+        <address>Ahtri 9, Tallinn</address>
+        <opened>E-P 08:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Esimesel korrusel, Kanela kaupluse kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-09-24 09:38:10.46898</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>235</place_id>
+        <name>Tallinna Nurmenuku Rimi</name>
+        <city>Tallinn</city>
+        <address>Ehitajate tee 107</address>
+        <opened>E-P 8:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Apteegi kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-09-09 06:35:21.795049</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>124</place_id>
+        <name>Tallinna Nõmme Keskus</name>
+        <city>Tallinn</city>
+        <address>Jaama 2</address>
+        <opened>E-R 09.00-19.00; L 10.00-17:00; P 10.00-15.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>teisel korrusel, Humana kaupluse kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>232</place_id>
+        <name>Tallinna Peterburi tee Rimi</name>
+        <city>Tallinn</city>
+        <address>Peterburi tee 98</address>
+        <opened>E-P 8:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel Rimi kassade kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-10-30 13:52:15.526828</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>216</place_id>
+        <name>Tallinna Pirita Keskus</name>
+        <city>Tallinn</city>
+        <address>Merivälja tee 24</address>
+        <opened>E-P 08:00 -22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel Rimi sissepääsu kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-06-19 09:13:36.145966</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>125</place_id>
+        <name>Tallinna Pirita Selver</name>
+        <city>Tallinn</city>
+        <address>Rummu tee 4</address>
+        <opened>E-P 09.00-23.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Selveri infoleti kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>193</place_id>
+        <name>Tallinna Priisle Maxima XXX</name>
+        <city>Tallinn</city>
+        <address>Linnamäe tee 57, Tallinn</address>
+        <opened>E-P 8:00-23:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel BuenoKids kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2015-12-16 15:24:57.327778</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>153</place_id>
+        <name>Tallinna Rocca Al Mare Keskus</name>
+        <city>Tallinn</city>
+        <address>Paldiski mnt 102</address>
+        <opened>E-P 08.00-23.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Prisma Peremarket kassade vastas, eskalaatorite all</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2011-09-27 11:02:22.891341</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>222</place_id>
+        <name>Tallinna Rotermanni Keskus</name>
+        <city>Tallinn</city>
+        <address>Rotermanni 8, Tallinn</address>
+        <opened>E-L 10:00-20:00 P 11:00-18:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel Coca-cola plaza poolse sissepääsu juures</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-09-05 12:22:42.196331</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>154</place_id>
+        <name>Tallinna Sikupilli Prisma</name>
+        <city>Tallinn</city>
+        <address>Tartu mnt 87</address>
+        <opened>E-P 24h</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>koridori lõpus, loomapoe Penner taga</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2011-09-27 11:02:33.158597</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>141</place_id>
+        <name>Tallinna Smuuli Maxima</name>
+        <city>Tallinn</city>
+        <address>Smuuli tee 9</address>
+        <opened>E-P 8.00 - 23.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>kassade vastas koridoris</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2010-08-09 11:38:09.423639</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>155</place_id>
+        <name>Tallinna Solaris Keskus</name>
+        <city>Tallinn</city>
+        <address>Estonia pst. 9, Tallinn</address>
+        <opened>E-P 09.00-23.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>0-korrusel kaupluse Biomarket kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2011-09-27 11:02:38.37109</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>200</place_id>
+        <name>Tallinna Stockmann</name>
+        <city>Tallinn</city>
+        <address>Liivalaia 53, Tallinn</address>
+        <opened>E-L 09.00–20:00; P 10.00–20:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>5. korrusel Tallinki boksi vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2016-11-04 09:48:02.188195</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>188</place_id>
+        <name>Tallinna Stroomi Keskus</name>
+        <city>Tallinn</city>
+        <address>Tuulemaa 20, Tallinn</address>
+        <opened>E-P 8:00-23:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Maxima kassade vastas, loomapoe kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2015-02-06 11:10:43.230355</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>226</place_id>
+        <name>Tallinna T1 Kaubanduskeskus</name>
+        <city>Tallinn</city>
+        <address>Peterburi tee 2</address>
+        <opened>E-P 08:00-23:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>0. korrusel travelaatorite kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-01-29 09:20:35.387474</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>236</place_id>
+        <name>Tallinna TalTech MEKTORY</name>
+        <city>Tallinn</city>
+        <address>Raja 15</address>
+        <opened>E-R 8:00-19:00, L 10:00-16:00 P - Suletud</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Peasissepääsu juures garderoobis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-09-10 17:54:53.860102</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>137</place_id>
+        <name>Tallinna Tondi Selver</name>
+        <city>Tallinn</city>
+        <address>Tammsaare tee 62</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Selveri infoleti kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-04-09 12:57:14.897</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>122</place_id>
+        <name>Tallinna Torupilli Selver</name>
+        <city>Tallinn</city>
+        <address>Vesivärava 37</address>
+        <opened>E-P 09.00-23.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>kassade vastas, nurgapealses boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>204</place_id>
+        <name>Tallinna Tähesaju Selver</name>
+        <city>Tallinn</city>
+        <address>Tähesaju tee 1, Tallinn</address>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Juuksurisalong Väike Dublin juures</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2017-10-11 09:14:39.851534</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>194</place_id>
+        <name>Tallinna Vilde tee Maxima XX</name>
+        <city>Tallinn</city>
+        <address>Vilde tee 77, Tallinn</address>
+        <opened>E-P kell 8:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel, peasissepääsust sisenedes paremal koridori lõpus</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2015-12-16 15:41:00.988291</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>215</place_id>
+        <name>Tallinna Viru Keskus</name>
+        <city>Tallinn</city>
+        <address>Viru väljak 4/6</address>
+        <opened>E-P 9:00 - 22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>-1 korrusel, Toidumaailma kassade juures, eskalaatorite all</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-04-08 16:08:06.348238</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>187</place_id>
+        <name>Tallinna Ülemiste keskus</name>
+        <city>Tallinn</city>
+        <address>Suur-Sõjamäe 4, Tallinn</address>
+        <opened>E-P 8:00-22:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel Ülemiste jaama poolse eskalaatori vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2014-10-24 10:12:28.167884</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>139</place_id>
+        <name>Viimsi Kaubanduskeskus (Delice)</name>
+        <city>Viimsi</city>
+        <address>Randvere tee 6</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>Peasissepääsu juures paremat kätt, eraldi boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2010-07-07 08:52:58.027</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>192</place_id>
+        <name>Viimsi Keskus (Selver)</name>
+        <city>Viimsi</city>
+        <address>Sõpruse tee 15, Haabneeme alevik, Viimsi</address>
+        <opened>E-P 08:00-23:00</opened>
+        <group_id>1</group_id>
+        <group_name>Tallinn/Harjumaa</group_name>
+        <group_sort>20</group_sort>
+        <description>1. korrusel New York pizza vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2015-08-25 10:42:24.31436</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>116</place_id>
+        <name>Kuressaare Saare Selver</name>
+        <city>Kuressaare</city>
+        <address>Tallinna 67</address>
+        <opened>E-P 08.00-22.00</opened>
+        <group_id>2</group_id>
+        <group_name>Saaremaa</group_name>
+        <group_sort>9</group_sort>
+        <description>Selveri kassade vastas boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>157</place_id>
+        <name>Kuressaare Kihelkonna mini-Rimi</name>
+        <city>Kuressaare</city>
+        <address>Kihelkonna mnt. 3</address>
+        <opened>E-P 08.00-22.00</opened>
+        <group_id>2</group_id>
+        <group_name>Saaremaa</group_name>
+        <group_sort>9</group_sort>
+        <description>toidupoe kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2012-07-24 16:40:08.487122</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>223</place_id>
+        <name>Auriga Keskus</name>
+        <city>Kuressaare</city>
+        <address>Tallinna 88, Kudjape</address>
+        <opened>E-P 8:00-22:00</opened>
+        <group_id>2</group_id>
+        <group_name>Saaremaa</group_name>
+        <group_sort>9</group_sort>
+        <description>1. korrusel, Koduekstra poe kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-08-27 16:10:54.760387</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>111</place_id>
+        <name>Jõgeva Kaubahall</name>
+        <city>Jõgeva</city>
+        <address>Aia 3</address>
+        <opened>E-P 07.30-20.00</opened>
+        <group_id>3</group_id>
+        <group_name>Jõgevamaa</group_name>
+        <group_sort>15</group_sort>
+        <description>esimesel korrusel apteegi kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>123</place_id>
+        <name>Põltsamaa Selver</name>
+        <city>Põltsamaa</city>
+        <address>Jõgeva mnt. 1a, Põltsamaa</address>
+        <opened>E-P 09.00-21.00</opened>
+        <group_id>3</group_id>
+        <group_name>Jõgevamaa</group_name>
+        <group_sort>15</group_sort>
+        <description>esimesel korrusel trepi kõrval (läbi Selveri)</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>202</place_id>
+        <name>Jõgeva Pae Konsum</name>
+        <city>Jõgeva</city>
+        <address>Aia 33, Jõgeva</address>
+        <opened>E-P 8.00-22.00</opened>
+        <group_id>3</group_id>
+        <group_name>Jõgevamaa</group_name>
+        <group_sort>15</group_sort>
+        <description>1. korrusel Apteegi vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2017-10-11 09:11:15.162324</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>115</place_id>
+        <name>Kärdla Selver</name>
+        <city>Kärdla</city>
+        <address>Rehemäe, Linnumäe küla, Pühalepa vald</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>6</group_id>
+        <group_name>Hiiumaa</group_name>
+        <group_sort>16</group_sort>
+        <description>Selveri kassade kõrval seina ääres</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>108</place_id>
+        <name>Jõhvi Tsentraal</name>
+        <city>Jõhvi</city>
+        <address>Keskväljak 4</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>8</group_id>
+        <group_name>Ida-Virumaa</group_name>
+        <group_sort>17</group_sort>
+        <description>1. korrusel, Büroomaailma kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>198</place_id>
+        <name>Ahtme Maxima</name>
+        <city>Kohtla-Järve</city>
+        <address>Puru tee 77, Ahtme</address>
+        <opened>E-P 8:00-23:00</opened>
+        <group_id>8</group_id>
+        <group_name>Ida-Virumaa</group_name>
+        <group_sort>17</group_sort>
+        <description>1. korrusel apteegi vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2016-10-12 20:16:11.26668</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>184</place_id>
+        <name>Jõhvi Grossi Toidukaubad</name>
+        <city>Jõhvi</city>
+        <address>Tartu mnt 15a, Jõhvi</address>
+        <opened>E-N, P 8.00-22.00, R-L 8.00-22.00</opened>
+        <group_id>8</group_id>
+        <group_name>Ida-Virumaa</group_name>
+        <group_sort>17</group_sort>
+        <description>1. korrusel kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-10-04 08:40:59.869139</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>249</place_id>
+        <name>Sillamäe Maxima XX</name>
+        <city>Sillamäe</city>
+        <address>Pavlovi tn 1a</address>
+        <opened>E-P 8:00-22:00</opened>
+        <group_id>8</group_id>
+        <group_name>Ida-Virumaa</group_name>
+        <group_sort>17</group_sort>
+        <description>Lillpoe kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-11-21 16:43:33.654771</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>181</place_id>
+        <name>Narva Prisma</name>
+        <city>Narva</city>
+        <address>Kangelaste prospekt 29, Narva</address>
+        <opened>E-P 8.00 - 23.00</opened>
+        <group_id>8</group_id>
+        <group_name>Ida-Virumaa</group_name>
+        <group_sort>17</group_sort>
+        <description>1. korrusel kassade kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2014-04-02 11:12:52.577211</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>109</place_id>
+        <name>Narva Astri Keskus</name>
+        <city>Narva</city>
+        <address>Tallinna mnt 41</address>
+        <opened>E-L 10.00-21.00; P 10.00-19.00</opened>
+        <group_id>8</group_id>
+        <group_name>Ida-Virumaa</group_name>
+        <group_sort>17</group_sort>
+        <description>Hoone keskel kaldtee lähistel</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>238</place_id>
+        <name>Kiviõli K5 keskus</name>
+        <city>Kiviõli</city>
+        <address>Metsa 3</address>
+        <opened>E-P 8:00-21:00</opened>
+        <group_id>8</group_id>
+        <group_name>Ida-Virumaa</group_name>
+        <group_sort>17</group_sort>
+        <description>Rimi kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-09-10 13:32:05.783241</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>131</place_id>
+        <name>Kohtla-Järve Vironia Keskus</name>
+        <city>Kohtla-Järve</city>
+        <address>Järveküla tee 50</address>
+        <opened>E-L 10.00-20.00; P 10.00-18.00</opened>
+        <group_id>8</group_id>
+        <group_name>Ida-Virumaa</group_name>
+        <group_sort>17</group_sort>
+        <description>Magaziini kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>182</place_id>
+        <name>Paide Maksimarket</name>
+        <city>Paide</city>
+        <address>Ringtee 2, Paide</address>
+        <opened>E-P 9.00-22.00</opened>
+        <group_id>9</group_id>
+        <group_name>Järvamaa</group_name>
+        <group_sort>14</group_sort>
+        <description>1. korrusel Klick arvutipoe vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-09-06 10:58:09.792704</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>143</place_id>
+        <name>Türi mini-Rimi</name>
+        <city>Türi</city>
+        <address>Paide 26</address>
+        <opened>E-L 08.00-22.00</opened>
+        <group_id>9</group_id>
+        <group_name>Järvamaa</group_name>
+        <group_sort>14</group_sort>
+        <description>kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2010-08-30 16:33:09.637806</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>112</place_id>
+        <name>Paide Selver</name>
+        <city>Paide</city>
+        <address>Aiavilja 4</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>9</group_id>
+        <group_name>Järvamaa</group_name>
+        <group_sort>14</group_sort>
+        <description>1. korrusel koridori lõpus</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>247</place_id>
+        <name>Imavere Alexela</name>
+        <city>Imavere</city>
+        <address>Paiaristi</address>
+        <opened>E-P 24h</opened>
+        <group_id>9</group_id>
+        <group_name>Järvamaa</group_name>
+        <group_sort>14</group_sort>
+        <description>Tanklapoes</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-09-26 10:38:48.132275</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>246</place_id>
+        <name>Paikuse Konsum</name>
+        <city>Paikuse</city>
+        <address>Pärnade pst. 1</address>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>10</group_id>
+        <group_name>Pärnumaa</group_name>
+        <group_sort>18</group_sort>
+        <description>Kohviku vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-09-26 10:30:47.937568</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>117</place_id>
+        <name>Pärnu Kaubamajakas</name>
+        <city>Pärnu</city>
+        <address>Papiniidu 8</address>
+        <opened>E-P 09.00-21.00</opened>
+        <group_id>10</group_id>
+        <group_name>Pärnumaa</group_name>
+        <group_sort>18</group_sort>
+        <description>1. korrusel Triumph pesupoe vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>130</place_id>
+        <name>Pärnu Keskus</name>
+        <city>Pärnu</city>
+        <address>Aida 7, Pärnu</address>
+        <opened>E-P 08.00-22:00</opened>
+        <group_id>10</group_id>
+        <group_name>Pärnumaa</group_name>
+        <group_sort>18</group_sort>
+        <description>I korrusel Sportlandi Outleti sissepääsu juures</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>189</place_id>
+        <name>Pärnu Mai Selver</name>
+        <city>Pärnu</city>
+        <address>Papiniidu 42</address>
+        <opened>E-P 09:00-22:00</opened>
+        <group_id>10</group_id>
+        <group_name>Pärnumaa</group_name>
+        <group_sort>18</group_sort>
+        <description>esimesel korrusel apteegi vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2015-07-16 13:18:43.117752</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>173</place_id>
+        <name>Pärnu Maksimarket</name>
+        <city>Pärnu</city>
+        <address>Pärnumaa, Audru vald, Haapsalu mnt 43</address>
+        <opened>E-P kell 9:00-22:00</opened>
+        <group_id>10</group_id>
+        <group_name>Pärnumaa</group_name>
+        <group_sort>18</group_sort>
+        <description>1.korrusel, peaukse juures</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-07-18 12:34:28.388562</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>158</place_id>
+        <name>Pärnu Maxima XXX</name>
+        <city>Pärnu</city>
+        <address>Riia mnt 131</address>
+        <opened>E-P 08.00-22.00</opened>
+        <group_id>10</group_id>
+        <group_name>Pärnumaa</group_name>
+        <group_sort>18</group_sort>
+        <description>Popshop kaupluse vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2012-07-24 16:42:19.52042</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>224</place_id>
+        <name>Pärnu Port Artur 2</name>
+        <city>Pärnu</city>
+        <address>Lai 11</address>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>10</group_id>
+        <group_name>Pärnumaa</group_name>
+        <group_sort>18</group_sort>
+        <description>0. korrusel, eskalaatorite kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-11-16 09:24:55.338855</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>127</place_id>
+        <name>Pärnu Ülejõe Selver</name>
+        <city>Pärnu</city>
+        <address>Tallinna mnt 93a</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>10</group_id>
+        <group_name>Pärnumaa</group_name>
+        <group_sort>18</group_sort>
+        <description>1. korrusel koridori lõpus</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>245</place_id>
+        <name>Sauga Konsum</name>
+        <city>Sauga</city>
+        <address>Kuldnoka 1</address>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>10</group_id>
+        <group_name>Pärnumaa</group_name>
+        <group_sort>18</group_sort>
+        <description>Peasissepääsu kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-09-24 14:31:00.800113</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>142</place_id>
+        <name>Vändra Konsum</name>
+        <city>Vändra</city>
+        <address>Pärnu-Paide mnt. 21</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>10</group_id>
+        <group_name>Pärnumaa</group_name>
+        <group_sort>18</group_sort>
+        <description>Konsumi kassade kõrval koridoris</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2010-08-23 09:03:24.946918</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>128</place_id>
+        <name>Põlva Edu Keskus</name>
+        <city>Põlva</city>
+        <address>Aasa 1</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>12</group_id>
+        <group_name>Põlvamaa</group_name>
+        <group_sort>11</group_sort>
+        <description>Taaraautomaadi kõrval boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>239</place_id>
+        <name>Räpina Maxima</name>
+        <city>Räpina</city>
+        <address>Pargi 1</address>
+        <opened>E-P 8:00-22:00</opened>
+        <group_id>12</group_id>
+        <group_name>Põlvamaa</group_name>
+        <group_sort>11</group_sort>
+        <description>Kassade vastas boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-09-16 15:46:53.734185</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>110</place_id>
+        <name>Rakvere Kroonikeskus</name>
+        <city>Rakvere</city>
+        <address>F. G. Adoffi 11</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>13</group_id>
+        <group_name>Lääne-Virumaa</group_name>
+        <group_sort>13</group_sort>
+        <description>Selveri müügisaali sissepääsu vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>152</place_id>
+        <name>Rakvere Põhjakeskus</name>
+        <city>Rakvere</city>
+        <address>Tõrremäe, Rakvere vald</address>
+        <opened>E-P 08.00-22.00</opened>
+        <group_id>13</group_id>
+        <group_name>Lääne-Virumaa</group_name>
+        <group_sort>13</group_sort>
+        <description>Rimi infoletist vasakul pool koridoris.</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2011-09-27 11:02:27.458905</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>221</place_id>
+        <name>Rakvere Vaala Keskus</name>
+        <city>Rakvere</city>
+        <address>Lõõtspilli 2, Rakvere</address>
+        <opened>E-P 9:00-21:00</opened>
+        <group_id>13</group_id>
+        <group_name>Lääne-Virumaa</group_name>
+        <group_sort>13</group_sort>
+        <description>Esimesel korrusel linnapoolse sissepääsu juures, kauplus Apelsin kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-08-27 09:51:58.412453</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>229</place_id>
+        <name>Tapa Konsum</name>
+        <city>Tapa</city>
+        <address>Kalmistu 3</address>
+        <opened>E-P 08:00–22:00</opened>
+        <group_id>13</group_id>
+        <group_name>Lääne-Virumaa</group_name>
+        <group_sort>13</group_sort>
+        <description>Esimesel korrusel apteegi vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-11-25 14:52:33.66274</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>147</place_id>
+        <name>Tapa Bussijaam</name>
+        <city>Tapa</city>
+        <address>Sauna 1</address>
+        <opened>E-P 07.00-19.00</opened>
+        <group_id>13</group_id>
+        <group_name>Lääne-Virumaa</group_name>
+        <group_sort>13</group_sort>
+        <description>Peaukse kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2010-09-02 12:20:52.48154</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>241</place_id>
+        <name>Haljala Grossi Toidukaubad</name>
+        <city>Haljala</city>
+        <address>Võsu mnt 5</address>
+        <opened>E-L 9:00-22:00, P 9:00-21:00</opened>
+        <group_id>13</group_id>
+        <group_name>Lääne-Virumaa</group_name>
+        <group_sort>13</group_sort>
+        <description>Peasissepääsu vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-09-13 14:40:26.23019</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>145</place_id>
+        <name>Märjamaa Konsum</name>
+        <city>Märjamaa</city>
+        <address>Pärnu mnt 62</address>
+        <opened>E-P 08.00-22.00</opened>
+        <group_id>14</group_id>
+        <group_name>Raplamaa</group_name>
+        <group_sort>10</group_sort>
+        <description>Kassade kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2010-08-30 16:49:26.397154</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>243</place_id>
+        <name>Kohila Konsum</name>
+        <city>Kohila</city>
+        <address>Lõuna 2</address>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>14</group_id>
+        <group_name>Raplamaa</group_name>
+        <group_sort>10</group_sort>
+        <description>Peasissepääsust vasakul</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-10-02 13:47:01.338094</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>113</place_id>
+        <name>Rapla Maxima</name>
+        <city>Rapla</city>
+        <address>Tallinna mnt 50a</address>
+        <opened>E-P 08.00-22.00</opened>
+        <group_id>14</group_id>
+        <group_name>Raplamaa</group_name>
+        <group_sort>10</group_sort>
+        <description>kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>190</place_id>
+        <name>Rapla Selver</name>
+        <city>Rapla</city>
+        <address>Tallinna maantee 4, Rapla</address>
+        <opened>E-P 09:00-22:00</opened>
+        <group_id>14</group_id>
+        <group_name>Raplamaa</group_name>
+        <group_sort>10</group_sort>
+        <description>Expert tehnikapoe ees</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2015-07-15 14:23:54.605094</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>201</place_id>
+        <name>Tartu Kaubamaja -1 korrus</name>
+        <city>Tartu</city>
+        <address>Riia 1, Tartu</address>
+        <opened>E-L 9.00-22.00, P 9.30-20.00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>-1. korruse liftitamburis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2017-10-11 09:05:55.781914</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>150</place_id>
+        <name>Tartu Eeden</name>
+        <city>Tartu</city>
+        <address>Kalda tee 1c</address>
+        <opened>E-P 09.00-21.00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>1. korrusel infoleti vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2011-09-27 11:02:11.948245</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>106</place_id>
+        <name>Tartu Anne Selver</name>
+        <city>Tartu</city>
+        <address>Kalda tee 43</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>Selveri infoleti kõrval koridoris</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>171</place_id>
+        <name>Tartu Anne Prisma</name>
+        <city>Tartu</city>
+        <address>Nõlvaku tee 2, Tartu</address>
+        <opened>E-P 8:00 - 23:00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>1. korrusel eskalaatori kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2014-04-02 11:14:29.742166</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>107</place_id>
+        <name>Tartu Lõunakeskuse Rimi</name>
+        <city>Tartu</city>
+        <address>Ringtee 75</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>Hoone liuväljapoolses tiivas, Anni pesusalongi vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>212</place_id>
+        <name>Tartu Vahi Selver</name>
+        <city>Tartu</city>
+        <address>Vahi 62, Tartu</address>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>BENU apteegi kõrval boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-02-21 16:43:04.214927</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>248</place_id>
+        <name>Tartu Tuglase Rimi</name>
+        <city>Tartu</city>
+        <address>Friedebert Tuglase 19</address>
+        <opened>E-P 8:00-21:00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>Sissepääsu vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-10-14 11:02:41.381467</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>135</place_id>
+        <name>Tartu Tasku</name>
+        <city>Tartu</city>
+        <address>Turu 2</address>
+        <opened>E-L 10.00-21.00; P 10.00-18.00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>Turu tänava sissepääsu juures esimesel korrusel liftide vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-03-02 11:33:19.589</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>218</place_id>
+        <name>Tartu Sõbrakeskus</name>
+        <city>Tartu</city>
+        <address>Võru 55F, Tartu</address>
+        <opened>E-P 10:00-20:30</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>1. korrusel peasissepääsu juures, autotarvete poe vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-08-21 14:41:03.636874</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>211</place_id>
+        <name>Tartu Saare Maxima</name>
+        <city>Tartu</city>
+        <address>Anne 57</address>
+        <opened>E-L 8:00-22:00; P 9:00-22:00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>1. korrusel Vsbogu OÜ kõrval boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-01-12 11:39:04.232195</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>169</place_id>
+        <name>Tartu Ringtee Selver</name>
+        <city>Tartu</city>
+        <address>Aardla 114, Tartu</address>
+        <opened>E-P 9.00-22.00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>1.korrusel koridori lõpus, kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-07-28 11:44:58.560186</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>136</place_id>
+        <name>Tartu Rebase Rimi</name>
+        <city>Tartu</city>
+        <address>Rebase 10</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>parklapoolne sissepääs, kohe paremat kätt asuv boks</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-03-27 10:09:53.666</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>163</place_id>
+        <name>Tartu Raadi Maxima</name>
+        <city>Tartu</city>
+        <address>Narva mnt 112/Peetri 26B</address>
+        <opened>E-P 8:00-22:00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>esimesel korrusel apteegi kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2012-11-01 09:53:23.991956</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>166</place_id>
+        <name>Tartu Lembitu Konsum</name>
+        <city>Tartu</city>
+        <address>Lembitu tn. 2, Tartu</address>
+        <opened>E-P 9.00-22.00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>1. korrusel kassade kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-10-20 10:51:09.864351</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>210</place_id>
+        <name>Tartu Kvartal</name>
+        <city>Tartu</city>
+        <address>Riia 2, Tartu</address>
+        <opened>E-L 9:00-22:00; P 9:00 – 20:00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>0. korrusel liftide vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2017-11-24 18:10:52.578021</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>176</place_id>
+        <name>Tartu Kaubamaja 0 korrus</name>
+        <city>Tartu</city>
+        <address>Riia 1, Tartu</address>
+        <opened>E-L 9.00-22.00, P 9.30-20.00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>0. korruse liftitamburis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-08-26 09:00:05.227542</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>172</place_id>
+        <name>Tartu Aardla Selver</name>
+        <city>Tartu</city>
+        <address>Võru 77</address>
+        <opened>E-P 9.00-22.00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>esimesel korrusel, kellassepa ja lillepoe vahel</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-06-20 13:41:23.090748</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>144</place_id>
+        <name>Elva mini-Rimi</name>
+        <city>Elva</city>
+        <address>Kesk 7</address>
+        <opened>E-P 08.00-21.00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2010-08-30 16:46:58.403937</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>209</place_id>
+        <name>Elva Maxima</name>
+        <city>Elva</city>
+        <address>Valga maantee 5</address>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>1. korrusel kassade vastas boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2018-01-31 10:04:40.896028</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>237</place_id>
+        <name>Ülenurme Konsum</name>
+        <city>Ülenurme</city>
+        <address>Võru mnt. 2</address>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>Kassade kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-09-10 13:32:19.2859</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>196</place_id>
+        <name>Tartu Veeriku Selver</name>
+        <city>Tartu</city>
+        <address>Vitamiini 1, Tartu</address>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>15</group_id>
+        <group_name>Tartumaa</group_name>
+        <group_sort>19</group_sort>
+        <description>Hesburgeri vastas boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2016-10-07 10:38:09.944142</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>114</place_id>
+        <name>Rannarootsi Keskus</name>
+        <city>Uuemõisa</city>
+        <address>Rannarootsi tee 1</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>16</group_id>
+        <group_name>Läänemaa</group_name>
+        <group_sort>12</group_sort>
+        <description>Selveri infoleti kõrval koridoris</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>167</place_id>
+        <name>Haapsalu Rimi</name>
+        <city>Haapsalu</city>
+        <address>Jaama 32, Haapsalu</address>
+        <opened>E-P 8.00 - 22.00</opened>
+        <group_id>16</group_id>
+        <group_name>Läänemaa</group_name>
+        <group_sort>12</group_sort>
+        <description>1.korrusel, peasissepääsu juures</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-06-19 11:49:45.121785</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>118</place_id>
+        <name>Valga Selver</name>
+        <city>Valga</city>
+        <address>Raja 5</address>
+        <opened>E-P 09.00-21.00</opened>
+        <group_id>17</group_id>
+        <group_name>Valgamaa</group_name>
+        <group_sort>8</group_sort>
+        <description>kassade vastas, boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>149</place_id>
+        <name>Otepää Maxima</name>
+        <city>Otepää</city>
+        <address>Valga mnt 1B</address>
+        <opened>E-P 08.00-22.00</opened>
+        <group_id>17</group_id>
+        <group_name>Valgamaa</group_name>
+        <group_sort>8</group_sort>
+        <description>kassade vastas boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2010-08-30 16:55:08.230862</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>148</place_id>
+        <name>Tõrva Maxima</name>
+        <city>Tõrva</city>
+        <address>Tamme 2</address>
+        <opened>E-P 09.00-21.00</opened>
+        <group_id>17</group_id>
+        <group_name>Valgamaa</group_name>
+        <group_sort>8</group_sort>
+        <description>kassade vastas boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2010-08-30 16:50:01.693143</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>244</place_id>
+        <name>Viljandi Centrum</name>
+        <city>Viljandi</city>
+        <address>Tallinna 24</address>
+        <opened>E-P 9:00-22:00</opened>
+        <group_id>18</group_id>
+        <group_name>Viljandimaa</group_name>
+        <group_sort>7</group_sort>
+        <description>Euronicsi vastas trepi all</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2019-10-02 13:47:07.345279</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>191</place_id>
+        <name>Viljandi Turu Konsum</name>
+        <city>Viljandi</city>
+        <address>Turu 16, 71003, Viljandi linn</address>
+        <opened>E-L 8-20; P 9-17</opened>
+        <group_id>18</group_id>
+        <group_name>Viljandimaa</group_name>
+        <group_sort>7</group_sort>
+        <description>esimesel korrusel kassade vastas</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2015-07-27 10:12:03.23609</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>101</place_id>
+        <name>Viljandi Männimäe Selver</name>
+        <city>Viljandi</city>
+        <address>Riia mnt 35</address>
+        <opened>E-P 09.00-22.00</opened>
+        <group_id>18</group_id>
+        <group_name>Viljandimaa</group_name>
+        <group_sort>7</group_sort>
+        <description>Selveri kassade vastas boksis</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>162</place_id>
+        <name>Viljandi Uku keskus</name>
+        <city>Viljandi</city>
+        <address>Tallinna tn. 41</address>
+        <opened>E-P 08:00-22:00</opened>
+        <group_id>18</group_id>
+        <group_name>Viljandimaa</group_name>
+        <group_sort>7</group_sort>
+        <description>esimesel korrusel Apollo raamatupoe kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2012-11-01 09:50:04.06355</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>119</place_id>
+        <name>Võru Kagukeskus</name>
+        <city>Võru</city>
+        <address>Kooli 6</address>
+        <opened>E-P 8.00 - 22.00</opened>
+        <group_id>19</group_id>
+        <group_name>Võrumaa</group_name>
+        <group_sort>6</group_sort>
+        <description>esimesel korrusel peaukse vahetus läheduses</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2009-01-20 15:23:10.57929</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+    <place>
+        <place_id>168</place_id>
+        <name>Võru Rimi</name>
+        <city>Võru</city>
+        <address>Jüri 85</address>
+        <opened>E-P 8:00 - 22:00</opened>
+        <group_id>19</group_id>
+        <group_name>Võrumaa</group_name>
+        <group_sort>6</group_sort>
+        <description>Peetri Pizza kõrval</description>
+        <active>1</active>
+        <inactive_reason></inactive_reason>
+        <created_date>2013-06-20 13:48:58.016953</created_date>
+        <updated_date>2019-12-23 03:00:02.727</updated_date>
+    </place>
+</places_info>

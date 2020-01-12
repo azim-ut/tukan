@@ -58,6 +58,7 @@ use core\service\App; ?>
 	<script type="text/javascript" src="/web/js/product.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/wishes.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/cart.js?t=<?=$version?>"></script>
+	<script type="text/javascript" src="/web/js/modern.js?t=<?=$version?>"></script>
 
     <script src="//kit.fontawesome.com/f15c23ae14.js" crossorigin="anonymous"></script>
 
