@@ -2,7 +2,9 @@
 .pointer{
     cursor: pointer;
 }
-
+.ng-cloak{
+    display: none !important;
+}
 #wrapper{
     overflow: hidden;
 }

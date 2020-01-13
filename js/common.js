@@ -4,10 +4,13 @@ angular.module('root')
             return parseInt(input, 10);
         };
     })
-    .controller("CommonController", function ($scope, $location, Data, WishFactory, CartService) {
+    .controller("CommonController", function ($scope, $location, Data, WishFactory, CartService, $httpParamSerializer) {
         angular.extend($scope, {
             data: Data,
             process: false,
+            params: function(obj){
+                return $httpParamSerializer(obj);
+            },
             fetchVisitsData: function () {
                 WishFactory.ids().$promise.then(function (res) {
                     $scope.data.wishes.ids = res.data

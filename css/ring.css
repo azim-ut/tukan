@@ -1,0 +1,32 @@
+body{
+    padding-top: 0; color: #fff;
+}
+
+.head, .subFooter{
+    display: none;
+}
+
+#wrapper{
+    background: #0f3e68;
+}
+
+.parcelColumn{
+    text-align: center; height: 50vh;color: #fff; font-size: 150%;
+}
+
+.parcelColumn *{
+    color: #fff; font-size: xx-large;
+}
+
+.serviceBell{
+    position: absolute; bottom: 10px;transition: .5s;cursor: pointer;
+    width: 100%; height: 40vh; background: transparent url(/web/img/service_bell.png) no-repeat center 10px/contain;
+}
+
+.serviceBell:active{
+    transform: translateY(10px);
+}
+
+hr{
+    border-top: #fff 1px solid;
+}
