@@ -18,7 +18,6 @@
                     <li><a href="/traderules">Правила</a></li>
                     <li><a href="/policy">Политика<br/>конфиденциальности</a></li>
                 </ul>
-                <div style="background: transparent url(/web/img/Itella_Smartpost_valge.png) no-repeat center center/contain; width: 100px; height: 100px;"></div>
             </div>
             <div class="col-sm-4 margin-bottom-30">
                 <h4 class="text-left text-color-white">Интересное</h4>
@@ -33,6 +32,20 @@
                 2-й этаж, бокс 24
 
                 <div class="sharethis-inline-follow-buttons" style="text-align: right; padding-top: 20px;"></div>
+            </div>
+            <div class="col-12" style="overflow:hidden;">
+                <div style="background: transparent url(/web/img/Itella_Smartpost_valge.png) no-repeat center center/contain; width: 100px; height: 100px; float: left;"></div>
+            </div>
+            <div class="col-12" style="overflow:hidden; padding-top: 15px; margin-top: 15px; border-top: #5a5a5a 1px solid;">
+                <div style="float: left;">
+                    <script type="text/javascript"> //<![CDATA[
+                        var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+                        document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+                        //]]></script>
+                    <script language="JavaScript" type="text/javascript">
+                        TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_sm_124x32.png", "POSDV", "none");
+                    </script>
+                </div>
             </div>
         </div>
     </div>
@@ -60,13 +73,6 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-155076505-1');
-</script>
-<script type="text/javascript"> //<![CDATA[
-    var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
-    document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
-    //]]></script>
-<script language="JavaScript" type="text/javascript">
-    TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_sm_124x32.png", "POSDV", "none");
 </script>
 </body>
 </html>
