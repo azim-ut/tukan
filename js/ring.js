@@ -32,9 +32,9 @@ angular.module('root')
     })
     .factory('RingFactory', function ($resource) {
         return $resource('/web/rest', null, {
-            places: {
+            ring: {
                 method: 'GET',
-                url: "/web/rest/modern/places",
+                url: "/web/rest/ring",
                 isArray: false,
             }
         })

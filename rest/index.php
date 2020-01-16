@@ -3,6 +3,7 @@ require_once(__DIR__ . "/../../core/core.php");
 require_once(__DIR__ . "/../config.php");
 require_once(__DIR__ . "/../rest/src/RestLottery.php");
 require_once(__DIR__ . "/../rest/src/RestModern.php");
+require_once(__DIR__ . "/../rest/src/RestRing.php");
 
 use core\Context;
 use core\exception\RestNotFoundedException;
@@ -41,5 +42,6 @@ function getRestExecutor($to){
 	switch($to){
 		case "lottery":	 		return new RestLottery(); break;
 		case "modern":	 		return new RestModern(); break;
+		case "ring":	 		return new RestRing(); break;
 	}
 }
