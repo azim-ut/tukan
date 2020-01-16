@@ -34,7 +34,7 @@ angular.module('root')
         return $resource('/web/rest', null, {
             ring: {
                 method: 'GET',
-                url: "/web/rest/ring",
+                url: "/shop/rest/ring",
                 isArray: false,
             }
         })

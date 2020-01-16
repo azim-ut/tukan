@@ -9,4 +9,3 @@ date_default_timezone_set("Europe/Tallinn");
 require_once(__DIR__ . "/../shop/config.php");
 require_once(__DIR__ . "/service/LotteryService.php");
 require_once(__DIR__ . "/service/ModernService.php");
-require_once(__DIR__ . "/service/RingService.php");
