@@ -36,12 +36,11 @@
                     &nbsp;
                 </div>
                 <div class="col-sm-4 parcelColumn">
-                    <div style="background: transparent url(/web/img/tukan_valga.png) no-repeat center center/contain; width: 100%; height: 100px;"></div>
-
+                    <div style="background: transparent url(/web/img/tukan_valga.png) no-repeat center center/contain; width: 100%; height: 80px;"></div>
                     <br/>
                     Нажмите чтобы получить бонус от покупки!
                     <br/>
-                    <div style="display: flex; text-align: center; justify-content: center; margin-bottom: 15px;">
+                    <div style="display: flex; text-align: center; justify-content: center;">
                         <div class="imageIcon"
                              ng-if="data.user.icon"
                              ng-style="{'background': 'transparent url('+data.user.icon+') no-repeat center center/contain', 'width':60, 'height':60}">

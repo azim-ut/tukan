@@ -8,7 +8,6 @@ use core\service\App; ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="profile" href="//gmpg.org/xfn/11"/>
 	<link rel="pingback" href="https://tukan.store/xmlrpc.php"/>
-    <link href="/web/assets/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="/web/img/icon_only.ico" type="image/x-icon">
 
     <script type="text/javascript" src="/web/assets/js/jquery.js"></script>
@@ -24,7 +23,6 @@ use core\service\App; ?>
 
 	<link href="/web/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/web/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-
 
 	<title>«Tukan» - магазин детской итальянской одежды</title>
 	<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
@@ -60,7 +58,6 @@ use core\service\App; ?>
 	<script type="text/javascript" src="/web/js/cart.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/modern.js?t=<?=$version?>"></script>
 
-    <script src="//kit.fontawesome.com/f15c23ae14.js" crossorigin="anonymous"></script>
 
     <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5bf306b3d329fa00111f74c2' async='async'></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v4.0&appId=<?=App::context()->facebookAuthAppID()?>&autoLogAppEvents=1"></script>
