@@ -20,7 +20,7 @@ body{
 
 .serviceBell{
     position: absolute; bottom: 10px; left: 10px; right: 10px; transition: .5s;cursor: pointer;
-    height: 35vh; background: transparent url(/web/img/service_bell.png) no-repeat center 10px/contain;
+    height: 30vh; background: transparent url(/web/img/service_bell.png) no-repeat center 10px/contain;
 }
 
 .serviceBell:active{
