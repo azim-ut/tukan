@@ -22,7 +22,7 @@ angular.module('root')
                 });
             },
             loginFB: function () {
-                CoreFactory.fbLoginLink().$promise.then(function (res) {
+                CoreFactory.fbStateLoginLink({state: "fb_ring"}).$promise.then(function (res) {
                     if (res.data) {
                         location.href = res.data;
                     }

@@ -57,6 +57,8 @@ if(!$user && $stateIsValid && $code != null){
 			}
 			if($state === 'lottery'){
                 header("Location:/lottery");
+            } else if($state === 'fb_ring'){
+                header("Location:/ring/facebook");
             }else{
                 header("Location:/");
             }

@@ -36,7 +36,9 @@
                     &nbsp;
                 </div>
                 <div class="col-sm-4 parcelColumn">
-                    <div style="background: transparent url(/web/img/tukan_valga.png) no-repeat center center/contain; width: 100%; height: 80px;"></div>
+                    <a href="/">
+                        <div style="background: transparent url(/web/img/tukan_valga.png) no-repeat center center/contain; width: 100%; height: 80px;"></div>
+                    </a>
                     <br/>
                     Нажмите чтобы получить бонус от покупки!
                     <br/>
