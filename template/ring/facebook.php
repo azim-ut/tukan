@@ -44,15 +44,14 @@
 
                     <div style="margin: 10px 0; font-size: 100%; border: rgba(255,255,255,.5) 1px solid; border-radius: 20px; padding: 5px; ">Ваш текущий бонус:<span style="color: #00ff00;"> {{bonus.coupon}}</span></div>
 
-                    <p style="font-size: 90%;">Нажмите чтобы получить бонус от покупки!</p>
-                    
-                    <div style="display: flex; text-align: center; justify-content: center;">
+                    <div style="font-size: 90%;">Нажмите чтобы получить бонус от покупки!</div>
+
+                    <div style="display: flex; text-align: center; justify-content: center; margin: 10px 0;">
                         <div class="imageIcon"
                              ng-if="data.user.icon"
                              ng-style="{'background': 'transparent url('+data.user.icon+') no-repeat center center/contain', 'width':60, 'height':60}">
                         </div>
                     </div>
-                    <br/>
                     <i class="fa fa-arrow-down"></i>
                 </div>
                 <div class="col-sm-4">
