@@ -228,7 +228,7 @@ angular.module('root')
             },
             fbStateLoginLink: {
                 method: 'GET',
-                url: "/core/rest/facebook/login/:state",
+                url: "/core/rest/facebook/state/login/:state",
                 isArray: false
             },
             fbRedirectLoginLink: {
