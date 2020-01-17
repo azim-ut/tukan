@@ -4,8 +4,10 @@ angular.module('root')
         angular.extend($scope, {
             items: null,
             searchText: null,
+            bonus: {},
             places: [],
             init: function () {
+                $scope.fetchGeneralBonus();
             },
             ring: function () {
                 let audio = new Audio("../../web/audio/desk_bell_ring.mp3");
@@ -15,6 +17,11 @@ angular.module('root')
                     $scope.places = res.data;
                 });
 
+            },
+            fetchGeneralBonus: function () {
+                RingFactory.bonus().$promise.then(function (res) {
+                    $scope.bonus = res.data;
+                });
             },
             placesList: function () {
                 ModernFactory.places().$promise.then(function (res) {
@@ -32,6 +39,11 @@ angular.module('root')
     })
     .factory('RingFactory', function ($resource) {
         return $resource('/web/rest', null, {
+            bonus: {
+                method: 'GET',
+                url: "/shop/rest/ring/bonus/general",
+                isArray: false,
+            },
             ring: {
                 method: 'GET',
                 url: "/shop/rest/ring",

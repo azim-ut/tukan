@@ -8,7 +8,9 @@
                     &nbsp;
                 </div>
                 <div class="col-sm-4 parcelColumn">
-                    <div style="background: transparent url(/web/img/tukan_valga.png) no-repeat center center/contain; width: 100%; height: 100px;"></div>
+                    <a href="/">
+                        <div style="background: transparent url(/web/img/tukan_valga.png) no-repeat center center/contain; width: 100%; height: 100px;"></div>
+                    </a>
                     <hr/>
                     Здравствуйте!
                     <hr/>
@@ -37,11 +39,13 @@
                 </div>
                 <div class="col-sm-4 parcelColumn">
                     <a href="/">
-                        <div style="background: transparent url(/web/img/tukan_valga.png) no-repeat center center/contain; width: 100%; height: 80px;"></div>
+                        <div style="background: transparent url(/web/img/tukan_valga.png) no-repeat center center/contain; width: 100%; height: 60px;"></div>
                     </a>
-                    <br/>
-                    Нажмите чтобы получить бонус от покупки!
-                    <br/>
+
+                    <div style="margin: 10px 0; font-size: 100%; border: rgba(255,255,255,.5) 1px solid; border-radius: 20px; padding: 5px; ">Ваш текущий бонус:<span style="color: #00ff00;"> {{bonus.coupon}}</span></div>
+
+                    <p style="font-size: 90%;">Нажмите чтобы получить бонус от покупки!</p>
+                    
                     <div style="display: flex; text-align: center; justify-content: center;">
                         <div class="imageIcon"
                              ng-if="data.user.icon"
