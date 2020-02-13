@@ -29,7 +29,7 @@
                 </a>
             </td>
             <td align="right">
-                <ul style="display: inline-block; width: 160px; margin-top: 5px;">
+                <ul style="display: inline-block; width: 200px; margin-top: 5px;">
                     <li class="userBtn text-center" style="width: 40px;">
                         <a data-toggle="modal"
                            ng-if="!data.user"
@@ -55,6 +55,11 @@
                             <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}
                             </div>
                         </a>
+                    </li>
+                    <li>
+                        <div class="imageIcon pointer"
+                             ng-click="openEmptyForm('#localeModal')"
+                             ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/'+data.user.locale+'.png) no-repeat center center/cover'}"></div>
                     </li>
                 </ul>
                 <div ng-if="data.user.current">
@@ -82,6 +87,31 @@
     </table>
 
 </div>
+
+
+<div class="modal fade" id="localeModal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body" style="display: flex;">
+
+                <a class="imageIcon pointer"
+                   href="?locale=et_EE"
+                     ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/et_EE.png) no-repeat center center/cover'}"></a>
+                <a class="imageIcon pointer"
+                   href="?locale=en_US"
+                   ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/en_US.png) no-repeat center center/cover'}"></a>
+                <a class="imageIcon pointer"
+                   href="?locale=ru_RU"
+                     ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/ru_RU.png) no-repeat center center/cover'}"></a>
+                <div class="imageIcon pointer"
+                     style="margin:10px 0 0 50px; text-align: center; line-height: 38px; font-weight: 700; color: #9c9c9c;">
+                    X
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <a id="start"></a>
 <div id="header-content" class="site-header no-print">
 

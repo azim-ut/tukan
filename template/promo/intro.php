@@ -1,3 +1,8 @@
+<?php use core\service\TranslateService; ?>
+<?
+
+$ts = TranslateService::getInstance();
+?>
 <div class="container headPromoBoyGirls">
     <div class="row">
         <div class="col-sm-6 text-center"
@@ -8,7 +13,7 @@
                     class="btn btn-success"
                     style="margin-top: 320px;"
                     onclick="location.href='/catalog?gender=2';">
-                Одежда для девочек
+                <?=$ts->get("GIRLS_CLOTHES")?>
             </button>
         </div>
         <div class="col-sm-6 text-center"

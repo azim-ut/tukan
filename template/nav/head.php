@@ -1,7 +1,9 @@
 <?
-$version = time();
+use core\service\App;
+use core\utils\ServerUtils;
 
-use core\service\App; ?>
+$version = time();
+?>
 <head>
 	<meta charset="UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
