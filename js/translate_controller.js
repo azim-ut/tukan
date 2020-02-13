@@ -1,9 +1,32 @@
 angular.module('root')
-    .controller("TranslateController", function ($scope, $rootScope, $controller, $timeout, ModernFactory, CoreFactory) {
+    .controller("TranslateController", function ($scope, $rootScope, $controller, $timeout, ToastService, TranslateFactory, CoreFactory) {
         angular.extend($scope, {
             list: [],
-            init: function () {
-                $scope.placesList();
+            pattern: undefined,
+            create: function (key) {
+                TranslateFactory.create({}, $.param({key: key})).$promise.then(function (res) {
+                    $scope.list = res.data;
+                });
+            },
+            update: function (id, en_US, ru_RU, et_EE) {
+                TranslateFactory.update({}, $.param({id: id, en_US:en_US, ru_RU:ru_RU, et_EE:et_EE})).$promise.then(function (res) {
+                    $scope.list = res.data;
+                });
+            },
+            copyToClipboard: function (event) {
+                let text = $(event.currentTarget).find("b").text();
+                let $temp = $("<input>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                ToastService.info("Copied the text: " + text);
+            },
+            delete: function (id, code) {
+                if(confirm("A you sure? Delete the \"" + code + "\" ?"))
+                TranslateFactory.delete({id: id}).$promise.then(function (res) {
+                    $scope.list = res.data;
+                });
             },
             searchPlace: function () {
                 let x = "AAABBBCCC";
@@ -11,8 +34,9 @@ angular.module('root')
                 return 1;
             },
             getAll: function () {
-                ModernFactory.places().$promise.then(function (res) {
-                    $scope.places = res.data;
+                TranslateFactory.all().$promise.then(function (res) {
+                    console.log(res.data);
+                    $scope.list = res.data;
                 });
             },
             loginFB: function () {
@@ -38,9 +62,9 @@ angular.module('root')
                 headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
                 isArray: false,
             },
-            remove: {
-                method: 'GET',
-                url: "/core/rest/translate/remove/:id",
+            delete: {
+                method: 'DELETE',
+                url: "/core/rest/translate/item/:id",
                 isArray: false,
             },
             all: {

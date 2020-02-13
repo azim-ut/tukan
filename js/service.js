@@ -19,16 +19,19 @@ angular.module('root')
                     }
                     return true;
                 },
+                info: function (msg) {
+                    this.show("success", undefined, msg);
+                },
                 show: function (type, title, msg) {
                     type = type.toLowerCase();
                     if (toastr) {
                         toastr.options = {
                             closeButton: true,
-                            positionClass: 'toast-top-left',
+                            positionClass: 'toast-bottom-right',
                             onclick: null,
                             showDuration: 1000,
                             hideDuration: 1000,
-                            timeOut: 8000,
+                            timeOut: 5000,
                             extendedTimeOut: 1000,
                             showMethod: "fadeIn",
                             hideMethod: "fadeOut"
