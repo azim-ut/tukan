@@ -23,7 +23,7 @@ $ts = TranslateService::getInstance();
                     class="btn btn-success"
                     style="margin-top: 320px;"
                     onclick="location.href='/catalog?gender=1';">
-                Одежда для мальчиков
+                <?=$ts->get('BOYS_CLOTHES')?>
             </button>
         </div>
     </div>

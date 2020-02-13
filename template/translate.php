@@ -8,8 +8,9 @@
             <td>
                 <form ng-submit="create(pattern)">
                     <div class="input-group mb-3 margin-bottom-0">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">KEY</span>
+                        <div class="input-group-prepend" ng-click="toggleMode()" ng-style="{'background-color': (mode === 'key')?'#ccc':'#00ff00'}">
+                            <span class="input-group-text" style="background: none;" id="basic-addon1" ng-if="mode === 'key'">KEY</span>
+                            <span class="input-group-text" style="background: none;" id="basic-addon1" ng-if="mode === 'val'"><b>VAL</b></span>
                         </div>
                         <input type="text" class="form-control" ng-model="pattern">
                         <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
@@ -20,7 +21,7 @@
     </table>
 
     <form ng-submit="update(row.id, row.en_US, row.ru_RU, row.et_EE)" ng-repeat="row in list"
-          ng-if="pattern || !row.filtered">
+          ng-if="!pattern || pattern.length ===0 || isFiltered(mode, pattern, row)">
         <div class="row"
              style="border: #ccc 1px solid; padding: 13px 5px 5px; margin: 5px; background: #eaeaea;">
             <div class="col-12">
