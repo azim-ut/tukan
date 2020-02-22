@@ -45,7 +45,9 @@ $version = time();
 
 	<script type='text/javascript' src='/web/assets/progressbar.js-master/dist/progressbar.min.js'></script>
 
-	<script type="text/javascript">angular.module("root", ['infinite-scroll', 'ngRoute', 'ngResource', 'ngCookies']);</script>
+	<script type="text/javascript">
+        var app = angular.module("root", ['infinite-scroll', 'ngRoute', 'ngResource', 'ngCookies']);
+    </script>
 
 	<link rel="stylesheet" type="text/css" href="/web/css/main.css?t=<?=$version?>"/>
 	<link rel="stylesheet" type="text/css" href="/web/css/checklist.css?t=<?=$version?>"/>

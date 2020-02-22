@@ -2,7 +2,7 @@ angular.module('root')
     .factory("Data", function () {
         angular.extend(this, {
             user: {},
-            locale: (navigator.language || navigator.userLanguage),
+            locale: document.documentElement.lang,
             view: null,
             cart: {
                 ids: null,

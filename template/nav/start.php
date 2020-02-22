@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru-RU" ng-app='root'>
+<html lang="<?=CURRENT_LOCATION?>" ng-app='root'>
 <? include_once __DIR__ . "/head.php" ?>
 
 <body ng-cloak=""
@@ -59,7 +59,7 @@
                     <li>
                         <div class="imageIcon pointer"
                              ng-click="openEmptyForm('#localeModal')"
-                             ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/'+data.user.locale+'.png) no-repeat center center/cover'}"></div>
+                             ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/'+data.locale+'.png) no-repeat center center/cover'}"></div>
                     </li>
                 </ul>
                 <div ng-if="data.user.current">
