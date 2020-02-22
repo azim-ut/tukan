@@ -16,7 +16,7 @@ if(sizeof($list) % 2 === 0){
 <div class="container headPromoBoyGirls" style="border-top: #fff 2px solid;">
     <div class="row" style="border-top: #000 2px solid;border-bottom: #000 2px solid;">
         <div class="col-6 text-center"
-             style="background: #ffffff url(/web/img/red_bg.jpg) no-repeat center top/cover; color: #fff; position: relative;">
+             style="display: none; background: #ffffff url(/web/img/red_bg.jpg) no-repeat center top/cover; color: #fff; position: relative;">
             <div style="display: inline-block; vertical-align: middle; position: relative; top: 7%;">
                 <div style="font-size: 200%; text-transform: uppercase;"><?=$ts->get("SALE")?></div>
                 <div style="font-size: 100%; color: #fff; text-transform: uppercase;"><?=$ts->get("UNTIL_ONLY")?> 31/01/2020</div>
