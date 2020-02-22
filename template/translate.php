@@ -1,16 +1,29 @@
+<?
+
+use core\manager\UserManager;
+
+if(!UserManager::isAdmin()){
+    http_response_code("404");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="ru-RU" ng-app='root'>
 <? include_once __DIR__ . "/nav/head.php" ?>
 <body style="padding: 0;">
+
 <div ng-controller="TranslateController" ng-init="getAll()">
     <table class="table table-bordered">
         <tr>
             <td>
                 <form ng-submit="create(pattern)">
                     <div class="input-group mb-3 margin-bottom-0">
-                        <div class="input-group-prepend" ng-click="toggleMode()" ng-style="{'background-color': (mode === 'key')?'#ccc':'#00ff00'}">
-                            <span class="input-group-text" style="background: none;" id="basic-addon1" ng-if="mode === 'key'">KEY</span>
-                            <span class="input-group-text" style="background: none;" id="basic-addon1" ng-if="mode === 'val'"><b>VAL</b></span>
+                        <div class="input-group-prepend" ng-click="toggleMode()"
+                             ng-style="{'background-color': (mode === 'key')?'#ccc':'#00ff00'}">
+                            <span class="input-group-text" style="background: none;" id="basic-addon1"
+                                  ng-if="mode === 'key'">KEY</span>
+                            <span class="input-group-text" style="background: none;" id="basic-addon1"
+                                  ng-if="mode === 'val'"><b>VAL</b></span>
                         </div>
                         <input type="text" class="form-control" ng-model="pattern">
                         <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
@@ -59,8 +72,8 @@
                 </button>
             </div>
             <small
-                ng-click="copyToClipboard($event)"
-                style="color: #fff; position: absolute; background: #333; padding: 2px 10px; font-size: 10px; margin-left: 20px; margin-top: -12px;">
+                    ng-click="copyToClipboard($event)"
+                    style="color: #fff; position: absolute; background: #333; padding: 2px 10px; font-size: 10px; margin-left: 20px; margin-top: -12px;">
                 KEY: <b>{{row.code}}</b>
             </small>
         </div>
