@@ -2,6 +2,7 @@
 use core\exception\BadResultException;
 use core\exception\NoUserException;
 use core\manager\UserManager;
+use core\service\TranslateService;
 use core\utils\StringUtils;
 
 try{
@@ -13,6 +14,8 @@ try{
     header("Location: /");
     exit();
 }
+
+$ts = TranslateService::getInstance();
 include_once __DIR__ . "/../nav/start.php";
 $list = OrderService::getInstance()->orders($user->getId());
 $total = sizeof($list);
@@ -51,33 +54,33 @@ foreach($list as $row){
                 <div class="col-sm-7 padding-left-15" style="padding: 20px;">
                     <div class="MyBarHead">
                         <img src="<?=$user->icon()?>">
-                        <div class="name">Привет, <?=$user->name()?>!</div>
+                        <div class="name"><?=$ts->get("HELLO")?>, <?=$user->name()?>!</div>
                     </div>
 
                     <div class="row grid2 margin-top-15">
                         <div class="block text-center col-6 col-sm-2">
                             <div class="cnt"><?=$total?></div>
-                            Все заказы
+                            <?=$ts->get("ALL_ORDERS")?>
                         </div>
                         <div class="block text-center col-6 col-sm-2">
                             <div class="cnt"><?=$checkouted?></div>
-                            Обработка заказа
+                            <?=$ts->get("ORDERS_PROCESSING")?>
                         </div>
                         <div class="block text-center col-6 col-sm-2">
                             <div class="cnt"><?=$pack?></div>
-                            Упаковка
+                            <?=$ts->get("ORDERS_PACKAGING")?>
                         </div>
                         <div class="block text-center col-6 col-sm-2">
                             <div class="cnt"><?=$sent?></div>
-                            Заказ отправлен
+                            <?=$ts->get("ORDER_SENT")?>
                         </div>
                         <div class="block text-center col-6 col-sm-2">
                             <div class="cnt"><?=$delivered?></div>
-                            Доставлен
+                            <?=$ts->get("ORDER_DELIVERED")?>
                         </div>
                         <div class="block text-center col-6 col-sm-2">
                             <div class="cnt"><?=$claim?></div>
-                            Открытые спорты
+                            <?=$ts->get("OPEN_DISPUTES")?>
                         </div>
                     </div>
 

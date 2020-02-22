@@ -2,6 +2,7 @@
 use core\exception\NoUserException;
 use core\manager\UserManager;
 use core\service\CountriesService;
+use core\service\TranslateService;
 
 try{
     $user = UserManager::current();
@@ -12,6 +13,7 @@ try{
     header("Location: /");
     exit();
 }
+$ts = TranslateService::getInstance();
 $countries = CountriesService::getInstance()->getCountries2();
 include_once __DIR__ . "/../nav/start.php";
 ?>
@@ -28,7 +30,7 @@ include_once __DIR__ . "/../nav/start.php";
                 <div class="col-sm-9">
                     <button type="button"
                             class="btn btn-success btn-lg"
-                            ng-click="openNewAddressForm()">Добавить адрес
+                            ng-click="openNewAddressForm()"><?=$ts->get("ADD_ADDRESS")?>
                     </button>
                     <hr/>
                     <div class="row">
@@ -48,8 +50,8 @@ include_once __DIR__ . "/../nav/start.php";
                                 <br/>
                                 <br/>
                                 <div class="tools">
-                                    <a ng-click="openEditForm(row)" class="pointer">Редактировать</a> |
-                                    <a ng-click="showAddressDelForm(row.id, row.name)" class="pointer">Удалить</a>
+                                    <a ng-click="openEditForm(row)" class="pointer"><?=$ts->get("EDIT")?></a> |
+                                    <a ng-click="showAddressDelForm(row.id, row.name)" class="pointer"><?=$ts->get("DELETE")?></a>
                                 </div>
                             </div>
                         </div>

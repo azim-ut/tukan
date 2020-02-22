@@ -2,6 +2,7 @@
 use core\exception\BadResultException;
 use core\exception\NoUserException;
 use core\manager\UserManager;
+use core\service\TranslateService;
 use core\utils\StringUtils;
 
 try{
@@ -13,6 +14,7 @@ try{
     header("Location: /");
     exit();
 }
+$ts = TranslateService::getInstance();
 include_once __DIR__ . "/../nav/start.php";
 
 ?>
@@ -39,7 +41,7 @@ include_once __DIR__ . "/../nav/start.php";
                             <td width="*">
                                 {{row.post_title}} x {{row.cnt}}<br/>
                                 <small>{{row.checkout*1000 | date:'dd MMMM yy'}}<br/>
-                                Статус:
+                                <?=$ts->get("STATUS")?>:
                                 <b ng-if="row.checkout === 0">Ожидание оплаты</b>
                                 <b ng-if="row.checkout && row.pack===0">Товар упаковывается</b>
                                 <b ng-if="row.pack && row.sent===0">Ожидеает отправки</b>

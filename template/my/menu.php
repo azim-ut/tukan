@@ -1,16 +1,18 @@
 <?php
 
 use core\Engine;
+use core\service\TranslateService;
 
 $page = Engine::getDir(1);
+$ts = TranslateService::getInstance();
 ?>
 
 <div class="list-group">
-    <a href="/my" class="<?=($page == null ? 'active' : '')?> list-group-item">Сводка</a>
-    <a href="/my/coupons" class="<?=($page == 'coupons' ? 'active' : '')?> list-group-item">Купоны</a>
-    <a href="/my/orders" class="<?=($page === 'orders' ? 'active' : '')?> list-group-item">Мои заказы</a>
-    <a href="/my/addresses" class="<?=($page === 'addresses' ? 'active' : '')?>  list-group-item">Адреса доставки</a>
+    <a href="/my" class="<?=($page == null ? 'active' : '')?> list-group-item"><?=$ts->get("SUMMARY")?></a>
+    <a href="/my/coupons" class="<?=($page == 'coupons' ? 'active' : '')?> list-group-item"><?=$ts->get("COUPONS")?></a>
+    <a href="/my/orders" class="<?=($page === 'orders' ? 'active' : '')?> list-group-item"><?=$ts->get("ORDERS")?></a>
+    <a href="/my/addresses" class="<?=($page === 'addresses' ? 'active' : '')?>  list-group-item"><?=$ts->get("DELIVERY_ADDRESS")?></a>
 </div>
 <div class="list-group">
-    <a href="/logout" class="list-group-item">Выйти</a>
+    <a href="/logout" class="list-group-item"><?=$ts->get("EXIT")?></a>
 </div>

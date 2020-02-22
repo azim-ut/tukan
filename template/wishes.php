@@ -1,3 +1,10 @@
+<?php
+
+use core\service\TranslateService; ?>
+<?
+
+$ts = TranslateService::getInstance();
+?>
 <? include_once __DIR__ . "/nav/start.php" ?>
     <link type="text/css" rel="stylesheet" href="/web/css/wishlist_empty.css"/>
 
@@ -9,7 +16,7 @@
                         <div class="emptyWish" ng-if="!data.wishes || !data.wishes.list.length">
                             <div class="example">
                                 <b class="icon icon-heart"></b>
-                                Wish list is empty
+                                <?=$ts->get("EMPTY_WISH_LIST")?>
                             </div>
                         </div>
                         <div class="container">
