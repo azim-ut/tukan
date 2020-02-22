@@ -1,3 +1,9 @@
+<?
+use core\service\TranslateService;
+
+$ts = TranslateService::getInstance();
+?>
+
 </div>
 
 
@@ -12,11 +18,10 @@
     <div class="col-xs-6 padding-top-5 text-right small text-uppercase container">
         <div class="row">
             <div class="col-sm-4">
-                <h4 class="text-left text-color-white">О нас</h4>
+                <h4 class="text-left text-color-white"><?=$ts->get("ABOUT_COMPANY")?></h4>
                 <ul class="padding-bottom-25">
-                    <li><a href="/">На главную</a><br/></li>
-                    <li><a href="/traderules">Правила</a></li>
-                    <li><a href="/policy">Политика<br/>конфиденциальности</a></li>
+                    <li><a href="/traderules"><?=$ts->get("RULES_TITLE")?></a></li>
+                    <li><a href="/policy"><?=$ts->get("PRIVACY_DATA_TITLE")?></a></li>
                 </ul>
             </div>
             <div class="col-sm-4 margin-bottom-30">

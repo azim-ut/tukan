@@ -1,3 +1,8 @@
+<?
+use core\service\TranslateService;
+
+$ts = TranslateService::getInstance();
+?>
 <link href="/web/css/promo2.css?t=<?=$version?>" rel="stylesheet" type="text/css"/>
 <div style="">
     <div class="container">
@@ -10,7 +15,7 @@
 
                     <!-- Optional: some overlay text to describe the video -->
                     <div class="content">
-                        <h1>Бренды нашего магазина</h1>
+                        <h1><?=$ts->get("BRANDS_IN_OUR_STORE")?></h1>
                     </div>
                 </div>
                 </a>
@@ -28,7 +33,7 @@
                          style="font-size: 200%;
                             padding: 10px 15px;
                             text-transform: uppercase;
-                            color: #333;">Лотерея скидок!</div>
+                            color: #333;"><?=$ts->get("LOTTERY_OF_DISCOUNTS")?></div>
                     <div class="text-left position-absolute"
                          style="font-size: 110%;
                             background: #333;
@@ -36,8 +41,8 @@
                             padding: 15px 15px;
                             color: #eaeaea;
                             font-weight: 400;">
-                        Нужна скидка побольше?<br/>
-                        Безпроигрышная лоттерея для наших пользователей.
+                        <?=$ts->get("NEED_BIGGER_DISCOUNT")?><br/>
+                        <?=$ts->get("WIN_WIN_LOTTERY_TITLE")?>
                     </div>
                 </div>
             </div>

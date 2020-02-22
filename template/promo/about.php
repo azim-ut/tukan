@@ -1,3 +1,8 @@
+<?
+use core\service\TranslateService;
+
+$ts = TranslateService::getInstance();
+?>
 <div class="container headPromoBoyGirls" style="border-top: #fff 2px solid;">
     <div class="row" style="border-top: #000 2px solid;border-bottom: #000 2px solid;">
         <div class="col-sm-12 pointer advantage"
@@ -5,9 +10,9 @@
              onclick="location.href='/catalog';">
             <p class="card-text">
             <ul>
-                <li>Итальянские бренды</li>
-                <li>Легкий возврат</li>
-                <li>Обратная связь</li>
+                <li><?=$ts->get("ITALIAN_BRANDS")?></li>
+                <li><?=$ts->get("EASY_RETURN")?></li>
+                <li><?=$ts->get("FEEDBACK")?></li>
             </ul>
             </p>
         </div>

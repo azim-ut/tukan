@@ -1,8 +1,14 @@
+<?
+use core\service\TranslateService;
+
+$ts = TranslateService::getInstance();
+?>
+
 <? include_once __DIR__ . "/../nav/start.php" ?>
     <div id="content" class="HeadTextPage container">
         <div class="row">
             <div>
-                <h1>Privacy Policy</h1>
+                <h1><?=$ts->get("PRIVACY_DATA_TITLE")?></h1>
                 <p><br/>Tukan OU is committed to protecting the privacy of its customers and users. Based on this, we have
                     provided this Privacy Policy which governs the collection, use, disclosure, transfer and storage of
                     Customer Data. Our activities on the Internet are in accordance with all relevant activities and
