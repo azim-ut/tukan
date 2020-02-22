@@ -34,7 +34,7 @@ $ts = TranslateService::getInstance();
             <div class="col-sm-4 text-color-white">
                 Mustakivi Keskus<br/>
                 Mahtra 1, 13811 Tallinn, Estonia<br/>
-                2-й этаж, бокс 24
+                2-й этаж, 2 <?=$ts->get("FLOOR")?>
 
                 <div class="sharethis-inline-follow-buttons" style="text-align: right; padding-top: 20px;"></div>
             </div>
