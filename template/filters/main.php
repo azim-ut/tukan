@@ -2,6 +2,7 @@
 use assets\services\WebCatalogService;
 use core\Engine;
 use core\manager\ParamsManager;
+use core\service\TranslateService;
 
 include_once __DIR__ . "/../nav/start.php" ?>
 
@@ -18,6 +19,7 @@ if(!$ts->isAgeExists($age, $gender) || !$ts->isValidGender($gender)){
 
 	return;
 }
+$tr = TranslateService::getInstance();
 $tags = $ts->getHeightTagsByAge($age, $gender);
 $brand = ParamsManager::getParam("brand");
 $gender = ParamsManager::getParam("gender");
@@ -77,7 +79,7 @@ $posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
                         </div>
                         <div class="modal-body">
                             <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon1">Рост</span>
+                                <span class="input-group-addon" id="basic-addon1"><?=$tr->get("HEIGHT")?></span>
                                 <input type="text" class="form-control"
                                        ng-model="heightTemp"
                                        placeholder="Укажите рост ребенка"

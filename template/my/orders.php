@@ -14,7 +14,7 @@ try{
     header("Location: /");
     exit();
 }
-$ts = TranslateService::getInstance();
+$tr = TranslateService::getInstance();
 include_once __DIR__ . "/../nav/start.php";
 
 ?>
@@ -41,13 +41,13 @@ include_once __DIR__ . "/../nav/start.php";
                             <td width="*">
                                 {{row.post_title}} x {{row.cnt}}<br/>
                                 <small>{{row.checkout*1000 | date:'dd MMMM yy'}}<br/>
-                                <?=$ts->get("STATUS")?>:
-                                <b ng-if="row.checkout === 0">Ожидание оплаты</b>
-                                <b ng-if="row.checkout && row.pack===0">Товар упаковывается</b>
-                                <b ng-if="row.pack && row.sent===0">Ожидеает отправки</b>
-                                <b ng-if="row.sent && row.delivered===0">Товар в пути</b>
-                                <b ng-if="row.delivered && row.closed===0">Пожалуйста подтвердите доставку</b>
-                                <b ng-if="row.claim && row.closed === 0">Разрешение спора</b>
+                                <?=$tr->get("STATUS")?>:
+                                <b ng-if="row.checkout === 0"><?=$tr->get("WAITING_FOR_PAYMENT")?></b>
+                                <b ng-if="row.checkout && row.pack===0"><?=$tr->get("ORDERS_PACKAGING")?></b>
+                                <b ng-if="row.pack && row.sent===0"><?=$tr->get("ORDER_SENT")?></b>
+                                <b ng-if="row.sent && row.delivered===0"><?=$tr->get("ORDER_SENT")?></b>
+                                <b ng-if="row.delivered && row.closed===0"><?=$tr->get("CONFIRM_DELIVERY")?></b>
+                                <b ng-if="row.claim && row.closed === 0"><?=$tr->get("DISPUTE_RESOLUTION")?></b>
                                 <b ng-if="row.closed">Заказ завершен</b>
                                 </small>
                             </td>

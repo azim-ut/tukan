@@ -5,7 +5,7 @@ use core\service\TranslateService; ?>
 
 <?
 
-$ts = TranslateService::getInstance();
+$tr = TranslateService::getInstance();
 ?>
     <link type="text/css" rel="stylesheet" href="/web/css/cart_empty.css?t=<?=$version?>"/>
 <!--    <script src="/web/js/every_pay.js?t=--><?//=$version?><!--" type="text/javascript"></script>-->
@@ -19,7 +19,7 @@ $ts = TranslateService::getInstance();
             <div class="emptyCart">
                 <div class="example">
                     <b class="icon icon-basket"></b>
-                    <?=$ts->get("EMPTY_CART")?>
+                    <?=$tr->get("EMPTY_CART")?>
                 </div>
             </div>
         </div>
@@ -39,12 +39,12 @@ $ts = TranslateService::getInstance();
             <div class="col-sm-4">
 
                 <div class="text-right addressBlock gb_Rd_sm">
-                    <span style="float: left;">Товары</span>
+                    <span style="float: left;"><?=$tr->get("ITEMS")?></span>
                     <span class="text-right">x {{cart.items.length}}</span>
                 </div>
                 <br/>
                 <div style="border-top: #eaeaea 1px solid;" class="addressBlock gb_Rd_sm" ng-if="data.user">
-                    <div style="line-height: 35px;">Адрес доставки:</div>
+                    <div style="line-height: 35px;"><?=$tr->get("DELIVERY_ADDRESS")?>:</div>
                     <div class="text-center center center-block"
                          style="border-top: #ccc 1px solid; overflow: hidden; text-align: center;">
                         <div class="addressBlock"
@@ -78,7 +78,9 @@ $ts = TranslateService::getInstance();
                 <div class="text-right addressBlock gb_Rd_sm margin-bottom-20">
                     <table width="100%" cellpadding="0" cellspacing="0" class="margin-bottom-10">
                         <tr>
-                            <td align="left">Купон скидок</td>
+                            <td align="left">
+                                <?=$tr->get("DISCOUNT_COUPON")?>
+                            </td>
                             <td ng-click="skipCoupon()">&nbsp;<i class="icon icon-arrow-right"></i>&nbsp;</td>
                         </tr>
                     </table>
@@ -100,7 +102,9 @@ $ts = TranslateService::getInstance();
                         <small>-{{cart.sale}}%</small>
                     </div>
                     <div>
-                        <span style="float: left;">Итого</span>
+                        <span style="float: left;">
+                            <?=$tr->get("TOTAL")?>
+                        </span>
                         <span class="text-right">€ {{cart.totalPrice}}</span>
                     </div>
                 </div>
@@ -111,7 +115,7 @@ $ts = TranslateService::getInstance();
                 <div ng-if="data.user">
                     <form action="/pay/everypay" target="iframe-payment-container" method="POST" name="cartSubmit">
                         <button class="btn btn-block btn-primary gb_Rd_sm" type="button" ng-click="checkout()">
-                            <i class="fa fa-credit-card"></i> Оплатить
+                            <i class="fa fa-credit-card"></i> <?=$tr->get("PAY")?>
                         </button>
                     </form>
                 </div>

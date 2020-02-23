@@ -1,5 +1,6 @@
 <? use assets\services\WebCatalogService;
 use core\Engine;
+use core\service\TranslateService;
 use core\utils\SafeUtils;
 use core\utils\StringUtils;
 
@@ -18,6 +19,7 @@ if(!$id){
     <script>location.href = "/404";</script>
     <?
 }
+$tr = TranslateService::getInstance();
 $post = new CatalogItem($id);
 
 $filter = new CatalogFilter();
@@ -129,7 +131,7 @@ $heights = $post->enabledHeights();
                                 <td>
                                     <? if(sizeof($heights)){ ?>
                                         <div>
-                                            <span class="thin-font">Рост:</span>
+                                            <span class="thin-font"><?=$tr->get("HEIGHT")?>:</span>
                                             <ul class="heightList">
                                                 <? foreach($post->enabledHeights() as $item){ ?>
                                                     <li ng-class="{'pointer':true, 'on': size==='<?=$item->size?>'}"
@@ -161,7 +163,7 @@ $heights = $post->enabledHeights();
 
                         <div class="btnRows" role="group">
                             <div class="error" ng-if="needSize" style="padding: 5px;">
-                                <span ng-if="needSize === true">Пожалуйста, выберите рост</span>&nbsp;
+                                <span ng-if="needSize === true"><?=$tr->get("CHOOSE_HEIGHT")?></span>&nbsp;
                             </div>
                             <div class="btn-group btn-group-justified btn-block">
                                 <button type="button"
@@ -172,7 +174,7 @@ $heights = $post->enabledHeights();
                                         ng-click="goBack()">
                                     <i class="icon-arrow-left"></i></button>
                                 <button type="button" ng-click="toCart(<?=$id?>, size, <?=$post->gender?>)"
-                                        class="btn btn-lg btn-warning btn-secondary">В корзину
+                                        class="btn btn-lg btn-warning btn-secondary"><?=$tr->get("ADD_TO_CART")?>
                                 </button>
                                 <button type="button" class="btn btn-lg btn-outline-secondary"
                                         ng-click="toggleProductWish(<?=$id?>)">
@@ -187,20 +189,19 @@ $heights = $post->enabledHeights();
                     <div class="container">
                         <div class="row margin-top-30" style="overflow: hidden;">
                             <p>
-                                Вы смотрите <?=mb_strtolower($post->title())?>
+                                <?=$tr->get("YOU_LOOKING")?> <?=mb_strtolower($post->title())?>
                                 <? switch($post->gender){
                                     case 1:
-                                        echo "для мальчиков.";
+                                        echo $tr->get("FOR_BOYS").".";
                                         break;
                                     case 2:
-                                        echo "для девочек.";
+                                        echo $tr->get("FOR_GIRLS").".";
                                         break;
                                     default:
-                                        echo "для детей.";
+                                        echo $tr->get("FOR_CHILDREN").".";
                                         break;
                                 } ?>
-                                Данная модель доступна в размерах (см): <?=$post->enabledHeightsString()?>. С этим
-                                товаром часто смотрят:
+                                <?=$tr->get("MODEL_AVAILABLE_SIZES")?>: <?=$post->enabledHeightsString()?>. <?=$tr->get('THIS_PRODUCT_OTHEN_VIEWED')?>:
                             </p>
                             <div>
                                 <? foreach($more as $i => $item){ ?>
@@ -231,23 +232,23 @@ $heights = $post->enabledHeights();
                                 <div class="col-sm-4 margin-bottom-20 text-center">
                                     <i class="fa fa-check" style="color: #c3cc36; font-size: 200%;"></i>
                                     <br/>
-                                    <div class="thin-font">Товар добавлен к корзину</div>
+                                    <div class="thin-font"><?=$tr->get("ADDED_TO_CART")?></div>
                                     <br/>
                                 </div>
                                 <div class="col-sm-4 margin-bottom-20">
-                                        <button type="button" class="btn btn-outline-success btn-block" ng-click="closeAdvices()">Перейти к
-                                            сайту
+                                        <button type="button" class="btn btn-outline-success btn-block" ng-click="closeAdvices()">
+                                            <?=$tr->get("GO_TO_SITE")?>
                                         </button>
                                     <br/>
                                 </div>
                                 <div class="col-sm-4 margin-bottom-20">
-                                    <a href="/cart" class="btn btn-success btn-block">Перейти в корзину</a>
+                                    <a href="/cart" class="btn btn-success btn-block"><?=$tr->get("GO_TO_CART")?></a>
                                     <br/>
                                 </div>
                             </div>
                         </div>
                         <hr/>
-                        <span class="thin-font">Вместе с этим часто покупают:</span>
+                        <span class="thin-font"><?=$tr->get("THIS_PRODUCT_OTHEN_VIEWED")?>:</span>
                         <div class="container" style="display: contents;">
                             <div class="row overflow" style="height: 140px;">
 

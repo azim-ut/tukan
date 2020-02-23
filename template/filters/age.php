@@ -2,6 +2,7 @@
 use assets\services\WebCatalogService;
 use core\Engine;
 use core\manager\ParamsManager;
+use core\service\TranslateService;
 
 include_once __DIR__ . "/../nav/start.php" ?>
 
@@ -18,6 +19,7 @@ if(!$ts->isAgeExists($age, $gender) || !$ts->isValidGender($gender)){
 
     return;
 }
+$tr = TranslateService::getInstance();
 $tags = $ts->getHeightTagsByAge($age, $gender);
 
 $height = $tags[0] ?? 0;
@@ -90,7 +92,7 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
                             <span style="font-size: 100%;"><?=$age?></span>
                             <br/>
                             <br/>
-                            <span>Рост:</span>
+                            <span><?=$tr->get("HEIGHT")?>:</span>
                             <br/>
                             <span style="font-size: 100%;"><?=$height?>cm</span>
                         </div>

@@ -2,6 +2,7 @@
 use assets\services\WebCatalogService;
 use core\Engine;
 use core\manager\ParamsManager;
+use core\service\TranslateService;
 
 include_once __DIR__ . "/../nav/start.php" ?>
 
@@ -18,6 +19,7 @@ if(!$ts->isAgeExists($age, $gender) || !$ts->isValidGender($gender)){
 
     return;
 }
+$tr = TranslateService::getInstance();
 $tags = $ts->getHeightTagsByAge($age, $gender);
 array_push($tags, $gender);
 $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
@@ -37,7 +39,7 @@ $posts = WebCatalogService::getInstance()->getPosts('publish', $tags);
                 </ul>
             </div>
             <div class="col-sm-8">
-                <div class="text-center" style="margin: 5px 0 10px;">Рост: {{height|num}} см</div>
+                <div class="text-center" style="margin: 5px 0 10px;"><?=$tr->get("HEIGHT")?>: {{height|num}} см</div>
                 <div class="slidecontainer">
                     <input type="range" min="1" max="100" value="50" class="slider" id="myRange" ng-model="heightP"
                            ng-change="setHeight()">
