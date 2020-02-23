@@ -3,6 +3,7 @@
 namespace assets\services;
 
 use core\service\MySqlService;
+use core\service\TranslateService;
 use stdClass;
 
 /**
@@ -22,6 +23,7 @@ class ModernService extends BaseRestService{
         if(!self::$instance){
             self::$instance      = new self();
             self::$instance->sql = MySqlService::getInstance();
+            self::$instance->translate = TranslateService::getInstance();
         }
 
         return self::$instance;

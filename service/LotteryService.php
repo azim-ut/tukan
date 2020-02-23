@@ -3,6 +3,7 @@
 namespace assets\services;
 
 use core\service\MySqlService;
+use core\service\TranslateService;
 use Coupon;
 
 /**
@@ -26,6 +27,7 @@ class LotteryService extends BaseRestService{
         if(!self::$instance){
             self::$instance      = new self();
             self::$instance->sql = MySqlService::getInstance();
+            self::$instance->translate = TranslateService::getInstance();
         }
 
         return self::$instance;
