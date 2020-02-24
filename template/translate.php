@@ -42,7 +42,7 @@ if(!UserManager::isAdmin()){
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">RU</span>
                     </div>
-                    <input type="text" class="form-control" ng-model="row.ru_RU">
+                    <textarea type="text" class="form-control" ng-model="row.ru_RU"></textarea>
                 </div>
             </div>
             <div class="col-12">
@@ -50,7 +50,7 @@ if(!UserManager::isAdmin()){
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">EN</span>
                     </div>
-                    <input type="text" class="form-control" ng-model="row.en_US">
+                    <textarea type="text" class="form-control" ng-model="row.en_US"></textarea>
                 </div>
             </div>
             <div class="col-12">
@@ -58,7 +58,7 @@ if(!UserManager::isAdmin()){
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">EE</span>
                     </div>
-                    <input type="text" class="form-control" ng-model="row.et_EE">
+                    <textarea type="text" class="form-control" ng-model="row.et_EE"></textarea>
                 </div>
             </div>
             <div class="col">
