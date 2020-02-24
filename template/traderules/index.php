@@ -1,14 +1,14 @@
 <?
 use core\service\TranslateService;
 
-$ts = TranslateService::getInstance();
+$tr = TranslateService::getInstance();
 ?>
 <? include_once __DIR__ . "/../nav/start.php" ?>
 
     <div id="content" class="HeadTextPage container" ng-init="contents = []">
         <div class="row">
             <div>
-                <h1><?=$ts->get("RULES_TITLE")?></h1>
+                <h1><?=$tr->get("RULES_TITLE")?></h1>
                 <div class="ContentsList">
                     <ul style="list-style: none;">
                         <a href="{{row.href}}" ng-repeat="row in contents">
@@ -21,77 +21,70 @@ $ts = TranslateService::getInstance();
                 <br/>
                 <br/>
                 <br/>
-                <h2 ng-init="contents.push({ttl:'Заказ товара', href:'#order'})">Заказ товара <a href="#!#top"
-                                                                                                 style="color: #ccc;">[вверх]</a>
+                <h2 ng-init="contents.push({ttl:'<?=$tr->get("ORDERING_GOODS")?>', href:'#order'})">
+                    <?=$tr->get("ORDERING_GOODS")?> <a href="#!#top" style="color: #ccc;">[<?=$tr->get("UP")?>]</a>
                 </h2>
                 <p>
-                    Выберите подходящие Вам изделия и добавьте их в корзину покупок. В корзине покупок Вы можете
-                    редактировать список выбраных товаров.
+                    <?=$tr->get("RULES_CHOOSE_PRODUCT")?>
                 </p>
                 <p>
-                    Выберите наиболее подходящий Вам способ оплаты, заполните при необходимости поля с личными данными и
-                    нажмите на кнопку «оформить заказ».
+                    <?=$tr->get("RULES_CHOOSE_PAYMENT")?>
                 </p>
                 <p>
-                    После заполнения на странице оформления заказа необходимых полей нажмите кнопку «Купить». После
-                    оплаты счета покупка считается совершенной.
+                    <?=$tr->get("RULES_BUY_PRODUCT")?>
                 </p>
 
                 <a id="delivery">&nbsp;</a>
                 <br/>
                 <br/>
                 <br/>
-                <h2 ng-init="contents.push({ttl:'Доставка', href:'#delivery'})">Доставка <a href="#!#top"
-                                                                                            style="color: #ccc;">[вверх]</a>
+                <h2 ng-init="contents.push({ttl:'<?=$tr->get("DELIVERY")?>', href:'#delivery'})"><?=$tr->get("DELIVERY")?>
+                    <a href="#!#top" style="color: #ccc;">[<?=$tr->get("UP")?>]</a>
                 </h2>
                 <p>
-                    Во время оформления заказа требуется указать точный адрес доставки. В случае вопросов по адресу
-                    доставки - наш специалист свяжется с вами
+                    <?=$tr->get("RULES_POINT_ADDRESS")?>
                 </p>
                 <p>
-                    Отправка товара осуществляется не позднее трёх дней после получения оплаты за покупку.
+                    <?=$tr->get("RULES_ORDER_SENDING")?>
                 </p>
 
                 <a id="pay">&nbsp;</a>
                 <br/>
                 <br/>
                 <br/>
-                <h2 ng-init="contents.push({ttl:'Оплата', href:'#pay'})">Оплата <a href="#!#top" style="color: #ccc;">[вверх]</a>
+                <h2 ng-init="contents.push({ttl:'<?=$tr->get("PAYMENT")?>', href:'#pay'})"><?=$tr->get("PAYMENT")?>
+                    <a href="#!#top" style="color: #ccc;">[<?=$tr->get("UP")?>]</a>
                 </h2>
                 <p>
-                    Покупку можно оплатить банковским переводом или кредитной картой.
+                    <?=$tr->get("RULES_HOW_TO_PAY")?>
                 </p>
                 <p>
-                    При оплате банковским переводом - укажите номер сделки в ссылке на перевод.
+                    <?=$tr->get("RULES_POINT_DEAL_ID")?>
                 </p>
                 <p>
-                    Оплата наличными доступна при доставке курьером в Таллине. Чек оплаты будет выдан после оплаты
-                    товара.
+                    <?=$tr->get("RULES_PAY_CASH")?>
                 </p>
 
                 <a id="moneyback">&nbsp;</a>
                 <br/>
                 <br/>
                 <br/>
-                <h2 ng-init="contents.push({ttl:'Гарантия возврата денег', href:'#moneyback'})">Гарантия возврата денег
-                    <a href="#!#top" style="color: #ccc;">[вверх]</a></h2>
+                <h2 ng-init="contents.push({ttl:'<?=$tr->get("RETURNS")?>', href:'#moneyback'})"><?=$tr->get("RETURNS")?>
+                    <a href="#!#top" style="color: #ccc;">[<?=$tr->get("UP")?>]</a></h2>
                 <p>
-                    Если купленный товар по какой-то причине Вам не подходит, то вы можете вернуть изделие в течение 14 дней. Транспортные расходы, связанные с возвратом товара, оплачивает потребитель.
+                    <?=$tr->get("RULES_RETURN_14_DAYS")?>
                 </p>
                 <p>
-                    Покупатели не могут видеть товары в интернет-магазине, поэтому законы, защищающие интересы
-                    потребителей в сфере электронной коммерции, предоставляют одно из важнейших средств защиты прав
-                    потребителей - право отказаться от договора о дистанционной продаже.
+                    <?=$tr->get("RULES_RETURN_BREAK_DEAL")?>
                 </p>
                 <p>
-                    Продавец должен быть уведомлен об отзыве в письменном виде. Для этого - в течении четырнадцать
-                    рабочих дней в списке Заказов требуется нажать "Открыть спор" напротив оспариваемого
-                    заказа. В открывшейся форме требуется изложить суть претензий.
+                    <?=$tr->get("RULES_RETURN_NOTIFY")?>
                 </p>
                 <p>
-                    Если на нашем складе есть товары, которые мы не можем предоставить нашим клиентам, мы всегда
-                    свяжемся с ними и предложим вам обмен или возврат. Возврат занимает до 7 рабочих дней.
+                    <?=$tr->get("RULES_RETURN_7_DAYS")?>
                 </p>
+                <br/>
+                <br/>
             </div>
         </div>
     </div>
