@@ -1,8 +1,10 @@
 <?
 use core\service\App;
+use core\service\TranslateService;
 use core\utils\ServerUtils;
 
 $version = time();
+$tr = TranslateService::getInstance();
 ?>
 <head>
 	<meta charset="UTF-8"/>
@@ -26,10 +28,10 @@ $version = time();
 	<link href="/web/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/web/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
 
-	<title>«Tukan» - магазин детской итальянской одежды</title>
+	<title><?=$tr->get("HEAD_TITLE");?></title>
 	<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
 	<link rel='dns-prefetch' href='//s.w.org'/>
-	<link rel="alternate" type="application/rss+xml" title="tukan.store &raquo; Лента"
+	<link rel="alternate" type="application/rss+xml" title="tukan.store &raquo; Feed"
 	      href="https://tukan.store/feed/"/>
 <!--	<link rel='stylesheet' id='elessi-style-css' href='/web/template/style.css?ver=--><?//=$version?><!--' media='all'/>-->
 

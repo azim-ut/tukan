@@ -1,5 +1,10 @@
 <?
+
+use core\service\TranslateService;
+
 $version = time();
+
+$tr = TranslateService::getInstance();
 ?>
 <head>
 	<meta charset="UTF-8"/>
@@ -23,6 +28,6 @@ $version = time();
 
 	<link href="/web/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/web/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-    
-    <title>«Tukan» - магазин детской итальянской одежды</title>
+
+    <title><?=$tr->get("HEAD_TITLE");?></title>
 </head>
