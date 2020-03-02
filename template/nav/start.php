@@ -104,6 +104,7 @@
                    href="?locale=ru_RU"
                      ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/ru_RU.png) no-repeat center center/cover'}"></a>
                 <div class="imageIcon pointer"
+                     data-dismiss="modal"
                      style="margin:10px 0 0 50px; text-align: center; line-height: 38px; font-weight: 700; color: #9c9c9c;">
                     X
                 </div>
