@@ -14,6 +14,11 @@ $tr = TranslateService::getInstance();
 	<link rel="pingback" href="https://tukan.store/xmlrpc.php"/>
     <link rel="shortcut icon" href="/web/img/icon_only.ico" type="image/x-icon">
 
+    <title><?=$tr->get("HEAD_TITLE");?></title>
+    <meta name="description" content="<?=$tr->get("HEAD_DESCRIPTION");?>">
+    <meta name="keywords" content="<?=$tr->get("HEAD_KEYWORDS");?>">
+    <meta name="author" content="<?=$tr->get("HEAD_AUTHOR");?>">
+
     <script type="text/javascript" src="/web/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/web/assets/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/web/assets/js/jquery-migrate.min.js"></script>
@@ -28,7 +33,6 @@ $tr = TranslateService::getInstance();
 	<link href="/web/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/web/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
 
-	<title><?=$tr->get("HEAD_TITLE");?></title>
 	<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
 	<link rel='dns-prefetch' href='//s.w.org'/>
 	<link rel="alternate" type="application/rss+xml" title="tukan.store &raquo; Feed"

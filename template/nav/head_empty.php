@@ -12,6 +12,11 @@ $tr = TranslateService::getInstance();
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="profile" href="//gmpg.org/xfn/11"/>
 	<link rel="pingback" href="https://tukan.store/xmlrpc.php"/>
+    
+    <title><?=$tr->get("HEAD_TITLE");?></title>
+    <meta name="description" content="<?=$tr->get("HEAD_DESCRIPTION");?>">
+    <meta name="keywords" content="<?=$tr->get("HEAD_KEYWORDS");?>">
+    <meta name="author" content="<?=$tr->get("HEAD_AUTHOR");?>">
 
     <script type="text/javascript" src="/web/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/web/assets/js/jquery.cookie.js"></script>
@@ -28,6 +33,4 @@ $tr = TranslateService::getInstance();
 
 	<link href="/web/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/web/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-
-    <title><?=$tr->get("HEAD_TITLE");?></title>
 </head>
