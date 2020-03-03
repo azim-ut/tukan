@@ -1,6 +1,5 @@
 <? use assets\services\TagsService;
 use assets\services\WebCatalogService;
-use core\Engine;
 use core\manager\ParamsManager;
 use core\service\TranslateService;
 
@@ -8,7 +7,6 @@ include_once __DIR__ . "/../nav/start.php" ?>
 
 <?
 $ts     = TagsService::getInstance();
-$main   = Engine::getInstance();
 $age    = ParamsManager::getParamDef("a", "4");
 $gender = ParamsManager::getParamDef("g", TagsService::$GENDER_BOY);
 $types  = $ts->getClothesTypeTags();

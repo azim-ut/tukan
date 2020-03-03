@@ -1,24 +1,9 @@
-<? use assets\services\CouponService;
-use assets\services\LotteryService;
-use core\exception\BadResultException;
-use core\exception\NoUserException;
-use core\manager\SessionManager;
-use core\manager\UserManager;
-
-try{
-    $user = UserManager::current();
-    if(!$user){
-        throw new NoUserException();
-    }
-}catch(NoUserException | BadResultException $e){
-    header("Location: /");
-    exit();
-}
+<?
 include_once __DIR__ . "/../nav/start.php";
-$list = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), SessionManager::id(), LotteryService::firstLotteryName());
 
 ?>
-    <div ng-cloak class="HeadContentPage">
+    <script type="text/javascript" src="/web/js/controller/my_coupons.js"></script>
+    <div ng-cloak class="HeadContentPage" ng-controller="MyCouponsController">
         <div class="container">
             <div class="row">
                 <div class="col-sm-1">
@@ -31,17 +16,9 @@ $list = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), S
 
 
                 <div class="col-sm-7 padding-left-15" style="padding: 20px;">
-                    <?
-                    foreach($list as $row){
-                    ?>
-
-                        <div class="col-12">
-                            <coupon data='<?=json_encode($row)?>'></coupon>
-                        </div>
-                        <?
-                        }
-                        ?>
-
+                    <div class="col-12" ng-repeat="row in list">
+                        <coupon data='row'></coupon>
+                    </div>
                 </div>
 
                 <div class="col-sm-1">

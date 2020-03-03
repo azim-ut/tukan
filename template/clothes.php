@@ -7,8 +7,7 @@ include_once __DIR__ . "/nav/start.php" ?>
 
 <?
 $ts    = TagsService::getInstance();
-$main  = Engine::getInstance();
-$type  = $main->getDirs()[1];
+$type  = Engine::getDir(1);
 $types = $ts->getClothesTypeTags();
 
 if(!in_array($type, $types)){
