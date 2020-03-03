@@ -1,6 +1,5 @@
 <? use core\exception\BadResultException;
 use core\exception\NoUserException;
-use core\manager\FileManager;
 use core\manager\ParamsManager;
 use core\manager\SessionManager;
 use core\manager\UserManager;
@@ -35,7 +34,7 @@ if(!$user && $stateIsValid && $code != null){
 
 	/** got access_token and */
 	if($code != null && $stateIsValid){
-		$app_token      = "EAAGipka04bgBAHASuftyl5pcMvT5r92qtBgCoZBRWenWslhAN4WyyQTKox8vqVKilcruoZCytCSn9BpbgJZBJSnPGrBz9CLFmcTS72hRq1vtvvgv9qNAOwzw5eOZA8b9z1QTNcbEM027dWS3ZBZAENSc8YypnMc4AespE5k7sZBcgZDZD";
+		$app_token      = App::context()->prop("chat.login.token");
 		$checkTokenPath = FacebookConstants::getCodeDebugPath($accessToken, $app_token);
 		$content        = file_get_contents($checkTokenPath);
 		FacebookAuthService::getInstance()->log($checkTokenPath, $content, 2);

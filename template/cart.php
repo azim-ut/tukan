@@ -185,7 +185,7 @@ $tr = TranslateService::getInstance();
         </div>
 
         <div id="iframe-payment-container" style="display: none; border: 0px; min-width: 460px; min-height: 325px">
-            <iframe width="460" height="325" style="border: 0px; height: 325; width: 460"></iframe>
+            <iframe width="460" height="325" style="border: 0px; height: 325px; width: 460px;"></iframe>
         </div>
 
     </div>

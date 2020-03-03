@@ -1,12 +1,13 @@
 <?php
 
 use core\manager\ParamsManager;
+use core\service\App;
 use core\service\FacebookChatService;
 use core\service\MySqlService;
 use core\utils\ServerUtils;
 use core\utils\StringUtils;
 
-$accessToken      = "EAAGipka04bgBALkxrZB8qhg3JLHfRq5D8wMtZCsj0XVxTfTZBr9YFxNfI19Ka0bTlVrA3dY6hUO91WuNpBpGY5OPKgIOCY4hfuccYuZAt5bcjXTvuouMWcD4ZC4ZCN6nzfnZCguRkeSoZCv1GJIbsv6lhqYEd6Lbga3AZCVsPoRQQ5fQmN6jZCKeD9";
+$accessToken      = App::context()->prop("chat.access.token");
 $verify_token     = "fb_time_bot";
 $hub_verify_token = null;
 $hubChallenge     = ParamsManager::getParam("hub_challenge");
