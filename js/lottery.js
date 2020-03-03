@@ -30,15 +30,15 @@ angular.module('root')
         });
     })
     .factory('LotteryFactory', function ($resource) {
-        return $resource('/web/rest', null, {
+        return $resource('/shop/rest', null, {
             spin: {
                 method: 'GET',
-                url: "/web/rest/lottery/spin",
+                url: "/shop/rest/lottery/spin",
                 isArray: false,
             },
             won: {
                 method: 'POST',
-                url: "/web/rest/lottery/won",
+                url: "/shop/rest/lottery/won",
                 params: {
                     ind: '@ind'
                 },

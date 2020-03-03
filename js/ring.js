@@ -38,7 +38,7 @@ angular.module('root')
         });
     })
     .factory('RingFactory', function ($resource) {
-        return $resource('/web/rest', null, {
+        return $resource('/shop/rest', null, {
             bonus: {
                 method: 'GET',
                 url: "/shop/rest/ring/bonus/general",

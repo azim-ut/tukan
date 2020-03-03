@@ -34,10 +34,10 @@ angular.module('root')
         });
     })
     .factory('ModernFactory', function ($resource) {
-        return $resource('/web/rest', null, {
+        return $resource('/shop/rest', null, {
             places: {
                 method: 'GET',
-                url: "/web/rest/modern/places",
+                url: "/shop/rest/modern/places",
                 isArray: false,
             }
         })

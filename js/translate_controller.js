@@ -66,7 +66,7 @@ angular.module('root')
         });
     })
     .factory('TranslateFactory', function ($resource) {
-        return $resource('/web/rest', null, {
+        return $resource('/shop/rest', null, {
             update: {
                 method: 'POST',
                 url: "/core/rest/translate/update",
