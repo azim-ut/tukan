@@ -1,8 +1,10 @@
 <?
 use core\service\App;
+use core\service\TranslateService;
 use core\utils\ServerUtils;
 
 $version = time();
+$tr = TranslateService::getInstance();
 ?>
 <head>
 	<meta charset="UTF-8"/>
@@ -11,6 +13,11 @@ $version = time();
 	<link rel="profile" href="//gmpg.org/xfn/11"/>
 	<link rel="pingback" href="https://tukan.store/xmlrpc.php"/>
     <link rel="shortcut icon" href="/web/img/icon_only.ico" type="image/x-icon">
+
+    <title><?=$tr->get("HEAD_TITLE");?></title>
+    <meta name="description" content="<?=$tr->get("HEAD_DESCRIPTION");?>">
+    <meta name="keywords" content="<?=$tr->get("HEAD_KEYWORDS");?>">
+    <meta name="author" content="<?=$tr->get("HEAD_AUTHOR");?>">
 
     <script type="text/javascript" src="/web/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/web/assets/js/jquery.cookie.js"></script>
@@ -26,10 +33,9 @@ $version = time();
 	<link href="/web/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/web/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
 
-	<title>«Tukan» - магазин детской итальянской одежды</title>
 	<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
 	<link rel='dns-prefetch' href='//s.w.org'/>
-	<link rel="alternate" type="application/rss+xml" title="tukan.store &raquo; Лента"
+	<link rel="alternate" type="application/rss+xml" title="tukan.store &raquo; Feed"
 	      href="https://tukan.store/feed/"/>
 <!--	<link rel='stylesheet' id='elessi-style-css' href='/web/template/style.css?ver=--><?//=$version?><!--' media='all'/>-->
 
