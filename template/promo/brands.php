@@ -1,7 +1,7 @@
 <?
-use core\service\TranslateService;
 
-$ts = TranslateService::getInstance();
+
+$ts = Translate::getInstance();
 ?>
 <link href="/web/css/promo2.css?t=<?=$version?>" rel="stylesheet" type="text/css"/>
 <div style="">

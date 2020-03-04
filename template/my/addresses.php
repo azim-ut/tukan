@@ -2,7 +2,6 @@
 use core\exception\NoUserException;
 use core\manager\UserManager;
 use core\service\CountriesService;
-use core\service\TranslateService;
 
 try{
     $user = UserManager::current();
@@ -13,7 +12,7 @@ try{
     header("Location: /");
     exit();
 }
-$ts = TranslateService::getInstance();
+$ts = Translate::getInstance();
 $countries = CountriesService::getInstance()->getCountries2();
 include_once __DIR__ . "/../nav/start.php";
 ?>

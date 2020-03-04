@@ -1,7 +1,7 @@
 <?
-use core\service\TranslateService;
 
-$ts = TranslateService::getInstance();
+
+$ts = Translate::getInstance();
 ?>
 
 </div>

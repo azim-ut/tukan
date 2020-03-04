@@ -1,10 +1,9 @@
 <?php
 
 use core\Engine;
-use core\service\TranslateService;
 
 $page = Engine::getDir(1);
-$ts = TranslateService::getInstance();
+$ts = Translate::getInstance();
 ?>
 
 <div class="list-group">

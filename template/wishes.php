@@ -1,9 +1,9 @@
 <?php
 
-use core\service\TranslateService; ?>
+?>
 <?
 
-$ts = TranslateService::getInstance();
+$ts = Translate::getInstance();
 ?>
 <? include_once __DIR__ . "/nav/start.php" ?>
     <link type="text/css" rel="stylesheet" href="/web/css/wishlist_empty.css"/>

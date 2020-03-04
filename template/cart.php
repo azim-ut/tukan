@@ -1,11 +1,10 @@
 <?php
-
-use core\service\TranslateService; ?>
+?>
 <? include_once __DIR__ . "/nav/start.php" ?>
 
 <?
 
-$tr = TranslateService::getInstance();
+$tr = Translate::getInstance();
 ?>
     <link type="text/css" rel="stylesheet" href="/web/css/cart_empty.css?t=<?=$version?>"/>
 <!--    <script src="/web/js/every_pay.js?t=--><?//=$version?><!--" type="text/javascript"></script>-->

@@ -2,12 +2,11 @@
 use assets\services\WebCatalogService;
 use core\Engine;
 use core\manager\ParamsManager;
-use core\service\TranslateService;
 
 include_once __DIR__ . "/../nav/start.php" ?>
 
 <?
-$ts     = TagsService::getInstance();
+$ts     = Translate::getInstance();
 $main   = Engine::getInstance();
 $age    = ParamsManager::getParamDef("a", "4");
 $gender = ParamsManager::getParamDef("g", TagsService::$GENDER_BOY);
@@ -19,7 +18,7 @@ if(!$ts->isAgeExists($age, $gender) || !$ts->isValidGender($gender)){
 
     return;
 }
-$tr = TranslateService::getInstance();
+$tr = Translate::getInstance();
 $tags = $ts->getHeightTagsByAge($age, $gender);
 
 $height = $tags[0] ?? 0;

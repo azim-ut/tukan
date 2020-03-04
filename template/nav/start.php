@@ -1,5 +1,8 @@
+<?php
+$tr = Translate::getInstance();
+?>
 <!DOCTYPE html>
-<html lang="<?=CURRENT_LOCATION?>" ng-app='root'>
+<html lang="<?=$tr->lang()?>" ng-app='root'>
 <? include_once __DIR__ . "/head.php" ?>
 
 <body ng-cloak=""

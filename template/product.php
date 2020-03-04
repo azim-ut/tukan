@@ -1,6 +1,5 @@
 <? use assets\services\WebCatalogService;
 use core\Engine;
-use core\service\TranslateService;
 use core\utils\SafeUtils;
 use core\utils\StringUtils;
 
@@ -19,7 +18,7 @@ if(!$id){
     <script>location.href = "/404";</script>
     <?
 }
-$tr = TranslateService::getInstance();
+$tr = Translate::getInstance();
 $post = new CatalogItem($id);
 
 $filter = new CatalogFilter();

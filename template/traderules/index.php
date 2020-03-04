@@ -1,7 +1,7 @@
 <?
-use core\service\TranslateService;
 
-$tr = TranslateService::getInstance();
+
+$tr = Translate::getInstance();
 ?>
 <? include_once __DIR__ . "/../nav/start.php" ?>
 

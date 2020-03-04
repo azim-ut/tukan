@@ -1,7 +1,7 @@
 <?
-use core\service\TranslateService;
 
-$ts = TranslateService::getInstance();
+
+$ts = Translate::getInstance();
 ?>
 <div class="container headPromoBoyGirls" style="border-top: #fff 2px solid;">
     <div class="row" style="border-top: #000 2px solid;border-bottom: #000 2px solid;">

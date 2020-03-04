@@ -1,7 +1,5 @@
 <?
 
-use core\manager\ParamsManager;
-
 ?>
 <? include_once __DIR__ . "/nav/start.php" ?>
 

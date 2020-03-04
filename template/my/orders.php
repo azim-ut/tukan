@@ -1,20 +1,6 @@
-<? use assets\services\OrderService;
-use core\exception\BadResultException;
-use core\exception\NoUserException;
-use core\manager\UserManager;
-use core\service\TranslateService;
-use core\utils\StringUtils;
+<?
 
-try{
-    $user = UserManager::current();
-    if(!$user){
-        throw new NoUserException();
-    }
-}catch(NoUserException | BadResultException $e){
-    header("Location: /");
-    exit();
-}
-$tr = TranslateService::getInstance();
+$tr = Translate::getInstance();
 include_once __DIR__ . "/../nav/start.php";
 
 ?>

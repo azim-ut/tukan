@@ -1,10 +1,8 @@
 <?
 use core\service\App;
-use core\service\TranslateService;
-use core\utils\ServerUtils;
 
 $version = time();
-$tr = TranslateService::getInstance();
+$tr = Translate::getInstance();
 ?>
 <head>
 	<meta charset="UTF-8"/>
@@ -72,6 +70,6 @@ $tr = TranslateService::getInstance();
 
 
     <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5bf306b3d329fa00111f74c2' async='async'></script>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v4.0&appId=<?=App::context()->facebookAuthAppID()?>&autoLogAppEvents=1"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v4.0&appId=<?=Properties::getInstance()->getFacebookAuthAppID()?>&autoLogAppEvents=1"></script>
 
 </head>

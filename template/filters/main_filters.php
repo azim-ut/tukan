@@ -1,9 +1,8 @@
 <?php
 
 use core\service\App;
-use core\service\TranslateService;
 
-$tr = TranslateService::getInstance();
+$tr = Translate::getInstance();
 
 $brands  = preg_split("#,#", App::context()->settingsByName("brands") ?? "");
 $height  = [70, 76, 82, 88, 93, 98, 104, 110, 116, 122, 128, 134, 140, 146, 152];

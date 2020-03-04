@@ -1,7 +1,8 @@
-<?php use core\service\TranslateService; ?>
+<?php
+?>
 <?
 
-$ts = TranslateService::getInstance();
+$ts = Translate::getInstance();
 ?>
 <div class="container headPromoBoyGirls">
     <div class="row">

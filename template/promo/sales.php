@@ -1,9 +1,7 @@
 <?
 
-use assets\services\WebCatalogService;
-use core\service\TranslateService;
 
-$ts = TranslateService::getInstance();
+$ts = Translate::getInstance();
 
 ?>
 <div class="container headPromoBoyGirls" ng-controller="SalesPromoController" style="border-top: #fff 2px solid;">
@@ -20,7 +18,7 @@ $ts = TranslateService::getInstance();
         </div>
         <div class="col-6 text-center sales" ng-repeat="row in items">
             <div class="photo"
-                 ng-click="location.href='/product/{{row.id}}';"
+                 ng-click="toProduct(row.id)"
                  style="background-image: url({{row.img}});">&nbsp;
             </div>
             <div class="info">-{{row.sale}}%</div>

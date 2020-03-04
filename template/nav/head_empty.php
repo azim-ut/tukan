@@ -1,10 +1,9 @@
 <?
 
-use core\service\TranslateService;
 
 $version = time();
 
-$tr = TranslateService::getInstance();
+$tr = Translate::getInstance();
 ?>
 <head>
 	<meta charset="UTF-8"/>
