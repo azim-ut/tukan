@@ -9,8 +9,8 @@ include_once __DIR__ . "/nav/start.php" ?>
 $dirs = Engine::getInstance()->getDirs(1);
 $id   = 0;
 
-if(sizeof($dirs) && SafeUtils::toInteger($dirs[0], 0)){
-    $id = $dirs[0] * 1;
+if(sizeof($dirs)){
+    $id = intval($dirs[0]) * 1;
 }
 
 if(!$id){
@@ -19,14 +19,8 @@ if(!$id){
     <?
 }
 $tr = Translate::getInstance();
-$post = new CatalogItem($id);
 
-$filter = new CatalogFilter();
-$filter->sizes($post->enabledSizes());
-$filter->gender($post->gender);
-$filter->exclude($post->id);
-$more = WebCatalogService::getInstance()->getPosts($filter, [], 0, 15);
-
+$post = Catalog::getInstance()->item($id);
 $brandSrc = null;
 switch($post->brand){
     case 'Original Marines':
@@ -49,7 +43,10 @@ switch($post->brand){
         break;
 }
 
-$heights = $post->enabledHeights();
+
+$more = Catalog::getInstance()->more($id);
+
+$heights = $post->enabledHeightsList;
 ?>
     <div ng-controller="ProductController" class="container">
         <div class="margin-bottom-50 HeadContentPage container"
@@ -87,7 +84,7 @@ $heights = $post->enabledHeights();
                             <tr>
                                 <td>
 
-                                    <h1 class="productTitle"><?=ucfirst($post->title())?>
+                                    <h1 class="productTitle"><?=ucfirst($post->post_title)?>
                                         <?
                                         if($post->sale){
                                             ?>
@@ -108,16 +105,16 @@ $heights = $post->enabledHeights();
                                     if($post->sale){
                                         ?>
                                         <div class="amount thin-font text-right" style="font-size: 150%; color: #ccc;">
-                                            <del><span class="thin-font" style="padding-right: 5px;">€</span><?=$post->price()?></del>
+                                            <del><span class="thin-font" style="padding-right: 5px;">€</span><?=$post->price?></del>
                                         </div>
                                         <div class="amount thin-font text-right" style="font-size: 200%;">
-                                            <span class="thin-font" style="padding-right: 5px;">€</span><?=$post->new_price()?>
+                                            <span class="thin-font" style="padding-right: 5px;">€</span><?=$post->new_price?>
                                         </div>
                                         <?
                                     }else{
                                         ?>
                                         <div class="amount thin-font text-right" style="font-size: 200%;">
-                                            <span class="thin-font" style="padding-right: 5px;">€</span><?=$post->price()?>
+                                            <span class="thin-font" style="padding-right: 5px;">€</span><?=$post->price?>
                                         </div>
                                         <?
                                     }
@@ -132,7 +129,7 @@ $heights = $post->enabledHeights();
                                         <div>
                                             <span class="thin-font"><?=$tr->get("HEIGHT")?>:</span>
                                             <ul class="heightList">
-                                                <? foreach($post->enabledHeights() as $item){ ?>
+                                                <? foreach($heights as $item){ ?>
                                                     <li ng-class="{'pointer':true, 'on': size==='<?=$item->size?>'}"
                                                         ng-click="toggleSize('<?=$item->size?>')"><?=$item->height?></li>
                                                 <? } ?>
@@ -188,7 +185,7 @@ $heights = $post->enabledHeights();
                     <div class="container">
                         <div class="row margin-top-30" style="overflow: hidden;">
                             <p>
-                                <?=$tr->get("YOU_LOOKING")?> <?=mb_strtolower($post->title())?>
+                                <?=$tr->get("YOU_LOOKING")?> <?=mb_strtolower($post->post_title)?>
                                 <? switch($post->gender){
                                     case 1:
                                         echo $tr->get("FOR_BOYS").".";
@@ -200,7 +197,7 @@ $heights = $post->enabledHeights();
                                         echo $tr->get("FOR_CHILDREN").".";
                                         break;
                                 } ?>
-                                <?=$tr->get("MODEL_AVAILABLE_SIZES")?>: <?=$post->enabledHeightsString()?>. <?=$tr->get('THIS_PRODUCT_OTHEN_VIEWED')?>:
+                                <?=$tr->get("MODEL_AVAILABLE_SIZES")?>: <?=$post->enabledHeightsStr?>. <?=$tr->get('THIS_PRODUCT_OTHEN_VIEWED')?>:
                             </p>
                             <div>
                                 <? foreach($more as $i => $item){ ?>
@@ -210,7 +207,7 @@ $heights = $post->enabledHeights();
                                                     background: transparent url(<?=$item->img?>) no-repeat center center/contain;
                                                     border: #c3cc36 1px solid; margin: 4px; padding: 5px;
                                                     width: 100px; height: 100px;"></div>
-                                            <span class="thin-font"><?=StringUtils::crop2($item->title, 16)?></span>
+                                            <span class="thin-font"><?=$item->title?></span>
                                             <br/>&euro; <?=$item->price?>
                                         </a>
                                     </div>
