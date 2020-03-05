@@ -4,7 +4,7 @@
 class Translate extends RemoteBase{
     protected static $instance = null;
     private static $cache = [];
-    private static $lang = "en";
+    private static $locale = "en_US";
 
     /**
      * @return Translate
@@ -14,7 +14,7 @@ class Translate extends RemoteBase{
             self::$instance = new self();
             $obj            = self::src(HOST . "core/rest/translate/translates");
             self::$cache    = $obj->list;
-            self::$lang     = preg_split("#_#", $obj->lang)[0];
+            self::$locale   = $obj->lang;
         }
 
         return self::$instance;
@@ -24,7 +24,8 @@ class Translate extends RemoteBase{
         return self::$cache->$code ?? $code;
     }
 
-    public function lang(){
-        return self::$lang;
+    public function locale(){
+        return self::$locale;
     }
+
 }
