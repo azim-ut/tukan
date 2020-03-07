@@ -58,6 +58,16 @@ $ts = Translate::getInstance();
     <br/>
 </div>
 <!-- END MAIN FOOTER -->
+<script>
+    $(function(){
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+            $('nav').toggleClass('active')
+            $('body').toggleClass('overflowed-y')
+            })
+        })
+    });
+</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47064836-2"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->

@@ -28,6 +28,7 @@ $tr = Translate::getInstance();
     <script type="text/javascript" src="/web/assets/bootstrap-toastr/toastr.min.js"></script>
 
 
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/web/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/web/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
 

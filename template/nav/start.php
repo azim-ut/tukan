@@ -22,74 +22,43 @@ $tr = Translate::getInstance();
     </div>
 </div>
 
-<div ng-controller="AuthBlockController" ng-cloak class="head no-print gb_Rd">
-
-    <table width="100%">
-        <tr>
-            <td width="1%">
-                <a href="/">
-                    <div class="header_logo mainLogo"></div>
+<header id="header" ng-controller="AuthBlockController" ng-cloak>
+    <a class="logo" href="/"></a>
+    <nav class="">
+        <ul>
+            <li>
+                <a
+                    data-toggle="modal"
+                    ng-if="!data.user"
+                    data-target="#AuthForm"
+                ><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+                <a
+                    href="/my"
+                    ng-if="data.user"
+                ><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a
+                    href="/cart"
+                ><i class="icon icon-basket" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a 
+                    href="/wishes" 
+                ><i class="icon icon-heart" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon-lang"
+                        ng-click="openEmptyForm('#localeModal')"
+                        ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/'+data.locale+'.png) no-repeat center center/cover'}"
+                    ></div>
                 </a>
-            </td>
-            <td align="right">
-                <ul style="display: inline-block; width: 200px; margin-top: 5px;">
-                    <li class="userBtn text-center" style="width: 40px;">
-                        <a data-toggle="modal"
-                           ng-if="!data.user"
-                           data-target="#AuthForm">
-                            <span class="fa fa-user-circle"></span>
-                        </a>
-                        <a href="/my"
-                           class="toMy text-uppercase"
-                           ng-if="data.user" style="font-size: 120%; font-weight: bold; line-height: 20px;display: contents;">
-                            <div class="imageIcon"
-                                 ng-if="data.user.icon"
-                                 ng-style="{'background': 'transparent url('+data.user.icon+') no-repeat center center/contain'}"></div>
-                            <div ng-if="!data.user.icon">{{data.user.name.charAt(0)}}</div>
-                        </a>
-                    </li>
-                    <li class="cartHeadBtn text-center"><a href="/cart">
-                            <i class="icon icon-basket"></i>
-                            <div ng-show="data.cart.ids.length" class="subIconCount blue">{{data.cart.ids.length}}</div>
-                        </a>
-                    </li>
-                    <li class="wishHeadBtn text-center"><a href="/wishes">
-                            <i class="icon icon-heart"></i>
-                            <div ng-show="data.wishes.ids.length" class="subIconCount red">{{data.wishes.ids.length}}
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="imageIcon pointer"
-                             ng-click="openEmptyForm('#localeModal')"
-                             ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/'+data.locale+'.png) no-repeat center center/cover'}"></div>
-                    </li>
-                </ul>
-                <div ng-if="data.user.current">
-                    <div class="text-right">
-                        <div id="AuthBlock">
-                            <ul>
-                                <li class="menu-item color">
-                                    <span class="icon-user"></span>
-                                    <span class="nasa-login-title">{{data.user.name}}</span>
-                                </li>
-                                <li class="menu-item color" ng-if="data.user">
-                                    <a href="/wishes">
-                                        <span class="icon-heart"></span> Мой список
-                                        <span ng-if="data.user.wishes.length>"
-                                              style="font-weight: 700;">({{data.user.wishes.length}})</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </td>
-        </tr>
-    </table>
-
-</div>
+            </li>
+        </ul>
+    </nav>
+    <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+</header>
 
 
 <div class="modal fade" id="localeModal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
