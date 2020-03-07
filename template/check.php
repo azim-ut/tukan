@@ -18,7 +18,7 @@ include_once __DIR__ . "/nav/start.php";
 if($order){
     ?>
     <div class="nasa-single-product-scroll HeadContentPage"
-         style="padding-right: 20px; padding-left: 20px; background: linear-gradient(#e5e8ed, #a1b3c1);">
+         style="padding-right: 20px; padding-left: 20px;">
 
         <div class="row">
             <div class="col-sm-4">

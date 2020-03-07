@@ -13,7 +13,7 @@ $tr = Translate::getInstance();
     <div ng-controller="CartListController"
          ng-cloak
          class="nasa-single-product-scroll HeadContentPage"
-         style="padding-right: 20px; padding-left: 20px; background: linear-gradient(#e5e8ed, #a1b3c1);">
+         style="padding-right: 20px; padding-left: 20px;">
         <div ng-if="!cart || cart.items.length == 0" style="text-align: center;">
             <div class="emptyCart">
                 <div class="example">
