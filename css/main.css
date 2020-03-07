@@ -11,7 +11,7 @@
 }
 
 #wrapper {
-    overflow: hidden;margin-top: 50px;
+    overflow: hidden; 
 }
 
 .navbar {
@@ -1588,7 +1588,7 @@ footer {
     }
 
     #main-content {
-        min-height: 450px !important;
+        min-height: 450px !important; margin-top: 50px;
     }
 
     .pagination {
