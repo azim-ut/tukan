@@ -15,7 +15,7 @@
 }
 
 #main-content{
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .navbar {
@@ -1592,7 +1592,7 @@ footer {
     }
 
     #main-content {
-        min-height: 450px !important;
+        min-height: 450px !important; margin-top: 100px;
     }
 
     .pagination {
