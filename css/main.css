@@ -11,7 +11,7 @@
 }
 
 #wrapper {
-    overflow: hidden;
+    overflow: hidden;margin-top: 50px;
 }
 
 .navbar {
