@@ -15,10 +15,10 @@ class Catalog extends RemoteBase{
     }
 
     public function item($id){
-        return self::src(HOST . "shop/rest/catalog/id/".$id);
+        return self::src( "shop/rest/catalog/id/".$id);
     }
 
     public function more($id){
-        return self::src(HOST . "shop/rest/catalog/more/".$id);
+        return self::src( "shop/rest/catalog/more/".$id);
     }
 }
