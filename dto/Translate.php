@@ -12,7 +12,7 @@ class Translate extends RemoteBase{
     public static function getInstance(){
         if(!self::$instance){
             self::$instance = new self();
-            $obj            = self::src("core/rest/translate/translates");
+            $obj            = self::src("/core/rest/translate/translates");
             self::$cache    = $obj->list;
             self::$locale   = $obj->lang;
         }

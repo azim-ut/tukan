@@ -17,7 +17,7 @@ class Properties extends RemoteBase{
 
     public function getFacebookAuthAppID(){
         if(!$this->facebookID){
-            $this->facebookID = self::src( "core/rest/property/fb/app/id");
+            $this->facebookID = self::src( "/core/rest/property/fb/app/id");
         }
         return $this->facebookID;
     }
