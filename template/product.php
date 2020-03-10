@@ -1,7 +1,4 @@
-<? use assets\services\WebCatalogService;
-use core\Engine;
-use core\utils\SafeUtils;
-use core\utils\StringUtils;
+<? use core\Engine;
 
 include_once __DIR__ . "/nav/start.php" ?>
 
@@ -42,7 +39,6 @@ switch($post->brand){
         $brandSrc = "ronnie-kay_logo-2.png";
         break;
 }
-
 
 $more = Catalog::getInstance()->more($id);
 

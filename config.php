@@ -7,5 +7,6 @@ date_default_timezone_set("Europe/Tallinn");
 
 
 require_once(__DIR__ . "/dto/Properties.php");
+require_once(__DIR__ . "/dto/CouponDto.php");
 require_once(__DIR__ . "/dto/Catalog.php");
 require_once(__DIR__ . "/dto/Translate.php");

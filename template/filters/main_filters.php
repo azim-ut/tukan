@@ -7,7 +7,6 @@ $height  = [70, 76, 82, 88, 93, 98, 104, 110, 116, 122, 128, 134, 140, 146, 152]
 $genders = [0 => $tr->get("FOR_CHILDREN"), 1 => $tr->get("FOR_BOYS"), 2 => $tr->get("FOR_GIRLS")];
 ?>
 <div class="align-center" style="background: #f9f9f9; border-top: #eaeaea 1px solid;">
-    <br/>
 <div class="container">
     <div class="row padding-top-15 padding-bottom-15">
 

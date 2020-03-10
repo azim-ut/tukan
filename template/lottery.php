@@ -2,15 +2,13 @@
 
 use assets\services\CouponService;
 use assets\services\LotteryService;
-use core\manager\UserManager;
 
 ?>
 <? include_once __DIR__ . "/nav/start.php" ?>
 <?
-$prizes = CouponService::getInstance()->getUserCoupons(UserManager::currentId(), LotteryService::firstLotteryName());
-$uid    = UserManager::currentId();
-if($uid){
-    ?>
+$data = CouponDto::getInstance()->lotteryPrizes();
+if($data->uid){
+	?>
     <link href="/web/css/lottery.css" rel="stylesheet" type="text/css"/>
     <div class="HeadContentPage"
          style="background: transparent url(/web/img/christmas_1024x768.jpg) no-repeat center center/cover"
@@ -54,11 +52,11 @@ if($uid){
             var prizesNames = <?=json_encode(CouponService::getInstance()->getCoupons(LotteryService::firstLotteryName()))?>;
 
             var prize = '';
-            <?
-            if(sizeof($prizes)){?>
-            prize = <?=json_encode($prizes[0])?>;
-            <?}
-            ?>
+			<?
+			if(sizeof($data->list)){?>
+            prize = <?=json_encode($data->list[0])?>;
+			<?}
+			?>
             var prizes = [];
             prizesNames.forEach(function (row) {
                 prizes.push({name: row.name, type: row.grp})
@@ -86,19 +84,21 @@ if($uid){
         </div>
         <script src="/web/js/lottery.js?t=<?=$version?>" type="text/javascript"></script>
     </div>
-    <?
+	<?
 }else{
-    ?>
+	?>
     <link href="/web/css/lottery.css" rel="stylesheet" type="text/css"/>
     <div class="HeadContentPage"
          ng-controller="AuthBlockController"
          style="background: transparent url(/web/img/christmas_1024x768.jpg) no-repeat center center/cover">
         <br/>
-        <div class="spinBtn align-center" ng-click="loginRedirectFB('lottery')" style="text-align: center; padding-top: 0%;">
+        <div class="spinBtn align-center" ng-click="loginRedirectFB('lottery')"
+             style="text-align: center; padding-top: 0%;">
             <button class="fbBtn shadow"><span>f</span></button>
             <br/>
 
-            <div align="center" style="background: #fff; display: block; padding: 10px; font-size: 120%; line-height: normal; overflow: hidden; margin: 10px 50px;">
+            <div align="center"
+                 style="background: #fff; display: block; padding: 10px; font-size: 120%; line-height: normal; overflow: hidden; margin: 10px 50px;">
                 <div ng-if="data.locale!=='ru-RU'">
                     <b ng-click="loginRedirectFB('lottery')">Login</b> and <b>Spin</b> to get additional discount!
                 </div>
@@ -109,7 +109,7 @@ if($uid){
         </div>
 
     </div>
-    <?
+	<?
 }
 ?>
 <? include_once __DIR__ . "/nav/footer.php" ?>

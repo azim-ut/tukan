@@ -27,15 +27,19 @@ $tr = Translate::getInstance();
     <nav class="">
         <ul>
             <li>
-                <a
-                    data-toggle="modal"
-                    ng-if="!data.user"
-                    data-target="#AuthForm"
-                ><i class="fa fa-user-circle" aria-hidden="true"></i></a>
-                <a
-                    href="/my"
-                    ng-if="data.user"
-                ><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+                <a data-toggle="modal"
+                   ng-if="!data.user"
+                   data-target="#AuthForm">
+                    <span class="fa fa-user-circle"></span>
+                </a>
+                <a href="/my"
+                   class="toMy text-uppercase"
+                   ng-if="data.user" style="font-size: 120%; font-weight: bold; line-height: 20px;display: contents;">
+                    <div class="imageIcon"
+                         ng-if="data.user.icon"
+                         ng-style="{'background': 'transparent url('+data.user.icon+') no-repeat center center/contain'}"></div>
+                    <div ng-if="!data.user.icon">{{data.user.name.charAt(0)}}</div>
+                </a>
             </li>
             <li>
                 <a
@@ -91,7 +95,6 @@ $tr = Translate::getInstance();
 </div>
 <? include_once __DIR__ . "/auth.php" ?>
 
-
 <div id="wrapper" class="fixNav-enabled">
-
+    <br/>    <br/>
     <div id="main-content" class="site-main light">
