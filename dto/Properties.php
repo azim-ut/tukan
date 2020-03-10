@@ -4,6 +4,7 @@
 class Properties extends RemoteBase{
     protected static $instance = null;
     private $facebookID = null;
+    private $data = [];
 
     /**
      * @return Properties
@@ -20,5 +21,12 @@ class Properties extends RemoteBase{
             $this->facebookID = self::src( "/core/rest/property/fb/app/id");
         }
         return $this->facebookID;
+    }
+
+    public function getBrands(){
+        if(!isset($this->data["brands"])){
+	        $this->data["brands"] = self::src( "/core/rest/property/prop/array/brands");
+        }
+        return $this->data["brands"];
     }
 }

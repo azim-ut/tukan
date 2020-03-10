@@ -1,43 +1,9 @@
-<? use assets\services\TagsService;
-use assets\services\WebCatalogService;
-use core\Engine;
-use core\manager\ParamsManager;
+<?
 
 include_once __DIR__ . "/../nav/start.php" ?>
 
 <?
-$ts     = TagsService::getInstance();
-$age    = ParamsManager::getParamDef("a", "4");
-$gender = ParamsManager::getParamDef("g", TagsService::$GENDER_BOY);
-$types  = $ts->getClothesTypeTags();
-
-
-if(!$ts->isAgeExists($age, $gender) || !$ts->isValidGender($gender)){
-	include_once __DIR__ . "/../404.php";
-
-	return;
-}
 $tr = Translate::getInstance();
-$tags = $ts->getHeightTagsByAge($age, $gender);
-$brand = ParamsManager::getParam("brand");
-$gender = ParamsManager::getParam("gender");
-
-if(Engine::getDir(0) === 'girls'){
-    $gender = 2;
-}else if(Engine::getDir(0) === 'boys'){
-    $gender = 1;
-}
-
-
-array_push($tags, $gender);
-$filter = new CatalogFilter();
-if($brand){
-    $filter->brand($brand);
-}
-if($gender){
-    $filter->gender($gender);
-}
-$posts  = WebCatalogService::getInstance()->getPosts($filter, $tags);
 ?>
 
 
