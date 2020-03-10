@@ -26,19 +26,21 @@ $tr = Translate::getInstance();
     <a class="logo" href="/"></a>
     <nav class="">
         <ul>
-            <li>
-                <a data-toggle="modal"
-                   ng-if="!data.user"
-                   data-target="#AuthForm">
-                    <span class="fa fa-user-circle"></span>
-                </a>
+            <li ng-if="!data.user">
+                <a
+                        data-toggle="modal"
+                        data-target="#AuthForm"
+                ><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+            </li>
+            <li ng-if="data.user">
                 <a href="/my"
                    class="toMy text-uppercase"
-                   ng-if="data.user" style="font-size: 120%; font-weight: bold; line-height: 20px;display: contents;">
+                   style="font-size: 120%; clear: both;">
                     <div class="imageIcon"
                          ng-if="data.user.icon"
                          ng-style="{'background': 'transparent url('+data.user.icon+') no-repeat center center/contain'}"></div>
                     <div ng-if="!data.user.icon">{{data.user.name.charAt(0)}}</div>
+                    &nbsp;
                 </a>
             </li>
             <li>
