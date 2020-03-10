@@ -7,7 +7,7 @@ use assets\services\LotteryService;
 <? include_once __DIR__ . "/nav/start.php" ?>
 <?
 $data = CouponDto::getInstance()->lotteryPrizes();
-if($data->uid){
+if($data->uid??null){
 	?>
     <link href="/web/css/lottery.css" rel="stylesheet" type="text/css"/>
     <div class="HeadContentPage"
