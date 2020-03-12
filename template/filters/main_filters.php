@@ -2,7 +2,7 @@
 
 
 $tr = Translate::getInstance();
-$brands = Properties::getInstance()->getBrands();
+$brands = AppDto::getInstance()->propArray("brands");
 $height  = [70, 76, 82, 88, 93, 98, 104, 110, 116, 122, 128, 134, 140, 146, 152];
 $genders = [0 => $tr->get("FOR_CHILDREN"), 1 => $tr->get("FOR_BOYS"), 2 => $tr->get("FOR_GIRLS")];
 ?>
