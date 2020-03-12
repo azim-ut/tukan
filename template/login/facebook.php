@@ -8,7 +8,6 @@ $token       = $_GET["token"]??null;
 $tokenType   = $_GET["token_type"]??null;
 $expiresIn   = $_GET["expires_in"]??null;
 $redirectUrl = Facebook::getInstance()->login($code, $state, $token, $tokenType, $expiresIn);
-var_dump($redirectUrl);
 if($redirectUrl != null){
     header("Location:" . $redirectUrl);
 }
