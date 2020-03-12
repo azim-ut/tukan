@@ -23,6 +23,13 @@ class Properties extends RemoteBase{
         return $this->facebookID;
     }
 
+    public function prop($name){
+        if(!isset($this->data[$name])){
+            $this->data[$name] = self::src( "/core/rest/property/prop/string/".$name);
+        }
+        return $this->data[$name];
+    }
+
     public function getBrands(){
         if(!isset($this->data["brands"])){
 	        $this->data["brands"] = self::src( "/core/rest/property/prop/array/brands");
