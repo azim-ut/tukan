@@ -2,11 +2,11 @@
 
 include_once __DIR__ . "/../nav/start_empty.php" ?>
 <?
-$code        = $_GET["code"];
-$state       = $_GET["state"];
-$token       = $_GET["token"];
-$tokenType   = $_GET["token_type"];
-$expiresIn   = $_GET["expires_in"];
+$code        = $_GET["code"]??null;
+$state       = $_GET["state"]??null;
+$token       = $_GET["token"]??null;
+$tokenType   = $_GET["token_type"]??null;
+$expiresIn   = $_GET["expires_in"]??null;
 $redirectUrl = Facebook::getInstance()->login($code, $state, $token, $tokenType, $expiresIn);
 if($redirectUrl != null){
     header("Location:" . $redirectUrl);
