@@ -27,7 +27,7 @@ class Facebook extends RemoteBase{
         $params[] = "token=".$token;
         $params[] = "tokenType=".$tokenType;
         $params[] = "expiresIn=".$expiresIn;
-        return self::src( "/core/rest/facebookAuth/login?".join("&", $params));
+        return self::src( "/core/rest/facebookAuth/login?".join("&", $params), "GET", true);
     }
 
     public function log($path, $content, $line){
