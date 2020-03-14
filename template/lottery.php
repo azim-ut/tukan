@@ -2,6 +2,7 @@
 
 ?>
 <? include_once __DIR__ . "/nav/start.php" ?>
+<script type="text/javascript" src="/web/js/lottery.js"></script>
 <?
 $data = CouponDto::getInstance()->myLotteryPrizes();
 if($data->uid ?? null){
