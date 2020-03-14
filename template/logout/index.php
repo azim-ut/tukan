@@ -1,6 +1,4 @@
 <?php
 
-use core\manager\UserManager;
-
-UserManager::logout();
+UserDto::getInstance()->logout();
 header("Location: /");

@@ -10,3 +10,4 @@ require_once(__DIR__ . "/dto/Facebook.php");
 require_once(__DIR__ . "/dto/CouponDto.php");
 require_once(__DIR__ . "/dto/Catalog.php");
 require_once(__DIR__ . "/dto/Translate.php");
+require_once(__DIR__ . "/dto/UserDto.php");
