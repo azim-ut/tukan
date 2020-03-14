@@ -16,7 +16,11 @@ class CouponDto extends RemoteBase{
         return self::$instance;
     }
 
-    public function lotteryPrizes(){
+    public function myLotteryPrizes(){
 	    return self::src( "/shop/rest/lottery/my/prizes");
+    }
+
+    public function lotteryCoupons(){
+	    return self::src( "/shop/rest/lottery/coupons/FirstLottery");
     }
 }

@@ -68,6 +68,7 @@ $tr = Translate::getInstance();
 	<script type="text/javascript" src="/web/js/modern.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/translate_controller.js?t=<?=$version?>"></script>
 	<script type="text/javascript" src="/web/js/controller/sales_promo.js"></script>
+	<script type="text/javascript" src="/web/js/lottery.js"></script>
 
 
     <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5bf306b3d329fa00111f74c2' async='async'></script>

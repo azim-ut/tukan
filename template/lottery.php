@@ -1,14 +1,11 @@
 <?
 
-use assets\services\CouponService;
-use assets\services\LotteryService;
-
 ?>
 <? include_once __DIR__ . "/nav/start.php" ?>
 <?
-$data = CouponDto::getInstance()->lotteryPrizes();
-if($data->uid??null){
-	?>
+$data = CouponDto::getInstance()->myLotteryPrizes();
+if($data->uid ?? null){
+    ?>
     <link href="/web/css/lottery.css" rel="stylesheet" type="text/css"/>
     <div class="HeadContentPage"
          style="background: transparent url(/web/img/christmas_1024x768.jpg) no-repeat center center/cover"
@@ -31,7 +28,7 @@ if($data->uid??null){
             </div>
 
         </div>
-
+        1111
         <div ng-if="prize" class="couponBlock">
             <h2>Ваш приз!</h2>
             <a href="/my/coupons" class="pointer">
@@ -49,18 +46,17 @@ if($data->uid??null){
         </div>
         <div id="counter"></div>
         <script>
-            var prizesNames = <?=json_encode(CouponService::getInstance()->getCoupons(LotteryService::firstLotteryName()))?>;
-
-            var prize = '';
-			<?
-			if(sizeof($data->list)){?>
+            var prizesNames = <?=json_encode(CouponDto::getInstance()->lotteryCoupons())?>;
+            console.log(prizesNames);
+            <?
+            if(sizeof($data->list)){?>
             prize = <?=json_encode($data->list[0])?>;
-			<?}
-			?>
-            var prizes = [];
+            <?}
+            ?>
             prizesNames.forEach(function (row) {
                 prizes.push({name: row.name, type: row.grp})
             })
+            console.log(prizes);
         </script>
 
         <div class="modal fade" tabindex="-1" role="dialog" id="ShowPrize">
@@ -84,9 +80,9 @@ if($data->uid??null){
         </div>
         <script src="/web/js/lottery.js?t=<?=$version?>" type="text/javascript"></script>
     </div>
-	<?
+    <?
 }else{
-	?>
+    ?>
     <link href="/web/css/lottery.css" rel="stylesheet" type="text/css"/>
     <div class="HeadContentPage"
          ng-controller="AuthBlockController"
@@ -109,7 +105,7 @@ if($data->uid??null){
         </div>
 
     </div>
-	<?
+    <?
 }
 ?>
 <? include_once __DIR__ . "/nav/footer.php" ?>

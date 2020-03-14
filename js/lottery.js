@@ -1,3 +1,6 @@
+
+var prize = '';
+var prizes = [];
 angular.module('root')
     .controller("LotteryController", function ($scope, $rootScope, $controller, $timeout, LotteryFactory, CoreFactory) {
         angular.extend(this, $controller("CommonController", {$scope: $scope}));
@@ -218,7 +221,7 @@ var wheel = {
 
     initAudio: function () {
         var sound = document.createElement('audio');
-        sound.setAttribute('src', 'wheel.mp3');
+        sound.setAttribute('src', 'audio/wheel.mp3');
         wheel.sound = sound;
     },
 
