@@ -17,7 +17,7 @@ class Facebook extends RemoteBase{
     }
 
     public function loginPath(){
-        return self::src( "/core/rest/facebookAuth/login/path/".Engine::getInstance()->sessionId());
+        return self::getData("/core/rest/facebookAuth/login/path/" . Engine::getInstance()->sessionId());
     }
 
     public function login($code, $stake, $token, $tokenType, $expiresIn){
@@ -27,10 +27,10 @@ class Facebook extends RemoteBase{
         $params[] = "token=".$token;
         $params[] = "tokenType=".$tokenType;
         $params[] = "expiresIn=".$expiresIn;
-        return self::src( "/core/rest/facebookAuth/login?".join("&", $params));
+        return self::getData("/core/rest/facebookAuth/login?" . join("&", $params));
     }
 
     public function log($path, $content, $line){
-        return self::src( "/shop/rest/catalog/more/".$id);
+        return self::getData("/shop/rest/catalog/more/" . $id);
     }
 }

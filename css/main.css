@@ -11,12 +11,9 @@
 }
 
 #wrapper {
-    overflow: hidden;
+    overflow: hidden;margin-top: 76px;
 }
 
-#main-content{
-    margin-top: 60px;
-}
 
 .navbar {
     background: #fff;
@@ -1592,7 +1589,7 @@ footer {
     }
 
     #main-content {
-        min-height: 450px !important; margin-top: 140px;
+        min-height: 450px !important;
     }
 
     .pagination {

@@ -49,15 +49,15 @@ $tr = Translate::getInstance();
                 ><i class="icon icon-basket" aria-hidden="true"></i></a>
             </li>
             <li>
-                <a 
-                    href="/wishes" 
+                <a
+                    href="/wishes"
                 ><i class="icon icon-heart" aria-hidden="true"></i></a>
             </li>
             <li>
                 <a href="#">
                     <div class="icon-lang"
                         ng-click="openEmptyForm('#localeModal')"
-                        ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/'+data.locale+'.png) no-repeat center center/cover'}"
+                        ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/'+data.user.locale+'.png) no-repeat center center/cover'}"
                     ></div>
                 </a>
             </li>
@@ -98,5 +98,4 @@ $tr = Translate::getInstance();
 <? include_once __DIR__ . "/auth.php" ?>
 
 <div id="wrapper" class="fixNav-enabled">
-    <br/>    <br/>
     <div id="main-content" class="site-main light">

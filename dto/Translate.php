@@ -1,6 +1,8 @@
 <?php
 
 
+use core\Engine;
+
 class Translate extends RemoteBase{
     protected static $instance = null;
     private static $cache = [];
@@ -12,11 +14,7 @@ class Translate extends RemoteBase{
     public static function getInstance(){
         if(!self::$instance){
             self::$instance = new self();
-            $obj            = self::src("/core/rest/translate/translates");
-            if($obj){
-                self::$cache    = $obj->list??[];
-                self::$locale   = $obj->lang??"en_US";
-            }
+            self::updateCache(Engine::getInstance()->getLocale());
         }
 
         return self::$instance;
@@ -28,6 +26,14 @@ class Translate extends RemoteBase{
 
     public function locale(){
         return self::$locale;
+    }
+
+    public static function updateCache($locale){
+        $obj            = self::getData("/core/rest/translate/translates/".$locale);
+        if($obj){
+            self::$cache  = $obj->list ?? [];
+            self::$locale = $obj->lang ?? "en_US";
+        }
     }
 
 }
