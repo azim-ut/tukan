@@ -40,6 +40,7 @@ $tr = Translate::getInstance();
 
 
     <link type="text/css" rel="stylesheet" href="/web/assets/lightslider-master/src/css/lightslider.css" />
+
     <script src="/web/assets/lightslider-master/src/js/lightslider.js"></script>
 
 	<script type="text/javascript" src="/web/assets/ng/angular.min.js"></script>
@@ -72,5 +73,10 @@ $tr = Translate::getInstance();
 
     <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5bf306b3d329fa00111f74c2' async='async'></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v4.0&appId=<?=ContextDto::getInstance()->prop("auth.app.id")?>&autoLogAppEvents=1"></script>
+    <link rel="stylesheet" href="/web/assets/exzoom/jquery.exzoom.css">
+
+	<script src="/web/assets/exzoom/jquery.exzoom.js"></script>
+	<script src="/web/assets/exzoom/exzoom.js"></script>
+
 
 </head>
