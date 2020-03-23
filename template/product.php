@@ -262,4 +262,5 @@ $heights = $post->enabledHeightsList;
         </div>
     </div>
 
+    <script src="/web/assets/exzoom/exzoom.js"></script>
 <? include_once __DIR__ . "/nav/footer.php" ?>

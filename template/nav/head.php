@@ -76,7 +76,6 @@ $tr = Translate::getInstance();
     <link rel="stylesheet" href="/web/assets/exzoom/jquery.exzoom.css">
 
 	<script src="/web/assets/exzoom/jquery.exzoom.js"></script>
-	<script src="/web/assets/exzoom/exzoom.js"></script>
 
 
 </head>
