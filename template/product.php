@@ -51,27 +51,27 @@ $heights = $post->enabledHeightsList;
              data-speed="300">
             <div class="row ProductInfo">
 
-                <div class="col-12 col-sm-5 columns product-gallery">
+                <div id="exzoom" class="col-12 col-sm-5 columns product-gallery exzoom">
 
-                    <div class="images">
+                    <div id="exzoom-dn" style="display: none"><div class="images exzoom_img_box">
                         <more-button product="<?=$id?>"></more-button>
-                        <ul id="imageGallery">
+                        <ul class="exzoom_img_ul">
                             <?
                             foreach($post->images as $image){
                                 ?>
-                                <li data-thumb="<?=$image->path?>"
-                                    data-src="<?=$image->path?>">
-                                    <div class="imageProductBlock"
-                                         style="background: transparent url(<?=$image->path?>) no-repeat center center/contain;"
-
-                                    ></div>
+                                <li>
+                                    <img src="<?=$image->path?>" alt="">
                                 </li>
                                 <?
                             }
                             ?>
                         </ul>
-                    </div>
+                    </div></div>
+                    <div id="exzoom-dn-nav" style="display: none"><div class="exzoom_nav"></div></div>
+
                 </div>
+
+
                 <div class="col-12 col-sm-7 product-info">
 
                     <div class="ProductLabel">
@@ -262,18 +262,5 @@ $heights = $post->enabledHeightsList;
         </div>
     </div>
 
-    <script>
-        $(function () {
-            $('#imageGallery').lightSlider({
-                gallery: true,
-                item: 1,
-                loop: true,
-                thumbItem: 9,
-                slideMargin: 0,
-                enableDrag: false,
-                currentPagerPosition: 'left'
-            });
-        });
-    </script>
-
+    <script src="/web/js/exzoom.js"></script>
 <? include_once __DIR__ . "/nav/footer.php" ?>
