@@ -16,7 +16,9 @@
                     <div wish-button product="{{product.id}}" title="{{product.title}}" class="left"></div>
                 </td>
                 <td align="right">
-                    <div cart-button product="{{product.id}}" price="{{product.price}}" class="right"></div>
+                    <div cart-button    product="{{product.id}}"
+                                        price="{{product.price}}"
+                                        sale-price="{{product.new_price}}" class="right"></div>
                 </td>
             </tr>
         </table>

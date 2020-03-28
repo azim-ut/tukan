@@ -1,4 +1,11 @@
 <button ng-class="{'btn btn-lg btn-icon-only cart':1, 'on':data.cart_ids.indexOf(product*1)>=0}"
         ng-click="toProduct(product)">
-    &euro;{{price}}
+
+    <span ng-if="salePrice > 0" style="white-space: nowrap;">
+        <small style="text-decoration: line-through; color: #838383;">&nbsp;&euro;{{price}}&nbsp;</small>
+        <span>&euro;{{salePrice}}</span>
+    </span>
+    <span ng-if="salePrice == 0">
+        &euro;{{price}}
+    </span>
 </button>

@@ -14,6 +14,21 @@
     overflow: hidden;margin-top: 76px;
 }
 
+.wishHeart{
+    padding: 0;
+}
+.wishHeart .far,
+.wishHeart .fas{
+    color: #333;
+    border: transparent 2px solid;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 0;
+}
+.wishHeart .fas{
+    color: #ff0000;
+    border-color: #ff0000;
+}
 
 .navbar {
     background: #fff;

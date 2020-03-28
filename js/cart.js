@@ -117,6 +117,7 @@ angular.module('root')
             restrict: "A",
             scope: {
                 price: "@",
+                salePrice: "@",
                 product: "@"
             },
             controller: function ($scope, $controller, Data, $interval, $anchorScroll, CartService) {
