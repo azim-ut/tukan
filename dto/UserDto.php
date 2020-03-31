@@ -17,6 +17,6 @@ class UserDto extends RemoteBase{
     }
 
     public function logout(){
-	    return self::getData( "/core/user/logout");
+	    return self::getData( "/core/rest/user/logout");
     }
 }
