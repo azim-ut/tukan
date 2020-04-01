@@ -18,6 +18,11 @@ if(!$id){
 $tr = Translate::getInstance();
 
 $post = Catalog::getInstance()->item($id);
+if(!$post){
+	?>
+    <script>location.href = "/";</script>
+	<?
+}
 $brandSrc = null;
 switch($post->brand){
     case 'Original Marines':
