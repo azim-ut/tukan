@@ -14,6 +14,7 @@ if(!$id){
     ?>
     <script>location.href = "/404";</script>
     <?
+	exit();
 }
 $tr = Translate::getInstance();
 
@@ -22,6 +23,7 @@ if(!$post){
 	?>
     <script>location.href = "/";</script>
 	<?
+    exit();
 }
 $brandSrc = null;
 switch($post->brand){
