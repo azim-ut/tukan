@@ -1,6 +1,7 @@
 <?php
 $tr = Translate::getInstance();
-?>
+
+use core\Engine; ?>
 <!DOCTYPE html>
 <html lang="<?=$tr->locale()?>" ng-app='root'>
 <? include_once __DIR__ . "/head.php" ?>
@@ -57,7 +58,7 @@ $tr = Translate::getInstance();
                 <a href="#">
                     <div class="icon-lang"
                         ng-click="openEmptyForm('#localeModal')"
-                        ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/'+data.user.locale+'.png) no-repeat center center/cover'}"
+                        ng-style="{'margin':10, 'background': 'transparent url(/web/img/flag/<?=Engine::getInstance()->getLocale()?>.png) no-repeat center center/cover'}"
                     ></div>
                 </a>
             </li>
