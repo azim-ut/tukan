@@ -178,8 +178,8 @@ $heights = $post->enabledHeightsList;
                                 <button type="button" class="btn btn-lg btn-outline-secondary"
                                         ng-click="toggleProductWish(<?=$id?>)">
                                         <span ng-if="wished"><i
-                                                    class="fa fa-heart text-danger"></i> {{totalWished}}</span>
-                                    <span ng-if="!wished"><i class="fa fa-heart-o"></i> <span
+                                                    class="fas fa-heart text-danger"></i> {{totalWished}}</span>
+                                    <span ng-if="!wished"><i class="far fa-heart"></i> <span
                                                 ng-if="totalWished>0">{{totalWished}}</span></span></button>
                             </div>
                         </div>
