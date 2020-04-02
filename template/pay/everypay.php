@@ -2,6 +2,7 @@
 
 $endpoint = EveryPayDto::getInstance()->endPoint();
 $data     = EveryPayDto::getInstance()->getInitData();
+exit();
 ?>
 
 <iframe id="iframe-payment-container" name="iframe-payment-container" width="400"
