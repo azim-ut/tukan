@@ -1,19 +1,16 @@
-<? use core\exception\BadResultException;
-use core\exception\NoUserException;
-use core\manager\UserManager;
-use core\service\CountriesService;
-
+<?
 try{
-    $user = UserManager::current();
-    if(!$user){
-        throw new NoUserException();
-    }
-}catch(NoUserException | BadResultException $e){
-    header("Location: /");
-    exit();
+
+	$user = UserDto::getInstance()->get();
+	if(!$user){
+		throw new Exception();
+	}
+}catch(Exception $e){
+	header("Location: /");
+	exit();
 }
-$ts = Translate::getInstance();
-$countries = CountriesService::getInstance()->getCountries2();
+$ts        = Translate::getInstance();
+$countries = CountriesDto::getInstance()->list();
 include_once __DIR__ . "/../nav/start.php";
 ?>
     <script type="text/javascript" src="/web/js/addresses.js?t=<?=$version?>"></script>
@@ -23,7 +20,7 @@ include_once __DIR__ . "/../nav/start.php";
             <div class="row">
 
                 <div class="col-sm-3 margin-bottom-15">
-                    <? require_once "menu.php" ?>
+					<? require_once "menu.php" ?>
                 </div>
 
                 <div class="col-sm-9">
@@ -50,7 +47,8 @@ include_once __DIR__ . "/../nav/start.php";
                                 <br/>
                                 <div class="tools">
                                     <a ng-click="openEditForm(row)" class="pointer"><?=$ts->get("EDIT")?></a> |
-                                    <a ng-click="showAddressDelForm(row.id, row.name)" class="pointer"><?=$ts->get("DELETE")?></a>
+                                    <a ng-click="showAddressDelForm(row.id, row.name)"
+                                       class="pointer"><?=$ts->get("DELETE")?></a>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +60,6 @@ include_once __DIR__ . "/../nav/start.php";
     </div>
 
 <? include_once __DIR__ . "/../forms/address.php" ?>
-
 
 
 <? include_once __DIR__ . "/../nav/footer.php" ?>
