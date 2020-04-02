@@ -23,7 +23,7 @@ include_once __DIR__ . "/../nav/start.php";
 					<? require_once "menu.php" ?>
                 </div>
 
-                <div class="col-sm-9">
+                <div class="col-9">
                     <button type="button"
                             class="btn btn-success btn-lg"
                             ng-click="openNewAddressForm()"><?=$ts->get("ADD_ADDRESS")?>
@@ -31,7 +31,7 @@ include_once __DIR__ . "/../nav/start.php";
                     <hr/>
                     <div class="row">
                         <div class="container">
-                            <div class="col-sm-4 addressUserRow" ng-repeat="row in list">
+                            <div class="col-sm-6 addressUserRow" ng-repeat="row in list">
                                 <i class="fa fa-user"></i> {{row.name}}<br/>
                                 <i class="fa fa-map-marker"></i> {{row.address}}<br/>
                                 {{row.town}}, {{row.region}}, {{row.zip}}<br/>

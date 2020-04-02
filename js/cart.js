@@ -58,10 +58,10 @@ angular.module('root')
                     $scope.cart = res.data;
                     $scope.editAddress = undefined;
                     if ($scope.cart.addresses.length > 0 && $scope.selectAddress === undefined) {
-                        $scope.selectAddress = 0;
+                        $scope.selectedAddress = 0;
                     }
                     if ($scope.cart.addresses.length === 0) {
-                        $scope.selectAddress = undefined;
+                        $scope.selectedAddress = undefined;
                     }
                 });
             }
@@ -78,8 +78,9 @@ angular.module('root')
             }
         }, false);
 
-        $scope.$on("addressesUpdated", function (data) {
-            $scope.useAddress($scope.selectedAddress);
+        $scope.$on("addressesUpdated", function (event, data) {
+            console.log(data);
+            $scope.useAddress(data.id);
         });
         $scope.$on("updateCart", $scope.updateCartData);
         $rootScope.$broadcast('updateCart', {});

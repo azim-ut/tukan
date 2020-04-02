@@ -21,6 +21,7 @@ angular.module('root')
                 let params = $.param(address);
                 CoreFactory.address(params).$promise.then(function (res) {
                     if (res.data) {
+                        address = res.data;
                         $rootScope.$broadcast('addressesUpdated', res.data);
                         $scope.closeAllForms();
                     }
@@ -90,7 +91,7 @@ angular.module('root')
                 $rootScope.$broadcast('editAddressForm', obj);
             },
             openNewAddressForm: function () {
-                $rootScope.$broadcast('newAddressForm', obj);
+                $rootScope.$broadcast('newAddressForm');
             },
             delAddress: function (id) {
                 CoreFactory.addressDel({id:id}).$promise.then(function (res) {
