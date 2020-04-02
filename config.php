@@ -12,4 +12,5 @@ require_once(__DIR__ . "/dto/Catalog.php");
 require_once(__DIR__ . "/dto/Translate.php");
 require_once(__DIR__ . "/dto/UserDto.php");
 require_once(__DIR__ . "/dto/CartDto.php");
+require_once(__DIR__ . "/dto/OrderDto.php");
 require_once(__DIR__ . "/dto/EveryPayDto.php");
