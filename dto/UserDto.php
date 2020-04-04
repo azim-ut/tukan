@@ -18,6 +18,10 @@ class UserDto extends RemoteBase{
 	    return self::getData( "/core/rest/user/check");
     }
 
+    public function admin(){
+	    return self::getData( "/core/rest/user/admin");
+    }
+
     public function logout(){
 	    return self::getData( "/core/rest/user/logout");
     }
