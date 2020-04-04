@@ -3,8 +3,6 @@
 
 class UserDto extends RemoteBase{
     protected static $instance = null;
-    private $facebookID = null;
-    private $data = [];
 
     /**
      * @return UserDto
@@ -16,7 +14,15 @@ class UserDto extends RemoteBase{
         return self::$instance;
     }
 
+    public function get(){
+	    return self::getData( "/core/rest/user/check");
+    }
+
+    public function admin(){
+	    return self::getData( "/core/rest/user/admin");
+    }
+
     public function logout(){
-	    return self::getData( "/core/user/logout");
+	    return self::getData( "/core/rest/user/logout");
     }
 }

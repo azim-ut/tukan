@@ -14,10 +14,17 @@ if(!$id){
     ?>
     <script>location.href = "/404";</script>
     <?
+	exit();
 }
 $tr = Translate::getInstance();
 
 $post = Catalog::getInstance()->item($id);
+if(!$post){
+	?>
+    <script>location.href = "/";</script>
+	<?
+    exit();
+}
 $brandSrc = null;
 switch($post->brand){
     case 'Original Marines':
@@ -171,8 +178,8 @@ $heights = $post->enabledHeightsList;
                                 <button type="button" class="btn btn-lg btn-outline-secondary"
                                         ng-click="toggleProductWish(<?=$id?>)">
                                         <span ng-if="wished"><i
-                                                    class="fa fa-heart text-danger"></i> {{totalWished}}</span>
-                                    <span ng-if="!wished"><i class="fa fa-heart-o"></i> <span
+                                                    class="fas fa-heart text-danger"></i> {{totalWished}}</span>
+                                    <span ng-if="!wished"><i class="far fa-heart"></i> <span
                                                 ng-if="totalWished>0">{{totalWished}}</span></span></button>
                             </div>
                         </div>
@@ -204,7 +211,27 @@ $heights = $post->enabledHeightsList;
                                                     border: #c3cc36 1px solid; margin: 4px; padding: 5px;
                                                     width: 100px; height: 100px;"></div>
                                             <span class="thin-font"><?=$item->title?></span>
-                                            <br/>&euro; <?=$item->price?>
+                                            <?
+                                            if(!$item->new_price){
+                                                ?><br/>&euro; <?=$item->price?><?
+                                            }else{
+                                                ?>
+                                                <br/>
+                                                <div style="display: inline-flex; clear: both;">
+                                                        <small style="text-decoration: line-through; color: #838383;">&nbsp;&euro; <?=$item->price?></small>
+                                                        <div style="    background: #ff0000;
+                                                    color: #fff;
+                                                    padding: 5px 6px;
+                                                    font-size: 12px;
+                                                    border-radius: 6px;
+                                                    transform: rotate(-10deg);
+                                                    margin-top: -10px;
+                                                    margin-left: 6px;
+                                                }">&euro; <?=$item->new_price?></div>
+                                                </div>
+                                                <?
+                                            }
+                                            ?>
                                         </a>
                                     </div>
                                 <? } ?>
@@ -252,6 +279,7 @@ $heights = $post->enabledHeightsList;
                                                     width: 100px; height: 100px;"></div>
                                         <span class="thin-font">{{row.title}}</span>
                                         <br/>&euro; {{row.price}}
+                                        <br/>&euro; {{row.new_price}}
                                     </a>
                                 </div>
                             </div>

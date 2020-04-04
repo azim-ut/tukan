@@ -15,10 +15,16 @@ class Catalog extends RemoteBase{
     }
 
     public function item($id){
-        return self::getData("/shop/rest/catalog/id/" . $id);
+        $res = self::getData("/shop/rest/catalog/id/" . $id);
+	    $res->post_title = Translate::getInstance()->get($res->post_title);
+        return $res;
     }
 
     public function more($id){
-        return self::getData("/shop/rest/catalog/more/" . $id);
+        $res = self::getData("/shop/rest/catalog/more/" . $id);
+        foreach($res as $row){
+        	$row->title = Translate::getInstance()->get($row->title);
+        }
+        return $res;
     }
 }

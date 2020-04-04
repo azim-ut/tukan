@@ -1,22 +1,13 @@
 <?
 
-use assets\services\OrderService;
 use core\Engine;
-use core\manager\UserManager;
 
-
-$orderService = OrderService::getInstance();
 $nonce        = Engine::getDir(1);
-$id           = $orderService->hasOrderNonce($nonce, UserManager::currentId());
-$order        = null;
-
-if($id){
-    $order = new Order($id);
-}
+$order = OrderDto::getInstance()->getNonce($nonce);
 include_once __DIR__ . "/nav/start.php";
 
 if($order){
-    ?>
+	?>
     <div class="nasa-single-product-scroll HeadContentPage"
          style="padding-right: 20px; padding-left: 20px;">
 
@@ -32,16 +23,16 @@ if($order){
                     <h3 class="thin-font" style="padding: 20px 0;">Спасибо за покупку!</h3>
                     <h4 class="text-left">Ваш заказ: </h4>
                     <table class="table">
-                        <?
-                        foreach($order->items() as $row){
-                            ?>
+						<?
+						foreach($order->items as $row){
+							?>
                             <tr>
-                                <td class="text-left"><?=$row->title()?>&nbsp;x&nbsp;<?=$row->count()?></td>
-                                <td width="1%" class="text-nowrap">&euro; <?=$row->price() * $row->count()?></td>
+                                <td class="text-left"><?=$row->title?>&nbsp;x&nbsp;<?=$row->cnt?></td>
+                                <td width="1%" class="text-nowrap">&euro; <?=$row->price * $row->cnt?></td>
                             </tr>
-                            <?
-                        }
-                        ?>
+							<?
+						}
+						?>
                         <tr>
                             <th class="text-left"><i class="fa fa-tshirt"></i> x <?=$order->totalCount?></th>
                             <th class="text-nowrap">&euro; <?=$order->totalPrice?></th>
@@ -78,7 +69,7 @@ if($order){
 
 
     </div>
-    <?
+	<?
 }
 ?>
 <? include_once __DIR__ . "/nav/footer.php" ?>

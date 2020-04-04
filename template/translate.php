@@ -1,8 +1,9 @@
 <?
 
 use core\manager\UserManager;
+$user = UserDto::getInstance()->admin();
 
-if(!UserManager::isAdmin()){
+if(!$user){
     http_response_code("404");
     exit();
 }

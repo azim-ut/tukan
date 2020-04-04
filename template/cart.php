@@ -47,6 +47,7 @@ $tr = Translate::getInstance();
                     <div class="text-center center center-block"
                          style="border-top: #ccc 1px solid; overflow: hidden; text-align: center;">
                         <div class="addressBlock"
+                             ng-if="cart.addresses.length > 0"
                              style="position: relative;">
                             <div class="btn btn-xs btn-icon-only"
                                  style="position: absolute; right: 0; top: 0; color: #ccc;"
