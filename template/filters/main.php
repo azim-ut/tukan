@@ -1,8 +1,4 @@
 <?
-
-include_once __DIR__ . "/../nav/start.php" ?>
-
-<?
 $tr = Translate::getInstance();
 ?>
 
