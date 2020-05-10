@@ -100,3 +100,5 @@ use core\Engine; ?>
 
 <div id="wrapper" class="fixNav-enabled">
     <div id="main-content" class="site-main light">
+        <div class="container">
+            <div class="row">

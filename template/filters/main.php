@@ -3,7 +3,7 @@ $tr = Translate::getInstance();
 ?>
 
 
-    <div id="content" ng-controller="MainPageController" ng-cloak>
+    <div id="content" ng-controller="MainPageController" class="col" ng-cloak>
 		<? require "main_filters.php" ?>
         <div class="margin-bottom-20 overflow">
             <product-preview style="height: 200px;"
@@ -22,10 +22,10 @@ $tr = Translate::getInstance();
             </div>
         </div>
 
-        <button class="btn btn-danger btn-block margin-bottom-20 margin-top-10"
+        <button class="btn btn-light btn-block margin-bottom-20 margin-top-10"
                 ng-if="total > posts.length"
                 ng-click="extendList()">
-            <i class="glyphicon glyphicon-plus"></i> Еще {{total - posts.length}}
+            <i class="glyphicon glyphicon-plus"></i> +
         </button>
 
         <div class="modal fade" tabindex="-1" id="CatalogFilterModal" role="dialog">

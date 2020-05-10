@@ -5,6 +5,8 @@ $ts = Translate::getInstance();
 ?>
 
 </div>
+</div>
+</div>
 
 
 </div>

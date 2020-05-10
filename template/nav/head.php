@@ -21,8 +21,8 @@ $tr = Translate::getInstance();
     <script type="text/javascript" src="/web/assets/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/web/assets/js/jquery-migrate.min.js"></script>
 
-    <link href="/web/assets/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="/web/assets/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <link href="/web/assets/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/web/assets/bootstrap-4.4.1/js/bootstrap.min.js"></script>
 
 	<link href="/web/assets/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="/web/assets/bootstrap-toastr/toastr.min.js"></script>

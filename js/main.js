@@ -14,7 +14,7 @@ angular.module('root')
             height: $cookies.get(heightCookieName),
             brand: $cookies.get(brandCookieName),
             post: 0,
-            limit: 20,
+            limit: 50,
             offset: 0,
             tagsOn: [],
             tags: [],
@@ -24,15 +24,10 @@ angular.module('root')
                 $("#CatalogFilterModal").modal("show");
             },
             updateFilter: function (heightVal, genderVal, brandVal) {
-                if(heightVal === undefined || genderVal === undefined || brandVal === undefined){
-                    return;
-                }
-                if (heightVal !== $scope.height || genderVal !== $scope.gender || brandVal !== $scope.brand) {
-                    $scope.gender = genderVal;
-                    $scope.height = heightVal;
-                    $scope.brand = brandVal;
-                    $scope.resetPosts();
-                }
+                $scope.gender = genderVal;
+                $scope.height = heightVal;
+                $scope.brand = brandVal;
+                $scope.resetPosts();
             },
             showChristmasPromo: function (row) {
                 console.log(row);
@@ -73,7 +68,6 @@ angular.module('root')
                     $scope.gender = $scope.genderTemp = res.data.gender;
                     $scope.height = $scope.heightTemp = res.data.height;
                     $scope.brand = $scope.brandTemp = res.data.brand;
-                    console.log($scope.posts);
                 });
             },
             resetPosts: function (offset) {
@@ -97,9 +91,7 @@ angular.module('root')
                     $scope.gender = $scope.genderTemp = res.data.gender;
                     $scope.height = $scope.heightTemp = res.data.height;
                     $scope.brand = $scope.brandTemp = res.data.brand;
-                    if(location.search && location.search.length>2){
-                        location.href="/catalog";
-                    }
+
                     let newHash = 'HeadTop';
                     if ($location.hash() !== newHash) {
                         // $location.hash('HeadTop');
@@ -116,7 +108,9 @@ angular.module('root')
             $scope.brand = startBrand;
         }
         let startGender = findGetParameter('gender');
+
         if(startGender){
+            $cookies.put(genderCookieName, startGender);
             $scope.height = $scope.heightTemp = 0;
             $scope.brand = $scope.brandTemp = 0;
             $scope.gender = startGender;
@@ -159,7 +153,6 @@ $(function(){
     setMinHeight();
 });
 function setMinHeight(){
-    console.log(window.innerHeight);
     $(".HeadContentPage").css("min-height", (3*window.innerHeight)/4+"px");
 }
 window.onresize = function(){

@@ -47,7 +47,7 @@ switch($post->brand){
         break;
 }
 
-$more = Catalog::getInstance()->more($id);
+$more = Catalog::getInstance()->more($id)??[];
 
 $heights = $post->enabledHeightsList;
 ?>

@@ -7,7 +7,7 @@ $ts = Translate::getInstance();
 <div style="">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 pointer" style="padding: 0;" onclick="location.href='/brands';">
+            <div class="col-sm-12 pointer" style="padding: 0;" onclick="location.href='/brands';">
                 <div class="card shadow-sm brandsContent">
                     <video autoplay muted loop id="vid">
                         <source src="/web/video/MVI_4856-commercial_HD.mp4" type="video/mp4">
@@ -19,32 +19,6 @@ $ts = Translate::getInstance();
                     </div>
                 </div>
                 </a>
-            </div>
-            <div class="col-sm-6 pointer"
-                 onclick="location.href='/lottery';"
-                 style="background: #ffffff url(/web/img/lottery.jpg) no-repeat center center/cover; position: relative; height: 400px;">
-                <div style="display: inline-block;
-                        vertical-align: middle;
-                        position: absolute;
-                        left: 0;
-                        background: #fff;
-                        top: 30%;">
-                    <div class="text-left"
-                         style="font-size: 200%;
-                            padding: 10px 15px;
-                            text-transform: uppercase;
-                            color: #333;"><?=$ts->get("LOTTERY_OF_DISCOUNTS")?></div>
-                    <div class="text-left position-absolute"
-                         style="font-size: 110%;
-                            background: #333;
-                            left: 0;
-                            padding: 15px 15px;
-                            color: #eaeaea;
-                            font-weight: 400;">
-                        <?=$ts->get("NEED_BIGGER_DISCOUNT")?><br/>
-                        <?=$ts->get("WIN_WIN_LOTTERY_TITLE")?>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
