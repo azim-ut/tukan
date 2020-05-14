@@ -48,10 +48,11 @@ $genders = [0 => $tr->get("FOR_CHILDREN"), 1 => $tr->get("FOR_BOYS"), 2 => $tr->
                     <?=$tr->get("BRAND")?>
                 </span>
                 <select class="form-control" ng-model="brandTemp" ng-change="updateFilter(heightTemp, genderTemp, brandTemp)">
+                    <option ng-value="'All'">-</option>
                     <?
                     foreach($brands as $i => $brand){
                         ?>
-                        <option ng-value="<?=$i?>"><?=$brand?></option>
+                        <option ng-value="'<?=$brand?>'"><?=$brand?></option>
                     <? } ?>
                 </select>
             </div>

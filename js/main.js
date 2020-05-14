@@ -112,7 +112,6 @@ angular.module('root')
         if(startGender){
             $cookies.put(genderCookieName, startGender);
             $scope.height = $scope.heightTemp = 0;
-            $scope.brand = $scope.brandTemp = 0;
             $scope.gender = startGender;
         }
         $scope.resetPosts();
