@@ -16,6 +16,17 @@
     overflow: hidden;margin-top: 76px;
 }
 
+.genderBtn{
+    border: #fff 0 solid !important;
+}
+.genderBtn button{
+    background: #fff url(/web/img/boy_girl.png) no-repeat center 5px;
+    width: 60px; height: 50px; border: none; border-radius: 10px;
+}
+.genderBtn.girls button{
+    background-position-y: -55px;
+}
+
 .wishHeart{
     padding: 0;
 }

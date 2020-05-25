@@ -23,8 +23,7 @@ angular.module('root')
             showFilterModal: function () {
                 $("#CatalogFilterModal").modal("show");
             },
-            updateFilter: function (heightVal, genderVal, brandVal) {
-                $scope.gender = genderVal;
+            updateFilter: function (heightVal, brandVal) {
                 $scope.height = heightVal;
                 $scope.brand = brandVal;
                 $scope.resetPosts();
@@ -88,7 +87,6 @@ angular.module('root')
                     $scope.posts = res.data.list;
                     $scope.offset = res.data.offset;
                     $scope.fetched = true;
-                    $scope.gender = $scope.genderTemp = res.data.gender;
                     $scope.height = $scope.heightTemp = res.data.height;
                     $scope.brand = $scope.brandTemp = res.data.brand;
 
