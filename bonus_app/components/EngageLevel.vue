@@ -19,14 +19,23 @@ export default {
         instagram: '',
         telegram: '',
         percent: 20,
-        checked: []
+        checked: [],
       },
       show: true,
       updatePercents(val) {
-        window.console.log(document.querySelector('.engageBar .Loading:after'))
-        // document.querySelector('.engageBar .Loading:after').style.width =
-        //   val + '%'
-      }
+        const newClassList = []
+        document
+          .querySelector('.engageBar .Loading')
+          .classList.forEach((cls) => {
+            if (!cls.match(/engaged(\\d+)/)) {
+              newClassList.push(cls)
+            }
+          })
+        newClassList.push('engaged' + Math.round(val / 10) * 10)
+        document.querySelector(
+          '.engageBar .Loading'
+        ).classList = newClassList.join(' ')
+      },
     }
   },
   created() {
@@ -36,11 +45,11 @@ export default {
   },
   methods: {
     onSubmit: {},
-    onReset: {}
-  }
+    onReset: {},
+  },
 }
 </script>
-<style scoped>
+<style>
 body {
   /*animation: pulse infinite 5s;*/
 }
@@ -67,11 +76,41 @@ body {
   content: '';
   position: absolute;
   background: #0f0;
-  width: 10%;
+  width: 0%;
   left: 0;
   height: 100%;
   border-radius: 4px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.engageBar .Loading.engaged10:after {
+  width: 10%;
+}
+.engageBar .Loading.engaged20:after {
+  width: 20%;
+}
+.engageBar .Loading.engaged30:after {
+  width: 30%;
+}
+.engageBar .Loading.engaged40:after {
+  width: 40%;
+}
+.engageBar .Loading.engaged50:after {
+  width: 50%;
+}
+.engageBar .Loading.engaged60:after {
+  width: 60%;
+}
+.engageBar .Loading.engaged70:after {
+  width: 70%;
+}
+.engageBar .Loading.engaged80:after {
+  width: 80%;
+}
+.engageBar .Loading.engaged90:after {
+  width: 90%;
+}
+.engageBar .Loading.engaged100:after {
+  width: 100%;
 }
 
 @keyframes load {

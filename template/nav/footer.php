@@ -30,7 +30,6 @@ $ts = Translate::getInstance();
                 <h4 class="text-left text-color-white"><?=$ts->get("INTERESTING_TITLE")?></h4>
                 <ul>
                     <li><a href="/checklist/daily">To do list</a><br/></li>
-                    <li><a href="/lottery"><?=$ts->get("WIN_WIN_LOTTERY_TITLE")?></a><br/></li>
                 </ul>
             </div>
             <div class="col-sm-4 text-color-white">

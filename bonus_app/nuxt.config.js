@@ -1,5 +1,8 @@
 export default {
   mode: 'spa',
+  generate: {
+    dir: '../bonus',
+  },
   /*
    ** Headers of the page
    */
@@ -11,10 +14,10 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
@@ -33,7 +36,7 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
   ],
   /*
    ** Nuxt.js modules
@@ -44,13 +47,30 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    'nuxt-fontawesome'
+    '@nuxtjs/proxy',
+    'nuxt-fontawesome',
+    '@nuxtjs/redirect-module',
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
+    debug: true,
+    proxy: true,
+  },
+  proxy: {
+    '/shop': {
+      target: 'http://tkn',
+    },
+    '/core': {
+      target: 'http://tkn',
+    },
+    '/web': {
+      target: 'http://tkn',
+    },
+  },
   /*
    ** Build configuration
    */
@@ -58,6 +78,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
-  }
+    extend(config, ctx) {},
+  },
 }

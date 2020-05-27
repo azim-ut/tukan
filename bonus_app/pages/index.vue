@@ -4,7 +4,17 @@
       <b-row align-v="center">
         <b-col
           class="contentBlock"
-          style="padding:0; position: relative; overflow: hidden; display: flex; border-radius: 25px; min-height: 80vh;justify-content: center; vertical-align: center; align-items: center;"
+          style="
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            border-radius: 25px;
+            min-height: 80vh;
+            justify-content: center;
+            vertical-align: center;
+            align-items: center;
+          "
         >
           <div style="">
             <logo />
@@ -48,7 +58,7 @@ import EngageLevel from '~/components/EngageLevel.vue'
 export default {
   components: {
     Logo,
-    EngageLevel
+    EngageLevel,
   },
   data() {
     return {
@@ -61,18 +71,18 @@ export default {
         w_app: '',
         instagram: '',
         telegram: '',
-        checked: []
+        checked: [],
       },
       show: true,
       FirstStep() {
-        this.$root.$emit('engaged', 50)
-      }
+        this.$root.$emit('engaged', 20)
+      },
     }
   },
   methods: {
     onSubmit: {},
-    onReset: {}
-  }
+    onReset: {},
+  },
 }
 </script>
 
@@ -107,27 +117,5 @@ export default {
   margin: 0 0 0 5px;
   width: 40px;
   color: #fff;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>
