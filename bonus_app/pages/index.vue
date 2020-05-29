@@ -17,7 +17,6 @@
           "
         >
           <div style="">
-            <logo />
             <font-awesome-icon :icon="['fab', 'linkedin']" />
             <b-form v-if="show" @submit="onSubmit" @reset="onReset">
               <b-input-group prepend="Email" class="mb-2">
@@ -52,12 +51,10 @@
   </div>
 </template>
 <script>
-import Logo from '~/components/Logo.vue'
 import EngageLevel from '~/components/EngageLevel.vue'
 
 export default {
   components: {
-    Logo,
     EngageLevel,
   },
   data() {
