@@ -1,10 +1,11 @@
 <template>
   <div>
     <b-container>
-      <b-row align-v="center">
+      <b-row align-v="center" style="width: 90%;">
         <b-col
           class="contentBlock"
           style="
+            z-index: 100;
             padding: 0;
             position: relative;
             overflow: hidden;
@@ -16,74 +17,138 @@
             align-items: center;
           "
         >
-          <div style="">
-            <font-awesome-icon :icon="['fab', 'linkedin']" />
-            <b-form v-if="show" @submit="onSubmit" @reset="onReset">
-              <b-input-group prepend="Email" class="mb-2">
-                <b-form-input
-                  v-model="form.email"
-                  aria-label="First name"
-                  type="email"
-                ></b-form-input>
-              </b-input-group>
-              <b-input-group prepend="Name" class="mb-2">
-                <b-form-input
-                  v-model="form.name"
-                  aria-label="First name"
-                  type="email"
-                ></b-form-input>
-              </b-input-group>
-
-              <b-button
-                class="formSubmit"
-                type="button"
-                variant="primary"
-                @click="FirstStep()"
-                >Send
-                <div>&gt;</div></b-button
-              >
-            </b-form>
+          <ul class="scrollPoints">
+            <li
+              v-for="row in tabs"
+              :key="row"
+              :class="row === tab ? 'active' : ''"
+              @click="toStep(row)"
+            >
+              <font-awesome-icon :icon="['fas', 'circle']" />
+            </li>
+          </ul>
+          <div>
             <engage-level />
+            <phone v-if="tab === 'phone'" />
+            <social-auth v-if="tab === 'social'" />
+            <push v-if="tab === 'push'" />
+
+            <b-button
+              class="backSubmit"
+              type="button"
+              variant="primary"
+              @click="BackStep()"
+            >
+              <div>&lt;</div>
+            </b-button>
+
+            <b-button
+              class="forwardSubmit"
+              type="button"
+              variant="primary"
+              @click="ForwardStep()"
+            >
+              <div>&gt;</div>
+            </b-button>
           </div>
+          <div></div>
         </b-col>
       </b-row>
     </b-container>
+
+    <b-modal id="social-auth" centered title="BootstrapVue">
+      <p class="my-4">Vertically centered modal!</p>
+    </b-modal>
   </div>
 </template>
 <script>
+import axios from 'axios'
 import EngageLevel from '~/components/EngageLevel.vue'
+import Phone from '~/components/Phone.vue'
+import Push from '~/components/Push.vue'
+import SocialAuth from '~/components/SocialAuth.vue'
 
 export default {
   components: {
     EngageLevel,
+    SocialAuth,
+    Push,
+    Phone
   },
+  fetch({ redirect }) {},
   data() {
     return {
+      tabs: ['phone', 'social', 'push'],
+      tab: null,
       form: {
-        name: '',
         email: '',
-        phone: '',
-        dob: '',
-        fb: '',
-        w_app: '',
-        instagram: '',
-        telegram: '',
-        checked: [],
+        name: '',
+        pwd: '',
+        checked: []
       },
       show: true,
-      FirstStep() {
-        this.$root.$emit('engaged', 20)
-      },
+      engaged: 0
     }
   },
-  methods: {
-    onSubmit: {},
-    onReset: {},
+  created() {
+    axios.get('/core/rest/loyalty/engaged').then((res) => {
+      this.tab = this.tabs[0]
+      if (res.data.data) {
+        // eslint-disable-next-line nuxt/no-globals-in-created
+        window.console.log(res.data.data)
+      }
+    })
   },
+  methods: {
+    BackStep() {
+      let ind = this.tabs.indexOf(this.tab)
+      ind--
+      if (ind < 0) {
+        ind = this.tabs.length - 1
+      }
+      this.tab = this.tabs[ind]
+    },
+    toStep(val) {
+      this.tab = val
+    },
+    ForwardStep() {
+      let ind = this.tabs.indexOf(this.tab)
+      ind++
+      if (ind > this.tabs.length - 1) {
+        ind = 0
+      }
+      this.tab = this.tabs[ind]
+    }
+  }
 }
 </script>
 
 <style>
+ul.scrollPoints {
+  clear: both;
+  display: inline-flex;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  z-index: 1;
+}
+ul.scrollPoints li {
+  padding: 10px;
+  height: 10px;
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+  font-size: 5px;
+  color: #717171;
+  cursor: pointer;
+  vertical-align: middle;
+}
+ul.scrollPoints li.active {
+  color: #0b2e13;
+  font-size: xx-small;
+}
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -92,10 +157,14 @@ export default {
   align-items: center;
   text-align: center;
 }
+
 .contentBlock {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  min-width: 50vw;
 }
-.formSubmit {
+
+.backSubmit,
+.forwardSubmit {
   position: absolute;
   display: flex;
   right: 10px;
@@ -106,12 +175,18 @@ export default {
   border: none;
   font-size: small;
   background: transparent !important;
+  z-index: 10;
 }
 
-.formSubmit div {
+.backSubmit {
+  left: 10px;
+}
+
+.backSubmit div,
+.forwardSubmit div {
   border-radius: 30px;
   background: #3a3af5;
-  margin: 0 0 0 5px;
+  margin: 0 0 0 0;
   width: 40px;
   color: #fff;
 }

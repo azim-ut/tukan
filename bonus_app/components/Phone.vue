@@ -1,50 +1,38 @@
 <template>
-  <div
-    style="position: absolute;
-  top: 0px;
-  left: 10px;
-  right: 10px"
-  >
-    <div class="engageBar">
-      <div class="Loading"></div>
-    </div>
+  <div>
+    <b-form v-if="show" center>
+      <b-button
+        type="button"
+        size="lg"
+        circle
+        block
+        variant="primary"
+        @click="sendSMS()"
+        >Отправить SMS <font-awesome-icon :icon="['fas', 'sms']" />
+      </b-button>
+    </b-form>
   </div>
 </template>
 <script>
 export default {
-  components: {},
   data() {
     return {
+      dates: [],
       form: {
-        name: '',
         email: '',
-        phone: '',
-        dob: '',
-        fb: '',
-        w_app: '',
-        instagram: '',
-        telegram: '',
-        percent: 20,
+        name: '',
+        pwd: '',
         checked: []
       },
-      show: true,
-      updateData(data) {
-        const newClassList = []
-        newClassList.push('Loading')
-        newClassList.push('engaged' + Math.round(data / 10) * 10)
-        document.querySelector(
-          '.engageBar .Loading'
-        ).classList = newClassList.join(' ')
-      }
+      show: true
     }
   },
-  created() {
-    this.$root.$on('engaged', (data) => {
-      this.updateData(data)
-    })
-  },
-  mounted() {},
-  methods: {}
+  created() {},
+  methods: {
+    sendSMS() {
+      this.$root.$emit('engaged', 20)
+    }
+  }
 }
 </script>
 <style>
@@ -55,8 +43,8 @@ body {
 .engageBar {
   width: 100%;
   margin: 10px auto;
-  position: relative;
   background: #fff;
+  position: relative;
   padding: 10px 40px;
   border-radius: 4px;
   box-sizing: border-box;

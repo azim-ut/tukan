@@ -1,50 +1,55 @@
 <template>
-  <div
-    style="position: absolute;
-  top: 0px;
-  left: 10px;
-  right: 10px"
-  >
-    <div class="engageBar">
-      <div class="Loading"></div>
-    </div>
+  <div>
+    <b-button-group vertical>
+      <b-button variant="outline-primary" size="lg" @click="loginFB">
+        <font-awesome-icon :icon="['fab', 'facebook-f']" />
+        Facebook
+      </b-button>
+      <b-button
+        v-if="false"
+        variant="outline-primary"
+        size="lg"
+        @click="loginVk"
+      >
+        <font-awesome-icon :icon="['fab', 'vk']" />
+        ВКонтакте
+      </b-button>
+      <b-button
+        v-if="false"
+        variant="outline-success"
+        size="lg"
+        @click="loginOk"
+      >
+        <font-awesome-icon :icon="['fab', 'odnoklassniki']" />
+        Odnoklassniki
+      </b-button>
+    </b-button-group>
   </div>
 </template>
 <script>
+import axios from 'axios'
+
 export default {
-  components: {},
   data() {
     return {
       form: {
-        name: '',
         email: '',
-        phone: '',
-        dob: '',
-        fb: '',
-        w_app: '',
-        instagram: '',
-        telegram: '',
-        percent: 20,
+        name: '',
+        pwd: '',
         checked: []
       },
-      show: true,
-      updateData(data) {
-        const newClassList = []
-        newClassList.push('Loading')
-        newClassList.push('engaged' + Math.round(data / 10) * 10)
-        document.querySelector(
-          '.engageBar .Loading'
-        ).classList = newClassList.join(' ')
-      }
+      show: true
     }
   },
-  created() {
-    this.$root.$on('engaged', (data) => {
-      this.updateData(data)
-    })
-  },
-  mounted() {},
-  methods: {}
+  created() {},
+  methods: {
+    loginFB() {
+      axios.get('/core/rest/facebook/login').then((res) => {
+        this.$root.$emit('engaged', 50)
+        // window.location.href = res.data.data
+      })
+    }
+  }
 }
 </script>
 <style>
@@ -55,8 +60,8 @@ body {
 .engageBar {
   width: 100%;
   margin: 10px auto;
-  position: relative;
   background: #fff;
+  position: relative;
   padding: 10px 40px;
   border-radius: 4px;
   box-sizing: border-box;

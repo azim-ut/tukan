@@ -26,17 +26,21 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/main.css'],
+  css: [
+    '@/assets/css/main.css',
+    '@fortawesome/fontawesome-svg-core/styles.css',
+  ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/fontawesome.js'],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    '@nuxtjs/fontawesome',
   ],
   /*
    ** Nuxt.js modules
@@ -48,7 +52,6 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/proxy',
-    'nuxt-fontawesome',
     '@nuxtjs/redirect-module',
   ],
   /*
@@ -59,6 +62,9 @@ export default {
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
     debug: true,
     proxy: true,
+  },
+  fontawesome: {
+    icons: [{ solid: ['faCog', 'faHome'] }, { brands: ['faFacebook'] }],
   },
   proxy: {
     '/shop': {
